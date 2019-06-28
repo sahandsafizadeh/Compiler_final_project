@@ -27,7 +27,7 @@
     public StringBuilder string = new StringBuilder();
 
     private Symbol token(int code){
-//        System.out.println(yytext());
+//        System.out.println(yytext());//debug
         return new Symbol(code, yytext());
     }
 

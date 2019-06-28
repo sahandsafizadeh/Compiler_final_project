@@ -16,7 +16,7 @@
       <root url="file://$PROJECT_DIR$/src/codegen" />
       <root url="file://$PROJECT_DIR$/src/parser" />
       <root url="file://$PROJECT_DIR$/src/scanner" />
-      <root url="file://$PROJECT_DIR$/src/scanner/bare" />
+      <root url="file://$PROJECT_DIR$/src/bare" />
     </SOURCES>
   </library>
 </component>
