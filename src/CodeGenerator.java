@@ -1,6 +1,7 @@
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.util.ASMifier;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,6 +10,10 @@ import java.io.OutputStream;
 import static org.objectweb.asm.Opcodes.ACC_PUBLIC;
 
 public class CodeGenerator {
+
+    public static void main(String[] args) throws IOException {
+        ASMifier.main(new String[]{"A.class"});
+    }
 
     private static final String OUTPUT_FILE = "Compiled.class";
     private static ClassWriter writer;

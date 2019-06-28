@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/asm_7_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/asm_7_1.xml" afterDir="false" />
+    <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="scanner and parser work correctly after moving to the new project">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jflex_full_1_7_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/asm_7_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bare/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bare/Scanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bare/ScannerHtmlGen.flex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bare/symbol/Symbol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bare/symbol/SymbolType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/ArrayDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/ArrayDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/Descriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/Descriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/FunctionDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/FunctionDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/KeywordDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/KeywordDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/StructureDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/StructureDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/TypeDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/TypeDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegen/descriptor/VariableDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptor/VariableDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scanner/Scanner.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner.flex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scanner/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scanner/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Symbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler_final_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler_final_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/manuals/asm4-guide.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/doc/manuals/asm4-guide.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/codegen/asm-7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/codegen/asm-util-7.1-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/codegen/asm-util-7.1-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/codegen/asm-util-7.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/CodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Compiler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser$CUP$Parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser$CUP$Parser$actions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Symbol.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Compiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,18 +40,78 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Scanner.flex">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+            <state relative-caret-position="270">
+              <caret line="1838" column="205" lean-forward="true" selection-start-line="1838" selection-start-column="205" selection-end-line="1838" selection-end-column="205" />
+              <folding>
+                <element signature="e#0#114114#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#350#381#0" expanded="true" />
+                <element signature="e#484#485#0" expanded="true" />
+                <element signature="e#519#520#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+                <element signature="e#625#626#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+                <element signature="e#932#933#0" expanded="true" />
+                <element signature="e#960#961#0" expanded="true" />
+                <element signature="e#4210#4211#0" expanded="true" />
+                <element signature="e#4250#4251#0" expanded="true" />
+                <element signature="e#47227#47228#0" expanded="true" />
+                <element signature="e#47263#47264#0" expanded="true" />
+                <element signature="e#58199#58200#0" expanded="true" />
+                <element signature="e#58235#58236#0" expanded="true" />
+                <element signature="e#58445#58446#0" expanded="true" />
+                <element signature="e#58502#58503#0" expanded="true" />
+                <element signature="e#58982#58983#0" expanded="true" />
+                <element signature="e#59006#59007#0" expanded="true" />
+                <element signature="e#59094#59095#0" expanded="true" />
+                <element signature="e#59118#59119#0" expanded="true" />
+                <element signature="e#59200#59201#0" expanded="true" />
+                <element signature="e#59224#59225#0" expanded="true" />
+                <element signature="e#59310#59311#0" expanded="true" />
+                <element signature="e#59334#59335#0" expanded="true" />
+                <element signature="e#59583#59584#0" expanded="true" />
+                <element signature="e#59621#59622#0" expanded="true" />
+                <element signature="e#59714#59768#1" expanded="true" />
+                <element signature="e#59927#59928#0" expanded="true" />
+                <element signature="e#59971#59972#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Symbol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4522">
+              <caret line="266" selection-start-line="266" selection-end-line="266" />
+              <folding>
+                <element signature="e#0#7115#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>, RESULT</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>, (java_cup.runtime.Symbol)RESULT</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="sahand.safizadeh &lt;sahandsafizadeh.s@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -68,9 +121,12 @@
         <option value="$PROJECT_DIR$/src/scanner/Scanner.flex" />
         <option value="$PROJECT_DIR$/src/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/parser/Parser.cup" />
-        <option value="$PROJECT_DIR$/src/Compiler.java" />
-        <option value="$PROJECT_DIR$/src/Symbol.java" />
         <option value="$PROJECT_DIR$/src/Scanner.flex" />
+        <option value="$PROJECT_DIR$/src/Compiler.java" />
+        <option value="$PROJECT_DIR$/src/CodeGenerator.java" />
+        <option value="$PROJECT_DIR$/lib/parser/Symbol.java" />
+        <option value="$PROJECT_DIR$/src/Symbol.java" />
+        <option value="$PROJECT_DIR$/src/Parser.java" />
       </list>
     </option>
   </component>
@@ -108,13 +164,13 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561735340571" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561744816593" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/scanner/jflex-full-1.7.0.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
@@ -134,7 +190,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CodeGenerator">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CodeGenerator" />
+      <module name="Compiler_final_project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Compiler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Compiler" />
       <module name="Compiler_final_project" />
@@ -144,6 +207,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.Compiler" />
       </list>
     </recent_temporary>
@@ -158,12 +222,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561733687683</updated>
-      <workItem from="1561733691176" duration="1555000" />
+      <workItem from="1561733691176" duration="6231000" />
     </task>
+    <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
+      <created>1561735332318</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561735332318</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1555000" />
+    <option name="totallyTimeSpent" value="6231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -174,14 +246,14 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22416107" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22416107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="SonarLint" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="SonarQube" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -194,14 +266,14 @@
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="ASMPlugin" order="7" weight="0.3295302" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="10" weight="0.24966443" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.24966443" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="ASMPlugin" order="8" weight="0.3295302" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="9" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
@@ -209,19 +281,19 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22416107" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.22416107" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.3286119" />
       <window_info anchor="bottom" id="SonarLint" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="SonarQube" order="7" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -229,18 +301,22 @@
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="ASMPlugin" order="7" weight="0.3295302" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="10" weight="0.24966443" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.24966443" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="ASMPlugin" order="8" weight="0.3295302" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="9" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="scanner and parser work correctly after moving to the new project" />
+    <option name="LAST_COMMIT_MESSAGE" value="scanner and parser work correctly after moving to the new project" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -251,30 +327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CodeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12903">
-          <caret line="787" column="11" selection-start-line="787" selection-start-column="11" selection-end-line="787" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Symbol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="245" column="82" selection-start-line="245" selection-start-column="82" selection-end-line="245" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -292,20 +344,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Compiler.java">
+    <entry file="file://$PROJECT_DIR$/src/Scanner.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/codegen/asm-7.1.jar!/org/objectweb/asm/Type.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/codegen/asm-util-7.1-sources.jar!/org/objectweb/asm/util/ASMifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/codegen/asm-util-7.0.jar!/org/objectweb/asm/util/Printer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="304" column="33" lean-forward="true" selection-start-line="304" selection-start-column="33" selection-end-line="304" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/codegen/asm-util-7.0.jar!/org/objectweb/asm/util/ASMifier.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Symbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding>
+            <element signature="e#0#7115#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Scanner.flex">
+    <entry file="file://$PROJECT_DIR$/src/Symbol.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        <state relative-caret-position="4522">
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
+          <folding>
+            <element signature="e#0#7115#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="1838" column="205" lean-forward="true" selection-start-line="1838" selection-start-column="205" selection-end-line="1838" selection-end-column="205" />
+          <folding>
+            <element signature="e#0#114114#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#350#381#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
+            <element signature="e#4210#4211#0" expanded="true" />
+            <element signature="e#4250#4251#0" expanded="true" />
+            <element signature="e#47227#47228#0" expanded="true" />
+            <element signature="e#47263#47264#0" expanded="true" />
+            <element signature="e#58199#58200#0" expanded="true" />
+            <element signature="e#58235#58236#0" expanded="true" />
+            <element signature="e#58445#58446#0" expanded="true" />
+            <element signature="e#58502#58503#0" expanded="true" />
+            <element signature="e#58982#58983#0" expanded="true" />
+            <element signature="e#59006#59007#0" expanded="true" />
+            <element signature="e#59094#59095#0" expanded="true" />
+            <element signature="e#59118#59119#0" expanded="true" />
+            <element signature="e#59200#59201#0" expanded="true" />
+            <element signature="e#59224#59225#0" expanded="true" />
+            <element signature="e#59310#59311#0" expanded="true" />
+            <element signature="e#59334#59335#0" expanded="true" />
+            <element signature="e#59583#59584#0" expanded="true" />
+            <element signature="e#59621#59622#0" expanded="true" />
+            <element signature="e#59714#59768#1" expanded="true" />
+            <element signature="e#59927#59928#0" expanded="true" />
+            <element signature="e#59971#59972#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Compiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -375,7 +525,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>asm-7.1</last-edited>
+          <last-edited>jflex-full-1.7.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

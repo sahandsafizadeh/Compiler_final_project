@@ -8,6 +8,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/lib/parser/Symbol.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/CodeGenerator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/Compiler.java">
           <value>
             <set />
