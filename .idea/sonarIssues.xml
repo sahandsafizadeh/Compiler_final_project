@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/A.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/lib/parser/Symbol.java">
           <value>
             <set />
@@ -39,6 +44,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/Symbol.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/descriptor/StructureDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/descriptor/VariableDescriptor.java">
           <value>
             <set />
           </value>

@@ -2,20 +2,20 @@ package descriptor;
 
 public class VariableDescriptor implements Descriptor {
 
-    private int size;
     private Class type;
+    private Object value;
 
-    public VariableDescriptor(int size, Class type) {
-        this.size = size;
+    public VariableDescriptor(Class type, Object value) {
+        this.value = value;
         this.type = type;
-    }
-
-    public int getSize() {
-        return size;
     }
 
     public Class getType() {
         return type;
     }
-    
+
+    public Object getValue() {
+        return value;
+    }
+
 }
