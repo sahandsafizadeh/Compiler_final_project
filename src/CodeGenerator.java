@@ -1,7 +1,5 @@
 import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.util.ASMifier;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,32 +10,33 @@ import static org.objectweb.asm.Opcodes.ACC_PUBLIC;
 public class CodeGenerator {
 
     public static void main(String[] args) throws IOException {
-        ASMifier.main(new String[]{"A.class"});
+//        ASMifier.main(new String[]{"A.class"});
+//        initClass();
+//        writeFinalClassCode();
     }
 
     private static final String OUTPUT_FILE = "Compiled.class";
-    private static ClassWriter writer;
+    private static ClassWriter clw;
 
     public static void initClass() {
-        System.out.println("Initializing code generator");
-        ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
+        Logger.log("Initializing code generator");
 
-        writer.visit(Opcodes.V1_8, ACC_PUBLIC, "a", null, "java/lang/Object", null);
-        MethodVisitor main = writer.visitMethod(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, "main", "()V", null, null);
-        main.visitCode();
-
-        main.visitMaxs(1, 1);
-        main.visitEnd();
+        clw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
+        clw.visit(Opcodes.V1_8, ACC_PUBLIC, "Compiled", null, "java/lang/Object", null);
     }
 
-    public static void writeFinalClassCode() {
-        System.out.println("Writing the generated code into the executable output file");
+    public static void writeFinalClassCode() throws IOException {
+        Logger.log("Writing the generated code into the executable output file");
+
+        clw.visitEnd();
         try (OutputStream out = new FileOutputStream(OUTPUT_FILE)) {
-            out.write(writer.toByteArray());
+            out.write(clw.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Code generation finished");
+
+        Logger.log("Code generation finished");
+        Logger.close();
     }
 
 }
