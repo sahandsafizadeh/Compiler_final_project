@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 import java_cup.runtime.*;
 
-//PARSER GENERATION
+
 parser code
     {:
         private Scanner scanner;
@@ -11,38 +11,69 @@ parser code
         }
     :};
 
-//SCANNER INVOKATION
 scan with {: return scanner.next_token(); :};
+
 
 //TERMINALS
 
-//KEYWORDS
-terminal CONST, RECORD, BOOL, CHAR, INT, LONG, FLOAT, DOUBLE, STRING, VOID, TRUE, FALSE, EXTERN, AUTO, FUNCTION;
-terminal BEGIN, END, IF, ELSE, SWITCH, OF, CASE, DEFAULT, FOR, FOREACH, IN, REPEAT, UNTIL, BREAK, CONTINUE, RETURN;
-terminal SIZEOF;
+//keywords
+terminal CONST, RECORD, BOOL, CHAR, INT, LONG, FLOAT, DOUBLE, STRING, VOID, TRUE, FALSE, EXTERN, AUTO, FUNCTION,
+BEGIN, END, IF, ELSE, SWITCH, OF, CASE, DEFAULT, FOR, FOREACH, IN, REPEAT, UNTIL, BREAK, CONTINUE, RETURN, SIZEOF;
 
-//OPERATORS
-terminal SEMI, COL, COMA, DOT, BINOT, PLUS, MINUS, UMINUS, MULT, DIVIDE, MOD, ASSIGN, BIAND, BIOR, BIEXOR, NOT, AND, OR, LT, GT, CURBRACOP,
- CURBRACCL, BRACKOP, BRACKCL, PRANTOP, PRANTCL, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2, PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
+//operators
+terminal SEMI, COL, COMA, DOT, BINOT, PLUS, MINUS, UMINUS, MULT, DIVIDE, MOD, ASSIGN, BIAND, BIOR, BIEXOR, NOT, AND,
+OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2, PLUSASSIGN,
+MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
 
-//LITERALS
-terminal String CHAR_LIT;
-terminal String STR_LIT;
-terminal Integer INT_LIT;
-terminal Double FLOAT_LIT;
+//literals
+terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT, ID;
 
-terminal String ID;
 
 //NON TERMINALS
 
-nonterminal program, var_dcl, func_dcl, struct_dcl;
-nonterminal var_dcl_part, var_dcl_cnt, var_dcl_cnt_part, var_dcl_cnt_extension_part, more_var_dcl_part, type, structure_type, variable_type, function_type, casting_type, func_dcl_part, arguments, arguments_part, function_array_dcl;
-nonterminal block, block_content, statement, assignment;
-nonterminal cond_stmt, else_part, case_part;
-nonterminal loop_stmt, loop_init_part, loop_cond_part, loop_update_part, loop_block, loop_statement, loop_block_content;
-nonterminal expr, arithmatic_expr, conditional_expr, const_val;
-nonterminal variable, array_part, single_var;
-nonterminal function_call, parameters, parameters_part;
+nonterminal program;
+nonterminal program_part;
+nonterminal var_dcl;
+nonterminal func_dcl;
+nonterminal struct_dcl;
+nonterminal var_dcl_part;
+nonterminal var_dcl_cnt;
+nonterminal var_dcl_cnt_part;
+nonterminal var_dcl_cnt_extension_part;
+nonterminal more_var_dcl_part;
+nonterminal type;
+nonterminal structure_type;
+nonterminal variable_type;
+nonterminal function_type;
+nonterminal casting_type;
+nonterminal func_dcl_part;
+nonterminal arguments_part;
+nonterminal function_array_dcl;
+nonterminal block;
+nonterminal block_content;
+nonterminal statement;
+nonterminal assignment;
+nonterminal cond_stmt;
+nonterminal else_part;
+nonterminal case_part;
+nonterminal loop_stmt;
+nonterminal loop_init_part;
+nonterminal loop_cond_part;
+nonterminal loop_update_part;
+nonterminal loop_block;
+nonterminal loop_statement;
+nonterminal loop_block_content;
+nonterminal expr;
+nonterminal arithmatic_expr;
+nonterminal conditional_expr;
+nonterminal const_val;
+nonterminal variable;
+nonterminal array_part;
+nonterminal single_var;
+nonterminal function_call;
+nonterminal parameters;
+nonterminal parameters_part;
+nonterminal global_var_dcl;
 
 //PRECEDENCES FOR REMOVING CONFLICTS
 precedence right MULTASSIGN, DIVASSIGN;
@@ -73,15 +104,22 @@ start with program;
 
 //program
 program ::=
-    var_dcl program
-    |
-    func_dcl program
-    |
-    struct_dcl program
+    program_part program
     |
     /*epsilon*/
     ;
 
+program_part ::=
+    global_var_dcl
+    |
+    func_dcl
+    |
+    struct_dcl
+    ;
+
+global_var_dcl ::=
+    variable_type ID SEMI
+    ;
 
 //variable declarations
 var_dcl ::=
