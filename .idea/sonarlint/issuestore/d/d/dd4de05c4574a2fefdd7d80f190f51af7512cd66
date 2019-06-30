@@ -1,0 +1,4 @@
+
+]squid:S1118":Add a private constructor to hide the implicit public one.(ŸæÌıÿÿÿÿ8¼Ô¨‘º-
+Jsquid:S1068",Remove this unused "LOG_FILE" private field.(áÕªÈ8’Ô­‘º-
+qsquid:S1192"NUse already-defined constant 'LOG_FILE' instead of duplicating its value here.(§ıœ¿ÿÿÿÿÿ8èù­‘º-

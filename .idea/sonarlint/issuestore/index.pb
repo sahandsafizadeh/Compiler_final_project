@@ -27,3 +27,17 @@ A
 src/Compiler.java,c\f\cfc57d4da04246473e6038fd7768f79fb65f72b2
 F
 src/CodeGenerator.java,a\4\a43bde1903ed47ce30ec343f52c724da5a25f984
+?
+src/Logger.java,d\d\dd4de05c4574a2fefdd7d80f190f51af7512cd66
+7
+log.txt,8\9\89dbeb08d7aa865d748d706c1d17ee94f6f82ba7
+C
+doc/manuals/Cup.txt,5\e\5ed7b63f82e7c07603f83d1b3ad26e99312bf86f
+>
+symbolData.txt,0\0\00d0a7f59d8a07ccc641381022ea3785265fa6f7
+K
+src/ast/expr/ConstNode.java,4\b\4bb3f9a22104318961a1ad201dda7386e9726121
+N
+src/ast/expr/VariableNode.java,b\b\bb5a66220e3231482b88705e9f6efd3e43d1d331
+P
+ src/ast/expr/ExpressionNode.java,b\5\b52b71de6c98e02847459aa6bcadd1d29c05ab24

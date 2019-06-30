@@ -12,6 +12,8 @@ import static org.objectweb.asm.Opcodes.*;
 
 public class CodeGenerator {
 
+    public static boolean inDCL = false;
+
     public static void main(String[] args) throws IOException {
         ASMifier.main(new String[]{"A.class"});
 //        initClass();
@@ -29,16 +31,20 @@ public class CodeGenerator {
 
         clw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
         clw.visit(Opcodes.V1_8, ACC_PUBLIC, "Compiled", null, "java/lang/Object", null);
-        MethodVisitor defConstructor = clw.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
-        defConstructor.visitCode();
-        defConstructor.visitVarInsn(ALOAD, 0);
-        defConstructor.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
-        defConstructor.visitInsn(RETURN);
-        defConstructor.visitMaxs(1, 1);
-        defConstructor.visitEnd();
+        mVisitor = clw.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
+        mVisitor.visitCode();
+        mVisitor.visitVarInsn(ALOAD, 0);
+        mVisitor.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
+        mVisitor.visitInsn(RETURN);
+        mVisitor.visitMaxs(1, 1);
+        mVisitor.visitEnd();
 //        MethodVisitor main = clw.visitMethod(ACC_PUBLIC | ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
 //        main.visitCode();
 //        main.visitEnd();
+    }
+
+    public static void dclGlobalVar() {
+
     }
 
     public static void add() {

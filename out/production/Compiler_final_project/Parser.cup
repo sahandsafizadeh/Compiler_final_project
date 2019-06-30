@@ -35,7 +35,7 @@ terminal String ID;
 
 //NON TERMINALS
 
-nonterminal program, var_dcl, func_dcl, struct_dcl;
+nonterminal program, var_dcl, func_dcl, struct_dcl, global_variable;
 nonterminal var_dcl_part, var_dcl_cnt, var_dcl_cnt_part, var_dcl_cnt_extension_part, more_var_dcl_part, type, func_dcl_part, arguments, arguments_part, function_array_dcl;
 nonterminal block, block_content, statement, assignment;
 nonterminal cond_stmt, else_part, case_part;
@@ -84,6 +84,7 @@ program ::=
 
 
 //variable declarations
+    //local variables
 var_dcl ::=
     CONST var_dcl_part SEMI
     |
@@ -130,6 +131,13 @@ type ::=
     AUTO
     |
     ID
+    ;
+
+    //global variables
+global_variable ::=
+    type:t1 single_var SEMI global_variable {:CodeGenerator.dclGlobalVar();:}
+    |
+    /*epsilon*/
     ;
 
 
