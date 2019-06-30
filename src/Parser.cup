@@ -22,8 +22,8 @@ BEGIN, END, IF, ELSE, SWITCH, OF, CASE, DEFAULT, FOR, FOREACH, IN, REPEAT, UNTIL
 
 //operators
 terminal SEMI, COL, COMA, DOT, BINOT, PLUS, MINUS, UMINUS, MULT, DIVIDE, MOD, ASSIGN, BIAND, BIOR, BIEXOR, NOT, AND,
-OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2, PLUSASSIGN,
-MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
+OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2,
+PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
 
 //literals
 terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT, ID;
@@ -33,22 +33,30 @@ terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT, ID;
 
 nonterminal program;
 nonterminal program_part;
-nonterminal var_dcl;
+
+nonterminal global_var_dcl;
+nonterminal variable_type;
+
 nonterminal func_dcl;
+nonterminal function_type;
+nonterminal func_dcl_part;
+nonterminal arguments;
+nonterminal arguments_part;
+nonterminal function_array_dcl;
+
 nonterminal struct_dcl;
+nonterminal struct_var_dcl;
+nonterminal struct_more_var_dcl;
+nonterminal struct_var_dcl_part;
+nonterminal struct_type;
+
+nonterminal var_dcl;
 nonterminal var_dcl_part;
 nonterminal var_dcl_cnt;
 nonterminal var_dcl_cnt_part;
 nonterminal var_dcl_cnt_extension_part;
-nonterminal more_var_dcl_part;
 nonterminal type;
-nonterminal structure_type;
-nonterminal variable_type;
-nonterminal function_type;
 nonterminal casting_type;
-nonterminal func_dcl_part;
-nonterminal arguments_part;
-nonterminal function_array_dcl;
 nonterminal block;
 nonterminal block_content;
 nonterminal statement;
@@ -73,9 +81,10 @@ nonterminal single_var;
 nonterminal function_call;
 nonterminal parameters;
 nonterminal parameters_part;
-nonterminal global_var_dcl;
 
-//PRECEDENCES FOR REMOVING CONFLICTS
+
+//PRECEDENCES
+
 precedence right MULTASSIGN, DIVASSIGN;
 precedence right PLUSASSIGN, MINUSASSIGN;
 precedence right ASSIGN;
@@ -91,16 +100,19 @@ precedence left PLUS, MINUS;
 precedence left MULT, DIVIDE, MOD;
 precedence right SIZEOF;
 precedence right NOT, BINOT;
+precedence right CASTPRANTOP;
 precedence right UMINUS;
+precedence left PRANTOP;
 precedence right PREFPLUS2, PREFMINUS2;
 precedence left BRACKOP;
-precedence left PRANTOP;
+precedence left FUNCPRANTOP;
 precedence left POSTPLUS2, POSTMINUS2;
+
 
 start with program;
 
-//GRAMMER PRODUCTION RULES
 
+//GRAMMER PRODUCTION RULES
 
 //program
 program ::=
@@ -117,9 +129,90 @@ program_part ::=
     struct_dcl
     ;
 
+
+//global variables
 global_var_dcl ::=
     variable_type ID SEMI
     ;
+
+variable_type ::=
+    struct_type
+    |
+    STRING
+    |
+    ID
+    ;
+
+
+//functions
+func_dcl ::=
+    EXTERN function_type ID SEMI
+    |
+    FUNCTION function_type ID PRANTOP arguments PRANTCL func_dcl_part
+    ;
+
+function_type ::=
+    variable_type
+    |
+    VOID
+    ;
+
+func_dcl_part ::=
+    SEMI
+    |
+    block
+    ;
+
+arguments ::=
+    variable_type ID function_array_dcl arguments_part
+    |
+    /*epsilon*/
+    ;
+
+arguments_part ::=
+     COMA arguments
+     |
+     /*epsilon*/
+    ;
+
+function_array_dcl ::=
+    BRACKOP BRACKCL function_array_dcl
+    |
+    /*epsilon*/
+    ;
+
+
+//structurs
+struct_dcl ::=
+    RECORD ID BEGIN struct_var_dcl struct_more_var_dcl END RECORD SEMI
+    ;
+
+struct_more_var_dcl ::=
+    struct_var_dcl struct_more_var_dcl
+    |
+    /*epsilon*/
+    ;
+
+struct_var_dcl ::=
+    CONST struct_var_dcl_part SEMI
+    |
+    struct_var_dcl_part SEMI
+    ;
+
+struct_var_dcl_part ::=
+    struct_type var_dcl_cnt var_dcl_cnt_extension_part
+    ;
+
+struct_type ::=
+    casting_type
+    |
+    BOOL
+    |
+    LONG
+    |
+    AUTO
+    ;
+
 
 //variable declarations
 var_dcl ::=
@@ -178,73 +271,6 @@ casting_type ::=
     FLOAT
     |
     DOUBLE
-    ;
-
-structure_type ::=
-    casting_type
-    |
-    BOOL
-    |
-    LONG
-    |
-    AUTO
-    ;
-
-variable_type ::=
-    structure_type
-    |
-    STRING
-    |
-    ID
-    ;
-
-function_type ::=
-    variable_type
-    |
-    VOID
-    ;
-
-//function declarations
-func_dcl ::=
-    EXTERN type ID SEMI
-    |
-    FUNCTION type ID PRANTOP arguments PRANTCL func_dcl_part
-    ;
-
-func_dcl_part ::=
-    SEMI
-    |
-    block
-    ;
-
-arguments ::=
-    type ID function_array_dcl arguments_part
-    |
-    /*epsilon*/
-    ;
-
-arguments_part ::=
-     COMA arguments
-     |
-     /*epsilon*/
-    ;
-
-function_array_dcl ::=
-    BRACKOP BRACKCL function_array_dcl
-    |
-    /*epsilon*/
-    ;
-
-
-//structur declarations
-struct_dcl ::=
-    RECORD ID BEGIN var_dcl more_var_dcl_part END RECORD SEMI
-    ;
-
-more_var_dcl_part ::=
-    var_dcl more_var_dcl_part
-    |
-    /*epsilon*/
     ;
 
 //statements
@@ -356,7 +382,7 @@ loop_update_part ::=
 
 //expressions
 expr ::=
-    PRANTOP casting_type PRANTCL expr
+    PRANTOP casting_type PRANTCL expr %prec CASTPRANTOP
     |
     arithmatic_expr
     |
@@ -458,7 +484,7 @@ array_part ::=
 
 //function calls
 function_call ::=
-    ID PRANTOP parameters PRANTCL
+    ID PRANTOP parameters PRANTCL %prec FUNCPRANTOP
     ;
 
 parameters ::=
