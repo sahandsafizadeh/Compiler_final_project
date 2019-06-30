@@ -39,7 +39,7 @@ nonterminal program, var_dcl, func_dcl, struct_dcl;
 nonterminal var_dcl_part, var_dcl_cnt, var_dcl_cnt_part, var_dcl_cnt_extension_part, more_var_dcl_part, type, structure_type, variable_type, function_type, casting_type, func_dcl_part, arguments, arguments_part, function_array_dcl;
 nonterminal block, block_content, statement, assignment;
 nonterminal cond_stmt, else_part, case_part;
-nonterminal loop_stmt, loop_init_part, loop_cond_part, loop_update_part;
+nonterminal loop_stmt, loop_init_part, loop_cond_part, loop_update_part, loop_block, loop_statement, loop_block_content;
 nonterminal expr, arithmatic_expr, conditional_expr, const_val;
 nonterminal variable, array_part, single_var;
 nonterminal function_call, parameters, parameters_part;
@@ -209,7 +209,6 @@ more_var_dcl_part ::=
     /*epsilon*/
     ;
 
-
 //statements
 block ::=
     BEGIN block_content END
@@ -223,6 +222,18 @@ block_content ::=
     /*epsilon*/
     ;
 
+loop_block ::=
+    BEGIN loop_block_content END
+    ;
+
+loop_block_content ::=
+    var_dcl loop_block_content
+    |
+    loop_statement loop_block_content
+    |
+    /*epsilon*/
+    ;
+
 statement ::=
     assignment SEMI
     |
@@ -230,15 +241,18 @@ statement ::=
     |
     loop_stmt
     |
-    BREAK SEMI
-    |
-    CONTINUE SEMI
-    |
     function_call SEMI
     |
     RETURN expr SEMI
     ;
 
+loop_statement ::=
+    statement
+    |
+    BREAK SEMI
+    |
+    CONTINUE SEMI
+    ;
 
 //assignment
 assignment ::=
@@ -276,11 +290,11 @@ case_part ::=
 
 //loop statements
 loop_stmt ::=
-    FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL block
+    FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
     |
-    REPEAT block UNTIL PRANTOP expr PRANTCL SEMI
+    REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
     |
-    FOREACH PRANTOP ID IN ID PRANTCL block
+    FOREACH PRANTOP ID IN ID PRANTCL loop_block
     ;
 
 loop_init_part ::=
@@ -304,6 +318,8 @@ loop_update_part ::=
 
 //expressions
 expr ::=
+    PRANTOP casting_type PRANTCL expr
+    |
     arithmatic_expr
     |
     conditional_expr

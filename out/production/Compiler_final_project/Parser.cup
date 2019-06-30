@@ -35,8 +35,8 @@ terminal String ID;
 
 //NON TERMINALS
 
-nonterminal program, var_dcl, func_dcl, struct_dcl, global_variable;
-nonterminal var_dcl_part, var_dcl_cnt, var_dcl_cnt_part, var_dcl_cnt_extension_part, more_var_dcl_part, type, func_dcl_part, arguments, arguments_part, function_array_dcl;
+nonterminal program, var_dcl, func_dcl, struct_dcl;
+nonterminal var_dcl_part, var_dcl_cnt, var_dcl_cnt_part, var_dcl_cnt_extension_part, more_var_dcl_part, type, structure_type, variable_type, function_type, casting_type, func_dcl_part, arguments, arguments_part, function_array_dcl;
 nonterminal block, block_content, statement, assignment;
 nonterminal cond_stmt, else_part, case_part;
 nonterminal loop_stmt, loop_init_part, loop_cond_part, loop_update_part;
@@ -84,7 +84,6 @@ program ::=
 
 
 //variable declarations
-    //local variables
 var_dcl ::=
     CONST var_dcl_part SEMI
     |
@@ -133,13 +132,39 @@ type ::=
     ID
     ;
 
-    //global variables
-global_variable ::=
-    type:t1 single_var SEMI global_variable {:CodeGenerator.dclGlobalVar();:}
+casting_type ::=
+    CHAR
     |
-    /*epsilon*/
+    INT
+    |
+    FLOAT
+    |
+    DOUBLE
     ;
 
+structure_type ::=
+    casting_type
+    |
+    BOOL
+    |
+    LONG
+    |
+    AUTO
+    ;
+
+variable_type ::=
+    structure_type
+    |
+    STRING
+    |
+    ID
+    ;
+
+function_type ::=
+    variable_type
+    |
+    VOID
+    ;
 
 //function declarations
 func_dcl ::=
@@ -273,14 +298,14 @@ loop_cond_part ::=
 loop_update_part ::=
     assignment
     |
-    expr//is it meaningful?
-    |
     /*epsilon*/
     ;
 
 
 //expressions
 expr ::=
+    PRANTOP casting_type PRANTCL expr
+    |
     arithmatic_expr
     |
     conditional_expr
@@ -298,7 +323,6 @@ expr ::=
     function_call
     |
     SIZEOF PRANTOP type PRANTCL
-
     ;
 
 arithmatic_expr ::=
