@@ -33,11 +33,12 @@ public class Symbol extends java_cup.runtime.Symbol {
     public static final int PLUSASSIGN = 64;
     public static final int FLOAT = 8;
     public static final int RECORD = 3;
-    public static final int PRANTCL = 59;
+    public static final int PRANTCL = 57;
+    public static final int CASTPRANTOP = 58;
     public static final int PREFMINUS2 = 61;
     public static final int BIEXOR = 48;
     public static final int MOD = 44;
-    public static final int PRANTOP = 58;
+    public static final int PRANTOP = 56;
     public static final int BIAND = 46;
     public static final int COMA = 36;
     public static final int TRUE = 12;
@@ -58,10 +59,8 @@ public class Symbol extends java_cup.runtime.Symbol {
     public static final int BREAK = 30;
     public static final int DOT = 37;
     public static final int INT = 6;
-    public static final int CURBRACCL = 55;
     public static final int EQEQ = 69;
     public static final int EOF = 0;
-    public static final int CURBRACOP = 54;
     public static final int STR_LIT = 73;
     public static final int DEFAULT = 24;
     public static final int COL = 35;
@@ -79,13 +78,14 @@ public class Symbol extends java_cup.runtime.Symbol {
     public static final int OF = 22;
     public static final int END = 18;
     public static final int FOREACH = 26;
+    public static final int FUNCPRANTOP = 59;
     public static final int BEGIN = 17;
     public static final int MINUSASSIGN = 65;
     public static final int CASE = 23;
     public static final int CHAR_LIT = 72;
-    public static final int BRACKCL = 57;
+    public static final int BRACKCL = 55;
     public static final int STRING = 10;
-    public static final int BRACKOP = 56;
+    public static final int BRACKOP = 54;
     public static final int PREFPLUS2 = 60;
     public static final int AND = 50;
     public static final int UMINUS = 41;
@@ -146,12 +146,12 @@ public class Symbol extends java_cup.runtime.Symbol {
             "OR",
             "LT",
             "GT",
-            "CURBRACOP",
-            "CURBRACCL",
             "BRACKOP",
             "BRACKCL",
             "PRANTOP",
             "PRANTCL",
+            "CASTPRANTOP",
+            "FUNCPRANTOP",
             "PREFPLUS2",
             "PREFMINUS2",
             "POSTPLUS2",

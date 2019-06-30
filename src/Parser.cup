@@ -50,34 +50,39 @@ nonterminal struct_more_var_dcl;
 nonterminal struct_var_dcl_part;
 nonterminal struct_type;
 
+nonterminal block;
+nonterminal block_content;
+nonterminal loop_block;
+nonterminal loop_block_content;
+
 nonterminal var_dcl;
 nonterminal var_dcl_part;
 nonterminal var_dcl_cnt;
 nonterminal var_dcl_cnt_part;
-nonterminal var_dcl_cnt_extension_part;
-nonterminal type;
-nonterminal casting_type;
-nonterminal block;
-nonterminal block_content;
+nonterminal var_dcl_cnt_extension;
+nonterminal single_var;
+nonterminal array_part;
+
 nonterminal statement;
-nonterminal assignment;
+nonterminal loop_statement;
+
 nonterminal cond_stmt;
 nonterminal else_part;
 nonterminal case_part;
+
 nonterminal loop_stmt;
 nonterminal loop_init_part;
 nonterminal loop_cond_part;
 nonterminal loop_update_part;
-nonterminal loop_block;
-nonterminal loop_statement;
-nonterminal loop_block_content;
+
+nonterminal assignment;
+nonterminal variable;
 nonterminal expr;
+
+nonterminal casting_type;
 nonterminal arithmatic_expr;
 nonterminal conditional_expr;
 nonterminal const_val;
-nonterminal variable;
-nonterminal array_part;
-nonterminal single_var;
 nonterminal function_call;
 nonterminal parameters;
 nonterminal parameters_part;
@@ -200,7 +205,7 @@ struct_var_dcl ::=
     ;
 
 struct_var_dcl_part ::=
-    struct_type var_dcl_cnt var_dcl_cnt_extension_part
+    struct_type var_dcl_cnt var_dcl_cnt_extension
     ;
 
 struct_type ::=
@@ -214,66 +219,7 @@ struct_type ::=
     ;
 
 
-//variable declarations
-var_dcl ::=
-    CONST var_dcl_part SEMI
-    |
-    var_dcl_part SEMI
-    ;
-
-var_dcl_part ::=
-    type var_dcl_cnt var_dcl_cnt_extension_part
-    ;
-
-var_dcl_cnt ::=
-    single_var var_dcl_cnt_part
-    ;
-
-var_dcl_cnt_part ::=
-    ASSIGN expr
-    |
-    /*epsilon*/
-    ;
-
-var_dcl_cnt_extension_part ::=
-    COMA var_dcl_cnt var_dcl_cnt_extension_part
-    |
-    /*epsilon*/
-    ;
-
-type ::=
-    BOOL
-    |
-    CHAR
-    |
-    INT
-    |
-    LONG
-    |
-    FLOAT
-    |
-    DOUBLE
-    |
-    STRING
-    |
-    VOID
-    |
-    AUTO
-    |
-    ID
-    ;
-
-casting_type ::=
-    CHAR
-    |
-    INT
-    |
-    FLOAT
-    |
-    DOUBLE
-    ;
-
-//statements
+//blocks
 block ::=
     BEGIN block_content END
     ;
@@ -298,12 +244,52 @@ loop_block_content ::=
     /*epsilon*/
     ;
 
-statement ::=
-    assignment SEMI
+
+//variables
+var_dcl ::=
+    CONST var_dcl_part SEMI
     |
+    var_dcl_part SEMI
+    ;
+
+var_dcl_part ::=
+    variable_type var_dcl_cnt var_dcl_cnt_extension
+    ;
+
+var_dcl_cnt ::=
+    single_var var_dcl_cnt_part
+    ;
+
+var_dcl_cnt_part ::=
+    ASSIGN expr
+    |
+    /*epsilon*/
+    ;
+
+var_dcl_cnt_extension ::=
+    COMA var_dcl_cnt var_dcl_cnt_extension
+    |
+    /*epsilon*/
+    ;
+
+single_var ::=
+    ID array_part
+    ;
+
+array_part ::=
+    BRACKOP expr BRACKCL array_part
+    |
+    /*epsilon*/
+    ;
+
+
+//statements
+statement ::=
     cond_stmt
     |
     loop_stmt
+    |
+    assignment SEMI
     |
     function_call SEMI
     |
@@ -318,21 +304,8 @@ loop_statement ::=
     CONTINUE SEMI
     ;
 
-//assignment
-assignment ::=
-    variable ASSIGN expr
-    |
-    variable PLUSASSIGN expr
-    |
-    variable MINUSASSIGN expr
-    |
-    variable MULTASSIGN expr
-    |
-    variable DIVASSIGN expr
-    ;
 
-
-//conditional statements
+//conditionals
 cond_stmt ::=
     IF PRANTOP expr PRANTCL block else_part
     |
@@ -352,7 +325,7 @@ case_part ::=
     ;
 
 
-//loop statements
+//loops
 loop_stmt ::=
     FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
     |
@@ -380,6 +353,34 @@ loop_update_part ::=
     ;
 
 
+//assignments
+assignment ::=
+    variable ASSIGN expr
+    |
+    variable PLUSASSIGN expr
+    |
+    variable MINUSASSIGN expr
+    |
+    variable MULTASSIGN expr
+    |
+    variable DIVASSIGN expr
+    ;
+
+variable ::=
+    single_var
+    |
+    variable DOT ID
+    |
+    PREFMINUS2 variable
+    |
+    PREFPLUS2 variable
+    |
+    variable PREFMINUS2 %prec POSTMINUS2
+    |
+    variable PREFPLUS2 %prec POSTPLUS2
+    ;
+
+
 //expressions
 expr ::=
     PRANTOP casting_type PRANTCL expr %prec CASTPRANTOP
@@ -400,7 +401,17 @@ expr ::=
     |
     function_call
     |
-    SIZEOF PRANTOP type PRANTCL
+    SIZEOF PRANTOP variable_type PRANTCL
+    ;
+
+casting_type ::=
+    CHAR
+    |
+    INT
+    |
+    FLOAT
+    |
+    DOUBLE
     ;
 
 arithmatic_expr ::=
@@ -456,32 +467,6 @@ const_val ::=
     ;
 
 
-//variables
-variable ::=
-    single_var
-    |
-    variable DOT ID
-    |
-    PREFMINUS2 variable
-    |
-    PREFPLUS2 variable
-    |
-    variable PREFMINUS2 %prec POSTMINUS2
-    |
-    variable PREFPLUS2 %prec POSTPLUS2
-    ;
-
-single_var ::=
-    ID array_part
-    ;
-
-array_part ::=
-    BRACKOP expr BRACKCL array_part
-    |
-    /*epsilon*/
-    ;
-
-
 //function calls
 function_call ::=
     ID PRANTOP parameters PRANTCL %prec FUNCPRANTOP
@@ -498,4 +483,3 @@ parameters_part ::=
     |
     /*epsilon*/
     ;
-
