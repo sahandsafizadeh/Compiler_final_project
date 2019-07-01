@@ -170,7 +170,6 @@ public class Symbol extends java_cup.runtime.Symbol {
             "FLOAT_LIT",
             "ID"
     };
-
     public static final String[] KEYWORDS = {
             "const",
             "record",

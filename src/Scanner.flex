@@ -148,8 +148,6 @@ Identifier = [_\w][_\w\d]*
 "or" { return token(Symbol.OR); }
 "<" { return token(Symbol.LT); }
 ">" { return token(Symbol.GT); }
-"{" { return token(Symbol.CURBRACOP); }
-"}" { return token(Symbol.CURBRACCL); }
 "[" { return token(Symbol.BRACKOP); }
 "]" { return token(Symbol.BRACKCL); }
 "(" { return token(Symbol.PRANTOP); }

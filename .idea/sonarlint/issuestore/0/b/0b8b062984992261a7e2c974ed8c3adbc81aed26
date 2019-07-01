@@ -1,0 +1,6 @@
+
+]squid:S1118	":Add a private constructor to hide the implicit public one.(é¢£Çûÿÿÿÿ8óúçº-
+Isquid:S1172
+"&Remove these unused method parameters.(òÚÏ¯ûÿÿÿÿ8“ºâëº-
+Isquid:S1172)"+Remove this unused method parameter "type".(Éî™•8“ºâëº-
+\squid:UnusedPrivateMethod)"0Remove this unused private "isValidType" method.(Éî™•8“ºâëº-
