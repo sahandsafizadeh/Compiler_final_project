@@ -23,5 +23,4 @@ public abstract class BinaryExpression extends Expression {
         CodeGenerator.mVisit.visitInsn(opcode);
     }
 
-    public abstract int determineOp(Type type);
 }

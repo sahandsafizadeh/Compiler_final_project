@@ -7,20 +7,32 @@ import static ast.type.FunctionType.*;
 
 public class TypeChecker {
 
+    public static Type unaryExprTypeCheck(Type t) {
+        if (!isValidExprType(t))
+            Logger.error("type mismatch");
+
+        if (t == DOUBL)
+            return StructureType.DOUBL;
+        else if (t == FLOAT)
+            return StructureType.FLOAT;
+        else if (t == LONG)
+            return StructureType.LONG;
+        else
+            return StructureType.INT;
+    }
+
     public static Type binaryExprTypeCheck(Type t1, Type t2) {
         if (!(isValidExprType(t1) && isValidExprType(t2)))
             Logger.error("type mismatch");
 
-        Type type;
         if (t1 == DOUBL || t2 == DOUBL)
-            type = StructureType.DOUBL;
+            return StructureType.DOUBL;
         else if (t1 == FLOAT || t2 == FLOAT)
-            type = StructureType.FLOAT;
+            return StructureType.FLOAT;
         else if (t1 == LONG || t2 == LONG)
-            type = StructureType.LONG;
+            return StructureType.LONG;
         else
-            type = StructureType.INT;
-        return type;
+            return StructureType.INT;
     }
 
     private static boolean isValidExprType(Type type) {

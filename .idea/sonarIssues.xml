@@ -248,7 +248,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/UnaryExpression.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/BinaryNot.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostMinus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostPlus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefMinus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefPlus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Uminus.java">
           <value>
             <set />
           </value>

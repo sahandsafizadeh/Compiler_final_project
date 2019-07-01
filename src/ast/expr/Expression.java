@@ -9,4 +9,7 @@ public abstract class Expression implements Node {
     public Type getType() {
         return type;
     }
+
+    public abstract int determineOp(Type type);
+
 }
