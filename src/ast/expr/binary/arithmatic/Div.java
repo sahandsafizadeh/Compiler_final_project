@@ -15,7 +15,7 @@ public class Div extends BinaryExpression {
 
     @Override
     public void compile() {
-        Logger.log("add");
+        Logger.log("div");
         super.compile();
     }
 

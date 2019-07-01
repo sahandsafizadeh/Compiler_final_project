@@ -15,7 +15,7 @@ public class Mod extends BinaryExpression {
 
     @Override
     public void compile() {
-        Logger.log("add");
+        Logger.log("mod");
         super.compile();
     }
 

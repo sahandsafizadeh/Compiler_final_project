@@ -15,7 +15,7 @@ public class BinaryOr extends BinaryExpression {
 
     @Override
     public void compile() {
-        Logger.log("add");
+        Logger.log("binary or");
         super.compile();
     }
 

@@ -15,7 +15,7 @@ public class BinaryAnd extends BinaryExpression {
 
     @Override
     public void compile() {
-        Logger.log("add");
+        Logger.log("binary and");
         super.compile();
     }
 

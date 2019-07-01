@@ -15,7 +15,7 @@ public class Mult extends BinaryExpression {
 
     @Override
     public void compile() {
-        Logger.log("add");
+        Logger.log("mult");
         super.compile();
     }
 
