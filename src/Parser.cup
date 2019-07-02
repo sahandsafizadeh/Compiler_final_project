@@ -144,11 +144,11 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type ID SEMI
+    variable_type:t ID:id SEMI {:new GlobalVariableDCL(t, id).compile();:}
     ;
 
 variable_type ::=
-    struct_type
+    struct_type:t {:RESULT = t;:}
     |
     STRING{:RESULT = VariableType.STRING;:}
     |

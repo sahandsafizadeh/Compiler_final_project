@@ -2,38 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ast/Assignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expr/CastExpr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/loop/Repeat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/type/VariableType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/parser/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Symbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Symbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/logical/EQEQ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/logical/NotEQ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/BooleanConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/BooleanConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/CharConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/CharConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/Constant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/FloatConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/IntegerConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/IntegerConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/StringConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/StringConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/FunctionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/FunctionType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/VariableDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/VariableDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/dcl/VariableDcl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/dcl/VariableDcl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/EQEQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/NotEQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/FunctionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/type/FunctionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/StructureType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/type/StructureType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cg/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cg/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/symtab/TableStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/TableStack.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,30 +30,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Parser.cup">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="255" column="11" lean-forward="true" selection-start-line="255" selection-start-column="11" selection-end-line="255" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/dcl/VariableDcl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#116#117#0" expanded="true" />
-                <element signature="e#143#144#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,7 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/descriptor/symtab/Entry.java" />
         <option value="$PROJECT_DIR$/src/descriptor/symtab/VariableEntry.java" />
         <option value="$PROJECT_DIR$/symbolData.txt" />
         <option value="$PROJECT_DIR$/src/Symbol.java" />
@@ -123,7 +72,6 @@
         <option value="$PROJECT_DIR$/src/symtab/dscp/Descriptor.java" />
         <option value="$PROJECT_DIR$/src/symtab/entry/Entry.java" />
         <option value="$PROJECT_DIR$/src/symtab/entry/KeywordEntry.java" />
-        <option value="$PROJECT_DIR$/src/symtab/TableStack.java" />
         <option value="$PROJECT_DIR$/src/ast/constant/CharConstant.java" />
         <option value="$PROJECT_DIR$/src/ast/constant/IntegerConstant.java" />
         <option value="$PROJECT_DIR$/src/ast/constant/BooleanConstant.java" />
@@ -157,10 +105,12 @@
         <option value="$PROJECT_DIR$/src/ast/type/VariableType.java" />
         <option value="$PROJECT_DIR$/src/ast/Assignment.java" />
         <option value="$PROJECT_DIR$/src/ast/loop/Repeat.java" />
-        <option value="$PROJECT_DIR$/src/Parser.cup" />
         <option value="$PROJECT_DIR$/A.java" />
-        <option value="$PROJECT_DIR$/src/cg/CodeGenerator.java" />
         <option value="$PROJECT_DIR$/src/ast/dcl/VariableDcl.java" />
+        <option value="$PROJECT_DIR$/src/cg/CodeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/symtab/TableStack.java" />
+        <option value="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java" />
+        <option value="$PROJECT_DIR$/src/Parser.cup" />
       </list>
     </option>
   </component>
@@ -230,7 +180,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562066261269" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562067941197" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -303,7 +253,7 @@
       <workItem from="1561972012195" duration="10480000" />
       <workItem from="1561998246428" duration="11116000" />
       <workItem from="1562041262872" duration="11255000" />
-      <workItem from="1562057423634" duration="9479000" />
+      <workItem from="1562057423634" duration="10510000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -323,7 +273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117225000" />
+    <option name="totallyTimeSpent" value="118256000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -336,7 +286,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -387,7 +336,7 @@
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3286119" />
       <window_info anchor="bottom" id="SonarQube" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4220963" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4220963" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="10" weight="0.45184135" />
@@ -403,7 +352,7 @@
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.3295302" />
-      <window_info anchor="right" id="ASMPlugin" order="8" visible="true" weight="0.3295302" />
+      <window_info anchor="right" id="ASMPlugin" order="8" weight="0.3295302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="9" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
     </layout-to-restore>
@@ -421,13 +370,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/symtab/dscp/TypeDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/symtab/dscp/StructureDescriptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -484,22 +426,6 @@
           <folding>
             <element signature="e#392#393#0" expanded="true" />
             <element signature="e#428#429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/symtab/TableStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2082#2083#0" expanded="true" />
-            <element signature="e#2109#2110#0" expanded="true" />
-            <element signature="e#2158#2159#0" expanded="true" />
-            <element signature="e#2181#2182#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cg/CodeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -885,10 +804,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/symtab/TableStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="100" column="81" selection-start-line="100" selection-start-column="81" selection-end-line="100" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cg/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.cup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="255" column="11" lean-forward="true" selection-start-line="255" selection-start-column="11" selection-end-line="255" selection-end-column="11" />
+        <state relative-caret-position="235">
+          <caret line="146" column="72" selection-start-line="146" selection-start-column="72" selection-end-line="146" selection-end-column="72" />
         </state>
       </provider>
     </entry>

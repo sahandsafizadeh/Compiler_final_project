@@ -97,6 +97,10 @@ public class TableStack {
         return instance;
     }
 
+    public void addGlobal(VariableDescriptor descriptor) {
+        base.getTable().add(new VariableEntry(descriptor.getName(), descriptor));
+    }
+
     public SymbolTable getBase() {
         return base;
     }

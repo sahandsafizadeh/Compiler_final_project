@@ -1,6 +1,7 @@
 package cg;
 
 import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.util.ASMifier;
@@ -17,6 +18,7 @@ public class CodeGenerator {
 
     public static ClassWriter clWriter;
     public static MethodVisitor mVisit;
+    public static FieldVisitor fVisit;
 
 
     public static void main(String[] args) throws IOException {

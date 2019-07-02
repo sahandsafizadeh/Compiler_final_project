@@ -139,3 +139,13 @@ S
 #src/ast/expr/constant/Constant.java,a\3\a3a3511da1d192d5d4a093a2029f87f42094a9c9
 W
 'src/ast/expr/constant/CharConstant.java,5\a\5a8ecd0477a4f3a5fe7cd7fe605186468de885ac
+J
+src/ast/expr/CastExpr.java,e\f\ef9483c1b315e369c734e4739bec06b762d398a7
+N
+src/ast/type/VariableType.java,3\5\356fed88a72950eab9113474d873b8950874480c
+G
+src/ast/Assignment.java,4\1\4111cf24cc85d89999b8c99ae9168539a3bbaf4f
+H
+src/ast/loop/Repeat.java,f\5\f5a73b97d0f6538633db93c3c7c21035a8498267
+R
+"src/ast/dcl/GlobalVariableDCL.java,f\e\fe37e53ae8ce2642f4a38b6944fe8a15321d13e7
