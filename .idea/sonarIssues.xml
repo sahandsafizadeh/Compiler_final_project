@@ -173,7 +173,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/ArrayDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/SingleVar.java">
           <value>
             <set />
           </value>
@@ -233,6 +243,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmaticBinaryExpr.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmaticBinaryExpression.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Arithmetic.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java">
           <value>
             <set />
@@ -268,6 +298,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/EQEQ.java">
           <value>
             <set />
@@ -289,6 +324,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/LTEQ.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java">
           <value>
             <set />
           </value>

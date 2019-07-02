@@ -2,6 +2,7 @@ package ast.dcl;
 
 import ast.Node;
 import ast.type.Type;
+import cg.CodeGenerator;
 import symtab.TableStack;
 import symtab.dscp.VariableDescriptor;
 
@@ -18,10 +19,10 @@ public class GlobalVariableDCL implements Node {
     @Override
     public Node compile() {
         //todo check if the type of structure is valid
-        VariableDescriptor descriptor = new VariableDescriptor(type, name, null);
-        descriptor.setArgument(false);
-        descriptor.setConst(false);
-        TableStack.getInstance().addGlobal(descriptor);
+//        VariableDescriptor descriptor = new VariableDescriptor(type, name, null);
+//        descriptor.setArgument(false);
+//        descriptor.setConst(false);
+//        TableStack.getInstance().addGlobal(descriptor);
         return null;
     }
 

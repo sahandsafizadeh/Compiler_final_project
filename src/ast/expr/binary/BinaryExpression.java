@@ -8,8 +8,8 @@ import ast.type.TypeChecker;
 
 public class BinaryExpression extends Expression {
 
-    private Expression expr1;
-    private Expression expr2;
+    protected Expression expr1;
+    protected Expression expr2;
 
     public BinaryExpression(Type type) {
         super(type);
@@ -23,11 +23,7 @@ public class BinaryExpression extends Expression {
 
     @Override
     public Node compile() {
-        Type t1 = expr1.getType();
-        Type t2 = expr2.getType();
-        Type resultType = TypeChecker.binaryExprTypeCheck(t1, t2);
-        CodeGenerator.mVisit.visitInsn(determineOp(resultType));
-        return new BinaryExpression(resultType);
+        return null;
     }
 
     @Override

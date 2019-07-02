@@ -10,12 +10,6 @@ public class VariableDescriptor implements Descriptor {
     private boolean isConst;
     private boolean isArgument;
 
-    public VariableDescriptor(Type type, String name, Object value) {
-        this.type = type;
-        this.name = name;
-        this.value = value;
-    }
-
     public Type getType() {
         return type;
     }

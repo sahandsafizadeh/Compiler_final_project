@@ -45,10 +45,6 @@ S
 #src/ast/expr/binary/logical/GT.java,b\7\b766d00269412d9a2f453a7e135d833dfcf90a8b
 U
 %src/ast/expr/binary/logical/GTEQ.java,f\1\f163c0b2bc91513aee475a6c9a535213112628f8
-U
-%src/ast/expr/binary/logical/EQEQ.java,0\f\0f965b02d7dd1474bcf5951826f4f53d1c6c362f
-V
-&src/ast/expr/binary/logical/NotEQ.java,2\b\2bd61346bde9df27196f369ae5ca50c8cf95c8ce
 \
 ,src/ast/expr/unary/arithmatic/PrefPlus2.java,c\9\c9e71f99149d9750c7dbaabbc248a597d7784a0d
 ]

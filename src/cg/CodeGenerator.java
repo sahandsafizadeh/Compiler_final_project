@@ -38,11 +38,12 @@ public class CodeGenerator {
         mVisit.visitVarInsn(ALOAD, 0);
         mVisit.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
         mVisit.visitInsn(RETURN);
+//        mVisit.visitLocalVariable("a", "[[I",null, new Label(), new Label(), 1);
         mVisit.visitMaxs(1, 1);
         mVisit.visitEnd();
-        MethodVisitor main = clWriter.visitMethod(ACC_PUBLIC | ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
-        main.visitCode();
-        main.visitEnd();
+//        MethodVisitor main = clWriter.visitMethod(ACC_PUBLIC | ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
+//        main.visitCode();
+//        main.visitEnd();
     }
 
     public static Label putLabel() {

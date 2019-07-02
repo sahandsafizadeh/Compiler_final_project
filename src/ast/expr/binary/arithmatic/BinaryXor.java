@@ -2,13 +2,12 @@ package ast.expr.binary.arithmatic;
 
 import ast.Node;
 import ast.expr.Expression;
-import ast.expr.binary.BinaryExpression;
 import ast.type.StructureType;
 import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-public class BinaryXor extends BinaryExpression {
+public class BinaryXor extends ArithmeticBinaryExpr {
 
     public BinaryXor(Expression expr1, Expression expr2) {
         super(expr1, expr2);
@@ -22,12 +21,12 @@ public class BinaryXor extends BinaryExpression {
 
     @Override
     public int determineOp(Type type) {
-        if (type == StructureType.DOUBL || type == StructureType.FLOAT)
-            Logger.error("type mismatch");
-        else if (type == StructureType.LONG)
+        if (type == StructureType.LONG && (expr1.getType() == StructureType.LONG && expr2.getType() == StructureType.LONG))
             return Opcodes.LXOR;
-        else
+        else if (type == StructureType.INT)
             return Opcodes.IXOR;
+        else
+            Logger.error("type mismatch");
         return 0;
     }
 

@@ -3,9 +3,12 @@ package ast.expr.binary.logical;
 import ast.Node;
 import ast.expr.Expression;
 import ast.expr.binary.BinaryExpression;
-import ast.type.StructureType;
+import ast.type.CastingType;
 import ast.type.Type;
+import ast.type.TypeChecker;
+import cg.CodeGenerator;
 import cg.Logger;
+import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 
 public class EQ extends BinaryExpression {
@@ -16,20 +19,14 @@ public class EQ extends BinaryExpression {
 
     @Override
     public Node compile() {
-        Logger.log("add");
-        super.compile();
+        Logger.log("equality");
+
         return null;
     }
 
     @Override
     public int determineOp(Type type) {
-        if (type == StructureType.DOUBL || type == StructureType.FLOAT)
-            Logger.error("type mismatch");
-        else if (type == StructureType.LONG)
-            return Opcodes.LAND;
-        else
-            return Opcodes.IAND;
-        return 0;
+        return Opcodes.IF_ICMPNE;
     }
 
 }

@@ -31,8 +31,8 @@ OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPL
 PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
 
 //literals
-terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT, ID;
-
+terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT;
+terminal String ID;
 
 //NON TERMINALS
 
@@ -60,7 +60,7 @@ nonterminal block_content;
 nonterminal loop_block;
 nonterminal loop_block_content;
 
-nonterminal var_dcl;
+nonterminal BlockContent var_dcl;
 nonterminal var_dcl_part;
 nonterminal var_dcl_cnt;
 nonterminal var_dcl_cnt_part;
@@ -82,8 +82,10 @@ nonterminal loop_update_part;
 
 nonterminal assignment;
 nonterminal variable;
-nonterminal Expression expr;
+nonterminal var_access;
+nonterminal var_access_array_part;
 
+nonterminal Expression expr;
 nonterminal Type casting_type;
 nonterminal Expression arithmatic_expr;
 nonterminal Expression conditional_expr;
@@ -144,11 +146,11 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type ID SEMI
+    variable_type:t ID:id SEMI {:new GlobalVariableDCL(t, id).compile();:}
     ;
 
 variable_type ::=
-    struct_type
+    struct_type:t {:RESULT = t;:}
     |
     STRING{:RESULT = VariableType.STRING;:}
     |
@@ -280,11 +282,11 @@ var_dcl_cnt_extension ::=
     ;
 
 single_var ::=
-    ID array_part
+    ID:id array_part {:RESULT = new SingleVar().compile();:}
     ;
 
 array_part ::=
-    BRACKOP expr BRACKCL array_part
+    BRACKOP expr BRACKCL array_part {::}
     |
     /*epsilon*/
     ;
@@ -336,7 +338,7 @@ case_part ::=
 loop_stmt ::=
     FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
     |//in your grammer we shouldn't declare variable in for loop
-    REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
+    {::} REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
     |
     FOREACH PRANTOP ID IN ID PRANTCL loop_block
     ;
@@ -374,7 +376,7 @@ assignment ::=
     ;
 
 variable ::=
-    single_var
+    var_access
     |
     variable DOT ID
     |
@@ -387,6 +389,15 @@ variable ::=
     variable PREFPLUS2 %prec POSTPLUS2
     ;
 
+var_access ::=
+    ID:id array_part {:RESULT = new SingleVar().compile();:}
+    ;
+
+var_access_array_part ::=
+    BRACKOP expr BRACKCL array_part {::}
+    |
+    /*epsilon*/
+    ;
 
 //expressions
 expr ::=

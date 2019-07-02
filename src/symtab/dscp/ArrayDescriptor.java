@@ -1,14 +1,25 @@
 package symtab.dscp;
 
+import ast.type.Type;
+
 public class ArrayDescriptor implements Descriptor {
 
-    int size;
-    int baseAddress;
-    Class type;
+    private String name;
+    private Type type;
 
-    public ArrayDescriptor(int size, int baseAddress, Class type) {
-        this.size = size;
-        this.baseAddress = baseAddress;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
         this.type = type;
     }
 

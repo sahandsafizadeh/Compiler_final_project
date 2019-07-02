@@ -2,13 +2,12 @@ package ast.expr.binary.arithmatic;
 
 import ast.Node;
 import ast.expr.Expression;
-import ast.expr.binary.BinaryExpression;
 import ast.type.StructureType;
 import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-public class Sub extends BinaryExpression {
+public class Sub extends ArithmeticBinaryExpr {
 
     public Sub(Expression expr1, Expression expr2) {
         super(expr1, expr2);
@@ -16,7 +15,7 @@ public class Sub extends BinaryExpression {
 
     @Override
     public Node compile() {
-        Logger.log("sub");
+        Logger.log("subtraction");
         return super.compile();
     }
 
@@ -31,4 +30,5 @@ public class Sub extends BinaryExpression {
         else
             return Opcodes.ISUB;
     }
+
 }
