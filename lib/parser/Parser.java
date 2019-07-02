@@ -1911,7 +1911,7 @@ Blocks.BLOCK_CONTENT.top().compile();
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 115: // conditional_expr ::= expr LTEQ expr 
+          case 115: // conditional_expr ::= expr LE expr
             {
               Object RESULT =null;
 
@@ -1929,7 +1929,7 @@ Blocks.BLOCK_CONTENT.top().compile();
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 117: // conditional_expr ::= expr GTEQ expr 
+          case 117: // conditional_expr ::= expr GE expr
             {
               Object RESULT =null;
 

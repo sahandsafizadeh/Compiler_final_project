@@ -2,40 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ast/dcl/ArrayDCL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/dcl/SingleVar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f965b02d7dd1474bcf5951826f4f53d1c6c362f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2bd61346bde9df27196f369ae5ca50c8cf95c8ce" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/META-INF/Compiler_final_project.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/dcl/VariableDcl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/dcl/VariableDcl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/logical/EQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/logical/EQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/cg/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/cg/CodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/TableStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/TableStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/ArrayDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/ArrayDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/VariableDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/VariableDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/parser/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser/Symbol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Symbol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cg/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cg/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/dscp/ArrayDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/dscp/ArrayDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/GTEQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/LTEQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,32 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Parser.cup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="970">
-              <caret line="423" column="40" lean-forward="true" selection-start-line="423" selection-start-column="40" selection-end-line="423" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="516">
+              <caret line="467" column="14" lean-forward="true" selection-start-line="467" selection-start-column="14" selection-end-line="467" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -120,18 +81,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/NotEQ.java" />
-        <option value="$PROJECT_DIR$/src/ast/block/stmt/conditional/If.java" />
-        <option value="$PROJECT_DIR$/src/ast/block/stmt/loop/Repeat.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java" />
-        <option value="$PROJECT_DIR$/src/ast/block/Block.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/EQEQ.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/conditional/Case.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/GTEQ.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LTEQ.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/loop/Foreach.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/loop/For.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/IntegerConstant.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/FloatConstant.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/DoubleConstant.java" />
@@ -152,29 +106,36 @@
         <option value="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java" />
         <option value="$PROJECT_DIR$/src/ast/dcl/SingleVar.java" />
         <option value="$PROJECT_DIR$/src/symtab/dscp/ArrayDescriptor.java" />
-        <option value="$PROJECT_DIR$/src/Parser.cup" />
         <option value="$PROJECT_DIR$/src/ast/dcl/ArrayDCL.java" />
         <option value="$PROJECT_DIR$/src/cg/CodeGenerator.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmaticBinaryExpression.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmaticBinaryExpr.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Arithmetic.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Add.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" />
         <option value="$PROJECT_DIR$/A.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java" />
+        <option value="$PROJECT_DIR$/src/Symbol.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LE.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java" />
+        <option value="$PROJECT_DIR$/src/Parser.cup" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="230" />
     <option name="width" value="1695" />
     <option name="height" value="1040" />
@@ -210,32 +171,6 @@
               <item name="ast" type="462c0819:PsiDirectoryNode" />
               <item name="expr" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-              <item name="binary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-              <item name="binary" type="462c0819:PsiDirectoryNode" />
-              <item name="arithmatic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-              <item name="binary" type="462c0819:PsiDirectoryNode" />
-              <item name="logical" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -247,7 +182,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562093365268" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562095070650" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -321,7 +256,7 @@
       <workItem from="1561998246428" duration="11116000" />
       <workItem from="1562041262872" duration="11255000" />
       <workItem from="1562057423634" duration="10510000" />
-      <workItem from="1562084101452" duration="9251000" />
+      <workItem from="1562084101452" duration="10946000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -341,7 +276,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127507000" />
+    <option name="totallyTimeSpent" value="129202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,15 +374,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/A.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/symtab/entry/VariableEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -760,37 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/GTEQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/LTEQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cg/CodeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -798,26 +693,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java">
+    <entry file="file://$PROJECT_DIR$/A.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="102">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        <state relative-caret-position="68">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -832,99 +784,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java">
+    <entry file="file://$PROJECT_DIR$/src/Symbol.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#1235#1236#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="159" column="13" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="238">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/LE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        <state relative-caret-position="255">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        <state relative-caret-position="221">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        <state relative-caret-position="255">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.cup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="970">
-          <caret line="423" column="40" lean-forward="true" selection-start-line="423" selection-start-column="40" selection-end-line="423" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        <state relative-caret-position="516">
+          <caret line="467" column="14" lean-forward="true" selection-start-line="467" selection-start-column="14" selection-end-line="467" selection-end-column="14" />
         </state>
       </provider>
     </entry>

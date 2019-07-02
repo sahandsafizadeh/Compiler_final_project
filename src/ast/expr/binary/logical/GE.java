@@ -6,21 +6,21 @@ import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-public class GT extends LogicalBinaryExpr {
+public class GE extends LogicalBinaryExpr {
 
-    public GT(Expression expr1, Expression expr2) {
+    public GE(Expression expr1, Expression expr2) {
         super(expr1, expr2);
     }
 
     @Override
     public Node compile() {
-        Logger.log("grater than");
+        Logger.log("grater than equal");
         return super.compile();
     }
 
     @Override
     public int determineOp(Type type) {
-        return Opcodes.IF_ICMPLE;
+        return Opcodes.IF_ICMPLT;
     }
 
 }

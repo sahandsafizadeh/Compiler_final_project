@@ -26,4 +26,9 @@ public class ArithmeticBinaryExpr extends BinaryExpression {
         return new ArithmeticBinaryExpr(resultType);
     }
 
+    @Override
+    public int determineOp(Type type) {
+        return 0;
+    }
+
 }

@@ -308,12 +308,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/GTEQ.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/LE.java">
           <value>
             <set />
           </value>
@@ -328,7 +338,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpression.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java">
           <value>
             <set />
           </value>

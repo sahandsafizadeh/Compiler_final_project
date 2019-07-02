@@ -28,7 +28,7 @@ BEGIN, END, IF, ELSE, SWITCH, OF, CASE, DEFAULT, FOR, FOREACH, IN, REPEAT, UNTIL
 //operators
 terminal SEMI, COL, COMA, DOT, BINOT, PLUS, MINUS, UMINUS, MULT, DIVIDE, MOD, ASSIGN, BIAND, BIOR, BIEXOR, NOT, AND,
 OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2,
-PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
+PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NE, EQ, LE, GE;
 
 //literals
 terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT;
@@ -453,17 +453,17 @@ arithmatic_expr ::=
     ;
 
 conditional_expr ::=
-    expr LT expr
+    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2).compile();:}
     |
-    expr LTEQ expr
+    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2).compile();:}
     |
-    expr GT expr
+    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2).compile();:}
     |
-    expr GTEQ expr
+    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2).compile();:}
     |
-    expr EQEQ expr
+    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2).compile();:}
     |
-    expr NOTEQ expr
+    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2).compile();:}
     |
     expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
     |

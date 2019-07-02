@@ -2,16 +2,11 @@ package ast.expr.binary.logical;
 
 import ast.Node;
 import ast.expr.Expression;
-import ast.expr.binary.BinaryExpression;
-import ast.type.CastingType;
 import ast.type.Type;
-import ast.type.TypeChecker;
-import cg.CodeGenerator;
 import cg.Logger;
-import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 
-public class EQ extends BinaryExpression {
+public class EQ extends LogicalBinaryExpr {
 
     public EQ(Expression expr1, Expression expr2) {
         super(expr1, expr2);
@@ -20,8 +15,7 @@ public class EQ extends BinaryExpression {
     @Override
     public Node compile() {
         Logger.log("equality");
-
-        return null;
+        return super.compile();
     }
 
     @Override
