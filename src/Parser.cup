@@ -423,21 +423,21 @@ casting_type ::=
     ;
 
 arithmatic_expr ::=
-    expr:e1 MULT expr:e2 {:new Mult(e1, e2).compile();:}
+    expr:e1 MULT expr:e2 {:RESULT = new Mult(e1, e2).compile();:}
     |
-    expr:e1 DIVIDE expr:e2 {:new Div(e1, e2).compile();:}
+    expr:e1 DIVIDE expr:e2 {:RESULT = new Div(e1, e2).compile();:}
     |
-    expr:e1 MOD expr:e2 {:new Mod(e1, e2).compile();:}
+    expr:e1 MOD expr:e2 {:RESULT = new Mod(e1, e2).compile();:}
     |
-    expr:e1 PLUS expr:e2 {:new Add(e1, e2).compile();:}
+    expr:e1 PLUS expr:e2 {:RESULT = new Add(e1, e2).compile();:}
     |
-    expr:e1 MINUS expr:e2 {:new Sub(e1, e2).compile();:}
+    expr:e1 MINUS expr:e2 {:RESULT = new Sub(e1, e2).compile();:}
     |
-    expr:e1 BIAND expr:e2 {:new BinaryAnd(e1, e2).compile();:}
+    expr:e1 BIAND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
     |
-    expr:e1 BIOR expr:e2 {:new BinaryOr(e1, e2).compile();:}
+    expr:e1 BIOR expr:e2 {:RESULT = new BinaryOr(e1, e2).compile();:}
     |
-    expr:e1 BIEXOR expr:e2 {:new BinaryXor(e1, e2).compile();:}
+    expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2).compile();:}
     ;
 
 conditional_expr ::=
@@ -459,17 +459,17 @@ conditional_expr ::=
     ;
 
 const_val ::=
-    TRUE
+    TRUE {:RESULT = new BooleanConstant(true);:}
     |
-    FALSE
+    FALSE {:RESULT = new BooleanConstant(false);:}
     |
-    CHAR_LIT
+    CHAR_LIT {:RESULT = new CharacterConstants(scanner.string);:}
     |
-    INT_LIT
+    INT_LIT {:RESULT = new IntegerConstant(scaner.ICV);:}
     |
-    FLOAT_LIT
+    FLOAT_LIT {:RESULT = new DoubleConstant(scanner.RCV);:}
     |
-    STR_LIT
+    STR_LIT {:RESULT = new StringConstant(scanner.string);:}
     ;
 
 

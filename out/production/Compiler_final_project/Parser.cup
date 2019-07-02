@@ -82,7 +82,7 @@ nonterminal loop_update_part;
 
 nonterminal assignment;
 nonterminal variable;
-nonterminal expr;
+nonterminal Expression expr;
 
 nonterminal casting_type;
 nonterminal arithmatic_expr;
@@ -423,21 +423,21 @@ casting_type ::=
     ;
 
 arithmatic_expr ::=
-    expr MULT expr {:new Mult().compile();:}
+    expr:e1 MULT expr:e2 {:RESULT = new Mult(e1, e2).compile();:}
     |
-    expr DIVIDE expr {:new Div().compile();:}
+    expr:e1 DIVIDE expr:e2 {:RESULT = new Div(e1, e2).compile();:}
     |
-    expr MOD expr {:new Mod().compile();:}
+    expr:e1 MOD expr:e2 {:RESULT = new Mod(e1, e2).compile();:}
     |
-    expr PLUS expr {:new Add().compile();:}
+    expr:e1 PLUS expr:e2 {:RESULT = new Add(e1, e2).compile();:}
     |
-    expr MINUS expr {:new Sub().compile();:}
+    expr:e1 MINUS expr:e2 {:RESULT = new Sub(e1, e2).compile();:}
     |
-    expr BIAND expr {:new BinaryAnd().compile();:}
+    expr:e1 BIAND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
     |
-    expr BIOR expr {:new BinaryOr().compile();:}
+    expr:e1 BIOR expr:e2 {:RESULT = new BinaryOr(e1, e2).compile();:}
     |
-    expr BIEXOR expr {:new BinaryXor().compile();:}
+    expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2).compile();:}
     ;
 
 conditional_expr ::=

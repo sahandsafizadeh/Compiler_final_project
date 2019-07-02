@@ -1,5 +1,6 @@
 package ast.block.stmt.conditional;
 
+import ast.Node;
 import ast.block.Block;
 import ast.block.stmt.Statement;
 import ast.expr.Expression;
@@ -17,7 +18,7 @@ public class If extends Statement {
     }
 
     @Override
-    public void compile() {
-
+    public Node compile() {
+        return null;
     }
 }

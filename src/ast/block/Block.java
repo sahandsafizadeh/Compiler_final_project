@@ -18,9 +18,10 @@ public class Block implements Node {
     }
 
     @Override
-    public void compile() {
+    public Node compile() {
         content.forEach(Node::compile);
         Blocks.BLOCK_CONTENT.pop();
+        return null;
     }
 
 }

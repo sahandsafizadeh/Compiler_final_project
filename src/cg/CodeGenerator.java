@@ -1,7 +1,6 @@
 package cg;
 
-import descriptor.Descriptor;
-import descriptor.VariableDescriptor;
+import symtab.dscp.Descriptor;
 import org.objectweb.asm.*;
 import org.objectweb.asm.util.ASMifier;
 

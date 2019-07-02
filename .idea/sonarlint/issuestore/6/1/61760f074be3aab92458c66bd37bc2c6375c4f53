@@ -1,0 +1,5 @@
+
+wsquid:S00116"XRename this field "SYM_TAB_STACK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô•·ø8ÚŸ…Š»-
+_squid:UselessImportCheck"4Remove this unused import 'java_cup.runtime.Symbol'.(ø¤ó³8 ŸóŠ»-
+fsquid:S2259~"CA "NullPointerException" could be thrown; "table" is nullable here.(ŠÊæñûÿÿÿÿ8Ôµ­‹»-
+Msquid:S1481r"*Remove this unused "index" local variable.(§®›Ùùÿÿÿÿ8—ªÃ‹»-

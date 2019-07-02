@@ -1,5 +1,6 @@
 package ast.expr.binary.logical;
 
+import ast.Node;
 import ast.expr.Expression;
 import ast.expr.binary.BinaryExpression;
 import ast.type.StructureType;
@@ -14,9 +15,10 @@ public class GTEQ extends BinaryExpression {
     }
 
     @Override
-    public void compile() {
+    public Node compile() {
         Logger.log("add");
         super.compile();
+        return null;
     }
 
     @Override

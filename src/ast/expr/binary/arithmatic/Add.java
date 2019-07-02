@@ -1,6 +1,7 @@
 package ast.expr.binary.arithmatic;
 
 
+import ast.Node;
 import ast.expr.Expression;
 import ast.expr.binary.BinaryExpression;
 import ast.type.StructureType;
@@ -15,9 +16,9 @@ public class Add extends BinaryExpression {
     }
 
     @Override
-    public void compile() {
+    public Node compile() {
         Logger.log("add");
-        super.compile();
+        return super.compile();
     }
 
     @Override
