@@ -88,6 +88,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/Assignment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/Node.java">
           <value>
             <set />
@@ -164,6 +169,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/constant/IntegerConstant.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/VariableDcl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/CastExpr.java">
           <value>
             <set />
           </value>
@@ -353,6 +368,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/loop/Repeat.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/type/CastingType.java">
           <value>
             <set />
@@ -384,6 +404,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/type/TypeChecker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/type/VariableType.java">
           <value>
             <set />
           </value>

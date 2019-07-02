@@ -1,8 +1,12 @@
 public class A {
 
     public static void main(String[] args) {
-        char c = 'c';
-        System.out.println("hello world");
+        boolean b;
+        int a = 5;
+        do {
+            a += 3;
+            b = a < 10;
+        } while (b);
     }
 
 }

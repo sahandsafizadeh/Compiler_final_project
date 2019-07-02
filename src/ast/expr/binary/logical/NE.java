@@ -8,9 +8,9 @@ import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-public class NotEQ extends BinaryExpression {
+public class NE extends BinaryExpression {
 
-    public NotEQ(Expression expr1, Expression expr2) {
+    public NE(Expression expr1, Expression expr2) {
         super(expr1, expr2);
     }
 

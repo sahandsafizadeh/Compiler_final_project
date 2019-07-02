@@ -1,11 +1,12 @@
-package ast.dcl;
+package ast.loop;
 
 import ast.Node;
 
-public class VariableDcl implements Node {
+public class Repeat implements Node {
 
     @Override
     public Node compile() {
         return null;
     }
+
 }

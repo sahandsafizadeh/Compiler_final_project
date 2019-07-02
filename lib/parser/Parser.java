@@ -1938,7 +1938,7 @@ Blocks.BLOCK_CONTENT.top().compile();
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 118: // conditional_expr ::= expr EQEQ expr 
+          case 118: // conditional_expr ::= expr EQ expr
             {
               Object RESULT =null;
 

@@ -8,9 +8,9 @@ import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-public class EQEQ extends BinaryExpression {
+public class EQ extends BinaryExpression {
 
-    public EQEQ(Expression expr1, Expression expr2) {
+    public EQ(Expression expr1, Expression expr2) {
         super(expr1, expr2);
     }
 

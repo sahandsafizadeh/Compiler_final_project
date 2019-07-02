@@ -40,7 +40,7 @@ nonterminal program;
 nonterminal program_part;
 
 nonterminal global_var_dcl;
-nonterminal variable_type;
+nonterminal Type variable_type;
 
 nonterminal func_dcl;
 nonterminal function_type;
@@ -53,7 +53,7 @@ nonterminal struct_dcl;
 nonterminal struct_var_dcl;
 nonterminal struct_more_var_dcl;
 nonterminal struct_var_dcl_part;
-nonterminal struct_type;
+nonterminal StructureType struct_type;
 
 nonterminal block;
 nonterminal block_content;
@@ -84,10 +84,11 @@ nonterminal assignment;
 nonterminal variable;
 nonterminal Expression expr;
 
-nonterminal casting_type;
-nonterminal arithmatic_expr;
-nonterminal conditional_expr;
-nonterminal const_val;
+nonterminal Type casting_type;
+nonterminal Expression arithmatic_expr;
+nonterminal Expression conditional_expr;
+nonterminal Constant const_val;
+
 nonterminal function_call;
 nonterminal parameters;
 nonterminal parameters_part;
@@ -149,9 +150,9 @@ global_var_dcl ::=
 variable_type ::=
     struct_type
     |
-    STRING
+    STRING{:RESULT = VariableType.STRING;:}
     |
-    ID
+    ID//?
     ;
 
 
@@ -163,7 +164,7 @@ func_dcl ::=
     ;
 
 function_type ::=
-    variable_type
+    variable_type:t {:RESULT = t;:}
     |
     VOID
     ;
@@ -215,13 +216,13 @@ struct_var_dcl_part ::=
     ;
 
 struct_type ::=
-    casting_type
+    casting_type:t {:RESULT = t;:}
     |
-    BOOL
+    BOOL {:RESULT = StructureType.BOOL;:}
     |
-    LONG
+    LONG {:RESULT = StructureType.LONG;:}
     |
-    AUTO
+    AUTO//?
     ;
 
 
@@ -335,7 +336,7 @@ case_part ::=
 loop_stmt ::=
     FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
     |//in your grammer we shouldn't declare variable in for loop
-    REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
+    {::} REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
     |
     FOREACH PRANTOP ID IN ID PRANTCL loop_block
     ;
@@ -389,13 +390,13 @@ variable ::=
 
 //expressions
 expr ::=
-    PRANTOP casting_type PRANTCL expr %prec CASTPRANTOP
+    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e).compile();:} %prec CASTPRANTOP
     |
-    arithmatic_expr
+    arithmatic_expr:e {:RESULT = e;:}
     |
-    conditional_expr
+    conditional_expr:e {:RESULT = e;:}
     |
-    PRANTOP expr PRANTCL
+    PRANTOP expr:e PRANTCL {:RESULT = e;:}
     |
     NOT expr
     |
@@ -403,7 +404,7 @@ expr ::=
     |
     MINUS expr %prec UMINUS
     |
-    const_val
+    const_val {:RESULT = e;:}
     |
     variable
     |
@@ -413,13 +414,13 @@ expr ::=
     ;
 
 casting_type ::=
-    CHAR
+    CHAR {:RESULT = CastingType.CHAR;:}
     |
-    INT
+    INT {:RESULT = CastingType.INT;:}
     |
-    FLOAT
+    FLOAT {:RESULT = CastingType.FLOAT;:}
     |
-    DOUBLE
+    DOUBLE {:RESULT = CastingType.DOUBLE;:}
     ;
 
 arithmatic_expr ::=
@@ -453,9 +454,9 @@ conditional_expr ::=
     |
     expr NOTEQ expr
     |
-    expr AND expr
+    expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
     |
-    expr OR expr
+    expr:e1 OR expr:e2 {:RESULT = new BinaryOr(e1, e2).compile();:}
     ;
 
 const_val ::=

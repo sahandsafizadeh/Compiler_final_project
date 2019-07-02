@@ -155,7 +155,7 @@ public class Symbol extends java_cup.runtime.Symbol {
             "MULTASSIGN",
             "DIVASSIGN",
             "NOTEQ",
-            "EQEQ",
+            "EQ",
             "LTEQ",
             "GTEQ",
             "CHAR_LIT",

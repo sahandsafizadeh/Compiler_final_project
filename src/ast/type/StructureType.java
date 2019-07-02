@@ -8,4 +8,5 @@ public class StructureType extends CastingType {
     StructureType(String type) {
         super(type);
     }
+
 }
