@@ -421,7 +421,7 @@ expr ::=
     |
     function_call
     |
-    SIZEOF PRANTOP variable_type PRANTCL
+    SIZEOF PRANTOP variable_type:t PRANTCL {:RESULT = new SizeOfExpr(t);:}
     ;
 
 casting_type ::=
