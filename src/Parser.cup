@@ -403,7 +403,7 @@ var_access_array_part ::=
 
 //expressions
 expr ::=
-    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e).compile();:} %prec CASTPRANTOP
+    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e);:} %prec CASTPRANTOP
     |
     arithmatic_expr:e {:RESULT = e;:}
     |

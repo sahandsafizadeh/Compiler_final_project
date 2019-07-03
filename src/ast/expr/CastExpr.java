@@ -7,6 +7,8 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
+import static ast.type.CastingType.*;
+
 public class CastExpr extends Expression {
 
     private Expression expr;
@@ -24,6 +26,7 @@ public class CastExpr extends Expression {
     @Override
     public Node compile() {
         Logger.log("type casting");
+        expr = (Expression) expr.compile();
         if (!(type instanceof CastingType))
             Logger.error("unsupported cast");
 
@@ -33,25 +36,26 @@ public class CastExpr extends Expression {
     }
 
     @Override
-    public int determineOp(Type type) {
-        if (type == CastingType.DOUBL && expr.getType() == CastingType.FLOAT)
+    public int determineOp(Type target) {
+        Type source = expr.getType();
+        if (target == DOUBL && source == FLOAT)
             return Opcodes.F2D;
-        else if (type == CastingType.FLOAT && expr.getType() == CastingType.DOUBL)
+        else if (target == FLOAT && source == DOUBL)
             return Opcodes.D2F;
-        else if (type == CastingType.DOUBL && expr.getType() == CastingType.INT)
+        else if (target == DOUBL && source == INT)
             return Opcodes.I2D;
-        else if (type == CastingType.INT && expr.getType() == CastingType.DOUBL)
+        else if (target == INT && source == DOUBL)
             return Opcodes.D2I;
-        else if (type == CastingType.FLOAT && expr.getType() == CastingType.INT)
+        else if (target == FLOAT && source == INT)
             return Opcodes.I2F;
-        else if (type == CastingType.INT && expr.getType() == CastingType.FLOAT)
+        else if (target == INT && source == FLOAT)
             return Opcodes.F2I;
-        else if (type == CastingType.INT && expr.getType() == CastingType.CHAR)
-            return 0;//todo
-        else if (type == CastingType.CHAR && expr.getType() == CastingType.INT)
+        else if (target == INT && source == CHAR)
+            return 0;
+        else if (target == CHAR && source == INT)
             return Opcodes.I2C;
         else {
-            //todo booleans
+            Logger.error("unsupported cast");
             return 0;
         }
     }
