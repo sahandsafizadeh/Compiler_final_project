@@ -28,7 +28,7 @@ BEGIN, END, IF, ELSE, SWITCH, OF, CASE, DEFAULT, FOR, FOREACH, IN, REPEAT, UNTIL
 //operators
 terminal SEMI, COL, COMA, DOT, BINOT, PLUS, MINUS, UMINUS, MULT, DIVIDE, MOD, ASSIGN, BIAND, BIOR, BIEXOR, NOT, AND,
 OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2,
-PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
+PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NE, EQ, LE, GE;
 
 //literals
 terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT;
@@ -308,17 +308,17 @@ statement ::=
 loop_statement ::=
     statement
     |
-    BREAK SEMI
+    BREAK SEMI {:new Break().compile();:}
     |
-    CONTINUE SEMI
+    CONTINUE SEMI {:new Continue().compile();:}
     ;
 
 
 //conditionals
 cond_stmt ::=
-    IF PRANTOP expr:e PRANTCL {:new Block();:} block {:Blocks.BLOCK_CONTENT.top().compile();:} else_part:block {:new If().compile();:}
+    IF PRANTOP expr PRANTCL {:new Block();:} block {:Blocks.getInstance().getCurrent().compile();:} else_part:block
     |
-    SWITCH PRANTOP ID PRANTCL OF COL BEGIN case_part DEFAULT COL {:new Block();:} block {:Blocks.BLOCK_CONTENT.top().compile();:} END
+    SWITCH PRANTOP ID PRANTCL OF COL BEGIN case_part DEFAULT COL block END
     ;
 
 else_part ::=
@@ -411,9 +411,9 @@ expr ::=
     |
     NOT expr
     |
-    BINOT expr
+    BINOT expr:e {:RESULT = new BinaryNot(e);:}
     |
-    MINUS expr %prec UMINUS
+    MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
     const_val {:RESULT = e;:}
     |
@@ -421,7 +421,7 @@ expr ::=
     |
     function_call
     |
-    SIZEOF PRANTOP variable_type PRANTCL
+    SIZEOF PRANTOP variable_type:t PRANTCL {:RESULT = new SizeOfExpr(t);:}
     ;
 
 casting_type ::=
@@ -453,17 +453,17 @@ arithmatic_expr ::=
     ;
 
 conditional_expr ::=
-    expr LT expr
+    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2).compile();:}
     |
-    expr LTEQ expr
+    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2).compile();:}
     |
-    expr GT expr
+    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2).compile();:}
     |
-    expr GTEQ expr
+    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2).compile();:}
     |
-    expr EQEQ expr
+    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2).compile();:}
     |
-    expr NOTEQ expr
+    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2).compile();:}
     |
     expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
     |

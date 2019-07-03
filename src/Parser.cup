@@ -31,7 +31,9 @@ OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPL
 PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NE, EQ, LE, GE;
 
 //literals
-terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT;
+terminal CHAR_LIT, STR_LIT;
+terminal Integer INT_LIT;
+terminal Double FLOAT_LIT;
 terminal String ID;
 
 //NON TERMINALS
@@ -316,9 +318,9 @@ loop_statement ::=
 
 //conditionals
 cond_stmt ::=
-    IF PRANTOP expr PRANTCL {:new Block();:} block {:Blocks.getInstance().getCurrent().compile();:} else_part:block
+    IF PRANTOP expr PRANTCL {:new Block(); new If().compile();:} block {:Blocks.getInstance().getCurrent().compile();:} else_part:block
     |
-    SWITCH PRANTOP ID PRANTCL OF COL BEGIN case_part DEFAULT COL block END
+    SWITCH PRANTOP ID {:;//todo:} PRANTCL OF COL {:Cases.getInstance().init();:} BEGIN case_part DEFAULT COL {:new Block();:} block {:new Default(Blocks.getInstance().getCurrent().getStart()); Blocks.getInstance().getCurrent().compile();:} END {:new Switch().compile();:}
     ;
 
 else_part ::=
@@ -328,7 +330,7 @@ else_part ::=
     ;
 
 case_part ::=
-    CASE INT_LIT COL {:new Block();:} block {:Blocks.BLOCK_CONTENT.top().compile();:} case_part
+    CASE INT_LIT COL {:new Block();:} block {:new Case(scanner.ICV, Blocks.getInstance().getCurrent().getStart()); Blocks.getInstance().getCurrent().compile();:} case_part
     |
     /*epsilon*/
     ;
@@ -338,7 +340,7 @@ case_part ::=
 loop_stmt ::=
     FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
     |//in your grammer we shouldn't declare variable in for loop
-    {::} REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
+    REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
     |
     FOREACH PRANTOP ID IN ID PRANTCL loop_block
     ;

@@ -148,6 +148,41 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Case.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Cases.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Default.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Switch.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/ifstmt/CompleteIf.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/ifstmt/Else.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/ifstmt/If.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/block/stmt/loop/For.java">
           <value>
             <set />
