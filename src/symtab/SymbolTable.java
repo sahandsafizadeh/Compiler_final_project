@@ -1,19 +1,24 @@
 package symtab;
 
-import symtab.entry.Entry;
+import symtab.dscp.Descriptor;
+import symtab.dscp.VariableDescriptor;
 
-import java.util.List;
+import java.util.Map;
 
 public class SymbolTable {
 
-    private List<Entry> table;
+    private Map<String, Descriptor> table;
 
-    public SymbolTable(List<Entry> table) {
+    public SymbolTable(Map<String, Descriptor> table) {
         this.table = table;
     }
 
-    public List<Entry> getTable() {
-        return table;
+    public boolean contains(String name) {
+        return table.containsKey(name);
+    }
+
+    public void put(VariableDescriptor descriptor) {
+        table.put(descriptor.getName(), descriptor);
     }
 
 }

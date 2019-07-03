@@ -698,6 +698,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/SymbolTable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/symtab/TableStack.java">
           <value>
             <set />
@@ -724,6 +729,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/StructureDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/Structures.java">
           <value>
             <set />
           </value>
