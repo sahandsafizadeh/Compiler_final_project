@@ -4,6 +4,7 @@ import ast.Node;
 import ast.expr.Expression;
 import ast.type.StructureType;
 import ast.type.Type;
+import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
@@ -21,13 +22,14 @@ public class Mult extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == StructureType.DOUBL)
+        if (type == VariableType.DOUBL)
             return Opcodes.DMUL;
-        else if (type == StructureType.FLOAT)
+        else if (type == VariableType.FLOAT)
             return Opcodes.FMUL;
-        else if (type == StructureType.LONG)
+        else if (type == VariableType.LONG)
             return Opcodes.LMUL;
         else
             return Opcodes.IMUL;
     }
+
 }

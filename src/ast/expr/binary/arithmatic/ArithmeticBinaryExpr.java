@@ -19,9 +19,9 @@ public class ArithmeticBinaryExpr extends BinaryExpression {
 
     @Override
     public Node compile() {
-        Type t1 = expr1.getType();
-        Type t2 = expr2.getType();
-        Type resultType = TypeChecker.binaryExprTypeCheck(t1, t2);
+        Expression e1 = (Expression) expr1.compile();
+        Expression e2 = (Expression) expr2.compile();
+        Type resultType = TypeChecker.binaryExprTypeCheck(e1.getType(), e2.getType());
         CodeGenerator.mVisit.visitInsn(determineOp(resultType));
         return new ArithmeticBinaryExpr(resultType);
     }
