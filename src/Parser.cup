@@ -411,7 +411,7 @@ expr ::=
     |
     PRANTOP expr:e PRANTCL {:RESULT = e;:}
     |
-    NOT expr
+    NOT expr:e {:RESULT = new Not(e);:}
     |
     BINOT expr:e {:RESULT = new BinaryNot(e);:}
     |
@@ -454,22 +454,22 @@ arithmatic_expr ::=
     expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2);:}
     ;
 
-conditional_expr ::=
-    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2).compile();:}
+conditional_expr ::=//These expressions can't operate on non-int types
+    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2);:}
     |
-    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2).compile();:}
+    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2);:}
     |
-    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2).compile();:}
+    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2);:}
     |
-    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2).compile();:}
+    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2);:}
     |
-    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2).compile();:}
+    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2);:}
     |
-    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2).compile();:}
+    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2);:}
     |
-    expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
+    expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2);:}
     |
-    expr:e1 OR expr:e2 {:RESULT = new BinaryOr(e1, e2).compile();:}
+    expr:e1 OR expr:e2 {:RESULT = new BinaryOr(e1, e2);:}
     ;
 
 const_val ::=

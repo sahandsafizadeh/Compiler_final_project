@@ -8,18 +8,18 @@ import ast.type.VariableType;
 import cg.CodeGenerator;
 import org.objectweb.asm.Opcodes;
 
-public class SizeOfExpr extends Expression {
+public class SizeOf extends Expression {
 
     private Type type;
 
-    public SizeOfExpr(Type type, Type type1) {
+    public SizeOf(Type type, Type type1) {
         super(type);
         this.type = type1;
     }
 
     @Override
     public Node compile() {
-        CodeGenerator.mVisit.visitVarInsn(Opcodes.LDC, determineOp(type));
+        CodeGenerator.mVisit.visitVarInsn(Opcodes.BIPUSH, determineOp(type));
         return new IntegerConstant(CastingType.INT);
     }
 

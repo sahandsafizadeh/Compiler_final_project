@@ -19,9 +19,10 @@ public class BinaryNot extends UnaryExpression {
     @Override
     public Node compile() {
         Logger.log("binary not");
-        Type resultType = TypeChecker.unaryExprTypeCheck(expr.getType());
+        Expression e = (Expression) expr.compile();
+        Type resultType = TypeChecker.unaryExprTypeCheck(e.getType());
         int opcode = determineOp(resultType);
-        CodeGenerator.mVisit.visitInsn(Opcodes.ICONST_1);
+        CodeGenerator.mVisit.visitVarInsn(Opcodes.LDC, -1);
         CodeGenerator.mVisit.visitInsn(opcode);
         return new UnaryExpression(resultType);
     }
@@ -30,6 +31,8 @@ public class BinaryNot extends UnaryExpression {
     public int determineOp(Type type) {
         if (type == VariableType.INT)
             return Opcodes.IXOR;
+        else if (type == VariableType.LONG)
+            return Opcodes.LXOR;
         else
             Logger.error("type mismatch");
         return 0;

@@ -7,6 +7,7 @@ import ast.type.Type;
 import ast.type.TypeChecker;
 import ast.type.VariableType;
 import cg.CodeGenerator;
+import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
 public class Uminus extends UnaryExpression {
@@ -17,7 +18,9 @@ public class Uminus extends UnaryExpression {
 
     @Override
     public Node compile() {
-        Type resultType = TypeChecker.unaryExprTypeCheck(expr.getType());
+        Logger.log("unary minus");
+        Expression e = (Expression) expr.compile();
+        Type resultType = TypeChecker.unaryExprTypeCheck(e.getType());
         CodeGenerator.mVisit.visitInsn(determineOp(resultType));
         return new UnaryExpression(resultType);
     }

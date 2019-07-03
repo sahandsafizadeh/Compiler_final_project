@@ -17,13 +17,13 @@ public class UnaryExpression extends Expression {
     }
 
     @Override
-    public int determineOp(Type type) {
-        return 0;
+    public Node compile() {
+        return null;
     }
 
     @Override
-    public Node compile() {
-        return null;
+    public int determineOp(Type type) {
+        return 0;
     }
 
 }
