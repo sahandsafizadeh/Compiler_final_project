@@ -6,6 +6,9 @@ import static ast.type.FunctionType.*;
 
 public class TypeChecker {
 
+    private TypeChecker() {
+    }
+
     public static Type unaryExprTypeCheck(Type t) {
         if (!isValidExprType(t))
             Logger.error("type mismatch");
@@ -34,8 +37,26 @@ public class TypeChecker {
             return StructureType.INT;
     }
 
-    private static boolean isValidExprType(Type type) {
+    public static boolean isValidExprType(Type type) {
         return type == BOOL || type == CHAR || type == INT || type == LONG || type == FLOAT || type == DOUBL;
+    }
+
+    public static boolean isValidVariableType(Type type) {
+        return isValidExprType(type) || type == VariableType.STRING || type == VariableType.AUTO;
+    }
+
+    public static Type getAutoType(Object value) {
+        if (value instanceof Double)
+            return VariableType.DOUBL;
+        else if (value instanceof Integer)
+            return VariableType.INT;
+        else if (value instanceof Character)
+            return VariableType.CHAR;
+        else if (value instanceof Boolean)
+            return VariableType.BOOL;
+        else if (value instanceof String)
+            return VariableType.STRING;
+        return null;
     }
 
 }

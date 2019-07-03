@@ -243,6 +243,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/LocalVariDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/LocalVariableDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/VariableDcl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/Variables.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/CastExpr.java">
           <value>
             <set />
@@ -289,6 +309,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/VariableNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/VariablePush.java">
           <value>
             <set />
           </value>
@@ -468,6 +493,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Minus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Plus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostMinus2.java">
           <value>
             <set />
@@ -478,12 +518,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixDualOperation.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixMinus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixPlus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefMinus2.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefPlus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefixDualOperation.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefixMinus2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefixPlus2.java">
           <value>
             <set />
           </value>

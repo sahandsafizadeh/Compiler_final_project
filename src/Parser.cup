@@ -42,7 +42,7 @@ nonterminal program;
 nonterminal program_part;
 
 nonterminal global_var_dcl;
-nonterminal Type variable_type;
+nonterminal VariableType variable_type;
 
 nonterminal func_dcl;
 nonterminal function_type;
@@ -58,19 +58,19 @@ nonterminal struct_var_dcl_part;
 nonterminal StructureType struct_type;
 
 nonterminal block;
-nonterminal block_content;
+nonterminal BlockContent block_content;
 nonterminal loop_block;
-nonterminal loop_block_content;
+nonterminal BlockContent loop_block_content;
 
 nonterminal BlockContent var_dcl;
 nonterminal var_dcl_part;
 nonterminal var_dcl_cnt;
 nonterminal var_dcl_cnt_part;
 nonterminal var_dcl_cnt_extension;
-nonterminal single_var;
+nonterminal String single_var;
 nonterminal array_part;
 
-nonterminal statement;
+nonterminal BlockContent statement;
 nonterminal loop_statement;
 
 nonterminal cond_stmt;
@@ -148,15 +148,15 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type:t ID:id SEMI {:new GlobalVariableDCL(t, id).compile();:}
+    variable_type:t ID SEMI {:new GlobalVariableDCL(t, scanner.string.toString()).compile();:}
     ;
 
 variable_type ::=
     struct_type:t {:RESULT = t;:}
     |
-    STRING{:RESULT = VariableType.STRING;:}
+    STRING {:RESULT = VariableType.STRING;:}
     |
-    ID//?
+    ID {:new VariableType(scanner.string.toString());:}
     ;
 
 
@@ -236,9 +236,9 @@ block ::=
     ;
 
 block_content ::=
-    var_dcl block_content
+    var_dcl:cont block_content {:RESULT = cont;:}
     |
-    statement block_content
+    statement:cont block_content {:RESULT = cont;:}
     |
     /*epsilon*/
     ;
@@ -258,17 +258,17 @@ loop_block_content ::=
 
 //variables
 var_dcl ::=
-    CONST var_dcl_part SEMI
+    CONST {:Variables.getInstance.setConstant(true);:} var_dcl_part SEMI {:RESULT = new VariableDcl(Variables.getInstance().getDcls());:}
     |
-    var_dcl_part SEMI
+    {:Variables.getInstance.setConstant(false);:} var_dcl_part SEMI {:RESULT = new VariableDcl(Variables.getInstance().getDcls());:}
     ;
 
 var_dcl_part ::=
-    variable_type var_dcl_cnt var_dcl_cnt_extension
+    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt var_dcl_cnt_extension
     ;
 
 var_dcl_cnt ::=
-    single_var var_dcl_cnt_part
+    {:Variables.getInstance().addDscp(new LocalVariableDCL(new VariableDescriptor()));:} single_var:name {:Variables.getInstance().getLastDscp().setName(name);:} var_dcl_cnt_part
     ;
 
 var_dcl_cnt_part ::=
@@ -284,11 +284,11 @@ var_dcl_cnt_extension ::=
     ;
 
 single_var ::=
-    ID:id array_part {:RESULT = new SingleVar().compile();:}
+    ID {:RESULT = scanner.string.toString();:} array_part
     ;
 
 array_part ::=
-    BRACKOP expr BRACKCL array_part {::}
+    BRACKOP expr BRACKCL array_part
     |
     /*epsilon*/
     ;
@@ -310,9 +310,9 @@ statement ::=
 loop_statement ::=
     statement
     |
-    BREAK SEMI {:new Break().compile();:}
+    BREAK SEMI {:new Break();:}
     |
-    CONTINUE SEMI {:new Continue().compile();:}
+    CONTINUE SEMI {:new Continue();:}
     ;
 
 
@@ -381,14 +381,6 @@ variable ::=
     var_access
     |
     variable DOT ID
-    |
-    PREFMINUS2 variable
-    |
-    PREFPLUS2 variable
-    |
-    variable PREFMINUS2 %prec POSTMINUS2
-    |
-    variable PREFPLUS2 %prec POSTPLUS2
     ;
 
 var_access ::=
@@ -417,9 +409,17 @@ expr ::=
     |
     MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
+    PREFMINUS2 variable:dscp {:RESULT = new PrefixMinus2(dscp);:}
+    |
+    PREFPLUS2 variable:dscp {:RESULT = new PrefixPlus2(dscp);:}
+    |
+    variable:dscp PREFMINUS2 {:RESULT = new PostfixMinus2(dscp);:} %prec POSTMINUS2
+    |
+    variable:dscp PREFPLUS2 {:RESULT = new PostfixPlus2(dscp);:} %prec POSTPLUS2
+    |
     const_val {:RESULT = e;:}
     |
-    variable
+    variable:dscp {:RESULT = new VariablePush(dscp);:}
     |
     function_call
     |

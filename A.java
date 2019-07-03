@@ -1,8 +1,12 @@
 public class A {
 
     public static void main(String[] args) {
-        long a = 5;
-        int b = ~a;
+        double a = 2;
+        double c = ++a - 1;
+    }
+
+    static void test() {
+        int a = 3;
     }
 
 }

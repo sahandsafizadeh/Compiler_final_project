@@ -6,7 +6,6 @@ public class VariableDescriptor implements Descriptor, Cloneable {
 
     private Type type;
     private String name;
-    private Object value;
     private boolean isConst;
     private boolean isArgument;
     private int stackIndex;
@@ -25,14 +24,6 @@ public class VariableDescriptor implements Descriptor, Cloneable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Object getValue() {
-        return value;
-    }
-
-    public void setValue(Object value) {
-        this.value = value;
     }
 
     public boolean isConst() {
@@ -64,7 +55,6 @@ public class VariableDescriptor implements Descriptor, Cloneable {
         VariableDescriptor other = new VariableDescriptor();
         other.name = name;
         other.type = type;
-        other.value = value;
         other.isConst = isConst;
         return other;
     }
