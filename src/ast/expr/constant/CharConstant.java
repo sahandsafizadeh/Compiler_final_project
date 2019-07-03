@@ -21,7 +21,7 @@ public class CharConstant extends Constant {
     @Override
     public Node compile() {
         super.compile();
-        return new CharConstant(StructureType.CHAR);
+        return new CharConstant(StructureType.INT);
     }
 
 }

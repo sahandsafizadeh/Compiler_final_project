@@ -18,8 +18,10 @@ public class BooleanConstant extends Constant {
 
     @Override
     public Node compile() {
-        boolean value = (Boolean) this.value;
-        CodeGenerator.mVisit.visitVarInsn(Opcodes.LDC, value ? 1 : 0);
+        if ((Boolean) this.value)
+            CodeGenerator.mVisit.visitInsn(Opcodes.ICONST_1);
+        else
+            CodeGenerator.mVisit.visitInsn(Opcodes.ICONST_0);
         return new BooleanConstant(StructureType.INT);
     }
 

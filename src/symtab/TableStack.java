@@ -103,7 +103,7 @@ public class TableStack {
     }
 
     public void addVariable(VariableDescriptor descriptor) {
-        if (getTop().contains(descriptor.getName()))
+        if (getTop().contains(descriptor.getName()) || getBase().contains(descriptor.getName()))
             Logger.error("name already exists");
         getTop().put(descriptor);
     }
