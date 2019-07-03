@@ -138,6 +138,41 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/DivisionAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/MinusAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/MultiplyAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/assignment/PlusAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/Case.java">
           <value>
             <set />

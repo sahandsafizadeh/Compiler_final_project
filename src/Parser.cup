@@ -366,15 +366,15 @@ loop_update_part ::=
 
 //assignments
 assignment ::=
-    variable ASSIGN expr
+    variable:dscp ASSIGN expr:e {:RESULT = new DirectAssign(dscp, expr);:}
     |
-    variable PLUSASSIGN expr
+    variable:dscp PLUSASSIGN expr:e {:RESULT = new PlusAssign(dscp, expr);:}
     |
-    variable MINUSASSIGN expr
+    variable:dscp MINUSASSIGN expr:e {:RESULT = new MinusAssign(dscp, expr);:}
     |
-    variable MULTASSIGN expr
+    variable:dscp MULTASSIGN expr:e {:RESULT = new MultiplyAssign(dscp, expr);:}
     |
-    variable DIVASSIGN expr
+    variable:dscp DIVASSIGN expr:e {:RESULT = new DivisionAssign(dscp, expr);:}
     ;
 
 variable ::=
