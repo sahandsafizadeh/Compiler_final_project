@@ -118,6 +118,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/LoopBlock.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/Break.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/Continue.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/block/stmt/Statement.java">
           <value>
             <set />
@@ -439,6 +454,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Uminus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/unary/logical/Not.java">
           <value>
             <set />
           </value>

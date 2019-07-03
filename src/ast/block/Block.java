@@ -1,26 +1,32 @@
 package ast.block;
 
 import ast.Node;
-
-import java.util.ArrayList;
-import java.util.List;
+import cg.CodeGenerator;
+import org.objectweb.asm.Label;
 
 public class Block implements Node {
 
-    private List<BlockContent> content = new ArrayList<>();
+    private Label start = new Label();
+    private Label end = new Label();
 
     public Block() {
-        Blocks.BLOCK_CONTENT.push(this);
+        Blocks.getInstance().add(this);
+        //todo pushing a new symbol table after finishing symbol table
+        CodeGenerator.mVisit.visitLabel(start);
     }
 
-    public void add(BlockContent cont) {
-        content.add(cont);
+    public Label getStart() {
+        return start;
+    }
+
+    public Label getEnd() {
+        return end;
     }
 
     @Override
     public Node compile() {
-        content.forEach(Node::compile);
-        Blocks.BLOCK_CONTENT.pop();
+        CodeGenerator.mVisit.visitLabel(end);
+        Blocks.getInstance().remove();
         return null;
     }
 

@@ -39,12 +39,8 @@ W
 'src/ast/expr/binary/arithmatic/Sub.java,2\c\2c6b2eb9bd7a6dc4334866730c90fbb79c4b2b58
 S
 #src/ast/expr/binary/logical/LT.java,4\1\417ba397da775c71230482d25b236a15a298899b
-U
-%src/ast/expr/binary/logical/LTEQ.java,f\6\f65e873c0ab8293feedf2dfdd7a54338ab93f498
 S
 #src/ast/expr/binary/logical/GT.java,b\7\b766d00269412d9a2f453a7e135d833dfcf90a8b
-U
-%src/ast/expr/binary/logical/GTEQ.java,f\1\f163c0b2bc91513aee475a6c9a535213112628f8
 \
 ,src/ast/expr/unary/arithmatic/PrefPlus2.java,c\9\c9e71f99149d9750c7dbaabbc248a597d7784a0d
 ]
@@ -145,3 +141,23 @@ H
 src/ast/loop/Repeat.java,f\5\f5a73b97d0f6538633db93c3c7c21035a8498267
 R
 "src/ast/dcl/GlobalVariableDCL.java,f\e\fe37e53ae8ce2642f4a38b6944fe8a15321d13e7
+J
+src/ast/dcl/SingleVar.java,2\0\20f6363290fb245f12de3a0c20f97991ed8aa472
+I
+src/ast/dcl/ArrayDCL.java,b\5\b5656d5d4252d5fccfdac7bb1cd2e07ee5f75e76
+h
+8src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java,c\9\c921effb07a7768a560d588becc12c71816da39d
+S
+#src/ast/expr/binary/logical/NE.java,9\0\90b8f3b91b13ae56a2ae312ae288ac0c76c18417
+S
+#src/ast/expr/binary/logical/LE.java,e\6\e603d61e1024e1a58478c2675d6288657e751615
+S
+#src/ast/expr/binary/logical/GE.java,e\d\ed2dc78e27097a7d20fb9903611916ff563c1446
+S
+#src/ast/expr/binary/logical/EQ.java,c\d\cde0c3fbcc274bc0b1852e3cf9ce63c1f11c833a
+b
+2src/ast/expr/binary/logical/LogicalBinaryExpr.java,6\b\6be21aba04b0bb02d9b24ccd447dc5c95a72c677
+L
+src/ast/expr/SizeOfExpr.java,d\a\da4372f62050790b9891d0802c86407b1e323b90
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

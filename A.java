@@ -1,8 +1,9 @@
 public class A {
 
     public static void main(String[] args) {
-        int a = 5;
-        int b = ~a;
+        int a = 1000;
+        if (a > 100)
+            a = 10;
     }
 
 }

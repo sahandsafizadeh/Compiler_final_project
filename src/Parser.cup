@@ -308,17 +308,17 @@ statement ::=
 loop_statement ::=
     statement
     |
-    BREAK SEMI
+    BREAK SEMI {:new Break().compile();:}
     |
-    CONTINUE SEMI
+    CONTINUE SEMI {:new Continue().compile();:}
     ;
 
 
 //conditionals
 cond_stmt ::=
-    IF PRANTOP expr:e PRANTCL {:new Block();:} block {:Blocks.BLOCK_CONTENT.top().compile();:} else_part:block {:new If().compile();:}
+    IF PRANTOP expr PRANTCL {:new Block();:} block {:Blocks.getInstance().getCurrent().compile();:} else_part:block
     |
-    SWITCH PRANTOP ID PRANTCL OF COL BEGIN case_part DEFAULT COL {:new Block();:} block {:Blocks.BLOCK_CONTENT.top().compile();:} END
+    SWITCH PRANTOP ID PRANTCL OF COL BEGIN case_part DEFAULT COL block END
     ;
 
 else_part ::=
@@ -411,9 +411,9 @@ expr ::=
     |
     NOT expr
     |
-    BINOT expr
+    BINOT expr:e {:RESULT = new BinaryNot(e);:}
     |
-    MINUS expr %prec UMINUS
+    MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
     const_val {:RESULT = e;:}
     |
