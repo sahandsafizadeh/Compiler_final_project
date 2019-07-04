@@ -1,5 +1,3 @@
-import java.io.FileReader;
-
 public class Compiler {
 
     public static void main(String[] args) throws Exception {

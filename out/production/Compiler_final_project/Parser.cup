@@ -77,10 +77,10 @@ nonterminal BlockContent cond_stmt;
 nonterminal Block else_part;
 nonterminal case_part;
 
-nonterminal loop_stmt;
-nonterminal loop_init_part;
-nonterminal loop_cond_part;
-nonterminal loop_update_part;
+nonterminal Statement loop_stmt;
+nonterminal Assignment loop_init_part;
+nonterminal Expression loop_cond_part;
+nonterminal Assignment loop_update_part;
 
 nonterminal assignment;
 nonterminal variable;
@@ -298,9 +298,9 @@ array_part ::=
 statement ::=
     cond_stmt:stmt {:RESULT = stmt;:}
     |
-    loop_stmt
+    loop_stmt:stmt {:RESULT = stmt;:}
     |
-    assignment SEMI
+    assignment:stmt SEMI {:RESULT = stmt;:}
     |
     function_call SEMI
     |
@@ -330,7 +330,7 @@ else_part ::=
     ;
 
 case_part ::=
-    CASE INT_LIT COL block case_part
+    CASE INT_LIT:i {:i = scanner.ICV;:} COL block:b {:Cases.getInstance().addCase(i, b);:} case_part
     |
     /*epsilon*/
     ;
@@ -338,29 +338,29 @@ case_part ::=
 
 //loops
 loop_stmt ::=
-    FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
+    FOR PRANTOP loop_init_part:in SEMI loop_cond_part:e SEMI loop_update_part:up PRANTCL loop_block:b {:RESULT = new For(in, e, up, b);:}
     |//in your grammer we shouldn't declare variable in for loops
-    REPEAT {:new Block();:} loop_block UNTIL PRANTOP expr {:new Repeat().compile();:} PRANTCL SEMI
+    REPEAT loop_block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
     |
     FOREACH PRANTOP ID IN ID PRANTCL loop_block
     ;
 
 loop_init_part ::=
-    assignment
+    assignment:a {:RESULT = a;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = null;:}
     ;
 
 loop_cond_part ::=
-    expr
+    expr:e {:RESULT = e;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = null;:}
     ;
 
 loop_update_part ::=
-    assignment
+    assignment:a {:RESULT = a;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = null;:}
     ;
 
 
