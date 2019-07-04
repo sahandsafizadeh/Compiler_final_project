@@ -2,61 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiled.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/block/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/block/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/block/stmt/conditional/Case.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/block/stmt/conditional/If.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/block/stmt/loop/Repeat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/block/stmt/loop/Repeat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/dcl/GlobalVariableDCL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/dcl/VariableDcl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/CastExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/CastExpr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/SizeOfExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/Variable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/BinaryAnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/BinaryAnd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/BinaryOr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/BinaryOr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/BinaryXor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/BinaryXor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Div.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Div.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Mod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Mod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Mult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Mult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Sub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/arithmatic/Sub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/logical/LogicalBinaryExpr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/binary/logical/LogicalBinaryExpr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/BooleanConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/BooleanConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/CharConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/CharConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/StringConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/StringConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/UnaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/UnaryExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/arithmatic/BinaryNot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/arithmatic/BinaryNot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/arithmatic/PrefMinus2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/arithmatic/PrefPlus2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/arithmatic/Uminus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/arithmatic/Uminus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/logical/Not.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/unary/logical/Not.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/StructureType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/StructureType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/TypeChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/TypeChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/VariableType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/VariableType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/cg/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/cg/CodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/SymbolTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/SymbolTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/TableStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/TableStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/StructureDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/StructureDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/TypeDescriptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/VariableDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/VariableDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/entry/Entry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/entry/KeywordEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/entry/VariableEntry.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Case.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Cases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Cases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Default.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Switch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/dcl/variable/LocalVariableDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/dcl/variable/LocalVariableDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/TypeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/type/TypeChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cg/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cg/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/SymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/TableStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/TableStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/loop/Repeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/loop/Repeat.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Parser.cup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1771">
-              <caret line="421" column="38" lean-forward="true" selection-start-line="421" selection-start-column="38" selection-end-line="421" selection-end-column="38" />
+            <state relative-caret-position="326">
+              <caret line="342" column="69" selection-start-line="342" selection-start-column="69" selection-end-line="342" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -121,7 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" />
@@ -163,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/MinusAssign.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/DivisionAssign.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/conditional/ifstmt/If.java" />
-        <option value="$PROJECT_DIR$/src/Parser.cup" />
         <option value="$PROJECT_DIR$/src/symtab/SymbolTable.java" />
         <option value="$PROJECT_DIR$/src/symtab/TableStack.java" />
         <option value="$PROJECT_DIR$/src/ast/type/TypeChecker.java" />
@@ -172,6 +117,8 @@
         <option value="$PROJECT_DIR$/src/cg/CodeGenerator.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Cases.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Switch.java" />
+        <option value="$PROJECT_DIR$/src/Parser.cup" />
+        <option value="$PROJECT_DIR$/src/ast/block/stmt/loop/Repeat.java" />
       </list>
     </option>
   </component>
@@ -226,17 +173,7 @@
               <item name="ast" type="462c0819:PsiDirectoryNode" />
               <item name="block" type="462c0819:PsiDirectoryNode" />
               <item name="stmt" type="462c0819:PsiDirectoryNode" />
-              <item name="conditional" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="block" type="462c0819:PsiDirectoryNode" />
-              <item name="stmt" type="462c0819:PsiDirectoryNode" />
-              <item name="conditional" type="462c0819:PsiDirectoryNode" />
-              <item name="casestmt" type="462c0819:PsiDirectoryNode" />
+              <item name="loop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -249,7 +186,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562250700815" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562251399084" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -327,7 +264,7 @@
       <workItem from="1562127556211" duration="45740000" />
       <workItem from="1562214883673" duration="14000" />
       <workItem from="1562215344160" duration="150000" />
-      <workItem from="1562245275191" duration="5799000" />
+      <workItem from="1562245275191" duration="6491000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -347,7 +284,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184478000" />
+    <option name="totallyTimeSpent" value="185170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,7 +304,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.16979866" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16979866" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -445,7 +382,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/Variable.java" />
     <entry file="jar://$PROJECT_DIR$/lib/codegen/asm-7.0.jar!/org/objectweb/asm/Opcodes.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -910,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Cases.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Switch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -924,10 +853,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/conditional/casestmt/Cases.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/loop/Repeat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.cup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="421" column="38" lean-forward="true" selection-start-line="421" selection-start-column="38" selection-end-line="421" selection-end-column="38" />
+        <state relative-caret-position="326">
+          <caret line="342" column="69" selection-start-line="342" selection-start-column="69" selection-end-line="342" selection-end-column="69" />
         </state>
       </provider>
     </entry>
