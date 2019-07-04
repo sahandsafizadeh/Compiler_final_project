@@ -1,19 +1,16 @@
 package ast.block.stmt.conditional.casestmt;
 
+import ast.block.Block;
 import cg.Logger;
 import org.objectweb.asm.Label;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Cases {
 
     private static final Cases instance = new Cases();
 
-    private List<Label> jumpTable;
-    private List<Integer> cases;
-    private Label defaultLabel;
-    private Label out;
+    private Map<Integer, Block> jumpTable;
     private int max;
     private int min;
 
@@ -25,26 +22,18 @@ public class Cases {
     }
 
     public void init() {
-        jumpTable = new LinkedList<>();
-        cases = new LinkedList<>();
-        defaultLabel = null;
-        out = new Label();
+        jumpTable = new TreeMap<>();
         max = Integer.MIN_VALUE;
         min = Integer.MAX_VALUE;
     }
 
-    public void addCase(int ca, Label label) {
-        if (cases.contains(ca))
+    public void addCase(int ca, Block block) {
+        if (jumpTable.containsKey(ca))
             Logger.error("invalid case");
 
-        jumpTable.add(label);
-        cases.add(ca);
+        jumpTable.put(ca, block);
         max = Math.max(max, ca);
         min = Math.min(min, ca);
-    }
-
-    public void setDefault(Label defaultLabel) {
-        this.defaultLabel = defaultLabel;
     }
 
     public int getMax() {
@@ -55,16 +44,17 @@ public class Cases {
         return min;
     }
 
-    public Label getDefaultLabel() {
-        return defaultLabel;
+    public Label[] getLabels(Label defaultLabel) {
+        Label[] labels = new Label[max - min + 1];
+        for (int i = min; i <= max; i++)
+            labels[i - min] = jumpTable.containsKey(i) ? jumpTable.get(i).getStart() : defaultLabel;
+        return labels;
     }
 
-    public Label getOut() {
-        return out;
-    }
-
-    public Label[] getLabels() {
-        return jumpTable.toArray(new Label[jumpTable.size()]);
+    public List<Block> getCaseBlocks() {
+        List<Block> blockList = new ArrayList<>();
+        jumpTable.forEach((i, b) -> blockList.add(b));
+        return blockList;
     }
 
 }

@@ -320,7 +320,7 @@ loop_statement ::=
 cond_stmt ::=
     IF PRANTOP expr:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
     |
-    SWITCH PRANTOP ID {:;//todo:} PRANTCL OF COL BEGIN case_part DEFAULT COL bloc END
+    SWITCH PRANTOP ID:id {:id = scanner.string.toString(); Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(id, db);:}
     ;
 
 else_part ::=
@@ -330,7 +330,7 @@ else_part ::=
     ;
 
 case_part ::=
-    CASE INT_LIT COL {:new Block();:} block {:new Case(scanner.ICV, Blocks.getInstance().getCurrent().getStart()); Blocks.getInstance().getCurrent().compile();:} case_part
+    CASE INT_LIT COL block case_part
     |
     /*epsilon*/
     ;

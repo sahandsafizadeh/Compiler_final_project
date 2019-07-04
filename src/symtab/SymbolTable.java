@@ -13,12 +13,16 @@ public class SymbolTable {
         this.table = table;
     }
 
-    public boolean contains(String name) {
-        return table.containsKey(name);
+    public boolean contains(String id) {
+        return table.containsKey(id);
     }
 
     public void put(VariableDescriptor descriptor) {
         table.put(descriptor.getName(), descriptor);
+    }
+
+    public VariableDescriptor get(String id) {
+        return (VariableDescriptor) table.get(id);
     }
 
 }

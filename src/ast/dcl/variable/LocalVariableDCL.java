@@ -21,7 +21,7 @@ public class LocalVariableDCL implements Node {
     @Override
     public Node compile() {
         TableStack.getInstance().addVariable(descriptor);
-        if (descriptor.getValue() != null)
+//        if (descriptor.getValue() != null)
             CodeGenerator.mVisit.visitVarInsn(determineOp(descriptor), descriptor.getStackIndex());
         return null;
     }
@@ -38,8 +38,8 @@ public class LocalVariableDCL implements Node {
         else if (type == VariableType.LONG)
             return Opcodes.LSTORE;
         else if (type == VariableType.AUTO) {
-            Type newType = TypeChecker.getAutoType(descriptor.getValue());
-            descriptor.setType(newType);
+//            Type newType = TypeChecker.getAutoType(descriptor.getValue());
+//            descriptor.setType(newType);
             return determineOp(descriptor);
         } else if (type == VariableType.INT || type == VariableType.CHAR || type == VariableType.BOOL)
             return Opcodes.ISTORE;

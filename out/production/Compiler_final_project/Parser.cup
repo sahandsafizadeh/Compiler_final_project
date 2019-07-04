@@ -31,7 +31,9 @@ OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPL
 PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NE, EQ, LE, GE;
 
 //literals
-terminal CHAR_LIT, STR_LIT, INT_LIT, FLOAT_LIT;
+terminal CHAR_LIT, STR_LIT;
+terminal Integer INT_LIT;
+terminal Double FLOAT_LIT;
 terminal String ID;
 
 //NON TERMINALS
@@ -40,7 +42,7 @@ nonterminal program;
 nonterminal program_part;
 
 nonterminal global_var_dcl;
-nonterminal Type variable_type;
+nonterminal VariableType variable_type;
 
 nonterminal func_dcl;
 nonterminal function_type;
@@ -56,22 +58,22 @@ nonterminal struct_var_dcl_part;
 nonterminal StructureType struct_type;
 
 nonterminal block;
-nonterminal block_content;
+nonterminal BlockContent block_content;
 nonterminal loop_block;
-nonterminal loop_block_content;
+nonterminal BlockContent loop_block_content;
 
 nonterminal BlockContent var_dcl;
 nonterminal var_dcl_part;
 nonterminal var_dcl_cnt;
 nonterminal var_dcl_cnt_part;
 nonterminal var_dcl_cnt_extension;
-nonterminal single_var;
+nonterminal String single_var;
 nonterminal array_part;
 
-nonterminal statement;
+nonterminal BlockContent statement;
 nonterminal loop_statement;
 
-nonterminal cond_stmt;
+nonterminal BlockContent cond_stmt;
 nonterminal Block else_part;
 nonterminal case_part;
 
@@ -146,15 +148,15 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type:t ID:id SEMI {:new GlobalVariableDCL(t, id).compile();:}
+    variable_type:t ID SEMI {:new GlobalVariableDCL(t, scanner.string.toString()).compile();:}
     ;
 
 variable_type ::=
     struct_type:t {:RESULT = t;:}
     |
-    STRING{:RESULT = VariableType.STRING;:}
+    STRING {:RESULT = VariableType.STRING;:}
     |
-    ID//?
+    ID {:new VariableType(scanner.string.toString());:}
     ;
 
 
@@ -234,9 +236,9 @@ block ::=
     ;
 
 block_content ::=
-    var_dcl block_content
+    var_dcl:cont block_content {:RESULT = cont;:}
     |
-    statement block_content
+    statement:cont block_content {:RESULT = cont;:}
     |
     /*epsilon*/
     ;
@@ -256,17 +258,17 @@ loop_block_content ::=
 
 //variables
 var_dcl ::=
-    CONST var_dcl_part SEMI
+    CONST {:Variables.getInstance.setConstant(true);:} var_dcl_part SEMI {:RESULT = new VariableDcl(Variables.getInstance().getDcls());:}
     |
-    var_dcl_part SEMI
+    {:Variables.getInstance.setConstant(false);:} var_dcl_part SEMI {:RESULT = new VariableDcl(Variables.getInstance().getDcls());:}
     ;
 
 var_dcl_part ::=
-    variable_type var_dcl_cnt var_dcl_cnt_extension
+    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt var_dcl_cnt_extension
     ;
 
 var_dcl_cnt ::=
-    single_var var_dcl_cnt_part
+    {:Variables.getInstance().addDscp(new LocalVariableDCL(new VariableDescriptor()));:} single_var:name {:Variables.getInstance().getLastDscp().setName(name);:} var_dcl_cnt_part
     ;
 
 var_dcl_cnt_part ::=
@@ -282,11 +284,11 @@ var_dcl_cnt_extension ::=
     ;
 
 single_var ::=
-    ID:id array_part {:RESULT = new SingleVar().compile();:}
+    ID {:RESULT = scanner.string.toString();:} array_part
     ;
 
 array_part ::=
-    BRACKOP expr BRACKCL array_part {::}
+    BRACKOP expr BRACKCL array_part
     |
     /*epsilon*/
     ;
@@ -294,7 +296,7 @@ array_part ::=
 
 //statements
 statement ::=
-    cond_stmt
+    cond_stmt:stmt {:RESULT = stmt;:}
     |
     loop_stmt
     |
@@ -308,27 +310,27 @@ statement ::=
 loop_statement ::=
     statement
     |
-    BREAK SEMI {:new Break().compile();:}
+    BREAK SEMI {:new Break();:}
     |
-    CONTINUE SEMI {:new Continue().compile();:}
+    CONTINUE SEMI {:new Continue();:}
     ;
 
 
 //conditionals
 cond_stmt ::=
-    IF PRANTOP expr PRANTCL {:new Block();:} block {:Blocks.getInstance().getCurrent().compile();:} else_part:block
+    IF PRANTOP expr:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
     |
-    SWITCH PRANTOP ID PRANTCL OF COL BEGIN case_part DEFAULT COL block END
+    SWITCH PRANTOP ID:id {:id = scanner.string.toString(); Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(id, db);:}
     ;
 
 else_part ::=
-    ELSE block {::}
+    ELSE block:b {:RESULT = b;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = null;:}
     ;
 
 case_part ::=
-    CASE INT_LIT COL {:new Block();:} block {:Blocks.BLOCK_CONTENT.top().compile();:} case_part
+    CASE INT_LIT COL block case_part
     |
     /*epsilon*/
     ;
@@ -337,8 +339,8 @@ case_part ::=
 //loops
 loop_stmt ::=
     FOR PRANTOP loop_init_part SEMI loop_cond_part SEMI loop_update_part PRANTCL loop_block
-    |//in your grammer we shouldn't declare variable in for loop
-    {::} REPEAT loop_block UNTIL PRANTOP expr PRANTCL SEMI
+    |//in your grammer we shouldn't declare variable in for loops
+    REPEAT {:new Block();:} loop_block UNTIL PRANTOP expr {:new Repeat().compile();:} PRANTCL SEMI
     |
     FOREACH PRANTOP ID IN ID PRANTCL loop_block
     ;
@@ -364,29 +366,21 @@ loop_update_part ::=
 
 //assignments
 assignment ::=
-    variable ASSIGN expr
+    variable:dscp ASSIGN expr:e {:RESULT = new DirectAssign(dscp, expr);:}
     |
-    variable PLUSASSIGN expr
+    variable:dscp PLUSASSIGN expr:e {:RESULT = new PlusAssign(dscp, expr);:}
     |
-    variable MINUSASSIGN expr
+    variable:dscp MINUSASSIGN expr:e {:RESULT = new MinusAssign(dscp, expr);:}
     |
-    variable MULTASSIGN expr
+    variable:dscp MULTASSIGN expr:e {:RESULT = new MultiplyAssign(dscp, expr);:}
     |
-    variable DIVASSIGN expr
+    variable:dscp DIVASSIGN expr:e {:RESULT = new DivisionAssign(dscp, expr);:}
     ;
 
 variable ::=
     var_access
     |
     variable DOT ID
-    |
-    PREFMINUS2 variable
-    |
-    PREFPLUS2 variable
-    |
-    variable PREFMINUS2 %prec POSTMINUS2
-    |
-    variable PREFPLUS2 %prec POSTPLUS2
     ;
 
 var_access ::=
@@ -401,7 +395,7 @@ var_access_array_part ::=
 
 //expressions
 expr ::=
-    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e).compile();:} %prec CASTPRANTOP
+    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e);:} %prec CASTPRANTOP
     |
     arithmatic_expr:e {:RESULT = e;:}
     |
@@ -409,15 +403,23 @@ expr ::=
     |
     PRANTOP expr:e PRANTCL {:RESULT = e;:}
     |
-    NOT expr
+    NOT expr:e {:RESULT = new Not(e);:}
     |
     BINOT expr:e {:RESULT = new BinaryNot(e);:}
     |
     MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
+    PREFMINUS2 variable:dscp {:RESULT = new PrefixMinus2(dscp);:}
+    |
+    PREFPLUS2 variable:dscp {:RESULT = new PrefixPlus2(dscp);:}
+    |
+    variable:dscp PREFMINUS2 {:RESULT = new PostfixMinus2(dscp);:} %prec POSTMINUS2
+    |
+    variable:dscp PREFPLUS2 {:RESULT = new PostfixPlus2(dscp);:} %prec POSTPLUS2
+    |
     const_val {:RESULT = e;:}
     |
-    variable
+    variable:dscp {:RESULT = new VariablePush(dscp);:}
     |
     function_call
     |
@@ -435,39 +437,39 @@ casting_type ::=
     ;
 
 arithmatic_expr ::=
-    expr:e1 MULT expr:e2 {:RESULT = new Mult(e1, e2).compile();:}
+    expr:e1 MULT expr:e2 {:RESULT = new Mult(e1, e2);:}
     |
-    expr:e1 DIVIDE expr:e2 {:RESULT = new Div(e1, e2).compile();:}
+    expr:e1 DIVIDE expr:e2 {:RESULT = new Div(e1, e2);:}
     |
-    expr:e1 MOD expr:e2 {:RESULT = new Mod(e1, e2).compile();:}
+    expr:e1 MOD expr:e2 {:RESULT = new Mod(e1, e2);:}
     |
-    expr:e1 PLUS expr:e2 {:RESULT = new Add(e1, e2).compile();:}
+    expr:e1 PLUS expr:e2 {:RESULT = new Add(e1, e2);:}
     |
-    expr:e1 MINUS expr:e2 {:RESULT = new Sub(e1, e2).compile();:}
+    expr:e1 MINUS expr:e2 {:RESULT = new Sub(e1, e2);:}
     |
-    expr:e1 BIAND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
+    expr:e1 BIAND expr:e2 {:RESULT = new BinaryAnd(e1, e2);:}
     |
-    expr:e1 BIOR expr:e2 {:RESULT = new BinaryOr(e1, e2).compile();:}
+    expr:e1 BIOR expr:e2 {:RESULT = new BinaryOr(e1, e2);:}
     |
-    expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2).compile();:}
+    expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2);:}
     ;
 
-conditional_expr ::=
-    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2).compile();:}
+conditional_expr ::=//These expressions can't operate on non-int types
+    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2);:}
     |
-    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2).compile();:}
+    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2);:}
     |
-    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2).compile();:}
+    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2);:}
     |
-    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2).compile();:}
+    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2);:}
     |
-    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2).compile();:}
+    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2);:}
     |
-    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2).compile();:}
+    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2);:}
     |
-    expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2).compile();:}
+    expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2);:}
     |
-    expr:e1 OR expr:e2 {:RESULT = new BinaryOr(e1, e2).compile();:}
+    expr:e1 OR expr:e2 {:RESULT = new BinaryOr(e1, e2);:}
     ;
 
 const_val ::=

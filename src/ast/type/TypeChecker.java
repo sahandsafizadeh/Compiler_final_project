@@ -45,6 +45,10 @@ public class TypeChecker {
         return isValidExprType(type) || type == VariableType.STRING || type == VariableType.AUTO;
     }
 
+    public static boolean isValidSwitchType(Type type) {
+        return type == BOOL || type == CHAR || type == INT;
+    }
+
     public static Type getAutoType(Object value) {
         if (value instanceof Double)
             return VariableType.DOUBL;

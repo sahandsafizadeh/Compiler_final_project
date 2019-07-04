@@ -129,4 +129,13 @@ public class TableStack {
         getTop().put(descriptor);
     }
 
+    public VariableDescriptor findVariable(String id) {
+        for (int i = SYM_TAB_STACK.size() - 1; i >= 0; i--) {
+            SymbolTable table = SYM_TAB_STACK.get(i);
+            if (table.contains(id))
+                return table.get(id);
+        }
+        return null;
+    }
+
 }
