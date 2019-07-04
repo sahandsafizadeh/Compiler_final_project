@@ -278,6 +278,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/ArrayDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/ArrayVarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/CompleteDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/DCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/dcl/variable/LocalVariDCL.java">
           <value>
             <set />
@@ -288,7 +308,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/VarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/VariableDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/dcl/variable/VariableDcl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/VariableVarDcl.java">
           <value>
             <set />
           </value>
@@ -813,6 +848,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/AbstractDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/ArrayDescriptor.java">
           <value>
             <set />
@@ -849,6 +889,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/variable/ArrayDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/variable/VariableDescriptor.java">
           <value>
             <set />
           </value>

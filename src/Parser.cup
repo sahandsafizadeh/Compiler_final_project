@@ -62,13 +62,13 @@ nonterminal BlockContent block_content;
 nonterminal loop_block;
 nonterminal BlockContent loop_block_content;
 
-nonterminal BlockContent var_dcl;
+nonterminal var_dcl;
 nonterminal var_dcl_part;
-nonterminal var_dcl_cnt;
-nonterminal var_dcl_cnt_part;
+nonterminal BlockContent var_dcl_cnt;
+nonterminal Expression var_dcl_cnt_part;
 nonterminal var_dcl_cnt_extension;
-nonterminal String single_var;
-nonterminal array_part;
+nonterminal DCL single_var;
+nonterminal DCL array_part;
 
 nonterminal BlockContent statement;
 nonterminal loop_statement;
@@ -236,9 +236,9 @@ block ::=
     ;
 
 block_content ::=
-    var_dcl:cont block_content {:RESULT = cont;:}
+    var_dcl block_content
     |
-    statement:cont block_content {:RESULT = cont;:}
+    statement:cont block_content {:Blocks.getINstance().getCurrent().addContent(cont);:}
     |
     /*epsilon*/
     ;
@@ -250,7 +250,7 @@ loop_block ::=
 loop_block_content ::=
     var_dcl loop_block_content
     |
-    loop_statement loop_block_content
+    loop_statement:cont loop_block_content {:Blocks.getINstance().getCurrent().addContent(cont);:}
     |
     /*epsilon*/
     ;
@@ -258,39 +258,39 @@ loop_block_content ::=
 
 //variables
 var_dcl ::=
-    CONST {:Variables.getInstance.setConstant(true);:} var_dcl_part SEMI {:RESULT = new VariableDcl(Variables.getInstance().getDcls());:}
+    CONST {:Variables.getInstance.setConstant(true);:} var_dcl_part SEMI
     |
-    {:Variables.getInstance.setConstant(false);:} var_dcl_part SEMI {:RESULT = new VariableDcl(Variables.getInstance().getDcls());:}
+    {:Variables.getInstance.setConstant(false);:} var_dcl_part SEMI
     ;
 
 var_dcl_part ::=
-    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt var_dcl_cnt_extension
+    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getINstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
     ;
 
 var_dcl_cnt ::=
-    {:Variables.getInstance().addDscp(new LocalVariableDCL(new VariableDescriptor()));:} single_var:name {:Variables.getInstance().getLastDscp().setName(name);:} var_dcl_cnt_part
+    single_var:dcl var_dcl_cnt_part:e {:RESULT = new CompleteDCL(dcl, new DirectAssign(dcl.getDescriptor(), e));:}
     ;
 
 var_dcl_cnt_part ::=
-    ASSIGN expr
+    ASSIGN expr:e {:RESULT = e;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = null;:}
     ;
 
 var_dcl_cnt_extension ::=
-    COMA var_dcl_cnt var_dcl_cnt_extension
+    COMA var_dcl_cnt:cont {:Blocks.getINstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
     |
     /*epsilon*/
     ;
 
 single_var ::=
-    ID {:RESULT = scanner.string.toString();:} array_part
+    ID:id {:id = scanner.string.toString();:} array_part:dcl {:dcl.setId(id); RESTULT = dcl;:}
     ;
 
 array_part ::=
-    BRACKOP expr BRACKCL array_part
+    BRACKOP expr:e BRACKCL array_part {:RESULT = new ArrayVarDCL(e);:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = new VariableDCL();:}
     ;
 
 
@@ -342,7 +342,7 @@ loop_stmt ::=
     |//in your grammer we shouldn't declare variable in for loops
     REPEAT loop_block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
     |
-    FOREACH PRANTOP ID IN ID PRANTCL loop_block
+    FOREACH PRANTOP ID IN ID PRANTCL loop_block {:;//todo after array dcl:}
     ;
 
 loop_init_part ::=

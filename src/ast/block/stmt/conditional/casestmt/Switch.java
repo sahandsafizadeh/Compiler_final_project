@@ -9,7 +9,7 @@ import cg.Logger;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.List;
 

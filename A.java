@@ -1,13 +1,13 @@
 public class A {
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            if (i < 5) {
-                continue;
-            } else
-                break;
-        }
+    public static class I {
 
+    }
+
+    public static void main(String[] args) {
+        I[] array = new I[10];
+        System.out.println(array[3]);
+        int b = 3;
     }
 
 }

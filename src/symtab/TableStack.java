@@ -3,7 +3,9 @@ package symtab;
 import ast.type.VariableType;
 import cg.Logger;
 import symtab.dscp.KeywordDescriptor;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.variable.ArrayDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -115,10 +117,30 @@ public class TableStack {
     }
 
     public void addVariable(VariableDescriptor descriptor) {
+        checkError(descriptor);
+        putDescriptor(descriptor.getType() == VariableType.DOUBL || descriptor.getType() == VariableType.LONG ? 2 : 1, descriptor);
+    }
+
+    public void addArray(ArrayDescriptor descriptor) {
+        checkError(descriptor);
+        putDescriptor(1, descriptor);
+    }
+
+    public VariableDescriptor findVariable(String id) {
+        for (int i = SYM_TAB_STACK.size() - 1; i >= 0; i--) {
+            SymbolTable table = SYM_TAB_STACK.get(i);
+            if (table.contains(id))
+                return (VariableDescriptor) table.get(id);
+        }
+        return null;
+    }
+
+    private void checkError(AbstractDescriptor descriptor) {
         if (getTop().contains(descriptor.getName()) || getBase().contains(descriptor.getName()))
             Logger.error("variable name already exists");
+    }
 
-        int increment = descriptor.getType() == VariableType.DOUBL || descriptor.getType() == VariableType.LONG ? 2 : 1;
+    private void putDescriptor(int increment, AbstractDescriptor descriptor) {
         if (inFuncDCL) {
             descriptor.setStackIndex(functionStackIndex);
             functionStackIndex += increment;
@@ -127,15 +149,6 @@ public class TableStack {
             mainStackIndex += increment;
         }
         getTop().put(descriptor);
-    }
-
-    public VariableDescriptor findVariable(String id) {
-        for (int i = SYM_TAB_STACK.size() - 1; i >= 0; i--) {
-            SymbolTable table = SYM_TAB_STACK.get(i);
-            if (table.contains(id))
-                return table.get(id);
-        }
-        return null;
     }
 
 }

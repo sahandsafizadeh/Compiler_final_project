@@ -1,15 +1,10 @@
 package ast.dcl.variable;
 
 import ast.type.Type;
-import symtab.dscp.VariableDescriptor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Variables {
 
     private static final Variables instance = new Variables();
-    private List<LocalVariableDCL> dcls;
     private boolean constant;
     private Type type;
 
@@ -21,7 +16,6 @@ public class Variables {
     }
 
     public void init() {
-        dcls = new ArrayList<>();
         constant = false;
         type = null;
     }
@@ -40,18 +34,6 @@ public class Variables {
 
     public void setType(Type type) {
         this.type = type;
-    }
-
-    public List<LocalVariableDCL> getDcls() {
-        return dcls;
-    }
-
-    public void addDscp(LocalVariableDCL dcl) {
-        dcls.add(dcl);
-    }
-
-    public VariableDescriptor getLastDscp() {
-        return dcls.get(dcls.size() - 1).getDescriptor();
     }
 
 }

@@ -4,7 +4,7 @@ import ast.Node;
 import ast.expr.Expression;
 import cg.CodeGenerator;
 import cg.Logger;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 public class DirectAssign extends Assignment {
 

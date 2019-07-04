@@ -3,7 +3,7 @@ package ast.block.stmt.assignment;
 import ast.Node;
 import ast.expr.Expression;
 import cg.CodeGenerator;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 public class OperatorAssign extends Assignment {
 

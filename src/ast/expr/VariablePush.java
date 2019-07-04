@@ -8,7 +8,7 @@ import ast.type.VariableType;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 public class VariablePush extends Expression {
 

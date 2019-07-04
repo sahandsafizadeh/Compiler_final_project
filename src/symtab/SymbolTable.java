@@ -1,7 +1,8 @@
 package symtab;
 
 import symtab.dscp.Descriptor;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.Map;
 
@@ -17,12 +18,12 @@ public class SymbolTable {
         return table.containsKey(id);
     }
 
-    public void put(VariableDescriptor descriptor) {
+    public void put(AbstractDescriptor descriptor) {
         table.put(descriptor.getName(), descriptor);
     }
 
-    public VariableDescriptor get(String id) {
-        return (VariableDescriptor) table.get(id);
+    public AbstractDescriptor get(String id) {
+        return (AbstractDescriptor) table.get(id);
     }
 
 }

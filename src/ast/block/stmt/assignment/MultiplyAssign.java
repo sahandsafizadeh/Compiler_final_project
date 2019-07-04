@@ -6,7 +6,7 @@ import ast.type.Type;
 import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 public class MultiplyAssign extends Assignment {
     private int opcode;

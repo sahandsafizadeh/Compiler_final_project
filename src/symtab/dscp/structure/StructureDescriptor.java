@@ -1,6 +1,8 @@
-package symtab.dscp;
+package symtab.dscp.structure;
 
 import cg.Logger;
+import symtab.dscp.Descriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.List;
 import java.util.Map;

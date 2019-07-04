@@ -6,7 +6,7 @@ import ast.type.Type;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 import static ast.type.CastingType.*;
 import static ast.type.StructureType.BOOL;

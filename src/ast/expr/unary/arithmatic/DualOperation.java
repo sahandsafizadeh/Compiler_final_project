@@ -4,7 +4,7 @@ import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
 import ast.type.VariableType;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.VariableDescriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 public class DualOperation extends UnaryExpression {
 

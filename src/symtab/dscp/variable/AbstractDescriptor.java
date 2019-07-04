@@ -1,14 +1,15 @@
-package symtab.dscp;
+package symtab.dscp.variable;
 
 import ast.type.Type;
+import symtab.dscp.Descriptor;
 
-public class VariableDescriptor implements Descriptor, Cloneable {
+public abstract class AbstractDescriptor implements Descriptor {
 
-    private Type type;
-    private String name;
-    private boolean isConst;
-    private boolean isArgument;
-    private int stackIndex;
+    Type type;
+    String name;
+    int stackIndex;
+    boolean isConst;
+    boolean isArgument;
 
     public Type getType() {
         return type;
@@ -48,15 +49,6 @@ public class VariableDescriptor implements Descriptor, Cloneable {
 
     public void setStackIndex(int stackIndex) {
         this.stackIndex = stackIndex;
-    }
-
-    @Override
-    public VariableDescriptor clone() {
-        VariableDescriptor other = new VariableDescriptor();
-        other.name = name;
-        other.type = type;
-        other.isConst = isConst;
-        return other;
     }
 
 }
