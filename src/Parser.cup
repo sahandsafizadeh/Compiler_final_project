@@ -73,7 +73,7 @@ nonterminal array_part;
 nonterminal BlockContent statement;
 nonterminal loop_statement;
 
-nonterminal cond_stmt;
+nonterminal BlockContent cond_stmt;
 nonterminal Block else_part;
 nonterminal case_part;
 
@@ -296,7 +296,7 @@ array_part ::=
 
 //statements
 statement ::=
-    cond_stmt
+    cond_stmt:stmt {:RESULT = stmt;:}
     |
     loop_stmt
     |
@@ -318,15 +318,15 @@ loop_statement ::=
 
 //conditionals
 cond_stmt ::=
-    IF PRANTOP expr PRANTCL {:new Block(); new If().compile();:} block {:Blocks.getInstance().getCurrent().compile();:} else_part:block
+    IF PRANTOP expr:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
     |
-    SWITCH PRANTOP ID {:;//todo:} PRANTCL OF COL {:Cases.getInstance().init();:} BEGIN case_part DEFAULT COL {:new Block();:} block {:new Default(Blocks.getInstance().getCurrent().getStart()); Blocks.getInstance().getCurrent().compile();:} END {:new Switch().compile();:}
+    SWITCH PRANTOP ID {:;//todo:} PRANTCL OF COL BEGIN case_part DEFAULT COL bloc END
     ;
 
 else_part ::=
-    ELSE block {::}
+    ELSE block:b {:RESULT = b;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = null;:}
     ;
 
 case_part ::=
