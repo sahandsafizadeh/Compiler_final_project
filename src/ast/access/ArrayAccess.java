@@ -2,7 +2,6 @@ package ast.access;
 
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
@@ -35,7 +34,7 @@ public class ArrayAccess extends Access {
     public void compile() {
         Logger.log("array access load");
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, descriptor.getStackIndex());
-        if (index.getResultType() != VariableType.INT)
+        if (index.getResultType() != INT)
             Logger.error("arrays can only be accessed using integer types");
         index.compile();
         CodeGenerator.mVisit.visitInsn(determineOp(descriptor.getType()));

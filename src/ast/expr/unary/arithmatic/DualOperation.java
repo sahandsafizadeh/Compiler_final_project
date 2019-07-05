@@ -2,11 +2,12 @@ package ast.expr.unary.arithmatic;
 
 import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.dscp.variable.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
+
+import static ast.type.VariableType.*;
 
 public abstract class DualOperation extends UnaryExpression {
 
@@ -24,6 +25,11 @@ public abstract class DualOperation extends UnaryExpression {
             Logger.error("undefined operation for arrays");
     }
 
+    public void checkOperation() {
+        if (descriptor.isConst())
+            Logger.error("constant variables can't be changed");
+    }
+
     /**
      * In this class this method determines 4 operations so it doesn't return a specific value.
      *
@@ -32,17 +38,17 @@ public abstract class DualOperation extends UnaryExpression {
      */
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.DOUBLE) {
+        if (type == DOUBLE) {
             ldrOp = Opcodes.DLOAD;
             strOp = Opcodes.DSTORE;
             addOp = Opcodes.DADD;
             dupOp = Opcodes.DUP2;
-        } else if (type == VariableType.FLOAT) {
+        } else if (type == FLOAT) {
             ldrOp = Opcodes.FLOAT;
             strOp = Opcodes.FSTORE;
             addOp = Opcodes.FADD;
             dupOp = Opcodes.DUP;
-        } else if (type == VariableType.LONG) {
+        } else if (type == LONG) {
             ldrOp = Opcodes.LLOAD;
             strOp = Opcodes.LSTORE;
             addOp = Opcodes.LADD;

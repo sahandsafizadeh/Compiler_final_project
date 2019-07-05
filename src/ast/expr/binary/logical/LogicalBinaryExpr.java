@@ -14,10 +14,6 @@ public abstract class LogicalBinaryExpr extends BinaryExpression {
     int opCode;
     int compareCode;
 
-    private LogicalBinaryExpr(Type type) {
-        super(type);
-    }
-
     LogicalBinaryExpr(Expression expr1, Expression expr2) {
         super(expr1, expr2);
     }
@@ -25,7 +21,7 @@ public abstract class LogicalBinaryExpr extends BinaryExpression {
     @Override
     public void compile() {
         Type resultType = getResultType();
-        compileExprs(resultType);
+        compileExpressions(resultType);
         Label l1 = new Label();
         Label l2 = new Label();
         determineOp(resultType);
@@ -40,7 +36,7 @@ public abstract class LogicalBinaryExpr extends BinaryExpression {
     }
 
     /**
-     * In the subclasses determinOp method doesn't return the codes but set the ones needed for this class
+     * In the subclasses determineOp method doesn't return the codes but set the ones needed for this class
      */
 
 }

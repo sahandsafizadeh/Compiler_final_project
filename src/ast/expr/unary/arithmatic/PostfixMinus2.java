@@ -15,6 +15,7 @@ public class PostfixMinus2 extends DualOperation {
     @Override
     public void compile() {
         Logger.log("postfix minus minus");
+        checkOperation();
         determineOp(getResultType());
         mVisit.visitVarInsn(ldrOp, descriptor.getStackIndex());
         mVisit.visitInsn(dupOp);

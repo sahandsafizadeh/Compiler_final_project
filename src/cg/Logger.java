@@ -18,7 +18,6 @@ public class Logger {
             writer.write("");
             writer.flush();
             writer.close();
-
             writer = new FileWriter("log.txt", true);
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,8 +40,9 @@ public class Logger {
     }
 
     public static void error(String message) {
-        message += "(Error)";
+        message += "(Error) ";
         Logger.log(message);
         throw new RuntimeException();
     }
+
 }

@@ -15,6 +15,7 @@ public class PrefixPlus2 extends DualOperation {
     @Override
     public void compile() {
         Logger.log("prefix plus plus");
+        checkOperation();
         determineOp(getResultType());
         mVisit.visitInsn(Opcodes.ICONST_1);
         mVisit.visitVarInsn(ldrOp, descriptor.getStackIndex());

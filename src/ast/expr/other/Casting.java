@@ -27,9 +27,8 @@ public class Casting extends Expression {
     @Override
     public void compile() {
         Logger.log("type casting");
-        Type resultType = getResultType();
         expr.compile();
-        expr.doCastCompile(resultType);
+        expr.doCastCompile(getResultType());
     }
 
     @Override

@@ -41,7 +41,6 @@ public class Block implements Node {
         contents.forEach(Node::compile);
     }
 
-    //todo check if removing should be done here
     public void markEnd() {
         CodeGenerator.mVisit.visitLabel(end);
         Blocks.getInstance().remove();

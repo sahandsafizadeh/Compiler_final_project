@@ -63,7 +63,7 @@ nonterminal DCL array_part;
 nonterminal BlockContent statement;
 nonterminal loop_statement;
 
-nonterminal BlockContent cond_stmt;
+nonterminal Statement cond_stmt;
 nonterminal Block else_part;
 nonterminal case_part;
 

@@ -7,10 +7,6 @@ import cg.CodeGenerator;
 
 public abstract class ArithmeticBinaryExpr extends BinaryExpression {
 
-    private ArithmeticBinaryExpr(Type type) {
-        super(type);
-    }
-
     ArithmeticBinaryExpr(Expression expr1, Expression expr2) {
         super(expr1, expr2);
     }
@@ -18,7 +14,7 @@ public abstract class ArithmeticBinaryExpr extends BinaryExpression {
     @Override
     public void compile() {
         Type resultType = getResultType();
-        compileExprs(resultType);
+        compileExpressions(resultType);
         CodeGenerator.mVisit.visitInsn(determineOp(resultType));
     }
 

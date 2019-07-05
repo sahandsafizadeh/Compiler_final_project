@@ -58,23 +58,14 @@ public class CodeGenerator {
         mVisit.visitEnd();
     }
 
-    public static Label putLabel() {
-        Label label = new Label();
-        mVisit.visitLabel(label);
-        return label;
-    }
-
     public static void writeFinalClassCode() throws IOException {
         Logger.log("Writing the generated code into the executable output file");
-
         clWriter.visitEnd();
         try (OutputStream out = new FileOutputStream(OUTPUT_FILE)) {
             out.write(clWriter.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Logger.log("Code generation finished");
         Logger.close();
     }
 

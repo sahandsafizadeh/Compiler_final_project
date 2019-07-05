@@ -9,10 +9,6 @@ public abstract class BinaryExpression extends Expression {
     protected Expression expr1;
     protected Expression expr2;
 
-    public BinaryExpression(Type type) {
-        super(type);
-    }
-
     public BinaryExpression(Expression expr1, Expression expr2) {
         super();
         this.expr1 = expr1;
@@ -24,7 +20,7 @@ public abstract class BinaryExpression extends Expression {
         return TypeChecker.binaryExprTypeCheck(expr1.getResultType(), expr2.getResultType());
     }
 
-    protected void compileExprs(Type resultType) {
+    protected void compileExpressions(Type resultType) {
         expr1.compile();
         expr1.doCastCompile(resultType);
         expr2.compile();
