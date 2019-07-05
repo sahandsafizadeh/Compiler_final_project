@@ -1,8 +1,8 @@
 package ast.expr.constant;
 
-import ast.Node;
-import ast.type.StructureType;
 import ast.type.Type;
+import ast.type.VariableType;
+import cg.CodeGenerator;
 
 public class DoubleConstant extends Constant {
 
@@ -15,9 +15,13 @@ public class DoubleConstant extends Constant {
     }
 
     @Override
-    public Node compile() {
-        super.compile();
-        return new DoubleConstant(StructureType.DOUBL);
+    public Type getResultType() {
+        return VariableType.DOUBL;
+    }
+
+    @Override
+    public void compile() {
+        CodeGenerator.mVisit.visitLdcInsn(value);
     }
 
 }

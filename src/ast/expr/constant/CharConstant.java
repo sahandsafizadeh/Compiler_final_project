@@ -1,8 +1,9 @@
 package ast.expr.constant;
 
-import ast.Node;
-import ast.type.StructureType;
 import ast.type.Type;
+import ast.type.VariableType;
+import cg.CodeGenerator;
+import org.objectweb.asm.Opcodes;
 
 public class CharConstant extends Constant {
 
@@ -19,9 +20,13 @@ public class CharConstant extends Constant {
     }
 
     @Override
-    public Node compile() {
-        super.compile();
-        return new CharConstant(StructureType.INT);
+    public Type getResultType() {
+        return VariableType.INT;
+    }
+
+    @Override
+    public void compile() {
+        CodeGenerator.mVisit.visitVarInsn(Opcodes.BIPUSH, (int) ((char) value));
     }
 
 }

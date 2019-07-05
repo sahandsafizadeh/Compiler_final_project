@@ -1,10 +1,10 @@
 package ast.expr.unary;
 
-import ast.Node;
 import ast.expr.Expression;
 import ast.type.Type;
+import ast.type.TypeChecker;
 
-public class UnaryExpression extends Expression {
+public abstract class UnaryExpression extends Expression {
 
     protected Expression expr;
 
@@ -17,13 +17,8 @@ public class UnaryExpression extends Expression {
     }
 
     @Override
-    public Node compile() {
-        return null;
-    }
-
-    @Override
-    public int determineOp(Type type) {
-        return 0;
+    public Type getResultType() {
+        return TypeChecker.unaryExprTypeCheck(expr.getResultType());
     }
 
 }

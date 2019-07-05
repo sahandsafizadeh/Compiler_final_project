@@ -1,9 +1,5 @@
 package ast.expr.unary.arithmatic;
 
-import ast.Node;
-import ast.expr.unary.UnaryExpression;
-import ast.type.Type;
-import ast.type.TypeChecker;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.dscp.variable.VariableDescriptor;
@@ -17,15 +13,14 @@ public class PostfixPlus2 extends DualOperation {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("postfix plus plus");
-        Type resultType = TypeChecker.unaryExprTypeCheck(descriptor.getType());
+        determineOp(getResultType());
         mVisit.visitVarInsn(ldrOp, descriptor.getStackIndex());
         mVisit.visitInsn(dupOp);
         mVisit.visitInsn(Opcodes.ICONST_1);
         mVisit.visitInsn(addOp);
         mVisit.visitVarInsn(strOp, descriptor.getStackIndex());
-        return new UnaryExpression(resultType);
     }
 
 }

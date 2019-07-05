@@ -6,7 +6,7 @@ import ast.type.VariableType;
 import org.objectweb.asm.Opcodes;
 import symtab.dscp.variable.VariableDescriptor;
 
-public class DualOperation extends UnaryExpression {
+public abstract class DualOperation extends UnaryExpression {
 
     VariableDescriptor descriptor;
     int ldrOp;

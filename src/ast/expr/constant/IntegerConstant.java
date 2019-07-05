@@ -1,8 +1,8 @@
 package ast.expr.constant;
 
-import ast.Node;
-import ast.type.StructureType;
 import ast.type.Type;
+import ast.type.VariableType;
+import cg.CodeGenerator;
 
 public class IntegerConstant extends Constant {
 
@@ -15,9 +15,13 @@ public class IntegerConstant extends Constant {
     }
 
     @Override
-    public Node compile() {
-        super.compile();
-        return new IntegerConstant(StructureType.INT);
+    public Type getResultType() {
+        return VariableType.INT;
+    }
+
+    @Override
+    public void compile() {
+        CodeGenerator.mVisit.visitLdcInsn(value);
     }
 
 }
