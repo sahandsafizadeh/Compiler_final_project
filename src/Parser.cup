@@ -1,13 +1,3 @@
-import java.util.*;
-import java.io.*;
-import ast.block.*;
-import ast.block.conditional.*;
-import ast.expr.binary.arithmatic.*;
-import ast.expr.unary.arithmatic.*;
-import ast.expr.Expression;
-import java_cup.runtime.*;
-
-
 parser code
     {:
         private Scanner scanner;
@@ -83,8 +73,8 @@ nonterminal Expression loop_cond_part;
 nonterminal Assignment loop_update_part;
 
 nonterminal assignment;
-nonterminal variable;
-nonterminal var_access;
+nonterminal Access variable;
+nonterminal Access var_access;
 nonterminal var_access_array_part;
 
 nonterminal Expression expr;
@@ -339,10 +329,10 @@ case_part ::=
 //loops
 loop_stmt ::=
     FOR PRANTOP loop_init_part:in SEMI loop_cond_part:e SEMI loop_update_part:up PRANTCL loop_block:b {:RESULT = new For(in, e, up, b);:}
-    |//in your grammer we shouldn't declare variable in for loops
+    |
     REPEAT loop_block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
     |
-    FOREACH PRANTOP ID IN ID PRANTCL loop_block {:;//todo after array dcl:}
+    FOREACH PRANTOP ID {:i1 = scanner.string.toString();:} IN ID:i2 {:i2 = scanner.string.toString();:} PRANTCL loop_block:b {:RESULT = new Foreach(i1, i2, b);:}
     ;
 
 loop_init_part ::=
@@ -366,40 +356,36 @@ loop_update_part ::=
 
 //assignments
 assignment ::=
-    variable:dscp ASSIGN expr:e {:RESULT = new DirectAssign(dscp, expr);:}
+    variable:a ASSIGN expr:e {:RESULT = new DirectAssign(dscp, expr);:}
     |
-    variable:dscp PLUSASSIGN expr:e {:RESULT = new PlusAssign(dscp, expr);:}
+    variable:a PLUSASSIGN expr:e {:RESULT = new PlusAssign(dscp, expr);:}
     |
-    variable:dscp MINUSASSIGN expr:e {:RESULT = new MinusAssign(dscp, expr);:}
+    variable:a MINUSASSIGN expr:e {:RESULT = new MinusAssign(dscp, expr);:}
     |
-    variable:dscp MULTASSIGN expr:e {:RESULT = new MultiplyAssign(dscp, expr);:}
+    variable:a MULTASSIGN expr:e {:RESULT = new MultiplyAssign(dscp, expr);:}
     |
-    variable:dscp DIVASSIGN expr:e {:RESULT = new DivisionAssign(dscp, expr);:}
+    variable:a DIVASSIGN expr:e {:RESULT = new DivisionAssign(dscp, expr);:}
     ;
 
 variable ::=
-    var_access
+    var_access:a {:RESULT = a;:}
     |
-    variable DOT ID
+    variable DOT ID {:;//todo:}
     ;
 
 var_access ::=
-    ID:id array_part {:RESULT = new SingleVar().compile();:}
+    ID:id array_part:a {:a.setDescriptor(id); RESULT = a;:}
     ;
 
 var_access_array_part ::=
-    BRACKOP expr BRACKCL array_part {::}
+    BRACKOP expr:e BRACKCL array_part {:RESULT = new ArrayAccess(e);:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = new VariableAccess();:}
     ;
 
 //expressions
 expr ::=
-    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e);:} %prec CASTPRANTOP
-    |
-    arithmatic_expr:e {:RESULT = e;:}
-    |
-    conditional_expr:e {:RESULT = e;:}
+    const_val {:RESULT = e;:}
     |
     PRANTOP expr:e PRANTCL {:RESULT = e;:}
     |
@@ -417,13 +403,17 @@ expr ::=
     |
     variable:dscp PREFPLUS2 {:RESULT = new PostfixPlus2(dscp);:} %prec POSTPLUS2
     |
-    const_val {:RESULT = e;:}
-    |
-    variable:dscp {:RESULT = new VariablePush(dscp);:}
-    |
-    function_call
+    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e);:} %prec CASTPRANTOP
     |
     SIZEOF PRANTOP variable_type:t PRANTCL {:RESULT = new SizeOfExpr(t);:}
+    |
+    arithmatic_expr:e {:RESULT = e;:}
+    |
+    conditional_expr:e {:RESULT = e;:}
+    |
+    variable:a {:RESULT = new Variable(a);:}
+    |
+    function_call
     ;
 
 casting_type ::=

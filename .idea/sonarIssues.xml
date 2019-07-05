@@ -103,6 +103,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/Access.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/ArrayAccess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/VariableAccess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/block/Block.java">
           <value>
             <set />
@@ -563,7 +578,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/other/Variable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/other/VariablePush.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/other/access/Access.java">
           <value>
             <set />
           </value>

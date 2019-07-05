@@ -41,6 +41,7 @@ public class Logger {
     }
 
     public static void error(String message) {
+        message += "(Error)";
         Logger.log(message);
         throw new RuntimeException();
     }
