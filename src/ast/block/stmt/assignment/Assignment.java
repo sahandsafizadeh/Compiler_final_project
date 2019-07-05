@@ -1,27 +1,23 @@
 package ast.block.stmt.assignment;
 
-import ast.Node;
 import ast.access.Access;
+import ast.access.ArrayAccess;
+import ast.access.VariableAccess;
 import ast.block.BlockContent;
 import ast.expr.Expression;
 import ast.type.Type;
+import ast.type.VariableType;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.variable.VariableDescriptor;
 
 import static ast.type.CastingType.*;
-import static ast.type.StructureType.BOOL;
 import static ast.type.StructureType.LONG;
-import static ast.type.VariableType.STRING;
 
-public class Assignment extends BlockContent {
+public abstract class Assignment extends BlockContent {
 
     protected Access access;
     protected Expression expr;
-    protected int castCode;
-    protected int ldrCode;
-    protected int strCode;
 
     public Assignment(Access access, Expression expr) {
         this.access = access;
@@ -30,55 +26,31 @@ public class Assignment extends BlockContent {
 
     @Override
     public void compile() {
-        Type t1 = descriptor.getType();
-        Type t2 = ((Expression) expr.compile()).getType();
-        determineCodes(t1, t2);
-        if (castCode != 0)
-            CodeGenerator.mVisit.visitInsn(castCode);
+        expr.compile();
+        expr.doCastCompile(access.getDescriptor().getType());
     }
 
-    public void determineCodes(Type t1, Type t2) {
-        if (t1 == STRING && t2 == STRING) {
-            ldrCode = Opcodes.ALOAD;
-            strCode = Opcodes.ASTORE;
-        } else if (t1 == DOUBLE) {
-            ldrCode = Opcodes.DLOAD;
-            strCode = Opcodes.DSTORE;
-            if (t2 == FLOAT)
-                castCode = Opcodes.F2D;
-            else if (t2 == LONG)
-                castCode = Opcodes.L2D;
-            else if (t2 == INT)
-                castCode = Opcodes.I2D;
-        } else if (t1 == FLOAT) {
-            ldrCode = Opcodes.FLOAT;
-            strCode = Opcodes.FSTORE;
-            if (t2 == DOUBLE)
-                castCode = Opcodes.D2F;
-            else if (t2 == LONG)
-                castCode = Opcodes.L2F;
-            else if (t2 == INT)
-                castCode = Opcodes.I2F;
-        } else if (t1 == LONG) {
-            ldrCode = Opcodes.LLOAD;
-            strCode = Opcodes.LSTORE;
-            if (t2 == DOUBLE)
-                castCode = Opcodes.D2L;
-            else if (t2 == FLOAT)
-                castCode = Opcodes.F2L;
-            else if (t2 == INT)
-                castCode = Opcodes.I2L;
-        } else if (t1 == INT || t1 == BOOL || t1 == CHAR) {
-            ldrCode = Opcodes.ILOAD;
-            strCode = Opcodes.ISTORE;
-            if (t2 == DOUBLE)
-                castCode = Opcodes.D2I;
-            else if (t2 == FLOAT)
-                castCode = Opcodes.F2I;
-            else if (t2 == LONG)
-                castCode = Opcodes.L2I;
-        } else
-            Logger.error("type mismatch");
+    public int determineOp(Type type) {
+        boolean varAccess = access instanceof VariableAccess;
+        if (type == DOUBLE)
+            return varAccess ? Opcodes.DSTORE : Opcodes.DASTORE;
+        else if (type == FLOAT)
+            return varAccess ? Opcodes.FSTORE : Opcodes.FASTORE;
+        else if (type == LONG)
+            return varAccess ? Opcodes.LSTORE : Opcodes.LASTORE;
+        else if (type == INT)
+            return varAccess ? Opcodes.ISTORE : Opcodes.IASTORE;
+        else
+            return varAccess ? Opcodes.ASTORE : Opcodes.AASTORE;
     }
+
+    void arrayStoreInit() {
+        CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, access.getDescriptor().getStackIndex());
+        Expression indexExpr = ((ArrayAccess) access).getIndex();
+        if (indexExpr.getResultType() != VariableType.INT)
+            Logger.error("arrays can only be accessed using integer values");
+        indexExpr.compile();
+    }
+
 
 }

@@ -1,12 +1,11 @@
 package ast.block.stmt.assignment;
 
-import ast.Node;
 import ast.access.Access;
+import ast.access.ArrayAccess;
 import ast.expr.Expression;
 import cg.CodeGenerator;
-import symtab.dscp.variable.VariableDescriptor;
 
-public class OperatorAssign extends Assignment {
+public abstract class OperatorAssign extends Assignment {
 
     protected int opcode;
 
@@ -15,12 +14,22 @@ public class OperatorAssign extends Assignment {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
+        int strCode = determineOp(access.getDescriptor().getType());
+        if (access instanceof ArrayAccess) {
+            arrayStoreInit();
+            doArithmetic();
+            CodeGenerator.mVisit.visitInsn(strCode);
+        } else {
+            doArithmetic();
+            CodeGenerator.mVisit.visitVarInsn(strCode, access.getDescriptor().getStackIndex());
+        }
+    }
+
+    private void doArithmetic() {
+        access.compile();
         super.compile();
-        CodeGenerator.mVisit.visitVarInsn(ldrCode, descriptor.getStackIndex());
         CodeGenerator.mVisit.visitInsn(opcode);
-        CodeGenerator.mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
-        return null;
     }
 
 }

@@ -20,6 +20,10 @@ public class ArrayAccess extends Access {
         this.index = index;
     }
 
+    public Expression getIndex() {
+        return index;
+    }
+
     @Override
     public void setDescriptor(String id) {
         descriptor = (AbstractDescriptor) TableStack.getInstance().find(id);

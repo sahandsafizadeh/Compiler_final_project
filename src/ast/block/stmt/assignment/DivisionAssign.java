@@ -1,37 +1,38 @@
 package ast.block.stmt.assignment;
 
-import ast.Node;
+import ast.access.Access;
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.variable.VariableDescriptor;
+
+import static ast.type.VariableType.*;
 
 public class DivisionAssign extends OperatorAssign {
 
-    public DivisionAssign(VariableDescriptor descriptor, Expression expr) {
-        super(descriptor, expr);
+    public DivisionAssign(Access access, Expression expr) {
+        super(access, expr);
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("division assignment");
-        return super.compile();
+        super.compile();
     }
 
     @Override
-    public void determineCodes(Type t1, Type t2) {
-        super.determineCodes(t1, t2);
-        if (t1 == VariableType.DOUBLE)
+    public int determineOp(Type type) {
+        if (type == DOUBLE)
             opcode = Opcodes.DDIV;
-        else if (t1 == VariableType.FLOAT)
+        else if (type == FLOAT)
             opcode = Opcodes.FDIV;
-        else if (t1 == VariableType.LONG)
+        else if (type == LONG)
             opcode = Opcodes.LDIV;
-        else if (t1 == VariableType.INT)
+        else if (type == INT)
             opcode = Opcodes.IDIV;
         else
             Logger.error("type mismatch");
+        return super.determineOp(type);
     }
+
 }
