@@ -28,7 +28,7 @@ public class Switch extends Statement {
         Logger.log("switch-case");
         Cases cs = Cases.getInstance();
         Label defaultLabel = defaultBlock.getStart();
-        VariableDescriptor descriptor = TableStack.getInstance().findVariable(id);
+        VariableDescriptor descriptor = TableStack.getInstance().find(id);
         if (!TypeChecker.isValidSwitchType(descriptor.getType()))
             Logger.error("invalid switch type");
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ILOAD, descriptor.getStackIndex());

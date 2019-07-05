@@ -1,6 +1,5 @@
 package ast.dcl.variable;
 
-import ast.Assignment;
 import ast.Node;
 import ast.block.BlockContent;
 

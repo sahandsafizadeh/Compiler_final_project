@@ -2,6 +2,7 @@ package symtab;
 
 import ast.type.VariableType;
 import cg.Logger;
+import symtab.dscp.Descriptor;
 import symtab.dscp.KeywordDescriptor;
 import symtab.dscp.variable.AbstractDescriptor;
 import symtab.dscp.variable.ArrayDescriptor;
@@ -126,11 +127,11 @@ public class TableStack {
         putDescriptor(1, descriptor);
     }
 
-    public VariableDescriptor findVariable(String id) {
+    public Descriptor find(String id) {
         for (int i = SYM_TAB_STACK.size() - 1; i >= 0; i--) {
             SymbolTable table = SYM_TAB_STACK.get(i);
             if (table.contains(id))
-                return (VariableDescriptor) table.get(id);
+                return table.get(id);
         }
         return null;
     }
