@@ -1,6 +1,5 @@
 package ast.block.stmt.conditional.casestmt;
 
-import ast.Node;
 import ast.block.Block;
 import ast.block.stmt.Statement;
 import ast.type.TypeChecker;
@@ -24,16 +23,16 @@ public class Switch extends Statement {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("switch-case");
         Cases cs = Cases.getInstance();
         Label defaultLabel = defaultBlock.getStart();
-        VariableDescriptor descriptor = TableStack.getInstance().find(id);
+        VariableDescriptor descriptor = (VariableDescriptor) TableStack.getInstance().find(id);
         if (!TypeChecker.isValidSwitchType(descriptor.getType()))
             Logger.error("invalid switch type");
+
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ILOAD, descriptor.getStackIndex());
         CodeGenerator.mVisit.visitTableSwitchInsn(cs.getMin(), cs.getMax(), defaultLabel, cs.getLabels(defaultLabel));
-
         Label endCase = defaultBlock.getEnd();
         List<Block> caseBlocks = cs.getCaseBlocks();
         for (Block block : caseBlocks) {
@@ -47,8 +46,6 @@ public class Switch extends Statement {
         defaultBlock.compile();
         CodeGenerator.mVisit.visitJumpInsn(Opcodes.GOTO, endCase);
         defaultBlock.markEnd();
-
-        return this;
     }
 
 }

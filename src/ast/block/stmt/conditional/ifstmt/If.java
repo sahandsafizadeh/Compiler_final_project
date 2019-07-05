@@ -1,6 +1,5 @@
 package ast.block.stmt.conditional.ifstmt;
 
-import ast.Node;
 import ast.block.Block;
 import ast.block.stmt.Statement;
 import ast.expr.Expression;
@@ -21,7 +20,7 @@ public class If extends Statement {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("if");
 
         expr.compile();
@@ -35,7 +34,6 @@ public class If extends Statement {
             elseBlock.compile();
             elseBlock.markEnd();
         }
-        return this;
     }
 
 }

@@ -37,11 +37,11 @@ public class Block implements Node {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         contents.forEach(Node::compile);
-        return null;
     }
 
+    //todo check if removing should be done here
     public void markEnd() {
         CodeGenerator.mVisit.visitLabel(end);
         Blocks.getInstance().remove();
