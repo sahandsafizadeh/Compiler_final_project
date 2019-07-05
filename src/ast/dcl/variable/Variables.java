@@ -15,11 +15,6 @@ public class Variables {
         return instance;
     }
 
-    public void init() {
-        constant = false;
-        type = null;
-    }
-
     public boolean isConstant() {
         return constant;
     }

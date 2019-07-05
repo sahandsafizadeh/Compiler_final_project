@@ -688,6 +688,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/GlobalVarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/Program.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/ProgramContent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/type/CastingType.java">
           <value>
             <set />
