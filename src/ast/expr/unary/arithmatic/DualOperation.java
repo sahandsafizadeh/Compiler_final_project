@@ -3,7 +3,9 @@ package ast.expr.unary.arithmatic;
 import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
 import ast.type.VariableType;
+import cg.Logger;
 import org.objectweb.asm.Opcodes;
+import symtab.dscp.variable.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 public abstract class DualOperation extends UnaryExpression {
@@ -14,9 +16,12 @@ public abstract class DualOperation extends UnaryExpression {
     int addOp;
     int dupOp;
 
-    public DualOperation(VariableDescriptor descriptor) {
+    public DualOperation(AbstractDescriptor descriptor) {
         super(descriptor.getType());
-        this.descriptor = descriptor;
+        if (descriptor instanceof VariableDescriptor)
+            this.descriptor = (VariableDescriptor) descriptor;
+        else
+            Logger.error("undefined operation for arrays");
     }
 
     /**

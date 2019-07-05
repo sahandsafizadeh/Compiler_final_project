@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/Access.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/ArrayAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/ArrayAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/VariableAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/VariableAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/DivisionAssign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/DivisionAssign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/other/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/other/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +28,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parser.cup">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="113">
-              <caret line="362" column="25" lean-forward="true" selection-start-line="362" selection-start-column="25" selection-end-line="362" selection-end-column="25" />
+              <caret line="359" column="5" lean-forward="true" selection-start-line="359" selection-start-column="5" selection-end-line="359" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -76,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" />
@@ -120,13 +129,14 @@
         <option value="$PROJECT_DIR$/src/ast/expr/other/VariablePush.java" />
         <option value="$PROJECT_DIR$/A.java" />
         <option value="$PROJECT_DIR$/src/Parser.cup" />
-        <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/DivisionAssign.java" />
         <option value="$PROJECT_DIR$/src/ast/access/Access.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/other/Variable.java" />
         <option value="$PROJECT_DIR$/src/ast/access/VariableAccess.java" />
         <option value="$PROJECT_DIR$/src/ast/access/ArrayAccess.java" />
+        <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" />
+        <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java" />
       </list>
     </option>
   </component>
@@ -178,6 +188,15 @@
               <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ast" type="462c0819:PsiDirectoryNode" />
+              <item name="block" type="462c0819:PsiDirectoryNode" />
+              <item name="stmt" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ast" type="462c0819:PsiDirectoryNode" />
               <item name="expr" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -200,7 +219,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562316086200" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562316358333" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -279,7 +298,7 @@
       <workItem from="1562214883673" duration="14000" />
       <workItem from="1562215344160" duration="150000" />
       <workItem from="1562245275191" duration="22090000" />
-      <workItem from="1562299467835" duration="16472000" />
+      <workItem from="1562299467835" duration="16744000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -299,7 +318,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217241000" />
+    <option name="totallyTimeSpent" value="217513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,7 +338,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17181209" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17181209" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -726,20 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="32" column="39" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -822,7 +827,21 @@
     <entry file="file://$PROJECT_DIR$/src/Parser.cup">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
-          <caret line="362" column="25" lean-forward="true" selection-start-line="362" selection-start-column="25" selection-end-line="362" selection-end-column="25" />
+          <caret line="359" column="5" lean-forward="true" selection-start-line="359" selection-start-column="5" selection-end-line="359" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
       </provider>
     </entry>

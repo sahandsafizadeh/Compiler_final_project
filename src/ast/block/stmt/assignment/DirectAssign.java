@@ -1,23 +1,20 @@
 package ast.block.stmt.assignment;
 
-import ast.Node;
+import ast.access.Access;
 import ast.expr.Expression;
 import cg.CodeGenerator;
 import cg.Logger;
-import symtab.dscp.variable.VariableDescriptor;
 
 public class DirectAssign extends Assignment {
 
-    public DirectAssign(VariableDescriptor descriptor, Expression expr) {
-        super(descriptor, expr);
+    public DirectAssign(Access access, Expression expr) {
+        super(access, expr);
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("direct assignment");
         super.compile();
-        CodeGenerator.mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
-        return null;
     }
 
 }

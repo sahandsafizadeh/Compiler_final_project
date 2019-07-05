@@ -29,13 +29,12 @@ public class Assignment extends BlockContent {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Type t1 = descriptor.getType();
         Type t2 = ((Expression) expr.compile()).getType();
         determineCodes(t1, t2);
         if (castCode != 0)
             CodeGenerator.mVisit.visitInsn(castCode);
-        return null;
     }
 
     public void determineCodes(Type t1, Type t2) {
