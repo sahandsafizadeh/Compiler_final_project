@@ -1,9 +1,6 @@
 package ast.expr.other;
 
-import ast.Node;
 import ast.expr.Expression;
-import ast.expr.constant.IntegerConstant;
-import ast.type.CastingType;
 import ast.type.Type;
 import ast.type.VariableType;
 import cg.CodeGenerator;
@@ -19,9 +16,13 @@ public class SizeOf extends Expression {
     }
 
     @Override
-    public Node compile() {
+    public Type getResultType() {
+        return VariableType.INT;
+    }
+
+    @Override
+    public void compile() {
         CodeGenerator.mVisit.visitVarInsn(Opcodes.BIPUSH, determineOp(type));
-        return new IntegerConstant(CastingType.INT);
     }
 
     /**
@@ -34,7 +35,7 @@ public class SizeOf extends Expression {
     public int determineOp(Type type) {
         if (type == VariableType.CHAR)
             return 2;
-        else if (type == VariableType.LONG || type == VariableType.DOUBL)
+        else if (type == VariableType.LONG || type == VariableType.DOUBLE)
             return 8;
         else
             return 4;

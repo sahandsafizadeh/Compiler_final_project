@@ -23,7 +23,7 @@ public class MinusAssign extends OperatorAssign {
     @Override
     public void determineCodes(Type t1, Type t2) {
         super.determineCodes(t1, t2);
-        if (t1 == VariableType.DOUBL)
+        if (t1 == VariableType.DOUBLE)
             opcode = Opcodes.DSUB;
         else if (t1 == VariableType.FLOAT)
             opcode = Opcodes.FSUB;

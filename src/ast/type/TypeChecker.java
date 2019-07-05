@@ -13,8 +13,8 @@ public class TypeChecker {
         if (!isValidExprType(t))
             Logger.error("type mismatch");
 
-        if (t == DOUBL)
-            return StructureType.DOUBL;
+        if (t == DOUBLE)
+            return StructureType.DOUBLE;
         else if (t == FLOAT)
             return StructureType.FLOAT;
         else if (t == LONG)
@@ -27,8 +27,8 @@ public class TypeChecker {
         if (!(isValidExprType(t1) && isValidExprType(t2)))
             Logger.error("type mismatch");
 
-        if (t1 == DOUBL || t2 == DOUBL)
-            return StructureType.DOUBL;
+        if (t1 == DOUBLE || t2 == DOUBLE)
+            return StructureType.DOUBLE;
         else if (t1 == FLOAT || t2 == FLOAT)
             return StructureType.FLOAT;
         else if (t1 == LONG || t2 == LONG)
@@ -38,11 +38,11 @@ public class TypeChecker {
     }
 
     public static boolean isValidExprType(Type type) {
-        return type == BOOL || type == CHAR || type == INT || type == LONG || type == FLOAT || type == DOUBL;
+        return type == BOOL || type == CHAR || type == INT || type == LONG || type == FLOAT || type == DOUBLE;
     }
 
-    public static boolean isValidVariableType(Type type) {//todo check if it is useful
-        return isValidExprType(type) || type == VariableType.STRING || type == VariableType.AUTO;
+    public static boolean isValidVariableType(Type type) {
+        return isValidExprType(type) || type == VariableType.STRING;
     }
 
     public static boolean isValidSwitchType(Type type) {
@@ -51,7 +51,7 @@ public class TypeChecker {
 
     public static Type getAutoType(Object value) {//todo fixing
         if (value instanceof Double)
-            return VariableType.DOUBL;
+            return VariableType.DOUBLE;
         else if (value instanceof Integer)
             return VariableType.INT;
         else if (value instanceof Character)

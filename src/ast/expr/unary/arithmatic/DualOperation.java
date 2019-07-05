@@ -27,7 +27,7 @@ public abstract class DualOperation extends UnaryExpression {
      */
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.DOUBL) {
+        if (type == VariableType.DOUBLE) {
             ldrOp = Opcodes.DLOAD;
             strOp = Opcodes.DSTORE;
             addOp = Opcodes.DADD;

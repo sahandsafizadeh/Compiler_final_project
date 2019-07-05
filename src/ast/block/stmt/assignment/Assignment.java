@@ -40,7 +40,7 @@ public class Assignment implements Node {
         if (t1 == STRING && t2 == STRING) {
             ldrCode = Opcodes.ALOAD;
             strCode = Opcodes.ASTORE;
-        } else if (t1 == DOUBL) {
+        } else if (t1 == DOUBLE) {
             ldrCode = Opcodes.DLOAD;
             strCode = Opcodes.DSTORE;
             if (t2 == FLOAT)
@@ -52,7 +52,7 @@ public class Assignment implements Node {
         } else if (t1 == FLOAT) {
             ldrCode = Opcodes.FLOAT;
             strCode = Opcodes.FSTORE;
-            if (t2 == DOUBL)
+            if (t2 == DOUBLE)
                 castCode = Opcodes.D2F;
             else if (t2 == LONG)
                 castCode = Opcodes.L2F;
@@ -61,7 +61,7 @@ public class Assignment implements Node {
         } else if (t1 == LONG) {
             ldrCode = Opcodes.LLOAD;
             strCode = Opcodes.LSTORE;
-            if (t2 == DOUBL)
+            if (t2 == DOUBLE)
                 castCode = Opcodes.D2L;
             else if (t2 == FLOAT)
                 castCode = Opcodes.F2L;
@@ -70,7 +70,7 @@ public class Assignment implements Node {
         } else if (t1 == INT || t1 == BOOL || t1 == CHAR) {
             ldrCode = Opcodes.ILOAD;
             strCode = Opcodes.ISTORE;
-            if (t2 == DOUBL)
+            if (t2 == DOUBLE)
                 castCode = Opcodes.D2I;
             else if (t2 == FLOAT)
                 castCode = Opcodes.F2I;

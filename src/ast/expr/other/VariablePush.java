@@ -1,8 +1,6 @@
 package ast.expr.other;
 
-import ast.Node;
 import ast.expr.Expression;
-import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
 import ast.type.TypeChecker;
 import ast.type.VariableType;
@@ -21,18 +19,20 @@ public class VariablePush extends Expression {
     }
 
     @Override
-    public Node compile() {
-        Type type = descriptor.getType();
-        if (!(TypeChecker.isValidExprType(type) || type == VariableType.STRING))
+    public Type getResultType() {
+        if (!TypeChecker.isValidVariableType(descriptor.getType()))
             Logger.error("type mismatch");
+        return descriptor.getType();
+    }
 
-        CodeGenerator.mVisit.visitVarInsn(determineOp(type), descriptor.getStackIndex());
-        return new UnaryExpression(type);
+    @Override
+    public void compile() {
+        CodeGenerator.mVisit.visitVarInsn(determineOp(getResultType()), descriptor.getStackIndex());
     }
 
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.DOUBL)
+        if (type == VariableType.DOUBLE)
             return Opcodes.DLOAD;
         else if (type == VariableType.FLOAT)
             return Opcodes.FLOAT;

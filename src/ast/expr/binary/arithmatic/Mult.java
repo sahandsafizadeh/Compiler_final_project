@@ -21,7 +21,7 @@ public class Mult extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == DOUBL)
+        if (type == DOUBLE)
             return Opcodes.DMUL;
         else if (type == FLOAT)
             return Opcodes.FMUL;

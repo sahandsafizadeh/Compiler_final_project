@@ -21,7 +21,7 @@ public class LT extends LogicalBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == DOUBL) {
+        if (type == DOUBLE) {
             opCode = Opcodes.IFGE;
             compareCode = Opcodes.DCMPG;
         } else if (type == FLOAT) {

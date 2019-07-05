@@ -553,6 +553,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/other/CastExpr.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/other/SizeOf.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/other/VariablePush.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/unary/UnaryExpression.java">
           <value>
             <set />

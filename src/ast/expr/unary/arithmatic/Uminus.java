@@ -25,7 +25,7 @@ public class Uminus extends UnaryExpression {
 
     @Override
     public int determineOp(Type type) {
-        if (type == DOUBL)
+        if (type == DOUBLE)
             return Opcodes.DNEG;
         else if (type == FLOAT)
             return Opcodes.FNEG;

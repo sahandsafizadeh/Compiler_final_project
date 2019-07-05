@@ -16,7 +16,7 @@ public class DoubleConstant extends Constant {
 
     @Override
     public Type getResultType() {
-        return VariableType.DOUBL;
+        return VariableType.DOUBLE;
     }
 
     @Override

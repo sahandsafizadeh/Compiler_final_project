@@ -118,7 +118,7 @@ public class TableStack {
 
     public void addVariable(VariableDescriptor descriptor) {
         checkError(descriptor);
-        putDescriptor(descriptor.getType() == VariableType.DOUBL || descriptor.getType() == VariableType.LONG ? 2 : 1, descriptor);
+        putDescriptor(descriptor.getType() == VariableType.DOUBLE || descriptor.getType() == VariableType.LONG ? 2 : 1, descriptor);
     }
 
     public void addArray(ArrayDescriptor descriptor) {

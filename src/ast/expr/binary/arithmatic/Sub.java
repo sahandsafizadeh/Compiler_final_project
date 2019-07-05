@@ -21,7 +21,7 @@ public class Sub extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == DOUBL)
+        if (type == DOUBLE)
             return Opcodes.DSUB;
         else if (type == FLOAT)
             return Opcodes.FSUB;

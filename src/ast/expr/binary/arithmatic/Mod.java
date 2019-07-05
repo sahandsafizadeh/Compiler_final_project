@@ -21,7 +21,7 @@ public class Mod extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == DOUBL)
+        if (type == DOUBLE)
             return Opcodes.DREM;
         else if (type == FLOAT)
             return Opcodes.FREM;

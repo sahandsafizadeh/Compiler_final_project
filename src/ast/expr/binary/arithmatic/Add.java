@@ -22,7 +22,7 @@ public class Add extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == DOUBL)
+        if (type == DOUBLE)
             return Opcodes.DADD;
         else if (type == FLOAT)
             return Opcodes.FADD;
