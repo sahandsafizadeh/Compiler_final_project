@@ -2,9 +2,14 @@ package ast.program;
 
 import ast.Node;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Program implements Node {
 
     private static final Program instance = new Program();
+
+    private List<ProgramContent> contents = new ArrayList<>();
 
     private Program() {
     }
@@ -13,9 +18,14 @@ public class Program implements Node {
         return instance;
     }
 
+    public void addContent(ProgramContent content) {
+        contents.add(content);
+    }
+
     @Override
     public void compile() {
-
+        //todo check existance of function main
+        contents.forEach(ProgramContent::compile);
     }
 
 }

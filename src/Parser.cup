@@ -31,17 +31,17 @@ terminal String ID;
 nonterminal program;
 nonterminal program_part;
 
-nonterminal global_var_dcl;
+nonterminal ProgramContent global_var_dcl;
 nonterminal Type variable_type;
 
-nonterminal func_dcl;
+nonterminal ProgramContent func_dcl;
 nonterminal function_type;
 nonterminal func_dcl_part;
 nonterminal arguments;
 nonterminal arguments_part;
 nonterminal function_array_dcl;
 
-nonterminal struct_dcl;
+nonterminal ProgramContent struct_dcl;
 nonterminal struct_var_dcl;
 nonterminal struct_more_var_dcl;
 nonterminal struct_var_dcl_part;
@@ -128,17 +128,17 @@ program ::=
     ;
 
 program_part ::=
-    global_var_dcl
+    global_var_dcl:cont {:Program.getInstance().addContent(cont);:}
     |
-    func_dcl
+    func_dcl:cont {:Program.getInstance().addContent(cont);:}
     |
-    struct_dcl
+    struct_dcl:cont {:Program.getInstance().addContent(cont);:}
     ;
 
 
 //global variables
 global_var_dcl ::=
-    variable_type:t ID SEMI {:new GlobalVariableDCL(t, scanner.string.toString()).compile();:}
+    variable_type:t ID:id {:id = scanner.string.toString();:} SEMI {:new GlobalVarDCL(t, id);:}
     ;
 
 variable_type ::=
@@ -146,7 +146,7 @@ variable_type ::=
     |
     STRING {:RESULT = VariableType.STRING;:}
     |
-    ID {:new VariableType(scanner.string.toString());:}
+    ID:type {:new VariableType(type);:}
     ;
 
 

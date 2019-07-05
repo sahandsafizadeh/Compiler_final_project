@@ -117,6 +117,10 @@ public class TableStack {
         SYM_TAB_STACK.remove(SYM_TAB_STACK.size() - 1);
     }
 
+    public void addGlobalVariable(VariableDescriptor descriptor) {
+        getBase().put(descriptor);
+    }
+
     public void addVariable(VariableDescriptor descriptor) {
         checkError(descriptor);
         putDescriptor(descriptor.getType() == VariableType.DOUBLE || descriptor.getType() == VariableType.LONG ? 2 : 1, descriptor);
