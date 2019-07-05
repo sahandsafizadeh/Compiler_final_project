@@ -30,6 +30,11 @@ public abstract class Assignment extends BlockContent {
         expr.doCastCompile(access.getDescriptor().getType());
     }
 
+    public void checkOperation() {
+        if (access.getDescriptor().isConst())
+            Logger.error("constant variables can't be changed");
+    }
+
     public int determineOp(Type type) {
         boolean varAccess = access instanceof VariableAccess;
         if (type == DOUBLE)
@@ -51,6 +56,5 @@ public abstract class Assignment extends BlockContent {
             Logger.error("arrays can only be accessed using integer values");
         indexExpr.compile();
     }
-
 
 }

@@ -15,6 +15,7 @@ public abstract class OperatorAssign extends Assignment {
 
     @Override
     public void compile() {
+        checkOperation();
         int strCode = determineOp(access.getDescriptor().getType());
         if (access instanceof ArrayAccess) {
             arrayStoreInit();

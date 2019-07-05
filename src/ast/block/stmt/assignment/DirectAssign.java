@@ -3,6 +3,7 @@ package ast.block.stmt.assignment;
 import ast.access.Access;
 import ast.access.ArrayAccess;
 import ast.expr.Expression;
+import ast.type.TypeChecker;
 import cg.CodeGenerator;
 import cg.Logger;
 
@@ -15,6 +16,8 @@ public class DirectAssign extends Assignment {
     @Override
     public void compile() {
         Logger.log("direct assignment");
+        checkOperation();
+        TypeChecker.inferType(access.getDescriptor(), expr.getResultType());
         int strCode = determineOp(access.getDescriptor().getType());
         if (access instanceof ArrayAccess) {
             arrayStoreInit();

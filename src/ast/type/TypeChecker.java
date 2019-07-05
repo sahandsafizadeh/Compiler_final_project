@@ -1,6 +1,8 @@
 package ast.type;
 
 import cg.Logger;
+import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.variable.ArrayDescriptor;
 
 import static ast.type.FunctionType.*;
 
@@ -49,18 +51,9 @@ public class TypeChecker {
         return type == BOOL || type == CHAR || type == INT;
     }
 
-    public static Type getAutoType(Object value) {//todo fixing
-        if (value instanceof Double)
-            return VariableType.DOUBLE;
-        else if (value instanceof Integer)
-            return VariableType.INT;
-        else if (value instanceof Character)
-            return VariableType.CHAR;
-        else if (value instanceof Boolean)
-            return VariableType.BOOL;
-        else if (value instanceof String)
-            return VariableType.STRING;
-        return null;
+    public static void inferType(AbstractDescriptor descriptor, Type type) {
+        if (descriptor.getType() == VariableType.AUTO)
+            descriptor.setType(type);
     }
 
 }

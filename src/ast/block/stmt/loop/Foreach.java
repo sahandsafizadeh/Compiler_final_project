@@ -25,6 +25,7 @@ public class Foreach extends Statement {
     private VariableDescriptor loopCounter;
     private int strCode;
     private int ldrCode;
+    private int arrayLdrCode;
 
     public Foreach(String temp, String array, Block body) {
         this.temp = temp;
@@ -36,6 +37,7 @@ public class Foreach extends Statement {
     public void compile() {
         Logger.log("foreach loop");
         initLoop();
+        determineOp(loopArray.getType());
         mVisit.visitInsn(Opcodes.ICONST_0);
         mVisit.visitVarInsn(Opcodes.ISTORE, loopCounter.getStackIndex());
 
@@ -48,6 +50,7 @@ public class Foreach extends Statement {
 
         mVisit.visitVarInsn(Opcodes.ALOAD, loopArray.getStackIndex());
         mVisit.visitVarInsn(Opcodes.ILOAD, loopCounter.getStackIndex());
+        mVisit.visitInsn(arrayLdrCode);
         mVisit.visitVarInsn(strCode, loopTemp.getStackIndex());
 
         body.compile();
@@ -59,20 +62,25 @@ public class Foreach extends Statement {
 
     private void determineOp(Type type) {
         if (type == DOUBLE) {
+            strCode = Opcodes.DSTORE;
             ldrCode = Opcodes.DLOAD;
-            strCode = Opcodes.DASTORE;
+            arrayLdrCode = Opcodes.DALOAD;
         } else if (type == FLOAT) {
+            strCode = Opcodes.FSTORE;
             ldrCode = Opcodes.FLOAT;
-            strCode = Opcodes.FASTORE;
+            arrayLdrCode = Opcodes.FALOAD;
         } else if (type == LONG) {
+            strCode = Opcodes.LSTORE;
             ldrCode = Opcodes.LLOAD;
-            strCode = Opcodes.LASTORE;
+            arrayLdrCode = Opcodes.LALOAD;
         } else if (type == INT) {
+            strCode = Opcodes.ISTORE;
             ldrCode = Opcodes.ILOAD;
-            strCode = Opcodes.IASTORE;
+            arrayLdrCode = Opcodes.IALOAD;
         } else {
+            strCode = Opcodes.ASTORE;
             ldrCode = Opcodes.ALOAD;
-            strCode = Opcodes.AASTORE;
+            arrayLdrCode = Opcodes.AALOAD;
         }
     }
 

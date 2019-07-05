@@ -49,8 +49,8 @@ public class For extends Statement {
 
         mVisit.visitLabel(loopBody);
         block.compile();
-        block.markEnd();
         mVisit.visitJumpInsn(Opcodes.GOTO, block.getStart());
+        block.markEnd();
     }
 
 }
