@@ -2,9 +2,11 @@ package ast.expr.binary.arithmatic;
 
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+
+import static ast.type.VariableType.*;
+
 
 public class BinaryAnd extends ArithmeticBinaryExpr {
 
@@ -20,9 +22,9 @@ public class BinaryAnd extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.LONG)
+        if (type == LONG)
             return Opcodes.LAND;
-        else if (type == VariableType.INT)
+        else if (type == INT)
             return Opcodes.IAND;
         else
             Logger.error("type mismatch");

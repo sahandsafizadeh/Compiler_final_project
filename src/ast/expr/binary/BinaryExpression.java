@@ -2,6 +2,7 @@ package ast.expr.binary;
 
 import ast.expr.Expression;
 import ast.type.Type;
+import ast.type.TypeChecker;
 
 public abstract class BinaryExpression extends Expression {
 
@@ -16,6 +17,18 @@ public abstract class BinaryExpression extends Expression {
         super();
         this.expr1 = expr1;
         this.expr2 = expr2;
+    }
+
+    @Override
+    public Type getResultType() {
+        return TypeChecker.binaryExprTypeCheck(expr1.getResultType(), expr2.getResultType());
+    }
+
+    protected void compileExprs(Type resultType) {
+        expr1.compile();
+        expr1.doCastCompile(resultType);
+        expr2.compile();
+        expr2.doCastCompile(resultType);
     }
 
 }

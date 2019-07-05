@@ -2,9 +2,10 @@ package ast.expr.binary.arithmatic;
 
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+
+import static ast.type.VariableType.*;
 
 public class Mod extends ArithmeticBinaryExpr {
 
@@ -20,11 +21,11 @@ public class Mod extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.DOUBL)
+        if (type == DOUBL)
             return Opcodes.DREM;
-        else if (type == VariableType.FLOAT)
+        else if (type == FLOAT)
             return Opcodes.FREM;
-        else if (type == VariableType.LONG)
+        else if (type == LONG)
             return Opcodes.LREM;
         else
             return Opcodes.IREM;

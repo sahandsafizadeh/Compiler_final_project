@@ -1,10 +1,11 @@
 package ast.expr.binary.logical;
 
-import ast.Node;
 import ast.expr.Expression;
 import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+
+import static ast.type.VariableType.*;
 
 public class GT extends LogicalBinaryExpr {
 
@@ -13,14 +14,25 @@ public class GT extends LogicalBinaryExpr {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("grater than");
-        return super.compile();
+        super.compile();
     }
 
     @Override
     public int determineOp(Type type) {
-        return Opcodes.IF_ICMPLE;
+        if (type == DOUBL) {
+            opCode = Opcodes.IFLE;
+            compareCode = Opcodes.DCMPG;
+        } else if (type == FLOAT) {
+            opCode = Opcodes.IFLE;
+            compareCode = Opcodes.FCMPG;
+        } else if (type == LONG) {
+            opCode = Opcodes.IFLE;
+            compareCode = Opcodes.LCMP;
+        } else
+            opCode = Opcodes.IF_ICMPLE;
+        return 0;
     }
 
 }

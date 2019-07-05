@@ -2,9 +2,10 @@ package ast.expr.binary.arithmatic;
 
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+
+import static ast.type.VariableType.*;
 
 public class BinaryXor extends ArithmeticBinaryExpr {
 
@@ -20,9 +21,9 @@ public class BinaryXor extends ArithmeticBinaryExpr {
 
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.LONG)
+        if (type == LONG)
             return Opcodes.LXOR;
-        else if (type == VariableType.INT)
+        else if (type == INT)
             return Opcodes.IXOR;
         else
             Logger.error("type mismatch");
