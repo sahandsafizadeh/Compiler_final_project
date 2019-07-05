@@ -72,7 +72,7 @@ nonterminal Assignment loop_init_part;
 nonterminal Expression loop_cond_part;
 nonterminal Assignment loop_update_part;
 
-nonterminal assignment;
+nonterminal BlockContent assignment;
 nonterminal Access variable;
 nonterminal Access var_access;
 nonterminal var_access_array_part;
@@ -356,15 +356,15 @@ loop_update_part ::=
 
 //assignments
 assignment ::=
-    variable:a ASSIGN expr:e {:RESULT = new DirectAssign(dscp, expr);:}
+    variable:a ASSIGN expr:e {:RESULT = new DirectAssign(a, expr);:}
     |
-    variable:a PLUSASSIGN expr:e {:RESULT = new PlusAssign(dscp, expr);:}
+    variable:a PLUSASSIGN expr:e {:RESULT = new PlusAssign(a, expr);:}
     |
-    variable:a MINUSASSIGN expr:e {:RESULT = new MinusAssign(dscp, expr);:}
+    variable:a MINUSASSIGN expr:e {:RESULT = new MinusAssign(a, expr);:}
     |
-    variable:a MULTASSIGN expr:e {:RESULT = new MultiplyAssign(dscp, expr);:}
+    variable:a MULTASSIGN expr:e {:RESULT = new MultiplyAssign(a, expr);:}
     |
-    variable:a DIVASSIGN expr:e {:RESULT = new DivisionAssign(dscp, expr);:}
+    variable:a DIVASSIGN expr:e {:RESULT = new DivisionAssign(a, expr);:}
     ;
 
 variable ::=
@@ -395,13 +395,13 @@ expr ::=
     |
     MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
-    PREFMINUS2 variable:dscp {:RESULT = new PrefixMinus2(dscp);:}
+    PREFMINUS2 variable:a {:RESULT = new PrefixMinus2(a);:}
     |
-    PREFPLUS2 variable:dscp {:RESULT = new PrefixPlus2(dscp);:}
+    PREFPLUS2 variable:a {:RESULT = new PrefixPlus2(a);:}
     |
-    variable:dscp PREFMINUS2 {:RESULT = new PostfixMinus2(dscp);:} %prec POSTMINUS2
+    variable:a PREFMINUS2 {:RESULT = new PostfixMinus2(a);:} %prec POSTMINUS2
     |
-    variable:dscp PREFPLUS2 {:RESULT = new PostfixPlus2(dscp);:} %prec POSTPLUS2
+    variable:a PREFPLUS2 {:RESULT = new PostfixPlus2(a);:} %prec POSTPLUS2
     |
     PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new CastExpr(t, e);:} %prec CASTPRANTOP
     |

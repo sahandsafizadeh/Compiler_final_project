@@ -29,7 +29,7 @@ public class DivisionAssign extends OperatorAssign {
             opcode = Opcodes.FDIV;
         else if (t1 == VariableType.LONG)
             opcode = Opcodes.LDIV;
-        else if (t1 == VariableType.INT | t1 == VariableType.BOOL || t1 == VariableType.CHAR)
+        else if (t1 == VariableType.INT)
             opcode = Opcodes.IDIV;
         else
             Logger.error("type mismatch");

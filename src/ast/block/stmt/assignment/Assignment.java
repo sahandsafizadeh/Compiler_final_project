@@ -1,6 +1,8 @@
 package ast.block.stmt.assignment;
 
 import ast.Node;
+import ast.access.Access;
+import ast.block.BlockContent;
 import ast.expr.Expression;
 import ast.type.Type;
 import cg.CodeGenerator;
@@ -13,16 +15,16 @@ import static ast.type.StructureType.BOOL;
 import static ast.type.StructureType.LONG;
 import static ast.type.VariableType.STRING;
 
-public class Assignment implements Node {
+public class Assignment extends BlockContent {
 
-    protected VariableDescriptor descriptor;
+    protected Access access;
     protected Expression expr;
     protected int castCode;
     protected int ldrCode;
     protected int strCode;
 
-    public Assignment(VariableDescriptor descriptor, Expression expr) {
-        this.descriptor = descriptor;
+    public Assignment(Access access, Expression expr) {
+        this.access = access;
         this.expr = expr;
     }
 

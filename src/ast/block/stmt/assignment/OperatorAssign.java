@@ -1,6 +1,7 @@
 package ast.block.stmt.assignment;
 
 import ast.Node;
+import ast.access.Access;
 import ast.expr.Expression;
 import cg.CodeGenerator;
 import symtab.dscp.variable.VariableDescriptor;
@@ -9,8 +10,8 @@ public class OperatorAssign extends Assignment {
 
     protected int opcode;
 
-    public OperatorAssign(VariableDescriptor descriptor, Expression expr) {
-        super(descriptor, expr);
+    public OperatorAssign(Access access, Expression expr) {
+        super(access, expr);
     }
 
     @Override
