@@ -1,6 +1,5 @@
 package ast.expr.binary.arithmatic;
 
-import ast.Node;
 import ast.expr.Expression;
 import ast.expr.binary.BinaryExpression;
 import ast.type.Type;
@@ -18,12 +17,18 @@ public class ArithmeticBinaryExpr extends BinaryExpression {
     }
 
     @Override
-    public Node compile() {
-        Expression e1 = (Expression) expr1.compile();
-        Expression e2 = (Expression) expr2.compile();
-        Type resultType = TypeChecker.binaryExprTypeCheck(e1.getType(), e2.getType());
+    public Type getResultType() {
+        return TypeChecker.binaryExprTypeCheck(expr1.getResultType(), expr2.getResultType());
+    }
+
+    @Override
+    public void compile() {
+        Type resultType = getResultType();
+        expr1.compile();
+        expr1.doCastCompile(resultType);
+        expr2.compile();
+        expr2.doCastCompile(resultType);
         CodeGenerator.mVisit.visitInsn(determineOp(resultType));
-        return new ArithmeticBinaryExpr(resultType);
     }
 
     @Override

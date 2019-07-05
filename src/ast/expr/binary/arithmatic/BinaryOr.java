@@ -1,6 +1,5 @@
 package ast.expr.binary.arithmatic;
 
-import ast.Node;
 import ast.expr.Expression;
 import ast.type.Type;
 import ast.type.VariableType;
@@ -14,14 +13,14 @@ public class BinaryOr extends ArithmeticBinaryExpr {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("binary or");
-        return super.compile();
+        super.compile();
     }
 
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.LONG && (expr1.getType() == VariableType.LONG && expr2.getType() == VariableType.LONG))
+        if (type == VariableType.LONG)
             return Opcodes.LOR;
         else if (type == VariableType.INT)
             return Opcodes.IOR;

@@ -83,18 +83,12 @@ W
 'src/ast/expr/unary/UnaryExpression.java,9\f\9f059a388a20b5d6f93f90d793e494738280ff01
 M
 src/ast/type/TypeChecker.java,8\d\8dc3087fd997d2665b8483ce1b16f57e413cd58c
-W
-'src/symtab/dscp/VariableDescriptor.java,a\3\a37d0e8813c19df1c0d94e772966e4956efdcfc1
-X
-(src/symtab/dscp/StructureDescriptor.java,b\5\b5c8ad88e8881d238c92350bdc9cd155cf98daff
 V
 &src/symtab/dscp/KeywordDescriptor.java,8\c\8c6fb73be507a5da91773f910a56096c041e7ef2
 W
 'src/symtab/dscp/FunctionDescriptor.java,a\8\a89e35e31c79ac5a4dd10c31cd56f0581c412130
 O
 src/symtab/dscp/Descriptor.java,3\8\38df08bec2709824858cb05d383c033b255a3e80
-T
-$src/symtab/dscp/ArrayDescriptor.java,c\c\cc371ff9fd5bbdee8bea93e15418c8e7fae74456
 K
 src/symtab/SymbolTable.java,d\c\dc971c3fb4de369e0209e97f3d9ac4972202170e
 J
@@ -119,8 +113,6 @@ G
 src/ast/Assignment.java,4\1\4111cf24cc85d89999b8c99ae9168539a3bbaf4f
 J
 src/ast/dcl/SingleVar.java,2\0\20f6363290fb245f12de3a0c20f97991ed8aa472
-I
-src/ast/dcl/ArrayDCL.java,b\5\b5656d5d4252d5fccfdac7bb1cd2e07ee5f75e76
 h
 8src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java,c\9\c921effb07a7768a560d588becc12c71816da39d
 S
@@ -141,24 +133,14 @@ _
 /src/ast/block/stmt/conditional/ifstmt/Else.java,f\e\fedeb2258b78ec9f33cd3f459ed611eac54fa4b4
 ]
 -src/ast/block/stmt/conditional/ifstmt/If.java,4\4\4491e041874f9850ecb4eac4a8a0352f7f5a5d34
-a
-1src/ast/block/stmt/conditional/casestmt/Case.java,a\9\a9657b68e622acc6d547e6c1f5b68e608ac6c8b4
 c
 3src/ast/block/stmt/conditional/casestmt/Switch.java,f\8\f80fe8694bc750c9cc9fb46820d9f1997cd6373f
-d
-4src/ast/block/stmt/conditional/casestmt/Default.java,d\2\d2c08464af444722d3592563cfc37eb736c46cfe
 b
 2src/ast/block/stmt/conditional/casestmt/Cases.java,c\a\ca7d774ff7003b052792b084f09b9451ca10c8c8
-O
-src/symtab/dscp/Structures.java,b\c\bccfeba9ec37092d8b84c7ea9afa46e4c416945e
 H
 src/ast/expr/SizeOf.java,b\c\bcc8c5e66fb541e464aa0b57215508b184646875
-[
-+src/ast/dcl/variable/GlobalVariableDCL.java,2\7\2743bed45f4dd5cb7e4103eb3916736c1b9da3da
 U
 %src/ast/dcl/variable/VariableDcl.java,5\6\560ef943e962dd1b1342c3abc228d98cce71d324
-Z
-*src/ast/dcl/variable/LocalVariableDCL.java,b\a\babb910c585ee82b6f043b47c1c788e246e24d6c
 S
 #src/ast/dcl/variable/Variables.java,1\9\1956c4d66f7615cb5f45a12eab1cef38e37b455c
 M
@@ -191,3 +173,21 @@ a
 .src/ast/block/stmt/assignment/MinusAssign.java,3\4\34c3a8ca2c2a2ff85edbf9ea9f398ae73492fe63
 a
 1src/ast/block/stmt/assignment/DivisionAssign.java,a\2\a2bf323ac989fa23291bf3d0300477e629ae2cc4
+Y
+)src/symtab/dscp/structure/Structures.java,0\1\01c0c66dd674d98865276ccbbbac4db0170211dd
+b
+2src/symtab/dscp/structure/StructureDescriptor.java,3\7\37eaf71e96b66813f48d7cfe565cc0d4291bc38f
+`
+0src/symtab/dscp/variable/VariableDescriptor.java,d\c\dcc4bdd3fdbbc34e88214545f463964f7931044b
+]
+-src/symtab/dscp/variable/ArrayDescriptor.java,f\1\f19df9ff03ddd8bd4f2ccd257a8428250850bc28
+`
+0src/symtab/dscp/variable/AbstractDescriptor.java,0\0\00f7de7c3a6006bb6ddf180b93fbe661ea553901
+U
+%src/ast/dcl/variable/ArrayVarDCL.java,c\3\c371631f94a499c7ffb9121b95f0e2ae7734c47e
+U
+%src/ast/dcl/variable/VariableDCL.java,3\7\37a2bf9ac79ac7a52ffa95755c5fd9989f23df9e
+P
+ src/ast/dcl/variable/VarDCL.java,3\0\30d82dc246bcfc219a985e640408bb74c64b1000
+U
+%src/ast/dcl/variable/CompleteDCL.java,0\f\0f8d047bf328128015bb3605534327217c3c9255

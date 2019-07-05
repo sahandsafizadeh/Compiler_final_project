@@ -41,7 +41,7 @@ public class TypeChecker {
         return type == BOOL || type == CHAR || type == INT || type == LONG || type == FLOAT || type == DOUBL;
     }
 
-    public static boolean isValidVariableType(Type type) {
+    public static boolean isValidVariableType(Type type) {//todo check if it is useful
         return isValidExprType(type) || type == VariableType.STRING || type == VariableType.AUTO;
     }
 
@@ -49,7 +49,7 @@ public class TypeChecker {
         return type == BOOL || type == CHAR || type == INT;
     }
 
-    public static Type getAutoType(Object value) {
+    public static Type getAutoType(Object value) {//todo fixing
         if (value instanceof Double)
             return VariableType.DOUBL;
         else if (value instanceof Integer)

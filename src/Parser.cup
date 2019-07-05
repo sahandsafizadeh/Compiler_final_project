@@ -454,7 +454,7 @@ arithmatic_expr ::=
     expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2);:}
     ;
 
-conditional_expr ::=//These expressions can't operate on non-int types
+conditional_expr ::=
     expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2);:}
     |
     expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2);:}

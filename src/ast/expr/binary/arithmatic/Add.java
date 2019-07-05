@@ -1,7 +1,6 @@
 package ast.expr.binary.arithmatic;
 
 
-import ast.Node;
 import ast.expr.Expression;
 import ast.type.Type;
 import ast.type.VariableType;
@@ -15,9 +14,9 @@ public class Add extends ArithmeticBinaryExpr {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("add");
-        return super.compile();
+        super.compile();
     }
 
     @Override

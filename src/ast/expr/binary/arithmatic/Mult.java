@@ -1,8 +1,6 @@
 package ast.expr.binary.arithmatic;
 
-import ast.Node;
 import ast.expr.Expression;
-import ast.type.StructureType;
 import ast.type.Type;
 import ast.type.VariableType;
 import cg.Logger;
@@ -15,9 +13,9 @@ public class Mult extends ArithmeticBinaryExpr {
     }
 
     @Override
-    public Node compile() {
+    public void compile() {
         Logger.log("multiply");
-        return super.compile();
+        super.compile();
     }
 
     @Override
