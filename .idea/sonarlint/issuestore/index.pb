@@ -105,14 +105,8 @@ S
 #src/ast/expr/constant/Constant.java,a\3\a3a3511da1d192d5d4a093a2029f87f42094a9c9
 W
 'src/ast/expr/constant/CharConstant.java,5\a\5a8ecd0477a4f3a5fe7cd7fe605186468de885ac
-J
-src/ast/expr/CastExpr.java,e\f\ef9483c1b315e369c734e4739bec06b762d398a7
 N
 src/ast/type/VariableType.java,3\5\356fed88a72950eab9113474d873b8950874480c
-G
-src/ast/Assignment.java,4\1\4111cf24cc85d89999b8c99ae9168539a3bbaf4f
-J
-src/ast/dcl/SingleVar.java,2\0\20f6363290fb245f12de3a0c20f97991ed8aa472
 h
 8src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java,c\9\c921effb07a7768a560d588becc12c71816da39d
 S
@@ -129,16 +123,12 @@ b
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 P
  src/ast/block/stmt/Continue.java,c\4\c4ce9019e733eab9f8c020969812d9d2fa92d2fa
-_
-/src/ast/block/stmt/conditional/ifstmt/Else.java,f\e\fedeb2258b78ec9f33cd3f459ed611eac54fa4b4
 ]
 -src/ast/block/stmt/conditional/ifstmt/If.java,4\4\4491e041874f9850ecb4eac4a8a0352f7f5a5d34
 c
 3src/ast/block/stmt/conditional/casestmt/Switch.java,f\8\f80fe8694bc750c9cc9fb46820d9f1997cd6373f
 b
 2src/ast/block/stmt/conditional/casestmt/Cases.java,c\a\ca7d774ff7003b052792b084f09b9451ca10c8c8
-H
-src/ast/expr/SizeOf.java,b\c\bcc8c5e66fb541e464aa0b57215508b184646875
 U
 %src/ast/dcl/variable/VariableDcl.java,5\6\560ef943e962dd1b1342c3abc228d98cce71d324
 S
@@ -147,8 +137,6 @@ M
 src/ast/block/stmt/Break.java,2\2\22fec8147e3fca8c3afc2ff489b9f10157b5e72c
 S
 #src/ast/expr/unary/logical/Not.java,6\8\68c5a79a0bd0e57faf214c9aa617d0527455bc5c
-N
-src/ast/expr/VariablePush.java,5\b\5b8981b1cda0b5bf6fa976b08cbc01ecc1f88744
 `
 0src/ast/expr/unary/arithmatic/DualOperation.java,3\a\3ab6ee1f7649d0ae8b8bf1ffe7090d2039cbabd5
 ^
@@ -191,3 +179,27 @@ P
  src/ast/dcl/variable/VarDCL.java,3\0\30d82dc246bcfc219a985e640408bb74c64b1000
 U
 %src/ast/dcl/variable/CompleteDCL.java,0\f\0f8d047bf328128015bb3605534327217c3c9255
+O
+src/ast/expr/other/Casting.java,d\3\d3ab999100386811db4b2df237cb582eb8100f8f
+N
+src/ast/expr/other/SizeOf.java,6\2\62256f1625c11ae49a8b238187ca02499c04eeeb
+P
+ src/ast/expr/other/Variable.java,f\7\f703aac168230d841056a49ce8dfba97a7cfcc2c
+O
+src/ast/access/ArrayAccess.java,f\4\f4661ac1c90d650cac91a9bcc4ad861005680322
+J
+src/ast/access/Access.java,f\0\f00d9a42f70ab7de9ccf84b1acaed89b4e473442
+R
+"src/ast/access/VariableAccess.java,f\b\fbb870bcbcc81950ef2e481148f92d6aee0cb9a6
+S
+#src/ast/program/ProgramContent.java,3\1\312266c9fd2339c79fd5bec333336473c3463bbb
+L
+src/ast/program/Program.java,0\f\0f5066c3add2cfdb585d0902875ee8602d7e690f
+X
+(src/ast/program/global/GlobalVarDCL.java,a\d\ad8da22a1c4d1c062a525a019bfbac50a8209a3d
+[
++src/ast/program/structure/StructureDCL.java,7\4\74695c73b81c959d3aa3aa9852acd1bb2fdee997
+[
++src/ast/program/structure/StructVarDCL.java,1\4\140ef3e14334a1eb4e3493dc72acd8db9a362b96
+=
+OldParser.cup,4\3\434e0fd88a1bc0559005490ebe9dbc676a1aa883

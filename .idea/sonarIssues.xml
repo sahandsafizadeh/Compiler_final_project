@@ -28,6 +28,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/OldParser.cup">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/inputFiles/A.java">
           <value>
             <set />
@@ -699,6 +704,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/program/ProgramContent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/StructureDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/structure/StructVarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/structure/StructureDCL.java">
           <value>
             <set />
           </value>

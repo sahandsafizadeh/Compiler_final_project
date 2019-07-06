@@ -15,13 +15,10 @@ public class CodeGenerator {
 
     public static ClassWriter clWriter;
     public static MethodVisitor mVisit;
-    public static FieldVisitor fVisit;
-
 
     public static void main(String[] args) throws IOException {
-        ASMifier.main(new String[]{"A.class"});
-//        initClass();
-//        writeFinalClassCode();
+        initClass();
+        writeFinalClassCode();
     }
 
 
@@ -38,23 +35,8 @@ public class CodeGenerator {
         mVisit.visitMaxs(1, 1);
         mVisit.visitEnd();
         mVisit = clWriter.visitMethod(ACC_PUBLIC | ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
-        Label dl = new Label();
-        Label l1 = new Label();
-        Label l2 = new Label();
-        Label l3 = new Label();
-        Label l4 = new Label();
-        mVisit.visitLookupSwitchInsn(dl, new int[]{2, 1, 7, 4}, new Label[]{l1, l2, l3, l4});
-        mVisit.visitLabel(l1);
-        mVisit.visitInsn(NOP);
-        mVisit.visitLabel(l2);
-        mVisit.visitInsn(NOP);
-        mVisit.visitLabel(l3);
-        mVisit.visitInsn(NOP);
-        mVisit.visitLabel(l4);
-        mVisit.visitInsn(NOP);
-        mVisit.visitLabel(dl);
-        mVisit.visitInsn(NOP);
         mVisit.visitCode();
+        mVisit.visitMaxs(1, 1);
         mVisit.visitEnd();
     }
 

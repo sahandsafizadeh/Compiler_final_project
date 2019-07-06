@@ -1,10 +1,11 @@
 public class A {
 
-    private static double test;
+    public static class B {
+        int a;
+    }
 
     public static void main(String[] args) {
-        int[] a = new int[10];
-        test = 3;
+        System.out.println(new B().a);
     }
 
 }

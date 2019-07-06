@@ -18,7 +18,7 @@ BEGIN, END, IF, ELSE, SWITCH, OF, CASE, DEFAULT, FOR, FOREACH, IN, REPEAT, UNTIL
 //operators
 terminal SEMI, COL, COMA, DOT, BINOT, PLUS, MINUS, UMINUS, MULT, DIVIDE, MOD, ASSIGN, BIAND, BIOR, BIEXOR, NOT, AND,
 OR, LT, GT, BRACKOP, BRACKCL, PRANTOP, PRANTCL, CASTPRANTOP, FUNCPRANTOP, PREFPLUS2, PREFMINUS2, POSTPLUS2, POSTMINUS2,
-PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NE, EQ, LE, GE;
+PLUSASSIGN, MINUSASSIGN, MULTASSIGN, DIVASSIGN, NOTEQ, EQEQ, LTEQ, GTEQ;
 
 //literals
 terminal CHAR_LIT, STR_LIT;
@@ -206,7 +206,7 @@ struct_var_dcl ::=
     ;
 
 struct_var_dcl_part ::=
-    struct_type var_dcl_cnt var_dcl_cnt_extension
+    struct_type:t var_dcl_cnt:dcl
     ;
 
 struct_type ::=
@@ -250,7 +250,7 @@ loop_block_content ::=
 var_dcl ::=
     CONST {:Variables.getInstance.setConstant(true);:} var_dcl_part SEMI
     |
-    {:Variables.getInstance.setConstant(false);:} var_dcl_part SEMI
+    var_dcl_part SEMI
     ;
 
 var_dcl_part ::=
@@ -268,7 +268,7 @@ var_dcl_cnt_part ::=
     ;
 
 var_dcl_cnt_extension ::=
-    COMA var_dcl_cnt:cont {:Blocks.getINstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
+    COMA var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
     |
     /*epsilon*/
     ;
@@ -447,15 +447,15 @@ arithmatic_expr ::=
 conditional_expr ::=
     expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2);:}
     |
-    expr:e1 LE expr:e2 {:RESULT = new LE(e1, e2);:}
+    expr:e1 LTEQ expr:e2 {:RESULT = new LE(e1, e2);:}
     |
     expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2);:}
     |
-    expr:e1 GE expr:e2 {:RESULT = new GE(e1, e2);:}
+    expr:e1 GTEQ expr:e2 {:RESULT = new GE(e1, e2);:}
     |
-    expr:e1 EQ expr:e2 {:RESULT = new EQ(e1, e2);:}
+    expr:e1 EQEQ expr:e2 {:RESULT = new EQ(e1, e2);:}
     |
-    expr:e1 NE expr:e2 {:RESULT = new NE(e1, e2);:}
+    expr:e1 NOTEQ expr:e2 {:RESULT = new NE(e1, e2);:}
     |
     expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2);:}
     |
