@@ -10,9 +10,9 @@ public class SizeOf extends Expression {
 
     private Type type;
 
-    public SizeOf(Type type, Type type1) {
+    public SizeOf(Type type) {
         super(type);
-        this.type = type1;
+        this.type = type;
     }
 
     @Override

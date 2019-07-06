@@ -155,16 +155,15 @@ public class Symbol extends java_cup.runtime.Symbol {
             "MULTASSIGN",
             "DIVASSIGN",
             "NOTEQ",
-            "EQ",
-            "LE",
-            "GE",
+            "EQEQ",
+            "LTEQ",
+            "GTEQ",
             "CHAR_LIT",
             "STR_LIT",
             "INT_LIT",
             "FLOAT_LIT",
             "ID"
     };
-
     private int code;
     private String value;
 

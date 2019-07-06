@@ -2,13 +2,14 @@ package ast.expr.unary.arithmatic;
 
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+import symtab.dscp.variable.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import static cg.CodeGenerator.mVisit;
 
 public class PrefixMinus2 extends DualOperation {
 
-    public PrefixMinus2(VariableDescriptor descriptor) {
+    public PrefixMinus2(AbstractDescriptor descriptor) {
         super(descriptor);
     }
 
