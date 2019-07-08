@@ -118,6 +118,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/StructureAccess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/access/VariableAccess.java">
           <value>
             <set />
@@ -283,6 +293,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/CompleteDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/dcl/GlobalVariableDCL.java">
           <value>
             <set />
@@ -293,7 +308,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/VarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/dcl/VariableDcl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/Variables.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/array/ArrayVarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/struct/StructDCL.java">
           <value>
             <set />
           </value>
@@ -713,12 +748,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/structure/StructVarAssign.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/program/structure/StructVarDCL.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/structure/StructVarInitialization.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/program/structure/StructureDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/structure/Structures.java">
           <value>
             <set />
           </value>
@@ -969,6 +1024,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/structure/StructureDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/structure/Structures.java">
           <value>
             <set />
           </value>

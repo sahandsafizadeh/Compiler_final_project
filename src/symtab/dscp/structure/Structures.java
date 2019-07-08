@@ -27,16 +27,16 @@ public class Structures {
         return false;
     }
 
-    public StructureDescriptor newDescriptor(String name) {
-        for (StructureDescriptor type : ALL_STRUCTURE_TYPES) {
-            if (type.getName().equals(name)) {
-                List<VariableDescriptor> temp = type.getVariables().entrySet()
-                        .stream().map(e -> e.getValue().clone()).collect(Collectors.toList());
-                return new StructureDescriptor(name, temp);
-            }
-        }
-        Logger.error("type not found");
-        return null;
-    }
+//    public StructureDescriptor newDescriptor(String name) {
+//        for (StructureDescriptor type : ALL_STRUCTURE_TYPES) {
+//            if (type.getName().equals(name)) {
+//                List<VariableDescriptor> temp = type.getVariables().entrySet()
+//                        .stream().map(e -> e.getValue().clone()).collect(Collectors.toList());
+//                return new StructureDescriptor(name, temp);
+//            }
+//        }
+//        Logger.error("type not found");
+//        return null;
+//    }
 
 }

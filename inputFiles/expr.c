@@ -1,9 +1,9 @@
-int a;
-int b;
 function int main()
 begin
-    a = 2;
-    b = 1;
+
+    int a = 2;
+    int b = 1;
     int c = a + b;
+    
 end
 

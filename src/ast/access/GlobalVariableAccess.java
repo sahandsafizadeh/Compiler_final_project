@@ -1,0 +1,29 @@
+package ast.access;
+
+import ast.type.Type;
+import cg.CodeGenerator;
+import cg.Logger;
+import org.objectweb.asm.Opcodes;
+import symtab.TableStack;
+
+public class GlobalVariableAccess extends Access {
+
+    @Override
+    public void setDescriptor(String id) {
+        descriptor = TableStack.getInstance().findGlobal(id);
+        if (descriptor == null)
+            Logger.error("no global variable found");
+    }
+
+    @Override
+    public void compile() {
+        Logger.log("global variable access load");
+        CodeGenerator.mVisit.visitFieldInsn(Opcodes.GETSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().getTypeName());
+    }
+
+    @Override
+    public int determineOp(Type type) {
+        return 0;
+    }
+
+}

@@ -19,6 +19,10 @@ import ast.block.stmt.conditional.ifstmt.If;
 import ast.block.stmt.loop.For;
 import ast.block.stmt.loop.Foreach;
 import ast.block.stmt.loop.Repeat;
+import ast.dcl.CompleteDCL;
+import ast.dcl.VarDCL;
+import ast.dcl.Variables;
+import ast.dcl.array.ArrayVarDCL;
 import ast.dcl.variable.*;
 import ast.expr.Expression;
 import ast.expr.binary.arithmatic.*;
@@ -1234,7 +1238,7 @@ public class Parser extends java_cup.runtime.lr_parser {
                 case 32: // struct_type ::= AUTO
                 {
                     Type RESULT = null;
-                    RESULT = StructureType.AUTO;
+                    RESULT = VariableType.AUTO;
                     CUP$Parser$result = parser.getSymbolFactory().newSymbol("struct_type", 14, ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()), RESULT);
                 }
                 return CUP$Parser$result;

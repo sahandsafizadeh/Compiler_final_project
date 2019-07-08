@@ -1,10 +1,11 @@
-package ast.dcl.variable;
+package ast.dcl;
 
 import ast.type.Type;
 
 public class Variables {
 
     private static final Variables instance = new Variables();
+
     private boolean constant;
     private Type type;
 

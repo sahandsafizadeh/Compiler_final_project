@@ -4,6 +4,7 @@ import ast.type.VariableType;
 import cg.Logger;
 import symtab.dscp.Descriptor;
 import symtab.dscp.KeywordDescriptor;
+import symtab.dscp.structure.StructureDescriptor;
 import symtab.dscp.variable.AbstractDescriptor;
 import symtab.dscp.variable.ArrayDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
@@ -17,6 +18,7 @@ public class TableStack {
 
     private static final TableStack instance = new TableStack();
     private final List<SymbolTable> SYM_TAB_STACK = new ArrayList<>();
+    private final SymbolTable GLOBALS;
     private int mainStackIndex = 1;
     private int functionStackIndex = 0;
     private boolean inFuncDCL = false;
@@ -89,9 +91,8 @@ public class TableStack {
             "<=",
             ">="};
 
-    static {
-        instance.SYM_TAB_STACK
-                .add(new SymbolTable(Arrays.stream(KEYWORDS).collect(Collectors.toMap(key -> key, key -> new KeywordDescriptor()))));
+    {
+        GLOBALS = new SymbolTable(Arrays.stream(KEYWORDS).collect(Collectors.toMap(key -> key, key -> new KeywordDescriptor())));
     }
 
     private TableStack() {
@@ -117,8 +118,10 @@ public class TableStack {
         SYM_TAB_STACK.remove(SYM_TAB_STACK.size() - 1);
     }
 
-    public void addGlobalVariable(VariableDescriptor descriptor) {
-        getBase().put(descriptor);
+    public void addGlobal(AbstractDescriptor descriptor) {
+        GLOBALS.put(descriptor);
+        if (descriptor instanceof StructureDescriptor)
+            ;//todo
     }
 
     public void addVariable(VariableDescriptor descriptor) {
@@ -131,13 +134,17 @@ public class TableStack {
         putDescriptor(1, descriptor);
     }
 
-    public Descriptor find(String id) {
+    public AbstractDescriptor find(String id) {
         for (int i = SYM_TAB_STACK.size() - 1; i >= 0; i--) {
             SymbolTable table = SYM_TAB_STACK.get(i);
             if (table.contains(id))
                 return table.get(id);
         }
-        return null;
+        return findGlobal(id);
+    }
+
+    public AbstractDescriptor findGlobal(String id) {
+        return GLOBALS.contains(id) ? GLOBALS.get(id) : null;
     }
 
     private void checkError(AbstractDescriptor descriptor) {

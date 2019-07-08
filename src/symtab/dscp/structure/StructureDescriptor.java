@@ -1,32 +1,16 @@
 package symtab.dscp.structure;
 
-import cg.Logger;
-import symtab.dscp.Descriptor;
+import symtab.dscp.variable.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-public class StructureDescriptor implements Descriptor {
+public class StructureDescriptor extends AbstractDescriptor {
 
-    private String name;
     private Map<String, VariableDescriptor> variables;
 
-    public StructureDescriptor(String name, List<VariableDescriptor> variables) {
-        if (Structures.getInstance().typeExists(name))
-            Logger.error("type already exists");
-        this.name = name;
-        this.variables = variables.stream().collect(Collectors.toMap(VariableDescriptor::getName, dscp -> dscp));
-        Structures.getInstance().ALL_STRUCTURE_TYPES.add(this);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Map<String, VariableDescriptor> getVariables() {
-        return variables;
+    public VariableDescriptor get(String name) {
+        return variables.get(name);
     }
 
 }

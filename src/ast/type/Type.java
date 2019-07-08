@@ -8,7 +8,7 @@ public abstract class Type {
         this.type = type;
     }
 
-    public String getType() {
+    public String getTypeName() {
         return type;
     }
 

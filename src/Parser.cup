@@ -76,9 +76,10 @@ nonterminal arguments_part;
 nonterminal function_array_dcl;
 
 nonterminal ProgramContent struct_dcl;
-nonterminal struct_var_dcl;
+nonterminal StructVarDCL struct_var_dcl;
 nonterminal struct_more_var_dcl;
-nonterminal struct_var_dcl_part;
+nonterminal StructVarDCL struct_var_dcl_part;
+nonterminal StructVarDCL struct_var_dcl_cnt;
 nonterminal Type struct_type;
 
 nonterminal Block block;
@@ -172,13 +173,15 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type:t ID:id {:id = scanner.string.toString();:} SEMI {:new GlobalVarDCL(t, id);:}
+    variable_type:t ID:id {:id = scanner.string.toString();:} SEMI {:RESULT = new GlobalVarDCL(t, id);:}
     ;
 
 variable_type ::=
     struct_type:t {:RESULT = t;:}
     |
     STRING {:RESULT = VariableType.STRING;:}
+    |
+    AUTO {:RESULT = VariableType.AUTO;:}
     |
     ID:type {:new VariableType(type);:}
     ;
@@ -224,23 +227,29 @@ function_array_dcl ::=
 
 //structurs
 struct_dcl ::=
-    RECORD ID BEGIN struct_var_dcl struct_more_var_dcl END RECORD SEMI
+    RECORD {:Structures.getInstance().init();:} ID:id BEGIN struct_var_dcl:dcl {:Structures.getInstance().addDCL(dcl);:} struct_more_var_dcl END RECORD SEMI {:RESULT = Structures.getInstance().getDCL(id);:}
     ;
 
 struct_more_var_dcl ::=
-    struct_var_dcl struct_more_var_dcl
+    struct_var_dcl:dcl {:Structures.getInstance().addDCL(dcl);:} struct_more_var_dcl
     |
     /*epsilon*/
     ;
 
 struct_var_dcl ::=
-    CONST struct_var_dcl_part SEMI
+    CONST struct_var_dcl_part:dcl SEMI {:ini.getDescriptor().setConst(true); RESULT = dcl;:}
     |
-    struct_var_dcl_part SEMI
+    struct_var_dcl_part:dcl SEMI {:ini.getDescriptor().setConst(false); RESULT = dcl;:}
     ;
 
 struct_var_dcl_part ::=
-    struct_type:t var_dcl_cnt:dcl
+    struct_type:t ID:id {:id = scanner.string.toString();:} struct_var_dcl_cnt:dcl {:ini.getDescriptor().setType(t); ini.getDescriptor().setName(id); RESULT = dcl;:}
+    ;
+
+struct_var_dcl_cnt ::=
+    ASSIGN const_val:c {:RESULT = new StructVarDCL(c);:}
+    |
+    /*epsilon*/ {:RESULT = new StructVarDCL(null);:}
     ;
 
 struct_type ::=
@@ -249,8 +258,6 @@ struct_type ::=
     BOOL {:RESULT = StructureType.BOOL;:}
     |
     LONG {:RESULT = StructureType.LONG;:}
-    |
-    AUTO {:RESULT = StructureType.AUTO;:}
     ;
 
 
@@ -288,7 +295,7 @@ var_dcl ::=
     ;
 
 var_dcl_part ::=
-    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
+    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension {:Blocks.getInstance().setConstant(false);:}
     ;
 
 var_dcl_cnt ::=
@@ -404,7 +411,7 @@ assignment ::=
 variable ::=
     var_access:a {:RESULT = a;:}
     |
-    variable DOT ID {:;//todo:}
+    variable:a DOT ID:id {:id = scanner.string.toString(); RESULT = new StructureAccess();:}
     ;
 
 var_access ::=

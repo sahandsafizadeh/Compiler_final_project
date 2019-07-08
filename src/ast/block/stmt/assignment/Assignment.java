@@ -36,7 +36,7 @@ public abstract class Assignment extends BlockContent {
     }
 
     public int determineOp(Type type) {
-        boolean varAccess = access instanceof VariableAccess;
+        boolean varAccess = !(access instanceof ArrayAccess);
         if (type == DOUBLE)
             return varAccess ? Opcodes.DSTORE : Opcodes.DASTORE;
         else if (type == FLOAT)

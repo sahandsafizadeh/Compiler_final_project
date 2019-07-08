@@ -1,6 +1,8 @@
-package ast.dcl.variable;
+package ast.dcl;
 
 import ast.block.BlockContent;
+import ast.dcl.array.ArrayVarDCL;
+import ast.dcl.variable.VariableDCL;
 import ast.expr.Expression;
 import ast.type.Type;
 import ast.type.TypeChecker;
@@ -26,7 +28,7 @@ public class CompleteDCL extends BlockContent {
         dcl.compile();
         if (expr == null)
             return;
-        if (dcl instanceof ArrayVarDCL)
+        if (!(dcl instanceof VariableDCL))
             Logger.error("invalid initialization for array");
         else {
             Type type = dcl.getDescriptor().getType();

@@ -1,11 +1,12 @@
 public class A {
 
-    public static class B {
-        int a;
-    }
+    public int c;
+    private static int b;
 
     public static void main(String[] args) {
-        System.out.println(new B().a);
+        b += 3;
+        A a = new A();
+        a.c += 2;
     }
 
 }

@@ -1,4 +1,4 @@
-package ast.dcl.variable;
+package ast.dcl;
 
 import ast.Node;
 import symtab.dscp.variable.AbstractDescriptor;

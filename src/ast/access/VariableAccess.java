@@ -14,7 +14,7 @@ public class VariableAccess extends Access {
 
     @Override
     public void setDescriptor(String id) {
-        descriptor = (AbstractDescriptor) TableStack.getInstance().find(id);
+        descriptor = TableStack.getInstance().find(id);
         if (!(descriptor instanceof VariableDescriptor))
             Logger.error("variable not declared");
     }

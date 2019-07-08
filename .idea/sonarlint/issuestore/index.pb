@@ -201,5 +201,7 @@ X
 +src/ast/program/structure/StructureDCL.java,7\4\74695c73b81c959d3aa3aa9852acd1bb2fdee997
 [
 +src/ast/program/structure/StructVarDCL.java,1\4\140ef3e14334a1eb4e3493dc72acd8db9a362b96
-=
-OldParser.cup,4\3\434e0fd88a1bc0559005490ebe9dbc676a1aa883
+Y
+)src/ast/program/structure/Structures.java,d\6\d632e6bdb0a3fa9e7098a5722766bc616d225ea4
+S
+#src/ast/access/StructureAccess.java,c\9\c99aaf2555ba334f3d4bb75d8eef98b21f3f333b

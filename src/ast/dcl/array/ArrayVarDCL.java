@@ -1,5 +1,7 @@
-package ast.dcl.variable;
+package ast.dcl.array;
 
+import ast.dcl.VarDCL;
+import ast.dcl.Variables;
 import ast.expr.Expression;
 import ast.type.Type;
 import ast.type.TypeChecker;
@@ -33,10 +35,8 @@ public class ArrayVarDCL extends VarDCL {
         Type type = descriptor.getType();
         if (TypeChecker.isValidPrimitiveArrayType(type))
             CodeGenerator.mVisit.visitVarInsn(Opcodes.NEWARRAY, determinePrimitiveType(type));
-        else if (type == AUTO)
-            Logger.error("unsupported array type");
         else
-            CodeGenerator.mVisit.visitTypeInsn(Opcodes.ANEWARRAY, type.getType());
+            Logger.error("unsupported array type");
     }
 
     private int determinePrimitiveType(Type type) {
