@@ -1,8 +1,7 @@
 package symtab;
 
 import symtab.dscp.Descriptor;
-import symtab.dscp.variable.AbstractDescriptor;
-import symtab.dscp.variable.VariableDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
 import java.util.Map;
 

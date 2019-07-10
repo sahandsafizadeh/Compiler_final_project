@@ -1,7 +1,6 @@
 package cg;
 
 import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.MethodVisitor;
 
 import java.io.FileOutputStream;

@@ -2,11 +2,10 @@ package symtab;
 
 import ast.type.VariableType;
 import cg.Logger;
-import symtab.dscp.Descriptor;
 import symtab.dscp.KeywordDescriptor;
-import symtab.dscp.structure.StructureDescriptor;
-import symtab.dscp.variable.AbstractDescriptor;
-import symtab.dscp.variable.ArrayDescriptor;
+import symtab.dscp.struct.StructureDescriptor;
+import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.array.ArrayDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.ArrayList;

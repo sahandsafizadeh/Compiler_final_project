@@ -1,7 +1,7 @@
 package ast.dcl.array;
 
-import ast.dcl.VarDCL;
-import ast.dcl.Variables;
+import ast.dcl.DCL;
+import ast.dcl.variable.Variables;
 import ast.expr.Expression;
 import ast.type.Type;
 import ast.type.TypeChecker;
@@ -9,15 +9,15 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.variable.ArrayDescriptor;
+import symtab.dscp.array.ArrayDescriptor;
 
 import static ast.type.VariableType.*;
 
-public class ArrayVarDCL extends VarDCL {
+public class ArrayDCL extends DCL {
 
     private Expression expr;
 
-    public ArrayVarDCL(Expression expr) {
+    public ArrayDCL(Expression expr) {
         this.expr = expr;
         descriptor = new ArrayDescriptor();
         descriptor.setConst(Variables.getInstance().isConstant());

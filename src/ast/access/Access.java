@@ -2,7 +2,7 @@ package ast.access;
 
 import ast.Node;
 import ast.type.Type;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
 public abstract class Access implements Node {
 

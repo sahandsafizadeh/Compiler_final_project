@@ -289,13 +289,13 @@ loop_block_content ::=
 
 //variables
 var_dcl ::=
-    CONST {:Variables.getInstance().setConstant(true);:} var_dcl_part SEMI
+    CONST {:Variables.getInstance().setConstant(true);:} var_dcl_part SEMI {:Variables.getInstance().setConstant(false);:}
     |
     var_dcl_part SEMI
     ;
 
 var_dcl_part ::=
-    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension {:Blocks.getInstance().setConstant(false);:}
+    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
     ;
 
 var_dcl_cnt ::=

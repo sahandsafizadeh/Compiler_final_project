@@ -1,13 +1,13 @@
 package ast.dcl.struct;
 
-import ast.dcl.VarDCL;
+import ast.dcl.DCL;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.structure.StructureDescriptor;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.struct.StructureDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
-public class StructDCL extends VarDCL {
+public class StructDCL extends DCL {
 
     public StructDCL(AbstractDescriptor descriptor) {
         this.descriptor = new StructureDescriptor();
@@ -19,7 +19,7 @@ public class StructDCL extends VarDCL {
 
     @Override
     public void compile() {
-        Logger.log("structure declaration");
+        Logger.log("struct declaration");
         CodeGenerator.mVisit.visitTypeInsn(Opcodes.NEW, descriptor.getType().getTypeName());
         CodeGenerator.mVisit.visitInsn(Opcodes.DUP);
         CodeGenerator.mVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, descriptor.getName(), "<init>", "()V", false);

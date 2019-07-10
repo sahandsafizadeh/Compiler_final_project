@@ -131,8 +131,6 @@ b
 2src/ast/block/stmt/conditional/casestmt/Cases.java,c\a\ca7d774ff7003b052792b084f09b9451ca10c8c8
 U
 %src/ast/dcl/variable/VariableDcl.java,5\6\560ef943e962dd1b1342c3abc228d98cce71d324
-S
-#src/ast/dcl/variable/Variables.java,1\9\1956c4d66f7615cb5f45a12eab1cef38e37b455c
 M
 src/ast/block/stmt/Break.java,2\2\22fec8147e3fca8c3afc2ff489b9f10157b5e72c
 S
@@ -172,13 +170,7 @@ b
 `
 0src/symtab/dscp/variable/AbstractDescriptor.java,0\0\00f7de7c3a6006bb6ddf180b93fbe661ea553901
 U
-%src/ast/dcl/variable/ArrayVarDCL.java,c\3\c371631f94a499c7ffb9121b95f0e2ae7734c47e
-U
 %src/ast/dcl/variable/VariableDCL.java,3\7\37a2bf9ac79ac7a52ffa95755c5fd9989f23df9e
-P
- src/ast/dcl/variable/VarDCL.java,3\0\30d82dc246bcfc219a985e640408bb74c64b1000
-U
-%src/ast/dcl/variable/CompleteDCL.java,0\f\0f8d047bf328128015bb3605534327217c3c9255
 O
 src/ast/expr/other/Casting.java,d\3\d3ab999100386811db4b2df237cb582eb8100f8f
 N
@@ -205,3 +197,15 @@ Y
 )src/ast/program/structure/Structures.java,d\6\d632e6bdb0a3fa9e7098a5722766bc616d225ea4
 S
 #src/ast/access/StructureAccess.java,c\9\c99aaf2555ba334f3d4bb75d8eef98b21f3f333b
+X
+(src/ast/access/GlobalVariableAccess.java,7\2\72eaf346ce41af31ec17c4143fb9370808d89420
+J
+src/ast/dcl/Variables.java,8\1\81fd296af6ff7652c312140c9450e4d783d674d9
+L
+src/ast/dcl/CompleteDCL.java,f\1\f1d4fa75af337356854c79060ecfe35a7350859d
+R
+"src/ast/dcl/array/ArrayVarDCL.java,4\d\4da821ea439f820d394a8a418b2dcc5ab07e9298
+G
+src/ast/dcl/VarDCL.java,f\8\f82cf69e82a6d859d556cdde8aa0c02e74f858f1
+Q
+!src/ast/dcl/struct/StructDCL.java,a\5\a530416122adb9efd912e57837977126a4c1053d

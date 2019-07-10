@@ -1,6 +1,6 @@
-package symtab.dscp.structure;
+package symtab.dscp.struct;
 
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.Map;

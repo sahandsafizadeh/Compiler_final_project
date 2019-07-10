@@ -1,15 +1,13 @@
-package symtab.dscp.variable;
+package symtab.dscp;
 
 import ast.type.Type;
-import symtab.dscp.Descriptor;
 
 public abstract class AbstractDescriptor implements Descriptor {
 
-    Type type;
-    String name;
-    int stackIndex;
-    boolean isConst;
-    boolean isArgument;
+    protected Type type;
+    protected String name;
+    protected int stackIndex;
+    protected boolean isConst;
 
     public Type getType() {
         return type;
@@ -33,14 +31,6 @@ public abstract class AbstractDescriptor implements Descriptor {
 
     public void setConst(boolean aConst) {
         isConst = aConst;
-    }
-
-    public boolean isArgument() {
-        return isArgument;
-    }
-
-    public void setArgument(boolean argument) {
-        isArgument = argument;
     }
 
     public int getStackIndex() {

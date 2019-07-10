@@ -5,7 +5,7 @@ import ast.expr.Expression;
 import ast.type.Type;
 import ast.type.TypeChecker;
 import cg.Logger;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
 public class Variable extends Expression {
 

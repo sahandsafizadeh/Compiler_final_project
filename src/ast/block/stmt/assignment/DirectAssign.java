@@ -6,8 +6,8 @@ import ast.type.TypeChecker;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.structure.StructureDescriptor;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.struct.StructureDescriptor;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 public class DirectAssign extends Assignment {

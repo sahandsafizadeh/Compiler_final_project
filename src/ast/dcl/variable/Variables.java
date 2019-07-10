@@ -1,4 +1,4 @@
-package ast.dcl;
+package ast.dcl.variable;
 
 import ast.type.Type;
 

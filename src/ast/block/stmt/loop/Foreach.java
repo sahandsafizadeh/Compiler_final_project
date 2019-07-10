@@ -8,7 +8,7 @@ import cg.Logger;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.variable.ArrayDescriptor;
+import symtab.dscp.array.ArrayDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import static ast.type.VariableType.*;

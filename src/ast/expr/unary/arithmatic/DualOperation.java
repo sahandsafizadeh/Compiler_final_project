@@ -4,7 +4,7 @@ import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import static ast.type.VariableType.*;

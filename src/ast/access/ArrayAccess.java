@@ -6,8 +6,8 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.variable.AbstractDescriptor;
-import symtab.dscp.variable.ArrayDescriptor;
+import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.array.ArrayDescriptor;
 
 import static ast.type.VariableType.*;
 

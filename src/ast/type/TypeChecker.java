@@ -1,8 +1,7 @@
 package ast.type;
 
 import cg.Logger;
-import symtab.dscp.variable.AbstractDescriptor;
-import symtab.dscp.variable.ArrayDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
 import static ast.type.FunctionType.*;
 

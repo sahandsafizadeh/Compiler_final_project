@@ -1,14 +1,13 @@
 package ast.dcl.variable;
 
-import ast.dcl.VarDCL;
-import ast.dcl.Variables;
+import ast.dcl.DCL;
 import ast.dcl.struct.StructDCL;
 import ast.type.TypeChecker;
 import cg.Logger;
 import symtab.TableStack;
 import symtab.dscp.variable.VariableDescriptor;
 
-public class VariableDCL extends VarDCL {
+public class VariableDCL extends DCL {
 
     public VariableDCL() {
         descriptor = new VariableDescriptor();

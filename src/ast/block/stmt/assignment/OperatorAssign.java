@@ -4,8 +4,8 @@ import ast.access.*;
 import ast.expr.Expression;
 import cg.CodeGenerator;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.structure.StructureDescriptor;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.struct.StructureDescriptor;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 public abstract class OperatorAssign extends Assignment {

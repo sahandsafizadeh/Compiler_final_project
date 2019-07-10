@@ -2,8 +2,7 @@ package ast.expr.unary.arithmatic;
 
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.variable.AbstractDescriptor;
-import symtab.dscp.variable.VariableDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
 import static cg.CodeGenerator.mVisit;
 

@@ -20,9 +20,9 @@ import ast.block.stmt.loop.For;
 import ast.block.stmt.loop.Foreach;
 import ast.block.stmt.loop.Repeat;
 import ast.dcl.CompleteDCL;
-import ast.dcl.VarDCL;
-import ast.dcl.Variables;
-import ast.dcl.array.ArrayVarDCL;
+import ast.dcl.DCL;
+import ast.dcl.variable.Variables;
+import ast.dcl.array.ArrayDCL;
 import ast.dcl.variable.*;
 import ast.expr.Expression;
 import ast.expr.binary.arithmatic.*;
@@ -1400,7 +1400,7 @@ public class Parser extends java_cup.runtime.lr_parser {
                     BlockContent RESULT = null;
                     int dclleft = ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 1)).left;
                     int dclright = ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 1)).right;
-                    VarDCL dcl = (VarDCL) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 1)).value;
+                    DCL dcl = (DCL) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 1)).value;
                     int eleft = ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).left;
                     int eright = ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).right;
                     Expression e = (Expression) ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
@@ -1468,7 +1468,7 @@ public class Parser extends java_cup.runtime.lr_parser {
                 /*. . . . . . . . . . . . . . . . . . . .*/
                 case 53: // NT$5 ::=
                 {
-                    VarDCL RESULT = null;
+                    DCL RESULT = null;
                     int idleft = ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).left;
                     int idright = ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).right;
                     String id = (String) ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
@@ -1480,15 +1480,15 @@ public class Parser extends java_cup.runtime.lr_parser {
                 /*. . . . . . . . . . . . . . . . . . . .*/
                 case 54: // single_var ::= ID NT$5 array_part
                 {
-                    VarDCL RESULT = null;
+                    DCL RESULT = null;
                     // propagate RESULT from NT$5
-                    RESULT = (VarDCL) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 1)).value;
+                    RESULT = (DCL) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 1)).value;
                     int idleft = ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)).left;
                     int idright = ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)).right;
                     String id = (String) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)).value;
                     int dclleft = ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).left;
                     int dclright = ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).right;
-                    VarDCL dcl = (VarDCL) ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+                    DCL dcl = (DCL) ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
                     dcl.setId(id);
                     RESULT = dcl;
                     CUP$Parser$result = parser.getSymbolFactory().newSymbol("single_var", 24, ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)), ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()), RESULT);
@@ -1498,11 +1498,11 @@ public class Parser extends java_cup.runtime.lr_parser {
                 /*. . . . . . . . . . . . . . . . . . . .*/
                 case 55: // array_part ::= BRACKOP expr BRACKCL array_part
                 {
-                    VarDCL RESULT = null;
+                    DCL RESULT = null;
                     int eleft = ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)).left;
                     int eright = ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)).right;
                     Expression e = (Expression) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 2)).value;
-                    RESULT = new ArrayVarDCL(e);
+                    RESULT = new ArrayDCL(e);
                     CUP$Parser$result = parser.getSymbolFactory().newSymbol("array_part", 25, ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top - 3)), ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()), RESULT);
                 }
                 return CUP$Parser$result;
@@ -1510,7 +1510,7 @@ public class Parser extends java_cup.runtime.lr_parser {
                 /*. . . . . . . . . . . . . . . . . . . .*/
                 case 56: // array_part ::=
                 {
-                    VarDCL RESULT = null;
+                    DCL RESULT = null;
                     RESULT = new VariableDCL();
                     CUP$Parser$result = parser.getSymbolFactory().newSymbol("array_part", 25, ((java_cup.runtime.Symbol) CUP$Parser$stack.peek()), RESULT);
                 }

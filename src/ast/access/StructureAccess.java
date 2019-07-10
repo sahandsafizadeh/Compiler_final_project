@@ -5,7 +5,7 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.structure.StructureDescriptor;
+import symtab.dscp.struct.StructureDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 public class StructureAccess extends Access {

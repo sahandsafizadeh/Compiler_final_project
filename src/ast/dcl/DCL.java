@@ -1,9 +1,9 @@
 package ast.dcl;
 
 import ast.Node;
-import symtab.dscp.variable.AbstractDescriptor;
+import symtab.dscp.AbstractDescriptor;
 
-public abstract class VarDCL implements Node {
+public abstract class DCL implements Node {
 
     protected String id;
     protected AbstractDescriptor descriptor;

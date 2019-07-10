@@ -1,7 +1,6 @@
 package ast.dcl;
 
 import ast.block.BlockContent;
-import ast.dcl.array.ArrayVarDCL;
 import ast.dcl.variable.VariableDCL;
 import ast.expr.Expression;
 import ast.type.Type;
@@ -14,10 +13,10 @@ import static ast.type.VariableType.*;
 
 public class CompleteDCL extends BlockContent {
 
-    private VarDCL dcl;
+    private DCL dcl;
     private Expression expr;
 
-    public CompleteDCL(VarDCL dcl, Expression expr) {
+    public CompleteDCL(DCL dcl, Expression expr) {
         this.dcl = dcl;
         this.expr = expr;
     }
