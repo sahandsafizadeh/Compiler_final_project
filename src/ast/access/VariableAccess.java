@@ -21,6 +21,7 @@ public class VariableAccess extends Access {
     @Override
     public void compile() {
         Logger.log("variable access load");
+        VariableDescriptor descriptor = (VariableDescriptor) getDescriptor();
         CodeGenerator.mVisit.visitVarInsn(determineOp(descriptor.getType()), descriptor.getStackIndex());
     }
 

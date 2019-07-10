@@ -1,12 +1,11 @@
 public class A {
 
-    public int c;
-    private static int b;
-
     public static void main(String[] args) {
-        b += 3;
-        A a = new A();
-        a.c += 2;
+        fib(10);
+    }
+
+    private static long fib(int n) {
+        return n < 2 ? n : fib(n - 1) + fib(n - 2);
     }
 
 }

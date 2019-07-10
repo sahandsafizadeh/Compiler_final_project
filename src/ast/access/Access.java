@@ -2,17 +2,17 @@ package ast.access;
 
 import ast.Node;
 import ast.type.Type;
-import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.Descriptor;
 
 public abstract class Access implements Node {
 
-    AbstractDescriptor descriptor;
+    Descriptor descriptor;
 
     public abstract void setDescriptor(String id);
 
     public abstract int determineOp(Type type);
 
-    public AbstractDescriptor getDescriptor() {
+    public Descriptor getDescriptor() {
         return descriptor;
     }
 

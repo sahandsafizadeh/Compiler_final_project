@@ -118,6 +118,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/FunctionAccess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/FunctionAcess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java">
           <value>
             <set />
@@ -129,6 +139,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/access/VariableAccess.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/function/FunctionAccessData.java">
           <value>
             <set />
           </value>
@@ -244,6 +259,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/block/stmt/conditional/ifstmt/If.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/function/Return.java">
           <value>
             <set />
           </value>
@@ -614,6 +639,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/function/FunctionCall.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/expr/function/FunctionData.java">
           <value>
             <set />
           </value>
@@ -1034,6 +1069,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/VariableDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/function/Functions.java">
           <value>
             <set />
           </value>

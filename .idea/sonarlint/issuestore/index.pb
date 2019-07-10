@@ -85,8 +85,6 @@ M
 src/ast/type/TypeChecker.java,8\d\8dc3087fd997d2665b8483ce1b16f57e413cd58c
 V
 &src/symtab/dscp/KeywordDescriptor.java,8\c\8c6fb73be507a5da91773f910a56096c041e7ef2
-W
-'src/symtab/dscp/FunctionDescriptor.java,a\8\a89e35e31c79ac5a4dd10c31cd56f0581c412130
 O
 src/symtab/dscp/Descriptor.java,3\8\38df08bec2709824858cb05d383c033b255a3e80
 K
@@ -159,16 +157,8 @@ a
 .src/ast/block/stmt/assignment/MinusAssign.java,3\4\34c3a8ca2c2a2ff85edbf9ea9f398ae73492fe63
 a
 1src/ast/block/stmt/assignment/DivisionAssign.java,a\2\a2bf323ac989fa23291bf3d0300477e629ae2cc4
-Y
-)src/symtab/dscp/structure/Structures.java,0\1\01c0c66dd674d98865276ccbbbac4db0170211dd
-b
-2src/symtab/dscp/structure/StructureDescriptor.java,3\7\37eaf71e96b66813f48d7cfe565cc0d4291bc38f
 `
 0src/symtab/dscp/variable/VariableDescriptor.java,d\c\dcc4bdd3fdbbc34e88214545f463964f7931044b
-]
--src/symtab/dscp/variable/ArrayDescriptor.java,f\1\f19df9ff03ddd8bd4f2ccd257a8428250850bc28
-`
-0src/symtab/dscp/variable/AbstractDescriptor.java,0\0\00f7de7c3a6006bb6ddf180b93fbe661ea553901
 U
 %src/ast/dcl/variable/VariableDCL.java,3\7\37a2bf9ac79ac7a52ffa95755c5fd9989f23df9e
 O
@@ -199,13 +189,21 @@ S
 #src/ast/access/StructureAccess.java,c\9\c99aaf2555ba334f3d4bb75d8eef98b21f3f333b
 X
 (src/ast/access/GlobalVariableAccess.java,7\2\72eaf346ce41af31ec17c4143fb9370808d89420
-J
-src/ast/dcl/Variables.java,8\1\81fd296af6ff7652c312140c9450e4d783d674d9
 L
 src/ast/dcl/CompleteDCL.java,f\1\f1d4fa75af337356854c79060ecfe35a7350859d
-R
-"src/ast/dcl/array/ArrayVarDCL.java,4\d\4da821ea439f820d394a8a418b2dcc5ab07e9298
-G
-src/ast/dcl/VarDCL.java,f\8\f82cf69e82a6d859d556cdde8aa0c02e74f858f1
 Q
 !src/ast/dcl/struct/StructDCL.java,a\5\a530416122adb9efd912e57837977126a4c1053d
+O
+src/ast/dcl/array/ArrayDCL.java,d\6\d605403e2c2548170be85178eb2860149a026ffa
+`
+0src/symtab/dscp/function/FunctionDescriptor.java,e\7\e7dec5222cfcba4133895d48a76c9a14a1e962b6
+Z
+*src/symtab/dscp/array/ArrayDescriptor.java,f\8\f8e047e186b23ff87c234e1a440dd460a1d95068
+_
+/src/symtab/dscp/struct/StructureDescriptor.java,7\1\712d55b9283396a76d58d942b0f87570053e500c
+W
+'src/symtab/dscp/AbstractDescriptor.java,5\a\5abaf35bb3415d37772b8bab7bf6bccabc9c522b
+D
+src/ast/dcl/DCL.java,5\2\526dd241d5545cfc6207b9f4cc0fdf37d04b83ef
+S
+#src/ast/dcl/variable/Variables.java,1\9\1956c4d66f7615cb5f45a12eab1cef38e37b455c

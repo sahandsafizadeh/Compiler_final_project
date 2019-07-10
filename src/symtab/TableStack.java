@@ -119,8 +119,6 @@ public class TableStack {
 
     public void addGlobal(AbstractDescriptor descriptor) {
         GLOBALS.put(descriptor);
-        if (descriptor instanceof StructureDescriptor)
-            ;//todo
     }
 
     public void addVariable(VariableDescriptor descriptor) {

@@ -2,7 +2,6 @@ package ast.block.stmt.assignment;
 
 import ast.access.Access;
 import ast.access.ArrayAccess;
-import ast.access.VariableAccess;
 import ast.block.BlockContent;
 import ast.expr.Expression;
 import ast.type.Type;

@@ -1,7 +1,7 @@
 
-|squid:S1171^"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ˆ¡›ş¼-
-Rsquid:EmptyStatementUsageCheck|"Remove this empty statement.(ìº“Àÿÿÿÿÿ8üÕ§ş¼-
-Usquid:S1135|"2Complete the task associated to this TODO comment.(ìº“Àÿÿÿÿÿ8üÕ§ş¼-
-vsquid:S00116"RRename this field "GLOBALS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åşÿÿÿÿÿ8®¼˜ş¼-
+Rsquid:EmptyStatementUsageCheck{"Remove this empty statement.(ìº“Àÿÿÿÿÿ8üÕ§ş¼-
+Usquid:S1135{"2Complete the task associated to this TODO comment.(ìº“Àÿÿÿÿÿ8üÕ§ş¼-
 ]squid:UselessImportCheck"3Remove this unused import 'symtab.dscp.Descriptor'.(šË8³òªş¼-
-wsquid:S00116"XRename this field "SYM_TAB_STACK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô•·ø8ÚŸ…Š»-
+wsquid:S00116"XRename this field "SYM_TAB_STACK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô•·ø8ÚŸ…Š»-
+vsquid:S00116"RRename this field "GLOBALS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åşÿÿÿÿÿ8®¼˜ş¼-
+|squid:S1171]"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ˆ¡›ş¼-
