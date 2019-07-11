@@ -3,7 +3,7 @@ package ast.type;
 import cg.Logger;
 import symtab.dscp.AbstractDescriptor;
 
-import static ast.type.FunctionType.*;
+import static ast.type.Type.*;
 
 public class TypeChecker {
 
@@ -13,29 +13,27 @@ public class TypeChecker {
     public static Type unaryExprTypeCheck(Type t) {
         if (!isValidExprType(t))
             Logger.error("type mismatch");
-
         if (t == DOUBLE)
-            return StructureType.DOUBLE;
+            return DOUBLE;
         else if (t == FLOAT)
-            return StructureType.FLOAT;
+            return FLOAT;
         else if (t == LONG)
-            return StructureType.LONG;
+            return LONG;
         else
-            return StructureType.INT;
+            return INT;
     }
 
     public static Type binaryExprTypeCheck(Type t1, Type t2) {
         if (!(isValidExprType(t1) && isValidExprType(t2)))
             Logger.error("type mismatch");
-
         if (t1 == DOUBLE || t2 == DOUBLE)
-            return StructureType.DOUBLE;
+            return DOUBLE;
         else if (t1 == FLOAT || t2 == FLOAT)
-            return StructureType.FLOAT;
+            return FLOAT;
         else if (t1 == LONG || t2 == LONG)
-            return StructureType.LONG;
+            return LONG;
         else
-            return StructureType.INT;
+            return INT;
     }
 
     public static boolean isValidExprType(Type type) {
@@ -43,7 +41,7 @@ public class TypeChecker {
     }
 
     public static boolean isValidVariableType(Type type) {
-        return isValidExprType(type) || type == VariableType.STRING;
+        return isValidExprType(type) || type == STRING;
     }
 
     public static boolean isValidPrimitiveArrayType(Type type) {
@@ -55,7 +53,7 @@ public class TypeChecker {
     }
 
     public static void inferType(AbstractDescriptor descriptor, Type type) {
-        if (descriptor.getType() == VariableType.AUTO)
+        if (descriptor.getType() == AUTO)
             descriptor.setType(type);
     }
 

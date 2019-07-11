@@ -20,7 +20,7 @@ public class GlobalVariableAccess extends Access {
     public void compile() {
         Logger.log("global variable access load");
         VariableDescriptor descriptor = (VariableDescriptor) getDescriptor();
-        CodeGenerator.mVisit.visitFieldInsn(Opcodes.GETSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().getTypeName());
+        CodeGenerator.mVisit.visitFieldInsn(Opcodes.GETSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
     }
 
     @Override

@@ -5,25 +5,15 @@ import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 import static cg.CodeGenerator.mVisit;
 
 public abstract class Expression implements Node {
 
-    protected Type type;
-
-    public Expression() {
-    }
-
-    public Expression(Type type) {
-        this.type = type;
-    }
-
     public abstract Type getResultType();
 
-    public abstract int determineOp(Type type);
-
     public void doCastCompile(Type resultType) {
+        Type type = getResultType();
         if (type == DOUBLE) {
             if (resultType == FLOAT)
                 mVisit.visitInsn(Opcodes.D2F);

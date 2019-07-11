@@ -28,7 +28,7 @@ public class StructVarDCL implements Node {
     public void compile() {
         Logger.log("declaring struct field");
         CodeGenerator.structClw
-                .visitField(Opcodes.ACC_PUBLIC, descriptor.getName(), descriptor.getType().getTypeName(), null, null).visitEnd();
+                .visitField(Opcodes.ACC_PUBLIC, descriptor.getName(), descriptor.getType().typeName(), null, null).visitEnd();
     }
 
     /**
@@ -44,7 +44,7 @@ public class StructVarDCL implements Node {
             CodeGenerator.structMVisit.visitVarInsn(Opcodes.ALOAD, 0);
             expr.compile();
             Type type = TypeChecker.unaryExprTypeCheck(descriptor.getType());
-            CodeGenerator.structMVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), type.getTypeName());
+            CodeGenerator.structMVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), type.typeName());
         }
     }
 

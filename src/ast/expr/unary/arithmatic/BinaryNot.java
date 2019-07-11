@@ -7,8 +7,7 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-import static ast.type.VariableType.INT;
-import static ast.type.VariableType.LONG;
+import static ast.type.Type.*;
 
 public class BinaryNot extends UnaryExpression {
 

@@ -49,9 +49,9 @@ public class FunctionDescriptor implements Descriptor {
 
     public String getDescriptor() {
         StringBuilder descriptor = new StringBuilder("(");
-        Arrays.stream(parameterTypes).forEach(type -> descriptor.append(type.getTypeName()));
+        Arrays.stream(parameterTypes).forEach(type -> descriptor.append(type.typeName()));
         descriptor.append(")");
-        descriptor.append(returnType.getTypeName());
+        descriptor.append(returnType.typeName());
         return descriptor.toString();
     }
 

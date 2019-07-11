@@ -20,7 +20,7 @@ public class StructDCL extends DCL {
     @Override
     public void compile() {
         Logger.log("struct declaration");
-        CodeGenerator.mVisit.visitTypeInsn(Opcodes.NEW, descriptor.getType().getTypeName());
+        CodeGenerator.mVisit.visitTypeInsn(Opcodes.NEW, descriptor.getType().typeName());
         CodeGenerator.mVisit.visitInsn(Opcodes.DUP);
         CodeGenerator.mVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, descriptor.getName(), "<init>", "()V", false);
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ASTORE, descriptor.getStackIndex());

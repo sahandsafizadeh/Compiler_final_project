@@ -1,6 +1,5 @@
 package symtab;
 
-import ast.type.VariableType;
 import cg.Logger;
 import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.KeywordDescriptor;

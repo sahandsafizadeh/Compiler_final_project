@@ -36,10 +36,7 @@ import ast.expr.unary.logical.Not;
 import ast.program.Program;
 import ast.program.ProgramContent;
 import ast.program.global.GlobalVarDCL;
-import ast.type.CastingType;
-import ast.type.StructureType;
 import ast.type.Type;
-import ast.type.VariableType;
 
 /**
  * CUP v0.11b 20160615 (GIT 4ac7450) generated parser.

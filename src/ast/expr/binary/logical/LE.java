@@ -5,7 +5,7 @@ import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public class LE extends LogicalBinaryExpr {
 
@@ -30,8 +30,10 @@ public class LE extends LogicalBinaryExpr {
         } else if (type == LONG) {
             opCode = Opcodes.IFGT;
             compareCode = Opcodes.LCMP;
-        } else
+        } else if (type == INT)
             opCode = Opcodes.IF_ICMPGT;
+        else
+            Logger.error("type mismatch");
         return 0;
     }
 

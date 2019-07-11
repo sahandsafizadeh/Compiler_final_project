@@ -1,8 +1,6 @@
 package ast.program;
 
 import ast.Node;
-import ast.type.FunctionType;
-import ast.type.VariableType;
 import cg.Logger;
 import symtab.dscp.function.Functions;
 

@@ -7,7 +7,7 @@ import org.objectweb.asm.Opcodes;
 import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public abstract class DualOperation extends UnaryExpression {
 
@@ -18,11 +18,10 @@ public abstract class DualOperation extends UnaryExpression {
     int dupOp;
 
     public DualOperation(AbstractDescriptor descriptor) {
-        super(descriptor.getType());
         if (descriptor instanceof VariableDescriptor)
             this.descriptor = (VariableDescriptor) descriptor;
         else
-            Logger.error("undefined operation for arrays");
+            Logger.error("undefined operation");
     }
 
     public void checkOperation() {

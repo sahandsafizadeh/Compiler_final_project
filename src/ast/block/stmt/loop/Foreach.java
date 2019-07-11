@@ -3,7 +3,6 @@ package ast.block.stmt.loop;
 import ast.block.Block;
 import ast.block.stmt.Statement;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;

@@ -1,14 +1,9 @@
 package ast.expr.constant;
 
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 
 public class DoubleConstant extends Constant {
-
-    public DoubleConstant(Type type) {
-        super(type);
-    }
 
     public DoubleConstant(Object value) {
         super(value);
@@ -16,7 +11,7 @@ public class DoubleConstant extends Constant {
 
     @Override
     public Type getResultType() {
-        return VariableType.DOUBLE;
+        return Type.DOUBLE;
     }
 
     @Override

@@ -2,7 +2,6 @@ package ast.expr.other;
 
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 import org.objectweb.asm.Opcodes;
 

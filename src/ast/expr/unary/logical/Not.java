@@ -3,7 +3,6 @@ package ast.expr.unary.logical;
 import ast.expr.Expression;
 import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.Logger;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
@@ -33,7 +32,7 @@ public class Not extends UnaryExpression {
 
     @Override
     public int determineOp(Type type) {
-        if (type == VariableType.INT)
+        if (type == Type.INT)
             return Opcodes.IFEQ;
         else
             Logger.error("type mismatch");

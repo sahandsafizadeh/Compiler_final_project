@@ -28,7 +28,7 @@ public class DirectAssign extends Assignment {
             CodeGenerator.mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
         } else if (access instanceof GlobalVariableAccess) {
             super.compile();
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().getTypeName());
+            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
         }
         if (access instanceof ArrayAccess) {
             arrayStoreInit();
@@ -38,7 +38,7 @@ public class DirectAssign extends Assignment {
             super.compile();
             StructureDescriptor structDscp = (StructureDescriptor) access.getDescriptor();
             VariableDescriptor structVar = structDscp.get(((StructureAccess) access).getId());
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getType().getTypeName(), structVar.getName(), structVar.getType().getTypeName());
+            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getType().typeName(), structVar.getName(), structVar.getType().typeName());
         }
     }
 

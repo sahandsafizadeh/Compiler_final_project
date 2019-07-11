@@ -33,7 +33,7 @@ public class GlobalVarDCL extends ProgramContent {
         TableStack.getInstance().addGlobal(descriptor);
         Program.getInstance().addContent(this);
 
-        CodeGenerator.mainClw.visitField(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, id, type.getTypeName(), null, null).visitEnd();
+        CodeGenerator.mainClw.visitField(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, id, type.typeName(), null, null).visitEnd();
     }
 
 }

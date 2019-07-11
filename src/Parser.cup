@@ -458,13 +458,13 @@ expr ::=
     ;
 
 casting_type ::=
-    CHAR {:RESULT = CastingType.CHAR;:}
+    CHAR {:RESULT = Type.CHAR;:}
     |
-    INT {:RESULT = CastingType.INT;:}
+    INT {:RESULT = Type.INT;:}
     |
-    FLOAT {:RESULT = CastingType.FLOAT;:}
+    FLOAT {:RESULT = Type.FLOAT;:}
     |
-    DOUBLE {:RESULT = CastingType.DOUBLE;:}
+    DOUBLE {:RESULT = Type.DOUBLE;:}
     ;
 
 arithmatic_expr ::=

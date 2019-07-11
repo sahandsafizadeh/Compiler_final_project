@@ -1,15 +1,10 @@
 package ast.expr.constant;
 
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 import org.objectweb.asm.Opcodes;
 
 public class CharConstant extends Constant {
-
-    public CharConstant(Type type) {
-        super(type);
-    }
 
     public CharConstant(Object value) {
         super(value);
@@ -21,7 +16,7 @@ public class CharConstant extends Constant {
 
     @Override
     public Type getResultType() {
-        return VariableType.INT;
+        return Type.INT;
     }
 
     @Override

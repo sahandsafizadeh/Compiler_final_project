@@ -7,7 +7,7 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public class Uminus extends UnaryExpression {
 

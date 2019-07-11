@@ -26,7 +26,7 @@ public abstract class OperatorAssign extends Assignment {
             CodeGenerator.mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
         } else if (access instanceof GlobalVariableAccess) {
             doArithmetic();
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().getTypeName());
+            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
         } else if (access instanceof ArrayAccess) {
             arrayStoreInit();
             doArithmetic();
@@ -34,7 +34,7 @@ public abstract class OperatorAssign extends Assignment {
         } else {
             doArithmetic();
             VariableDescriptor structVar = ((StructureDescriptor) descriptor).get(((StructureAccess) access).getId());
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getName(), structVar.getName(), structVar.getType().getTypeName());
+            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getName(), structVar.getName(), structVar.getType().typeName());
         }
     }
 

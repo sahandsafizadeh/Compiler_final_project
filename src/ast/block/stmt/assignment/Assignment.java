@@ -5,7 +5,6 @@ import ast.access.ArrayAccess;
 import ast.block.BlockContent;
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;

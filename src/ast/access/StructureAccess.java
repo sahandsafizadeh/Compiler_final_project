@@ -33,7 +33,7 @@ public class StructureAccess extends Access {
         StructureDescriptor descriptor = (StructureDescriptor) getDescriptor();
         VariableDescriptor structureVar = descriptor.get(id);
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, descriptor.getStackIndex());
-        CodeGenerator.mVisit.visitFieldInsn(Opcodes.GETFIELD, descriptor.getName(), structureVar.getName(), structureVar.getType().getTypeName());
+        CodeGenerator.mVisit.visitFieldInsn(Opcodes.GETFIELD, descriptor.getName(), structureVar.getName(), structureVar.getType().typeName());
     }
 
     @Override

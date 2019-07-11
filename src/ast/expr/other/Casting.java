@@ -31,9 +31,4 @@ public class Casting extends Expression {
         expr.doCastCompile(getResultType());
     }
 
-    @Override
-    public int determineOp(Type target) {
-        return 0;
-    }
-
 }

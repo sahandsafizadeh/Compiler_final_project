@@ -2,9 +2,7 @@ package ast.block.stmt.function;
 
 import ast.access.FunctionAccess;
 import ast.block.BlockContent;
-import ast.type.FunctionType;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;

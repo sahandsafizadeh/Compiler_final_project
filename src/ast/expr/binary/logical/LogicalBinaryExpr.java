@@ -3,7 +3,6 @@ package ast.expr.binary.logical;
 import ast.expr.Expression;
 import ast.expr.binary.BinaryExpression;
 import ast.type.Type;
-import ast.type.VariableType;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 
@@ -25,7 +24,7 @@ public abstract class LogicalBinaryExpr extends BinaryExpression {
         Label l1 = new Label();
         Label l2 = new Label();
         determineOp(resultType);
-        if (resultType != VariableType.INT)
+        if (resultType != Type.INT)
             mVisit.visitInsn(compareCode);
         mVisit.visitJumpInsn(opCode, l1);
         mVisit.visitInsn(Opcodes.ICONST_1);

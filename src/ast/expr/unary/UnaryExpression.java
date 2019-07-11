@@ -7,18 +7,18 @@ import ast.type.TypeChecker;
 public abstract class UnaryExpression extends Expression {
 
     protected Expression expr;
-
-    public UnaryExpression(Type type) {
-        super(type);
-    }
+    private Type resultType;
 
     public UnaryExpression(Expression expr) {
         this.expr = expr;
+        resultType = expr.getResultType();
     }
+
+    public abstract int determineOp(Type resultType);
 
     @Override
     public Type getResultType() {
-        return TypeChecker.unaryExprTypeCheck(expr.getResultType());
+        return TypeChecker.unaryExprTypeCheck(resultType);
     }
 
 }

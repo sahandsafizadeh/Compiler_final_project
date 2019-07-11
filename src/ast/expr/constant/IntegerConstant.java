@@ -1,14 +1,9 @@
 package ast.expr.constant;
 
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 
 public class IntegerConstant extends Constant {
-
-    public IntegerConstant(Type type) {
-        super(type);
-    }
 
     public IntegerConstant(Object value) {
         super(value);
@@ -16,7 +11,7 @@ public class IntegerConstant extends Constant {
 
     @Override
     public Type getResultType() {
-        return VariableType.INT;
+        return Type.INT;
     }
 
     @Override
