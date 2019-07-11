@@ -123,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/access/FunctionAccessData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/access/FunctionAcess.java">
           <value>
             <set />
@@ -1093,6 +1098,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/struct/StructureDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/structure/StructureDescriptor.java">
           <value>
             <set />
@@ -1104,6 +1114,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/variable/ArrayDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/variable/GlobalVariableDescriptor.java">
           <value>
             <set />
           </value>

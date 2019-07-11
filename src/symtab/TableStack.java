@@ -1,5 +1,6 @@
 package symtab;
 
+import ast.type.Type;
 import cg.Logger;
 import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.KeywordDescriptor;
@@ -128,7 +129,7 @@ public class TableStack {
 
     public void addVariable(VariableDescriptor descriptor) {
         checkError(descriptor);
-        putDescriptor(descriptor.getType() == VariableType.DOUBLE || descriptor.getType() == VariableType.LONG ? 2 : 1, descriptor);
+        putDescriptor(descriptor.getType() == Type.DOUBLE || descriptor.getType() == Type.LONG ? 2 : 1, descriptor);
     }
 
     public void addArray(ArrayDescriptor descriptor) {

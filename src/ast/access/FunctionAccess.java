@@ -1,6 +1,5 @@
 package ast.access;
 
-import ast.access.function.FunctionAccessData;
 import ast.type.Type;
 import cg.CodeGenerator;
 import cg.Logger;

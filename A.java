@@ -1,11 +1,14 @@
 public class A {
 
-    public static void main(String[] args) {
-        fib(10);
-    }
+    int a;
 
-    private static long fib(int n) {
-        return n < 2 ? n : fib(n - 1) + fib(n - 2);
+    public static void main(String[] args) {
+        A a = new A();
+        a.a = 2;
+        int b = a.a;
+        args = new String[10];
+        args[0] = "ali";
+        System.out.println(args[0]);
     }
 
 }

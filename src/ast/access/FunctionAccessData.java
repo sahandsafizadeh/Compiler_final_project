@@ -1,4 +1,4 @@
-package ast.access.function;
+package ast.access;
 
 import ast.expr.Expression;
 import ast.type.Type;

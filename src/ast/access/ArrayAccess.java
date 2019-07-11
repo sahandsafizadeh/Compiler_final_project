@@ -6,10 +6,9 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.array.ArrayDescriptor;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public class ArrayAccess extends Access {
 
@@ -25,14 +24,15 @@ public class ArrayAccess extends Access {
 
     @Override
     public void setDescriptor(String id) {
-        descriptor = (AbstractDescriptor) TableStack.getInstance().find(id);
-        if (!(descriptor instanceof ArrayDescriptor))
-            Logger.error("array not declared");
+        descriptor = TableStack.getInstance().find(id);
     }
 
     @Override
     public void compile() {
         Logger.log("array access load");
+        if (!(descriptor instanceof ArrayDescriptor))
+            Logger.error("array not declared");
+        ArrayDescriptor descriptor = (ArrayDescriptor) getDescriptor();
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, descriptor.getStackIndex());
         if (index.getResultType() != INT)
             Logger.error("arrays can only be accessed using integer types");

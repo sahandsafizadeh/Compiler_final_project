@@ -421,7 +421,7 @@ assignment ::=
 variable ::=
     var_access:a {:RESULT = a;:}
     |
-    variable:a DOT ID:id {:id = scanner.string.toString(); RESULT = new StructureAccess();:}
+    variable:a DOT ID:id {:id = scanner.string.toString(); RESULT = new StructureAccess(a); RESULT.setDescriptor(id);:}
     ;
 
 var_access ::=

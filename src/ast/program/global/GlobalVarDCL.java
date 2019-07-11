@@ -8,7 +8,7 @@ import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
-import symtab.dscp.variable.VariableDescriptor;
+import symtab.dscp.variable.GlobalVariableDescriptor;
 
 public class GlobalVarDCL extends ProgramContent {
 
@@ -25,17 +25,16 @@ public class GlobalVarDCL extends ProgramContent {
         Logger.log("global variable declaration");
         if (!TypeChecker.isValidVariableType(type))
             Logger.error("invalid type for global variable");
-        VariableDescriptor descriptor = generate();
+        GlobalVariableDescriptor descriptor = generate();
         TableStack.getInstance().addGlobal(descriptor);
         Program.getInstance().addContent(this);
         CodeGenerator.mainClw.visitField(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, id, type.typeName(), null, null).visitEnd();
     }
 
-    private VariableDescriptor generate() {
-        VariableDescriptor descriptor = new VariableDescriptor();
+    private GlobalVariableDescriptor generate() {
+        GlobalVariableDescriptor descriptor = new GlobalVariableDescriptor();
         descriptor.setName(id);
         descriptor.setType(type);
-        descriptor.setConst(false);
         return descriptor;
     }
 
