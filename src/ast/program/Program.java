@@ -1,6 +1,10 @@
 package ast.program;
 
 import ast.Node;
+import ast.type.FunctionType;
+import ast.type.VariableType;
+import cg.Logger;
+import symtab.dscp.function.Functions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +28,10 @@ public class Program implements Node {
 
     @Override
     public void compile() {
-        //todo check existance of function main
+        Logger.log("compiling program");
         contents.forEach(ProgramContent::compile);
+        if (!Functions.getInstance().contains("main", FunctionType.INT))
+            Logger.error("program doesn't contain a main function");
     }
 
 }

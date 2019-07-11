@@ -12,6 +12,10 @@ public abstract class Type {
         return type;
     }
 
+    public Type toArray(Type t) {
+        return new VariableType("[" + t.getTypeName());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

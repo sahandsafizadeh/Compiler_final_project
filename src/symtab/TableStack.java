@@ -2,10 +2,10 @@ package symtab;
 
 import ast.type.VariableType;
 import cg.Logger;
-import symtab.dscp.KeywordDescriptor;
-import symtab.dscp.struct.StructureDescriptor;
 import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.KeywordDescriptor;
 import symtab.dscp.array.ArrayDescriptor;
+import symtab.dscp.function.FunctionDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.ArrayList;
@@ -21,6 +21,8 @@ public class TableStack {
     private int mainStackIndex = 1;
     private int functionStackIndex = 0;
     private boolean inFuncDCL = false;
+    private FunctionDescriptor currentFunction;
+
     private static final String[] KEYWORDS = {
             "const",
             "record",
@@ -107,6 +109,10 @@ public class TableStack {
 
     public SymbolTable getTop() {
         return SYM_TAB_STACK.get(SYM_TAB_STACK.size() - 1);
+    }
+
+    public FunctionDescriptor getCurrentFunction() {
+        return currentFunction;
     }
 
     public void pushSymbolTable(SymbolTable symbolTable) {

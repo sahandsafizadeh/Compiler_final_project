@@ -2,12 +2,13 @@ package ast.block.stmt.function;
 
 import ast.block.BlockContent;
 import ast.expr.Expression;
-import ast.expr.other.Variable;
 import ast.type.Type;
-import ast.type.VariableType;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+import symtab.TableStack;
+
+import static ast.type.VariableType.*;
 
 public class Return extends BlockContent {
 
@@ -25,16 +26,18 @@ public class Return extends BlockContent {
     }
 
     private int determineOp(Type type) {
-        if (type == VariableType.DOUBLE)
+        Type currentFuncReturnType = TableStack.getInstance().getCurrentFunction().getReturnType();
+        if (type == DOUBLE && currentFuncReturnType == DOUBLE)
             return Opcodes.DRETURN;
-        else if (type == VariableType.FLOAT)
+        else if (type == FLOAT && currentFuncReturnType == FLOAT)
             return Opcodes.FRETURN;
-        else if (type == VariableType.LONG)
+        else if (type == LONG && currentFuncReturnType == LONG)
             return Opcodes.LRETURN;
-        else if (type == VariableType.INT)
+        else if (type == INT && currentFuncReturnType == INT)
             return Opcodes.IRETURN;
         else
-            return Opcodes.ARETURN;
+            Logger.error("invalid function return type");
+        return 0;
     }
 
 }

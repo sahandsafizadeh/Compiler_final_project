@@ -2,8 +2,10 @@ package symtab.dscp.function;
 
 import ast.type.Type;
 import symtab.dscp.Descriptor;
+import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Objects;
 
 public class FunctionDescriptor implements Descriptor {
@@ -11,6 +13,7 @@ public class FunctionDescriptor implements Descriptor {
     private String name;
     private Type returnType;
     private Type[] parameterTypes;
+    private Map<String, VariableDescriptor> parameters;
 
     public String getName() {
         return name;
@@ -34,6 +37,14 @@ public class FunctionDescriptor implements Descriptor {
 
     public void setParameterTypes(Type... parameterTypes) {
         this.parameterTypes = parameterTypes;
+    }
+
+    public Map<String, VariableDescriptor> getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(Map<String, VariableDescriptor> parameters) {
+        this.parameters = parameters;
     }
 
     public String getDescriptor() {

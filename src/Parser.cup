@@ -69,11 +69,11 @@ nonterminal ProgramContent global_var_dcl;
 nonterminal Type variable_type;
 
 nonterminal ProgramContent func_dcl;
-nonterminal function_type;
-nonterminal func_dcl_part;
+nonterminal Type function_type;
+nonterminal Block func_dcl_part;
 nonterminal arguments;
 nonterminal arguments_part;
-nonterminal function_array_dcl;
+nonterminal Boolean function_array_dcl;
 
 nonterminal ProgramContent struct_dcl;
 nonterminal StructVarDCL struct_var_dcl;
@@ -189,9 +189,9 @@ variable_type ::=
 
 //functions
 func_dcl ::=
-    EXTERN function_type ID SEMI
+    EXTERN function_type ID SEMI //todo
     |
-    FUNCTION function_type ID PRANTOP arguments PRANTCL func_dcl_part
+    FUNCTION function_type:t ID:id {:id = scanner.string.toString();:} PRANTOP arguments PRANTCL func_dcl_part:b {:RESULT = new FunctionDCL(t, id, b);:}
     ;
 
 function_type ::=
@@ -201,13 +201,13 @@ function_type ::=
     ;
 
 func_dcl_part ::=
-    SEMI
+    SEMI {:RESULT = null;:}
     |
-    block
+    block:b {:RESULT = b;:}
     ;
 
 arguments ::=
-    variable_type ID function_array_dcl arguments_part
+    variable_type:t {:FunctionArguments.getInstance().setCurrentType(t);:} ID:id {:id = scanner.string.toString();:} function_array_dcl:b {:t = b ? Type.toArray(t) : t;:} arguments_part {:FunctionArguments.getinstance().addArgument(id, t);:}
     |
     /*epsilon*/
     ;
@@ -219,9 +219,9 @@ arguments_part ::=
     ;
 
 function_array_dcl ::=
-    BRACKOP BRACKCL function_array_dcl
+    BRACKOP BRACKCL function_array_dcl {:RESULT = true;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = false;:}
     ;
 
 

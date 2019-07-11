@@ -793,6 +793,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/function/FunctionArguments.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java">
           <value>
             <set />
