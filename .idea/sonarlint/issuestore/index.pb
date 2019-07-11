@@ -207,3 +207,15 @@ D
 src/ast/dcl/DCL.java,5\2\526dd241d5545cfc6207b9f4cc0fdf37d04b83ef
 S
 #src/ast/dcl/variable/Variables.java,1\9\1956c4d66f7615cb5f45a12eab1cef38e37b455c
+W
+'src/symtab/dscp/function/Functions.java,9\3\9398c1fd8c16b3e81faa3c829e6014e5d8adae08
+_
+/src/ast/access/function/FunctionAccessData.java,9\1\912b84512aecd8caaf3a6e74692ce02dd739a1f8
+R
+"src/ast/access/FunctionAccess.java,e\b\ebd73f508f4c7dfc4154b8f79cd5693ae12838b8
+]
+-src/ast/block/stmt/function/FunctionCall.java,a\2\a249b61c99084cb5a2c0ef92a3b375dfa65aed93
+W
+'src/ast/expr/function/FunctionCall.java,4\6\46fa25b34ae34dfe4bd2c514fae0f6d04671e492
+W
+'src/ast/block/stmt/function/Return.java,f\3\f3a1427b0c51efe65e9a7aed937a5ba89fa0148f

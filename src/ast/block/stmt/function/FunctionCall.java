@@ -2,6 +2,7 @@ package ast.block.stmt.function;
 
 import ast.access.FunctionAccess;
 import ast.block.BlockContent;
+import ast.type.FunctionType;
 import ast.type.Type;
 import ast.type.VariableType;
 import cg.CodeGenerator;
@@ -22,7 +23,8 @@ public class FunctionCall extends BlockContent {
         Logger.log("function call statement");
         access.compile();
         Type returnType = ((FunctionDescriptor) access.getDescriptor()).getReturnType();
-        CodeGenerator.mVisit.visitInsn(!(returnType == VariableType.DOUBLE || returnType == VariableType.LONG) ? Opcodes.POP : Opcodes.POP2);
+        if (returnType != FunctionType.VOID)
+            CodeGenerator.mVisit.visitInsn(!(returnType == VariableType.DOUBLE || returnType == VariableType.LONG) ? Opcodes.POP : Opcodes.POP2);
     }
 
 }

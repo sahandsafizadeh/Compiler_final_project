@@ -2,37 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ast/access/FunctionAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/access/function/FunctionAccessData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/block/stmt/function/Return.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expr/function/FunctionCall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/symtab/dscp/function/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00f7de7c3a6006bb6ddf180b93fbe661ea553901" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/01c0c66dd674d98865276ccbbbac4db0170211dd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37eaf71e96b66813f48d7cfe565cc0d4291bc38f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4da821ea439f820d394a8a418b2dcc5ab07e9298" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c4bea00ea7e50bd90a704523a73a2f04d3b2f9d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c4bea00ea7e50bd90a704523a73a2f04d3b2f9d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52f5af6d5a647d9d9dce41b80d1d0f632112478c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52f5af6d5a647d9d9dce41b80d1d0f632112478c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61760f074be3aab92458c66bd37bc2c6375c4f53" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61760f074be3aab92458c66bd37bc2c6375c4f53" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/81fd296af6ff7652c312140c9450e4d783d674d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8dc3087fd997d2665b8483ce1b16f57e413cd58c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8dc3087fd997d2665b8483ce1b16f57e413cd58c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6de43fe840079bb249d83591f66556de57d3280" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6de43fe840079bb249d83591f66556de57d3280" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a89e35e31c79ac5a4dd10c31cd56f0581c412130" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dcc4bdd3fdbbc34e88214545f463964f7931044b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dcc4bdd3fdbbc34e88214545f463964f7931044b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f19df9ff03ddd8bd4f2ccd257a8428250850bc28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1d4fa75af337356854c79060ecfe35a7350859d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1d4fa75af337356854c79060ecfe35a7350859d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/8/f82cf69e82a6d859d556cdde8aa0c02e74f858f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fbb870bcbcc81950ef2e481148f92d6aee0cb9a6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fbb870bcbcc81950ef2e481148f92d6aee0cb9a6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/Access.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/VariableAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/VariableAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/TableStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/TableStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,24 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Parser.cup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="199" column="39" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/function/Return.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#203#204#0" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
-                <element signature="e#278#279#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="409">
+              <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
             </state>
           </provider>
         </entry>
@@ -153,7 +113,6 @@
         <option value="$PROJECT_DIR$/src/symtab/TableStack.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/function/FunctionData.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" />
-        <option value="$PROJECT_DIR$/src/ast/block/stmt/function/Return.java" />
         <option value="$PROJECT_DIR$/A.java" />
         <option value="$PROJECT_DIR$/src/symtab/dscp/function/Functions.java" />
         <option value="$PROJECT_DIR$/src/ast/access/FunctionAcess.java" />
@@ -163,10 +122,11 @@
         <option value="$PROJECT_DIR$/src/ast/access/function/FunctionAccessData.java" />
         <option value="$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java" />
         <option value="$PROJECT_DIR$/src/symtab/dscp/Descriptor.java" />
-        <option value="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" />
         <option value="$PROJECT_DIR$/src/ast/access/FunctionAccess.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/function/FunctionCall.java" />
         <option value="$PROJECT_DIR$/src/Parser.cup" />
+        <option value="$PROJECT_DIR$/src/ast/block/stmt/function/Return.java" />
+        <option value="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" />
       </list>
     </option>
   </component>
@@ -256,7 +216,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562778824225" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562778830740" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../servers/Server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -342,7 +302,9 @@
       <workItem from="1562662800446" duration="626000" />
       <workItem from="1562750082001" duration="2077000" />
       <workItem from="1562752857033" duration="18000" />
-      <workItem from="1562765306544" duration="9239000" />
+      <workItem from="1562765306544" duration="9495000" />
+      <workItem from="1562781322350" duration="694000" />
+      <workItem from="1562817044662" duration="1041000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -362,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285253000" />
+    <option name="totallyTimeSpent" value="287244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,7 +344,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18926175" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19463088" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -460,13 +422,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/other/SizeOf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/type/StructureType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -871,27 +826,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/function/FunctionData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/function/FunctionData.java" />
     <entry file="file://$PROJECT_DIR$/src/ast/expr/function/FunctionCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -906,24 +841,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="2001" column="19" selection-start-line="2001" selection-start-column="15" selection-end-line="2001" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/function/Return.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="148">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.cup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="199" column="39" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
+        <state relative-caret-position="409">
+          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
         </state>
       </provider>
     </entry>
