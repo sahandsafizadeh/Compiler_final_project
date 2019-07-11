@@ -15,6 +15,10 @@ public class StructureAccess extends Access {
         descriptor = access.getDescriptor();
     }
 
+    public VariableDescriptor getStructureVar() {
+        return structureVar;
+    }
+
     @Override
     public void setDescriptor(String id) {
         structureVar = ((StructureDescriptor) descriptor).get(id);

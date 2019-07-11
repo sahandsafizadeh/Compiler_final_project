@@ -1,6 +1,7 @@
 package ast.type;
 
 import cg.Logger;
+import symtab.dscp.AbstractDescriptor;
 
 public class Type {
 
@@ -30,7 +31,20 @@ public class Type {
         return type;
     }
 
-    public Type toArray(Type t) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Type type1 = (Type) o;
+        return type.equals(type1.type);
+    }
+
+    public static void inferType(AbstractDescriptor descriptor, Type type) {
+        if (descriptor.getType() == AUTO)
+            descriptor.setType(type);
+    }
+
+    public static Type toArray(Type t) {
         if (t == BOOL)
             return BOOL_ARRAY;
         else if (t == CHAR)
@@ -48,12 +62,22 @@ public class Type {
         return null;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Type type1 = (Type) o;
-        return type.equals(type1.type);
+    public static Type toSimple(Type t) {
+        if (t == BOOL_ARRAY)
+            return BOOL;
+        else if (t == CHAR_ARRAY)
+            return CHAR;
+        else if (t == INT_ARRAY)
+            return INT;
+        else if (t == LONG_ARRAY)
+            return LONG;
+        else if (t == FLOAT_ARRAY)
+            return FLOAT;
+        else if (t == DOUBLE_ARRAY)
+            return DOUBLE;
+        else
+            Logger.error("invalid array type");
+        return null;
     }
 
 }

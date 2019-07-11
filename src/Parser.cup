@@ -4,8 +4,8 @@ import ast.access.VariableAccess;
 import ast.block.Block;
 import ast.block.BlockContent;
 import ast.block.Blocks;
-import ast.block.stmt.Break;
-import ast.block.stmt.Continue;
+import ast.block.stmt.loop.Break;
+import ast.block.stmt.loop.Continue;
 import ast.block.stmt.Statement;
 import ast.block.stmt.assignment.*;
 import ast.block.stmt.conditional.casestmt.Cases;
@@ -446,13 +446,13 @@ expr ::=
     |
     MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
-    PREFMINUS2 variable:a {:RESULT = new PrefixMinus2(a.getDescriptor());:}
+    PREFMINUS2 variable:a {:RESULT = new PrefixMinus2(a);:}
     |
-    PREFPLUS2 variable:a {:RESULT = new PrefixPlus2(a.getDescriptor());:}
+    PREFPLUS2 variable:a {:RESULT = new PrefixPlus2(a);:}
     |
-    variable:a PREFMINUS2 {:RESULT = new PostfixMinus2(a.getDescriptor());:} %prec POSTMINUS2
+    variable:a PREFMINUS2 {:RESULT = new PostfixMinus2(a);:} %prec POSTMINUS2
     |
-    variable:a PREFPLUS2 {:RESULT = new PostfixPlus2(a.getDescriptor());:} %prec POSTPLUS2
+    variable:a PREFPLUS2 {:RESULT = new PostfixPlus2(a);:} %prec POSTPLUS2
     |
     PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new Casting(t, e);:} %prec CASTPRANTOP
     |

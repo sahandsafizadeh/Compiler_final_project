@@ -1,24 +1,22 @@
 package ast.expr.unary.arithmatic;
 
+import ast.access.Access;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.AbstractDescriptor;
 
 import static cg.CodeGenerator.mVisit;
 
 public class PrefixMinus2 extends DualOperation {
 
-    public PrefixMinus2(AbstractDescriptor descriptor) {
-        super(descriptor);
+    public PrefixMinus2(Access access) {
+        super(access);
     }
 
     @Override
     public void compile() {
         Logger.log("prefix minus minus");
-        checkOperation();
-        determineOp(getResultType());
+        super.compile();
         mVisit.visitInsn(Opcodes.ICONST_M1);
-        mVisit.visitVarInsn(ldrOp, descriptor.getStackIndex());
         mVisit.visitInsn(addOp);
         mVisit.visitInsn(dupOp);
         mVisit.visitVarInsn(strOp, descriptor.getStackIndex());

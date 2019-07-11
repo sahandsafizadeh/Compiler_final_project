@@ -10,30 +10,23 @@ import symtab.dscp.AbstractDescriptor;
 public class Variable extends Expression {
 
     private Access access;
-    private AbstractDescriptor descriptor;
 
     public Variable(Access access) {
-        super(access.getDescriptor().getType());
         this.access = access;
-        descriptor = access.getDescriptor();
     }
 
     @Override
     public Type getResultType() {
-        if (!TypeChecker.isValidVariableType(descriptor.getType()))
+        Type type = ((AbstractDescriptor) access.getDescriptor()).getType();
+        if (!TypeChecker.isValidVariableType(type))
             Logger.error("type mismatch");
-        return descriptor.getType();
+        return type;
     }
 
     @Override
     public void compile() {
         Logger.log("variable push");
         access.compile();
-    }
-
-    @Override
-    public int determineOp(Type type) {
-        return 0;
     }
 
 }

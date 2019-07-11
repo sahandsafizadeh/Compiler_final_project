@@ -1,47 +1,65 @@
 package ast.block.stmt.assignment;
 
-import ast.access.*;
+import ast.access.Access;
+import ast.access.ArrayAccess;
+import ast.access.StructureAccess;
+import ast.access.VariableAccess;
 import ast.expr.Expression;
+import ast.type.Type;
 import cg.CodeGenerator;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.struct.StructureDescriptor;
-import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.variable.GlobalVariableDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
+
+import static cg.CodeGenerator.mVisit;
 
 public abstract class OperatorAssign extends Assignment {
 
-    protected int opcode;
+    int opcode;
 
-    public OperatorAssign(Access access, Expression expr) {
+    OperatorAssign(Access access, Expression expr) {
         super(access, expr);
     }
 
     @Override
     public void compile() {
         checkOperation();
-        AbstractDescriptor descriptor = access.getDescriptor();
-        int strCode = determineOp(access.getDescriptor().getType());
-        if (access instanceof VariableAccess) {
-            doArithmetic();
-            CodeGenerator.mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
-        } else if (access instanceof GlobalVariableAccess) {
-            doArithmetic();
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
-        } else if (access instanceof ArrayAccess) {
-            arrayStoreInit();
-            doArithmetic();
-            CodeGenerator.mVisit.visitInsn(strCode);
-        } else {
-            doArithmetic();
-            VariableDescriptor structVar = ((StructureDescriptor) descriptor).get(((StructureAccess) access).getId());
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getName(), structVar.getName(), structVar.getType().typeName());
-        }
+        if (access instanceof VariableAccess)
+            variableOperatorAssign();
+        else if (access instanceof ArrayAccess)
+            arrayOperatorAssign();
+        else
+            structOperatorAssign();
     }
 
-    private void doArithmetic() {
+    private void variableOperatorAssign() {
         access.compile();
-        super.compile();
+        expr.compile();
+        expr.doCastCompile(descriptor.getType());
         CodeGenerator.mVisit.visitInsn(opcode);
+        if (descriptor instanceof GlobalVariableDescriptor)
+            mVisit.visitFieldInsn(Opcodes.PUTFIELD, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
+        else
+            mVisit.visitVarInsn(determineOp(descriptor.getType()), descriptor.getStackIndex());
+    }
+
+    private void arrayOperatorAssign() {
+        Type type = Type.toSimple(descriptor.getType());
+        arrayStoreInit();
+        access.compile();
+        expr.compile();
+        expr.doCastCompile(type);
+        mVisit.visitInsn(opcode);
+        mVisit.visitInsn(determineOp(type));
+    }
+
+    private void structOperatorAssign() {
+        VariableDescriptor structVar = ((StructureAccess) access).getStructureVar();
+        access.compile();
+        expr.compile();
+        expr.doCastCompile(structVar.getType());
+        mVisit.visitInsn(opcode);
+        mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getType().typeName(), structVar.getName(), structVar.getType().typeName());
     }
 
 }

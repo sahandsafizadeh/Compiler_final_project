@@ -2,39 +2,36 @@ package ast.block.stmt.assignment;
 
 import ast.access.Access;
 import ast.access.ArrayAccess;
+import ast.access.VariableAccess;
 import ast.block.BlockContent;
 import ast.expr.Expression;
 import ast.type.Type;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+import symtab.dscp.AbstractDescriptor;
 
-import static ast.type.CastingType.*;
-import static ast.type.StructureType.LONG;
+import static ast.type.Type.*;
 
 public abstract class Assignment extends BlockContent {
 
     protected Access access;
     protected Expression expr;
+    protected AbstractDescriptor descriptor;
 
     public Assignment(Access access, Expression expr) {
         this.access = access;
         this.expr = expr;
+        descriptor = (AbstractDescriptor) access.getDescriptor();
     }
 
-    @Override
-    public void compile() {
-        expr.compile();
-        expr.doCastCompile(access.getDescriptor().getType());
-    }
-
-    public void checkOperation() {
-        if (access.getDescriptor().isConst())
+    void checkOperation() {
+        if (descriptor.isConst())
             Logger.error("constant variables can't be changed");
     }
 
     public int determineOp(Type type) {
-        boolean varAccess = !(access instanceof ArrayAccess);
+        boolean varAccess = access instanceof VariableAccess;
         if (type == DOUBLE)
             return varAccess ? Opcodes.DSTORE : Opcodes.DASTORE;
         else if (type == FLOAT)
@@ -48,9 +45,9 @@ public abstract class Assignment extends BlockContent {
     }
 
     void arrayStoreInit() {
-        CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, access.getDescriptor().getStackIndex());
+        CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, descriptor.getStackIndex());
         Expression indexExpr = ((ArrayAccess) access).getIndex();
-        if (indexExpr.getResultType() != VariableType.INT)
+        if (indexExpr.getResultType() != INT)
             Logger.error("arrays can only be accessed using integer values");
         indexExpr.compile();
     }

@@ -1,7 +1,6 @@
 package ast.type;
 
 import cg.Logger;
-import symtab.dscp.AbstractDescriptor;
 
 import static ast.type.Type.*;
 
@@ -50,11 +49,6 @@ public class TypeChecker {
 
     public static boolean isValidSwitchType(Type type) {
         return type == BOOL || type == CHAR || type == INT;
-    }
-
-    public static void inferType(AbstractDescriptor descriptor, Type type) {
-        if (descriptor.getType() == AUTO)
-            descriptor.setType(type);
     }
 
 }

@@ -1,14 +1,18 @@
 package ast.block.stmt.assignment;
 
-import ast.access.*;
+import ast.access.Access;
+import ast.access.ArrayAccess;
+import ast.access.StructureAccess;
+import ast.access.VariableAccess;
 import ast.expr.Expression;
-import ast.type.TypeChecker;
+import ast.type.Type;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.struct.StructureDescriptor;
-import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.variable.GlobalVariableDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
+
+import static cg.CodeGenerator.mVisit;
 
 public class DirectAssign extends Assignment {
 
@@ -20,26 +24,37 @@ public class DirectAssign extends Assignment {
     public void compile() {
         Logger.log("direct assignment");
         checkOperation();
-        TypeChecker.inferType(access.getDescriptor(), expr.getResultType());
-        AbstractDescriptor descriptor = access.getDescriptor();
-        int strCode = determineOp(descriptor.getType());
-        if (access instanceof VariableAccess) {
-            super.compile();
-            CodeGenerator.mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
-        } else if (access instanceof GlobalVariableAccess) {
-            super.compile();
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
-        }
-        if (access instanceof ArrayAccess) {
-            arrayStoreInit();
-            super.compile();
-            CodeGenerator.mVisit.visitInsn(strCode);
-        } else {
-            super.compile();
-            StructureDescriptor structDscp = (StructureDescriptor) access.getDescriptor();
-            VariableDescriptor structVar = structDscp.get(((StructureAccess) access).getId());
-            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getType().typeName(), structVar.getName(), structVar.getType().typeName());
-        }
+        if (access instanceof VariableAccess)
+            variableDirectAssign();
+        else if (access instanceof ArrayAccess)
+            arrayDirectAssign();
+        else
+            structDirectAssign();
+    }
+
+    private void variableDirectAssign() {
+        Type.inferType(descriptor, expr.getResultType());
+        expr.compile();
+        expr.doCastCompile(descriptor.getType());
+        if (descriptor instanceof GlobalVariableDescriptor)
+            mVisit.visitFieldInsn(Opcodes.PUTFIELD, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
+        else
+            mVisit.visitVarInsn(determineOp(descriptor.getType()), descriptor.getStackIndex());
+    }
+
+    private void arrayDirectAssign() {
+        Type type = Type.toSimple(descriptor.getType());
+        arrayStoreInit();
+        expr.compile();
+        expr.doCastCompile(Type.toSimple(type));
+        mVisit.visitInsn(determineOp(type));
+    }
+
+    private void structDirectAssign() {
+        VariableDescriptor structVar = ((StructureAccess) access).getStructureVar();
+        expr.compile();
+        expr.doCastCompile(structVar.getType());
+        mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getType().typeName(), structVar.getName(), structVar.getType().typeName());
     }
 
 }
