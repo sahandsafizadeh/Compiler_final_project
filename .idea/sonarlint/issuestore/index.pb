@@ -65,12 +65,6 @@ B
 src/cg/Logger.java,0\2\02213f5882130b5f6ca199b36cc9ae14706ef759
 I
 src/cg/CodeGenerator.java,a\6\a6de43fe840079bb249d83591f66556de57d3280
-M
-src/ast/type/CastingType.java,b\8\b82c32f6011d77836603ebc23c1b9f9a400bff21
-O
-src/ast/type/StructureType.java,8\d\8de1ee3d69241e0f80197edc9fc96217cdeeed14
-N
-src/ast/type/FunctionType.java,3\c\3c201a13192fc84641e676d4cdeda1b4a7ef9583
 Q
 !src/ast/block/stmt/Statement.java,3\3\33bf3c9dc7e07807524b96382e113d287112ed44
 F
@@ -103,8 +97,6 @@ S
 #src/ast/expr/constant/Constant.java,a\3\a3a3511da1d192d5d4a093a2029f87f42094a9c9
 W
 'src/ast/expr/constant/CharConstant.java,5\a\5a8ecd0477a4f3a5fe7cd7fe605186468de885ac
-N
-src/ast/type/VariableType.java,3\5\356fed88a72950eab9113474d873b8950874480c
 h
 8src/ast/expr/binary/arithmatic/ArithmeticBinaryExpr.java,c\9\c921effb07a7768a560d588becc12c71816da39d
 S
@@ -219,3 +211,7 @@ W
 'src/ast/expr/function/FunctionCall.java,4\6\46fa25b34ae34dfe4bd2c514fae0f6d04671e492
 W
 'src/ast/block/stmt/function/Return.java,f\3\f3a1427b0c51efe65e9a7aed937a5ba89fa0148f
+_
+/src/ast/program/function/FunctionArguments.java,4\e\4eb4154a5d802485d5865de6d1b00fd0f24be57a
+Y
+)src/ast/program/function/FunctionDCL.java,b\3\b338f1efef1968d2842194534cafef011c79a526

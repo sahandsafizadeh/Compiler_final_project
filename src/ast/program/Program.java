@@ -1,6 +1,7 @@
 package ast.program;
 
 import ast.Node;
+import ast.type.Type;
 import cg.Logger;
 import symtab.dscp.function.Functions;
 
@@ -28,7 +29,7 @@ public class Program implements Node {
     public void compile() {
         Logger.log("compiling program");
         contents.forEach(ProgramContent::compile);
-        if (!Functions.getInstance().contains("main", FunctionType.INT))
+        if (!Functions.getInstance().contains("main", Type.INT))
             Logger.error("program doesn't contain a main function");
     }
 

@@ -41,7 +41,7 @@ public class TypeChecker {
     }
 
     public static boolean isValidVariableType(Type type) {
-        return isValidExprType(type) || type == STRING;
+        return isValidExprType(type) || type == STRING || type == AUTO;
     }
 
     public static boolean isValidPrimitiveArrayType(Type type) {

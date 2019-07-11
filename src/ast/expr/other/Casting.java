@@ -10,10 +10,6 @@ public class Casting extends Expression {
     private Expression expr;
     private Type type;
 
-    public Casting(Type type) {
-        super(type);
-    }
-
     public Casting(Type type, Expression expr) {
         this.expr = expr;
         this.type = type;

@@ -2,59 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02213f5882130b5f6ca199b36cc9ae14706ef759" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02213f5882130b5f6ca199b36cc9ae14706ef759" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f5066c3add2cfdb585d0902875ee8602d7e690f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f5066c3add2cfdb585d0902875ee8602d7e690f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/356fed88a72950eab9113474d873b8950874480c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c201a13192fc84641e676d4cdeda1b4a7ef9583" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/4885b292191de9a5ec63be35c24471cc6140644b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/4885b292191de9a5ec63be35c24471cc6140644b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/512febc7b868a5ab727790a2e675f0135fefa9fc" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/512febc7b868a5ab727790a2e675f0135fefa9fc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61760f074be3aab92458c66bd37bc2c6375c4f53" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61760f074be3aab92458c66bd37bc2c6375c4f53" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8de1ee3d69241e0f80197edc9fc96217cdeeed14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3a3511da1d192d5d4a093a2029f87f42094a9c9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3a3511da1d192d5d4a093a2029f87f42094a9c9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6de43fe840079bb249d83591f66556de57d3280" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6de43fe840079bb249d83591f66556de57d3280" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b82c32f6011d77836603ebc23c1b9f9a400bff21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c01849516282e9cd72c18c3af78438592fefdbd6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c01849516282e9cd72c18c3af78438592fefdbd6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3ab999100386811db4b2df237cb582eb8100f8f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3ab999100386811db4b2df237cb582eb8100f8f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3a1427b0c51efe65e9a7aed937a5ba89fa0148f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3a1427b0c51efe65e9a7aed937a5ba89fa0148f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/access/StructureAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/access/StructureAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/DirectAssign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/assignment/OperatorAssign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/block/stmt/loop/Foreach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/block/stmt/loop/Foreach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/dcl/struct/StructDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/dcl/struct/StructDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/Expression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryAnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryOr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/BinaryXor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Div.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Mult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/arithmatic/Sub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/GT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/LE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/BooleanConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/BooleanConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/CharConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/CharConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/DoubleConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/DoubleConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/IntegerConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/IntegerConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/expr/other/Casting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/other/Casting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/expr/other/SizeOf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/other/SizeOf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/unary/UnaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/unary/UnaryExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/BinaryNot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/BinaryNot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Uminus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Uminus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/unary/logical/Not.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/unary/logical/Not.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/program/structure/StructVarDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/structure/StructVarDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/CastingType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/FunctionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/StructureType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/type/Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/type/TypeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/type/TypeChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/VariableType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/TableStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/TableStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,62 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Parser.cup">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="439" column="5" lean-forward="true" selection-start-line="439" selection-start-column="5" selection-end-line="439" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixMinus2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixPlus2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefixMinus2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefixPlus2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="439">
+              <caret line="456" column="20" selection-start-line="456" selection-start-column="20" selection-end-line="456" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -173,12 +91,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ast/access/function/FunctionAccessData.java" />
-        <option value="$PROJECT_DIR$/src/symtab/dscp/Descriptor.java" />
         <option value="$PROJECT_DIR$/src/ast/access/FunctionAccess.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/function/FunctionCall.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/function/FunctionCall.java" />
-        <option value="$PROJECT_DIR$/src/ast/program/Program.java" />
         <option value="$PROJECT_DIR$/src/symtab/dscp/function/Functions.java" />
         <option value="$PROJECT_DIR$/src/symtab/TableStack.java" />
         <option value="$PROJECT_DIR$/src/ast/block/stmt/function/Return.java" />
@@ -207,7 +122,6 @@
         <option value="$PROJECT_DIR$/src/ast/expr/constant/DoubleConstant.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/Constant.java" />
-        <option value="$PROJECT_DIR$/src/ast/expr/other/Casting.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/LogicalBinaryExpr.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/GE.java" />
@@ -217,17 +131,21 @@
         <option value="$PROJECT_DIR$/src/ast/expr/binary/logical/NE.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/binary/BinaryExpression.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/Expression.java" />
-        <option value="$PROJECT_DIR$/src/ast/type/TypeChecker.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/unary/logical/Not.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/unary/UnaryExpression.java" />
-        <option value="$PROJECT_DIR$/src/Parser.cup" />
         <option value="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/Uminus.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/BinaryNot.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java" />
+        <option value="$PROJECT_DIR$/src/ast/program/Program.java" />
+        <option value="$PROJECT_DIR$/src/Parser.cup" />
+        <option value="$PROJECT_DIR$/src/ast/type/TypeChecker.java" />
+        <option value="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/other/Casting.java" />
+        <option value="$PROJECT_DIR$/src/ast/expr/other/SizeOf.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="230" />
     <option name="width" value="1695" />
     <option name="height" value="1040" />
@@ -237,7 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,6 +179,13 @@
               <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ast" type="462c0819:PsiDirectoryNode" />
+              <item name="access" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ast" type="462c0819:PsiDirectoryNode" />
               <item name="expr" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -269,25 +194,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ast" type="462c0819:PsiDirectoryNode" />
               <item name="expr" type="462c0819:PsiDirectoryNode" />
-              <item name="unary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-              <item name="unary" type="462c0819:PsiDirectoryNode" />
-              <item name="arithmatic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Compiler_final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-              <item name="expr" type="462c0819:PsiDirectoryNode" />
-              <item name="unary" type="462c0819:PsiDirectoryNode" />
-              <item name="logical" type="462c0819:PsiDirectoryNode" />
+              <item name="other" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Compiler" type="b2602c69:ProjectViewProjectNode" />
@@ -300,14 +207,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562829588291" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562840180117" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../servers/Server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -381,7 +288,8 @@
       <workItem from="1562752857033" duration="18000" />
       <workItem from="1562765306544" duration="9495000" />
       <workItem from="1562781322350" duration="694000" />
-      <workItem from="1562817044662" duration="11625000" />
+      <workItem from="1562817044662" duration="11758000" />
+      <workItem from="1562835121216" duration="2931000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -401,7 +309,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297828000" />
+    <option name="totallyTimeSpent" value="300892000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,7 +321,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -421,7 +329,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1738255" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17583893" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -499,78 +407,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/symtab/TableStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="165" column="33" lean-forward="true" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2609#2610#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2770#2771#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/program/function/FunctionArguments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Scanner.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cg/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19720">
@@ -605,34 +441,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/type/StructureType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/type/CastingType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/type/VariableType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/type/FunctionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/type/StructureType.java" />
+    <entry file="file://$PROJECT_DIR$/src/ast/type/CastingType.java" />
+    <entry file="file://$PROJECT_DIR$/src/ast/type/VariableType.java" />
+    <entry file="file://$PROJECT_DIR$/src/ast/type/FunctionType.java" />
     <entry file="file://$PROJECT_DIR$/src/ast/type/Type.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -760,16 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/other/Casting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/expr/binary/logical/EQ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -851,28 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/type/TypeChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/Expression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/logical/Not.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -940,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixMinus2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixPlus2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -961,10 +734,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PostfixMinus2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/program/ProgramContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/program/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/type/TypeChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/Expression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/access/VariableAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/access/GlobalVariableAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/PrefixPlus2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/other/SizeOf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/expr/other/Casting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -973,18 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.cup">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="439" column="5" lean-forward="true" selection-start-line="439" selection-start-column="5" selection-end-line="439" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/expr/unary/arithmatic/DualOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="439">
+          <caret line="456" column="20" selection-start-line="456" selection-start-column="20" selection-end-line="456" selection-end-column="20" />
         </state>
       </provider>
     </entry>

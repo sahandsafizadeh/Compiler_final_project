@@ -177,13 +177,23 @@ global_var_dcl ::=
     ;
 
 variable_type ::=
-    struct_type:t {:RESULT = t;:}
+    BOOL {:RESULT = Type.BOOL;:}
     |
-    STRING {:RESULT = VariableType.STRING;:}
+    CHAR {:RESULT = Type.CHAR;:}
     |
-    AUTO {:RESULT = VariableType.AUTO;:}
+    INT {:RESULT = Type.INT;:}
     |
-    ID:type {:new VariableType(type);:}
+    LONG {:RESULT = Type.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
+    |
+    STRING {:RESULT = Type.STRING;:}
+    |
+    AUTO {:RESULT = Type.AUTO;:}
+    |
+    ID:type {:new Type(type);:}
     ;
 
 

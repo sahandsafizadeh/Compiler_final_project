@@ -3,6 +3,7 @@ package ast.expr.other;
 import ast.expr.Expression;
 import ast.type.Type;
 import cg.CodeGenerator;
+import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
 public class SizeOf extends Expression {
@@ -10,31 +11,24 @@ public class SizeOf extends Expression {
     private Type type;
 
     public SizeOf(Type type) {
-        super(type);
         this.type = type;
     }
 
     @Override
     public Type getResultType() {
-        return VariableType.INT;
+        return Type.INT;
     }
 
     @Override
     public void compile() {
+        Logger.log("sizeof operator");
         CodeGenerator.mVisit.visitVarInsn(Opcodes.BIPUSH, determineOp(type));
     }
 
-    /**
-     * In this class this method doesn't return opcode itself but returns argument of the instruction.
-     *
-     * @param type
-     * @return
-     */
-    @Override
     public int determineOp(Type type) {
-        if (type == VariableType.CHAR)
+        if (type == Type.CHAR)
             return 2;
-        else if (type == VariableType.LONG || type == VariableType.DOUBLE)
+        else if (type == Type.LONG || type == Type.DOUBLE)
             return 8;
         else
             return 4;

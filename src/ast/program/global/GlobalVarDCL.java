@@ -25,15 +25,18 @@ public class GlobalVarDCL extends ProgramContent {
         Logger.log("global variable declaration");
         if (!TypeChecker.isValidVariableType(type))
             Logger.error("invalid type for global variable");
+        VariableDescriptor descriptor = generate();
+        TableStack.getInstance().addGlobal(descriptor);
+        Program.getInstance().addContent(this);
+        CodeGenerator.mainClw.visitField(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, id, type.typeName(), null, null).visitEnd();
+    }
 
+    private VariableDescriptor generate() {
         VariableDescriptor descriptor = new VariableDescriptor();
         descriptor.setName(id);
         descriptor.setType(type);
         descriptor.setConst(false);
-        TableStack.getInstance().addGlobal(descriptor);
-        Program.getInstance().addContent(this);
-
-        CodeGenerator.mainClw.visitField(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, id, type.typeName(), null, null).visitEnd();
+        return descriptor;
     }
 
 }
