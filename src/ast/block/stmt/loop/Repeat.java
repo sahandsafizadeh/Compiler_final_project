@@ -23,8 +23,8 @@ public class Repeat extends Statement {
         block.markStart();
         block.compile();
         expr.compile();
-        block.markEnd();
         CodeGenerator.mVisit.visitJumpInsn(Opcodes.IFEQ, block.getStart());
+        block.markEnd();
     }
 
 }

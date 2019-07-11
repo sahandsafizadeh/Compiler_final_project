@@ -28,7 +28,6 @@ public class For extends Statement {
     @Override
     public void compile() {
         Logger.log("for loop");
-
         if (init != null)
             init.compile();
 

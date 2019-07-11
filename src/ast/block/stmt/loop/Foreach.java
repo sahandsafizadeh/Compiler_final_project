@@ -1,6 +1,7 @@
 package ast.block.stmt.loop;
 
 import ast.block.Block;
+import ast.block.Blocks;
 import ast.block.stmt.Statement;
 import ast.type.Type;
 import cg.Logger;
@@ -10,7 +11,7 @@ import symtab.TableStack;
 import symtab.dscp.array.ArrayDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 import static cg.CodeGenerator.mVisit;
 
 public class Foreach extends Statement {
@@ -23,7 +24,6 @@ public class Foreach extends Statement {
     private VariableDescriptor loopTemp;
     private VariableDescriptor loopCounter;
     private int strCode;
-    private int ldrCode;
     private int arrayLdrCode;
 
     public Foreach(String temp, String array, Block body) {
@@ -44,7 +44,7 @@ public class Foreach extends Statement {
         mVisit.visitLabel(loopStart);
         mVisit.visitVarInsn(Opcodes.ALOAD, loopArray.getStackIndex());
         mVisit.visitInsn(Opcodes.ARRAYLENGTH);
-        mVisit.visitVarInsn(ldrCode, loopCounter.getStackIndex());
+        mVisit.visitVarInsn(Opcodes.ILOAD, loopCounter.getStackIndex());
         mVisit.visitJumpInsn(Opcodes.IFGE, body.getEnd());
 
         mVisit.visitVarInsn(Opcodes.ALOAD, loopArray.getStackIndex());
@@ -62,40 +62,34 @@ public class Foreach extends Statement {
     private void determineOp(Type type) {
         if (type == DOUBLE) {
             strCode = Opcodes.DSTORE;
-            ldrCode = Opcodes.DLOAD;
             arrayLdrCode = Opcodes.DALOAD;
         } else if (type == FLOAT) {
             strCode = Opcodes.FSTORE;
-            ldrCode = Opcodes.FLOAT;
             arrayLdrCode = Opcodes.FALOAD;
         } else if (type == LONG) {
             strCode = Opcodes.LSTORE;
-            ldrCode = Opcodes.LLOAD;
             arrayLdrCode = Opcodes.LALOAD;
         } else if (type == INT) {
             strCode = Opcodes.ISTORE;
-            ldrCode = Opcodes.ILOAD;
             arrayLdrCode = Opcodes.IALOAD;
         } else {
             strCode = Opcodes.ASTORE;
-            ldrCode = Opcodes.ALOAD;
             arrayLdrCode = Opcodes.AALOAD;
         }
     }
 
     private void initLoop() {
         loopArray = (ArrayDescriptor) TableStack.getInstance().find(array);
-
         loopTemp = new VariableDescriptor();
         loopTemp.setName(temp);
         loopTemp.setConst(false);
-        loopTemp.setType(loopArray.getType());
+        loopTemp.setType(Type.toSimple(loopArray.getType()));
         TableStack.getInstance().addVariable(loopTemp);
 
         loopCounter = new VariableDescriptor();
-        loopCounter.setName("$t");
+        loopCounter.setName("$t" + Blocks.getInstance().size());
         loopCounter.setConst(false);
-        loopCounter.setType(VariableType.INT);
+        loopCounter.setType(INT);
         TableStack.getInstance().addVariable(loopCounter);
     }
 

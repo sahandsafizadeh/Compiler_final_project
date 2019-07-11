@@ -361,7 +361,7 @@ loop_statement ::=
 cond_stmt ::=
     IF PRANTOP expr:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
     |
-    SWITCH PRANTOP ID:id {:id = scanner.string.toString(); Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(id, db);:}
+    SWITCH PRANTOP variable:a {:Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(a, db);:}
     ;
 
 else_part ::=

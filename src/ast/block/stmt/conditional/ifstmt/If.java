@@ -22,7 +22,6 @@ public class If extends Statement {
     @Override
     public void compile() {
         Logger.log("if");
-
         expr.compile();
         CodeGenerator.mVisit.visitJumpInsn(Opcodes.IFEQ, ifBlock.getEnd());
         ifBlock.compile();
