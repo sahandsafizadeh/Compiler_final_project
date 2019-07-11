@@ -1,12 +1,19 @@
+import ast.program.Program;
+import cg.CodeGenerator;
+
 import java.io.FileReader;
 
 public class Compiler {
 
-    public static void main(String[] args) throws Exception {
-        Parser parser = new Parser(new Scanner(new FileReader("inputFiles/expr.c")));
-        parser.parse();
+    private static final String INPUT_FILE = "input.c";
 
-//        Program.getInstance().compile();
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(new FileReader(INPUT_FILE));
+        Parser parser = new Parser(scanner);
+        CodeGenerator.initClass();
+        parser.parse();
+        Program.getInstance().compile();
+        CodeGenerator.writeFinalClassCode();
     }
 
 }

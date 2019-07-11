@@ -14,11 +14,11 @@ public class Logger {
 
     private static void init() {
         try {
-            writer = new FileWriter("log.txt");
+            writer = new FileWriter(LOG_FILE);
             writer.write("");
             writer.flush();
             writer.close();
-            writer = new FileWriter("log.txt", true);
+            writer = new FileWriter(LOG_FILE, true);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,14 +35,14 @@ public class Logger {
         }
     }
 
-    public static void close() throws IOException {
-        writer.close();
+    public static void error(String error) {
+        error += "(Error) ";
+        Logger.log(error);
+        throw new RuntimeException();
     }
 
-    public static void error(String message) {
-        message += "(Error) ";
-        Logger.log(message);
-        throw new RuntimeException();
+    public static void close() throws IOException {
+        writer.close();
     }
 
 }

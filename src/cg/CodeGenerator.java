@@ -18,27 +18,17 @@ public class CodeGenerator {
     public static ClassWriter mainClw;
     public static ClassWriter structClw;
     public static MethodVisitor mVisit;
-    public static MethodVisitor structMvisit;
-
-    public static void main(String[] args) throws IOException {
-        initClass();
-        writeFinalClassCode();
-    }
-
+    public static MethodVisitor structMVisit;
 
     public static void initClass() {
         Logger.log("Initializing code generator");
         mainClw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
-        mainClw.visit(V1_8, ACC_PUBLIC, "Compiled", null, SUPER_CLASS, null);
+        mainClw.visit(V1_8, ACC_PUBLIC, GENERATED_CLASS, null, SUPER_CLASS, null);
         mVisit = mainClw.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
         mVisit.visitCode();
         mVisit.visitVarInsn(ALOAD, 0);
         mVisit.visitMethodInsn(INVOKESPECIAL, SUPER_CLASS, "<init>", "()V", false);
         mVisit.visitInsn(RETURN);
-        mVisit.visitMaxs(1, 1);
-        mVisit.visitEnd();
-        mVisit = mainClw.visitMethod(ACC_PUBLIC | ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
-        mVisit.visitCode();
         mVisit.visitMaxs(1, 1);
         mVisit.visitEnd();
     }
@@ -53,6 +43,5 @@ public class CodeGenerator {
         }
         Logger.close();
     }
-
 
 }

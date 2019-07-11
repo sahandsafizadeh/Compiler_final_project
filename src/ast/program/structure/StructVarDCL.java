@@ -41,10 +41,10 @@ public class StructVarDCL implements Node {
         else if (!(expr instanceof Constant))
             Logger.error("invalid struct field initialization");
         else {
-            CodeGenerator.structMvisit.visitVarInsn(Opcodes.ALOAD, 0);
+            CodeGenerator.structMVisit.visitVarInsn(Opcodes.ALOAD, 0);
             expr.compile();
             Type type = TypeChecker.unaryExprTypeCheck(descriptor.getType());
-            CodeGenerator.structMvisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), type.getTypeName());
+            CodeGenerator.structMVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), type.getTypeName());
         }
     }
 
