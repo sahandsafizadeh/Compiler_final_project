@@ -4,12 +4,11 @@ import ast.block.BlockContent;
 import ast.dcl.variable.VariableDCL;
 import ast.expr.Expression;
 import ast.type.Type;
-import ast.type.TypeChecker;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public class CompleteDCL extends BlockContent {
 
@@ -28,11 +27,9 @@ public class CompleteDCL extends BlockContent {
         if (expr == null)
             return;
         if (!(dcl instanceof VariableDCL))
-            Logger.error("invalid initialization for array");
+            Logger.error("invalid initialization");
         else {
             Type type = dcl.getDescriptor().getType();
-            if (!TypeChecker.isValidVariableType(type))
-                Logger.error("invalid variable initialization");
             expr.compile();
             expr.doCastCompile(type);
             CodeGenerator.mVisit.visitVarInsn(determineOp(type), dcl.getDescriptor().getStackIndex());

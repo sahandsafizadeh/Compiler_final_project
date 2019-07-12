@@ -11,7 +11,7 @@ import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
 import symtab.dscp.array.ArrayDescriptor;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public class ArrayDCL extends DCL {
 
@@ -21,7 +21,7 @@ public class ArrayDCL extends DCL {
         this.expr = expr;
         descriptor = new ArrayDescriptor();
         descriptor.setConst(Variables.getInstance().isConstant());
-        descriptor.setType(Variables.getInstance().getType());
+        descriptor.setType(Type.toArray(Variables.getInstance().getType()));
     }
 
     @Override
@@ -30,13 +30,8 @@ public class ArrayDCL extends DCL {
         if (!TypeChecker.isValidSwitchType(expr.getResultType()))
             Logger.error("invalid array size parameter");
         expr.compile();
-        TableStack.getInstance().addArray((ArrayDescriptor) descriptor);
-
-        Type type = descriptor.getType();
-        if (TypeChecker.isValidPrimitiveArrayType(type))
-            CodeGenerator.mVisit.visitVarInsn(Opcodes.NEWARRAY, determinePrimitiveType(type));
-        else
-            Logger.error("unsupported array type");
+        TableStack.getInstance().addVariable(descriptor);
+        CodeGenerator.mVisit.visitVarInsn(Opcodes.NEWARRAY, determinePrimitiveType(descriptor.getType()));
     }
 
     private int determinePrimitiveType(Type type) {
@@ -46,8 +41,11 @@ public class ArrayDCL extends DCL {
             return Opcodes.T_FLOAT;
         else if (type == LONG)
             return Opcodes.T_LONG;
-        else
+        else if (type == INT || type == CHAR || type == BOOL)
             return Opcodes.T_INT;
+        else
+            Logger.log("unsupported array type");
+        return 0;
     }
 
 }

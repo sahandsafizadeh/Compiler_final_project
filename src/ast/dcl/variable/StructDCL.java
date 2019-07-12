@@ -1,29 +1,30 @@
 package ast.dcl.variable;
 
 import ast.dcl.DCL;
-import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
-import symtab.dscp.struct.StructureDescriptor;
+import symtab.TableStack;
 import symtab.dscp.AbstractDescriptor;
+import symtab.dscp.struct.Structures;
+
+import static cg.CodeGenerator.mVisit;
 
 public class StructDCL extends DCL {
 
     StructDCL(AbstractDescriptor descriptor) {
-        this.descriptor = new StructureDescriptor();
-        this.descriptor.setType(descriptor.getType());
-        this.descriptor.setConst(descriptor.isConst());
-        this.descriptor.setStackIndex(descriptor.getStackIndex());
+        this.descriptor = Structures.getInstance().newDescriptor(descriptor.getType());
         this.descriptor.setName(descriptor.getName());
+        this.descriptor.setConst(descriptor.isConst());
     }
 
     @Override
     public void compile() {
         Logger.log("struct declaration");
-        CodeGenerator.mVisit.visitTypeInsn(Opcodes.NEW, descriptor.getType().typeName());
-        CodeGenerator.mVisit.visitInsn(Opcodes.DUP);
-        CodeGenerator.mVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, descriptor.getName(), "<init>", "()V", false);
-        CodeGenerator.mVisit.visitVarInsn(Opcodes.ASTORE, descriptor.getStackIndex());
+        TableStack.getInstance().addVariable(descriptor);
+        mVisit.visitTypeInsn(Opcodes.NEW, descriptor.getType().typeName());
+        mVisit.visitInsn(Opcodes.DUP);
+        mVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, descriptor.getName(), "<init>", "()V", false);
+        mVisit.visitVarInsn(Opcodes.ASTORE, descriptor.getStackIndex());
     }
 
 }

@@ -43,10 +43,6 @@ public class TypeChecker {
         return isValidExprType(type) || type == STRING || type == AUTO;
     }
 
-    public static boolean isValidPrimitiveArrayType(Type type) {
-        return isValidSwitchType(type) || type == LONG || type == FLOAT || type == DOUBLE;
-    }
-
     public static boolean isValidSwitchType(Type type) {
         return type == BOOL || type == CHAR || type == INT;
     }
