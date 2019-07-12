@@ -8,6 +8,8 @@ import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.dscp.function.FunctionDescriptor;
 
+import static ast.type.Type.*;
+
 public class FunctionCall extends BlockContent {
 
     private FunctionAccess access;
@@ -21,8 +23,8 @@ public class FunctionCall extends BlockContent {
         Logger.log("function call statement");
         access.compile();
         Type returnType = ((FunctionDescriptor) access.getDescriptor()).getReturnType();
-        if (returnType != FunctionType.VOID)
-            CodeGenerator.mVisit.visitInsn(!(returnType == VariableType.DOUBLE || returnType == VariableType.LONG) ? Opcodes.POP : Opcodes.POP2);
+        if (returnType != VOID)
+            CodeGenerator.mVisit.visitInsn(!(returnType == DOUBLE || returnType == LONG) ? Opcodes.POP : Opcodes.POP2);
     }
 
 }

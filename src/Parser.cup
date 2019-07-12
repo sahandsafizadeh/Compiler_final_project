@@ -547,11 +547,11 @@ const_val ::=
 
 //function calls
 function_call ::=
-    ID:id {:FunctionAccess.init(); id = scanner.string.toString();:} PRANTOP parameters PRANTCL {:RESULT = new FunctionAccess(id);:} %prec FUNCPRANTOP
+    ID:id {:FunctionAccessData.getInstance().init(); id = scanner.string.toString();:} PRANTOP parameters PRANTCL {:RESULT = new FunctionAccess(); RESULT.setDescriptor(id);:} %prec FUNCPRANTOP
     ;
 
 parameters ::=
-    expr:e {:FunctionAccess.addParameter(e);:} parameters_part
+    expr:e {:FunctionAccessData.getInstance().addParameter(e);:} parameters_part
     |
     /*epsilon*/
     ;

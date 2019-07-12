@@ -19,6 +19,7 @@ public class TableStack {
     private static final TableStack instance = new TableStack();
     private final List<SymbolTable> SYM_TAB_STACK = new ArrayList<>();
     private final SymbolTable GLOBALS;
+    private FunctionDescriptor currentFunection;
     private int stackIndex;
 
     private static final String[] KEYWORDS = {
@@ -105,6 +106,10 @@ public class TableStack {
         return SYM_TAB_STACK.get(SYM_TAB_STACK.size() - 1);
     }
 
+    public FunctionDescriptor currentFunction() {
+        return currentFunection;
+    }
+
     public void pushSymbolTable(SymbolTable symbolTable) {
         SYM_TAB_STACK.add(symbolTable);
     }
@@ -119,6 +124,7 @@ public class TableStack {
 
     public void newFunction(FunctionDescriptor descriptor, boolean isMain) {
         stackIndex = isMain ? 1 : 0;
+        currentFunection = descriptor;
         descriptor.getParameters().forEach(this::addVariable);
     }
 

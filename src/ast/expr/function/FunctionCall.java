@@ -25,9 +25,4 @@ public class FunctionCall extends Expression {
         access.compile();
     }
 
-    @Override
-    public int determineOp(Type type) {
-        return 0;
-    }
-
 }

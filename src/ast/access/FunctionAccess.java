@@ -9,20 +9,18 @@ import symtab.dscp.function.Functions;
 
 public class FunctionAccess extends Access {
 
-    public FunctionAccess(String id) {
-        setDescriptor(id);
-    }
-
     @Override
     public void setDescriptor(String id) {
-        descriptor = Functions.getInstance().get(id, FunctionAccessData.getInstance().getParameters());
+        Type[] parameterTypes = FunctionAccessData.getInstance().getParameters();
+        if (!Functions.getInstance().contains(id, parameterTypes))
+            Logger.error("no function definition found");
+        descriptor = Functions.getInstance().get(id, parameterTypes);
     }
 
     @Override
     public void compile() {
-        if (descriptor == null)
-            Logger.error("no function definition found");
-        FunctionDescriptor descriptor = (FunctionDescriptor) getDescriptor();
+        Logger.log("function access invoke");
+        FunctionDescriptor descriptor = (FunctionDescriptor) this.descriptor;
         CodeGenerator.mVisit.visitMethodInsn(Opcodes.INVOKESTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getDescriptor(), false);
     }
 

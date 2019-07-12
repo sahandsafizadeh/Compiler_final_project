@@ -8,7 +8,7 @@ import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.TableStack;
 
-import static ast.type.VariableType.*;
+import static ast.type.Type.*;
 
 public class Return extends BlockContent {
 
@@ -26,14 +26,14 @@ public class Return extends BlockContent {
     }
 
     private int determineOp(Type type) {
-        Type currentFuncReturnType = TableStack.getInstance().getCurrentFunction().getReturnType();
+        Type currentFuncReturnType = TableStack.getInstance().currentFunction().getReturnType();
         if (type == DOUBLE && currentFuncReturnType == DOUBLE)
             return Opcodes.DRETURN;
         else if (type == FLOAT && currentFuncReturnType == FLOAT)
             return Opcodes.FRETURN;
         else if (type == LONG && currentFuncReturnType == LONG)
             return Opcodes.LRETURN;
-        else if (type == INT && currentFuncReturnType == INT)
+        else if (type == INT && (currentFuncReturnType == INT || currentFuncReturnType == CHAR || currentFuncReturnType == BOOL))
             return Opcodes.IRETURN;
         else
             Logger.error("invalid function return type");
