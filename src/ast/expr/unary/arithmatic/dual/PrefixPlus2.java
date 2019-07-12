@@ -1,16 +1,13 @@
-package ast.expr.unary.arithmatic;
+package ast.expr.unary.arithmatic.dual;
 
 import ast.access.Access;
-import ast.access.ArrayAccess;
-import ast.access.VariableAccess;
 import ast.type.Type;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 
 import static ast.type.Type.*;
-import static cg.CodeGenerator.mVisit;
 
-public class PrefixPlus2 extends DualOperation {
+public class PrefixPlus2 extends PreOperation {
 
     public PrefixPlus2(Access access) {
         super(access);
@@ -20,17 +17,6 @@ public class PrefixPlus2 extends DualOperation {
     public void compile() {
         Logger.log("prefix plus plus");
         super.compile();
-        mVisit.visitInsn(constOp);
-        mVisit.visitInsn(opcode);
-        mVisit.visitInsn(dupOp);
-        if (access instanceof VariableAccess) {
-
-        } else if (access instanceof ArrayAccess) {
-
-        } else {
-
-        }
-        mVisit.visitVarInsn(strOp, descriptor.getStackIndex());
     }
 
     @Override

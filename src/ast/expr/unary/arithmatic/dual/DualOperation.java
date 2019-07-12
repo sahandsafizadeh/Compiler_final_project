@@ -1,8 +1,6 @@
-package ast.expr.unary.arithmatic;
+package ast.expr.unary.arithmatic.dual;
 
 import ast.access.Access;
-import ast.access.ArrayAccess;
-import ast.access.StructureAccess;
 import ast.access.VariableAccess;
 import ast.expr.unary.UnaryExpression;
 import ast.type.Type;
@@ -21,27 +19,23 @@ public abstract class DualOperation extends UnaryExpression {
     int dupOp;
     int opcode;
 
-    public DualOperation(Access access) {
+    DualOperation(Access access) {
         super();
         this.access = access;
         descriptor = (AbstractDescriptor) access.getDescriptor();
     }
 
-    public void checkOperation() {
-        if (descriptor.isConst() ||
-                ((access instanceof StructureAccess) && (((StructureAccess) access)).getStructureVar().isConst()))
+    private void checkOperation() {
+        if (descriptor.isConst())
             Logger.error("constant variables can't be changed");
+        if (!(access instanceof VariableAccess))
+            Logger.error("unsupported operation");
     }
 
     @Override
     public void compile() {
         checkOperation();
-        if (access instanceof VariableAccess)
-            determineOp(descriptor.getType());
-        else if (access instanceof ArrayAccess)
-            determineOp(Type.toSimple(descriptor.getType()));
-        else
-            determineOp(((StructureAccess) access).getStructureVar().getType());
+        determineOp(descriptor.getType());
         access.compile();
     }
 
@@ -51,23 +45,23 @@ public abstract class DualOperation extends UnaryExpression {
      * @param type
      * @return
      */
+    @Override
     public int determineOp(Type type) {
-        boolean varAccess = !(access instanceof ArrayAccess);
         if (type == DOUBLE) {
             constOp = Opcodes.DCONST_1;
-            strOp = varAccess ? Opcodes.DSTORE : Opcodes.DASTORE;
+            strOp = Opcodes.DSTORE;
             dupOp = Opcodes.DUP2;
         } else if (type == FLOAT) {
             constOp = Opcodes.FCONST_1;
-            strOp = varAccess ? Opcodes.FSTORE : Opcodes.FASTORE;
+            strOp = Opcodes.FSTORE;
             dupOp = Opcodes.DUP;
         } else if (type == LONG) {
             constOp = Opcodes.LCONST_1;
-            strOp = varAccess ? Opcodes.LSTORE : Opcodes.LASTORE;
+            strOp = Opcodes.LSTORE;
             dupOp = Opcodes.DUP2;
         } else if (type == INT) {
             constOp = Opcodes.ICONST_1;
-            strOp = varAccess ? Opcodes.ISTORE : Opcodes.IASTORE;
+            strOp = Opcodes.ISTORE;
             dupOp = Opcodes.DUP;
         } else
             Logger.error("invalid operation");
