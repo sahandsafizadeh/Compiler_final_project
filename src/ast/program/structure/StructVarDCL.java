@@ -1,22 +1,19 @@
 package ast.program.structure;
 
-import ast.Node;
-import ast.expr.Expression;
 import ast.expr.constant.Constant;
-import ast.type.Type;
-import ast.type.TypeChecker;
+import ast.program.ProgramContent;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
 import symtab.dscp.variable.VariableDescriptor;
 
-public class StructVarDCL implements Node {
+public class StructVarDCL extends ProgramContent {
 
-    private Expression expr;
+    private Constant constant;
     private VariableDescriptor descriptor;
 
-    public StructVarDCL(Expression expr) {
-        this.expr = expr;
+    public StructVarDCL(Constant constant) {
+        this.constant = constant;
         descriptor = new VariableDescriptor();
     }
 
@@ -27,24 +24,19 @@ public class StructVarDCL implements Node {
     @Override
     public void compile() {
         Logger.log("declaring struct field");
-        CodeGenerator.structClw
-                .visitField(Opcodes.ACC_PUBLIC, descriptor.getName(), descriptor.getType().typeName(), null, null).visitEnd();
+        CodeGenerator.structClw.visitField
+                (Opcodes.ACC_PUBLIC, descriptor.getName(), descriptor.getType().typeName(), null, null).visitEnd();
     }
 
     /**
      * structures should be initialized in class constructor so there will be two code generations for them.
      */
     public void init(String typeName) {
-        Logger.log("initializing struct value in constructor");
-        if (expr == null)
-            return;
-        else if (!(expr instanceof Constant))
-            Logger.error("invalid struct field initialization");
-        else {
+        Logger.log("initializing struct variable value in constructor");
+        if (constant != null) {
             CodeGenerator.structMVisit.visitVarInsn(Opcodes.ALOAD, 0);
-            expr.compile();
-            Type type = TypeChecker.unaryExprTypeCheck(descriptor.getType());
-            CodeGenerator.structMVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), type.typeName());
+            constant.compile();
+            CodeGenerator.structMVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), descriptor.getType().typeName());
         }
     }
 

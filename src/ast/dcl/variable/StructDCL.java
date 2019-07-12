@@ -1,4 +1,4 @@
-package ast.dcl.struct;
+package ast.dcl.variable;
 
 import ast.dcl.DCL;
 import cg.CodeGenerator;
@@ -9,7 +9,7 @@ import symtab.dscp.AbstractDescriptor;
 
 public class StructDCL extends DCL {
 
-    public StructDCL(AbstractDescriptor descriptor) {
+    StructDCL(AbstractDescriptor descriptor) {
         this.descriptor = new StructureDescriptor();
         this.descriptor.setType(descriptor.getType());
         this.descriptor.setConst(descriptor.isConst());

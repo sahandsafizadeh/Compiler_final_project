@@ -3,6 +3,7 @@ package cg;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,13 +13,12 @@ import static org.objectweb.asm.Opcodes.*;
 public class CodeGenerator {
 
     private static final String OUTPUT_FILE = "Compiled.class";
-    private static final String SUPER_CLASS = "java/lang/Object";
+    public static final String SUPER_CLASS = "java/lang/Object";
     public static final String GENERATED_CLASS = "Compiled";
 
     public static ClassWriter mainClw;
     public static ClassWriter structClw;
     public static MethodVisitor mVisit;
-    public static MethodVisitor structMVisit;
 
     public static void initClass() {
         Logger.log("Initializing code generator");
@@ -42,6 +42,15 @@ public class CodeGenerator {
             e.printStackTrace();
         }
         Logger.close();
+    }
+
+    public static void writeStructureClassCode(String outputFile) {
+        Logger.log("writing structures class code to the output file");
+        try (OutputStream out = new FileOutputStream(outputFile)) {
+            out.write(structClw.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

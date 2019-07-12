@@ -1,7 +1,6 @@
 package ast.dcl.variable;
 
 import ast.dcl.DCL;
-import ast.dcl.struct.StructDCL;
 import ast.type.TypeChecker;
 import cg.Logger;
 import symtab.TableStack;
@@ -19,7 +18,7 @@ public class VariableDCL extends DCL {
     public void compile() {
         Logger.log("variable declaration");
         if (TypeChecker.isValidVariableType(descriptor.getType()))
-            TableStack.getInstance().addVariable((VariableDescriptor) descriptor);
+            TableStack.getInstance().addVariable(descriptor);
         else
             new StructDCL(descriptor).compile();
     }

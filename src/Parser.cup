@@ -15,15 +15,15 @@ import ast.block.stmt.loop.For;
 import ast.block.stmt.loop.Foreach;
 import ast.block.stmt.loop.Repeat;
 import ast.dcl.variable.*;
-import ast.expr.Expression;
-import ast.expr.binary.arithmatic.*;
-import ast.expr.binary.logical.*;
-import ast.expr.constant.*;
-import ast.expr.other.Casting;
-import ast.expr.other.SizeOf;
-import ast.expr.other.Variable;
-import ast.expr.unary.arithmatic.*;
-import ast.expr.unary.logical.Not;
+import ast.constant.Expression;
+import ast.constant.binary.arithmatic.*;
+import ast.constant.binary.logical.*;
+import ast.constant.constant.*;
+import ast.constant.other.Casting;
+import ast.constant.other.SizeOf;
+import ast.constant.other.Variable;
+import ast.constant.unary.arithmatic.*;
+import ast.constant.unary.logical.Not;
 import ast.program.Program;
 import ast.program.ProgramContent;
 import ast.program.global.GlobalVarDCL;
@@ -113,7 +113,7 @@ nonterminal Access variable;
 nonterminal Access var_access;
 nonterminal Access var_access_array_part;
 
-nonterminal Expression expr;
+nonterminal Expression constant;
 nonterminal Type casting_type;
 nonterminal Expression arithmatic_expr;
 nonterminal Expression conditional_expr;
@@ -264,13 +264,13 @@ struct_more_var_dcl ::=
     ;
 
 struct_var_dcl ::=
-    CONST struct_var_dcl_part:dcl SEMI {:ini.getDescriptor().setConst(true); RESULT = dcl;:}
+    CONST struct_var_dcl_part:dcl SEMI {:dcl.getDescriptor().setConst(true); RESULT = dcl;:}
     |
-    struct_var_dcl_part:dcl SEMI {:ini.getDescriptor().setConst(false); RESULT = dcl;:}
+    struct_var_dcl_part:dcl SEMI {:dcl.getDescriptor().setConst(false); RESULT = dcl;:}
     ;
 
 struct_var_dcl_part ::=
-    struct_type:t ID:id {:id = scanner.string.toString();:} struct_var_dcl_cnt:dcl {:ini.getDescriptor().setType(t); ini.getDescriptor().setName(id); RESULT = dcl;:}
+    struct_type:t ID:id {:id = scanner.string.toString();:} struct_var_dcl_cnt:dcl {:dcl.getDescriptor().setType(t); dcl.getDescriptor().setName(id); RESULT = dcl;:}
     ;
 
 struct_var_dcl_cnt ::=
@@ -280,11 +280,17 @@ struct_var_dcl_cnt ::=
     ;
 
 struct_type ::=
-    casting_type:t {:RESULT = t;:}
-    |
     BOOL {:RESULT = StructureType.BOOL;:}
     |
+    CHAR {:RESULT = Type.CHAR;:}
+    |
+    INT {:RESULT = Type.INT;:}
+    |
     LONG {:RESULT = StructureType.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
     ;
 
 
@@ -330,7 +336,7 @@ var_dcl_cnt ::=
     ;
 
 var_dcl_cnt_part ::=
-    ASSIGN expr:e {:RESULT = e;:}
+    ASSIGN constant:e {:RESULT = e;:}
     |
     /*epsilon*/ {:RESULT = null;:}
     ;
@@ -346,7 +352,7 @@ single_var ::=
     ;
 
 array_part ::=
-    BRACKOP expr:e BRACKCL array_part {:RESULT = new ArrayVarDCL(e);:}
+    BRACKOP constant:e BRACKCL array_part {:RESULT = new ArrayVarDCL(e);:}
     |
     /*epsilon*/ {:RESULT = new VariableDCL();:}
     ;
@@ -362,7 +368,7 @@ statement ::=
     |
     function_call:a SEMI {:RESULT = new FunctionCall(a);:}
     |
-    RETURN expr:e SEMI {:RESULT = new Return(e);:}
+    RETURN constant:e SEMI {:RESULT = new Return(e);:}
     ;
 
 loop_statement ::=
@@ -376,7 +382,7 @@ loop_statement ::=
 
 //conditionals
 cond_stmt ::=
-    IF PRANTOP expr:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
+    IF PRANTOP constant:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
     |
     SWITCH PRANTOP variable:a {:Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(a, db);:}
     ;
@@ -398,7 +404,7 @@ case_part ::=
 loop_stmt ::=
     FOR PRANTOP loop_init_part:in SEMI loop_cond_part:e SEMI loop_update_part:up PRANTCL loop_block:b {:RESULT = new For(in, e, up, b);:}
     |
-    REPEAT loop_block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
+    REPEAT loop_block:b UNTIL PRANTOP constant:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
     |
     FOREACH PRANTOP ID:i1 {:i1 = scanner.string.toString();:} IN ID:i2 {:i2 = scanner.string.toString();:} PRANTCL loop_block:b {:RESULT = new Foreach(i1, i2, b);:}
     ;
@@ -410,7 +416,7 @@ loop_init_part ::=
     ;
 
 loop_cond_part ::=
-    expr:e {:RESULT = e;:}
+    constant:e {:RESULT = e;:}
     |
     /*epsilon*/ {:RESULT = null;:}
     ;
@@ -424,15 +430,15 @@ loop_update_part ::=
 
 //assignments
 assignment ::=
-    variable:a ASSIGN expr:e {:RESULT = new DirectAssign(a, e);:}
+    variable:a ASSIGN constant:e {:RESULT = new DirectAssign(a, e);:}
     |
-    variable:a PLUSASSIGN expr:e {:RESULT = new PlusAssign(a, e);:}
+    variable:a PLUSASSIGN constant:e {:RESULT = new PlusAssign(a, e);:}
     |
-    variable:a MINUSASSIGN expr:e {:RESULT = new MinusAssign(a, e);:}
+    variable:a MINUSASSIGN constant:e {:RESULT = new MinusAssign(a, e);:}
     |
-    variable:a MULTASSIGN expr:e {:RESULT = new MultiplyAssign(a, e);:}
+    variable:a MULTASSIGN constant:e {:RESULT = new MultiplyAssign(a, e);:}
     |
-    variable:a DIVASSIGN expr:e {:RESULT = new DivisionAssign(a, e);:}
+    variable:a DIVASSIGN constant:e {:RESULT = new DivisionAssign(a, e);:}
     ;
 
 variable ::=
@@ -446,22 +452,22 @@ var_access ::=
     ;
 
 var_access_array_part ::=
-    BRACKOP expr:e BRACKCL array_part {:RESULT = new ArrayAccess(e);:}
+    BRACKOP constant:e BRACKCL array_part {:RESULT = new ArrayAccess(e);:}
     |
     /*epsilon*/ {:RESULT = new VariableAccess();:}
     ;
 
 //expressions
-expr ::=
+constant ::=
     const_val:e {:RESULT = e;:}
     |
-    PRANTOP expr:e PRANTCL {:RESULT = e;:}
+    PRANTOP constant:e PRANTCL {:RESULT = e;:}
     |
-    NOT expr:e {:RESULT = new Not(e);:}
+    NOT constant:e {:RESULT = new Not(e);:}
     |
-    BINOT expr:e {:RESULT = new BinaryNot(e);:}
+    BINOT constant:e {:RESULT = new BinaryNot(e);:}
     |
-    MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
+    MINUS constant:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
     PREFMINUS2 variable:a {:RESULT = new PrefixMinus2(a);:}
     |
@@ -471,7 +477,7 @@ expr ::=
     |
     variable:a PREFPLUS2 {:RESULT = new PostfixPlus2(a);:} %prec POSTPLUS2
     |
-    PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new Casting(t, e);:} %prec CASTPRANTOP
+    PRANTOP casting_type:t PRANTCL constant:e {:RESULT = new Casting(t, e);:} %prec CASTPRANTOP
     |
     SIZEOF PRANTOP variable_type:t PRANTCL {:RESULT = new SizeOf(t);:}
     |
@@ -495,39 +501,39 @@ casting_type ::=
     ;
 
 arithmatic_expr ::=
-    expr:e1 MULT expr:e2 {:RESULT = new Mult(e1, e2);:}
+    constant:e1 MULT constant:e2 {:RESULT = new Mult(e1, e2);:}
     |
-    expr:e1 DIVIDE expr:e2 {:RESULT = new Div(e1, e2);:}
+    constant:e1 DIVIDE constant:e2 {:RESULT = new Div(e1, e2);:}
     |
-    expr:e1 MOD expr:e2 {:RESULT = new Mod(e1, e2);:}
+    constant:e1 MOD constant:e2 {:RESULT = new Mod(e1, e2);:}
     |
-    expr:e1 PLUS expr:e2 {:RESULT = new Add(e1, e2);:}
+    constant:e1 PLUS constant:e2 {:RESULT = new Add(e1, e2);:}
     |
-    expr:e1 MINUS expr:e2 {:RESULT = new Sub(e1, e2);:}
+    constant:e1 MINUS constant:e2 {:RESULT = new Sub(e1, e2);:}
     |
-    expr:e1 BIAND expr:e2 {:RESULT = new BinaryAnd(e1, e2);:}
+    constant:e1 BIAND constant:e2 {:RESULT = new BinaryAnd(e1, e2);:}
     |
-    expr:e1 BIOR expr:e2 {:RESULT = new BinaryOr(e1, e2);:}
+    constant:e1 BIOR constant:e2 {:RESULT = new BinaryOr(e1, e2);:}
     |
-    expr:e1 BIEXOR expr:e2 {:RESULT = new BinaryXor(e1, e2);:}
+    constant:e1 BIEXOR constant:e2 {:RESULT = new BinaryXor(e1, e2);:}
     ;
 
 conditional_expr ::=
-    expr:e1 LT expr:e2 {:RESULT = new LT(e1, e2);:}
+    constant:e1 LT constant:e2 {:RESULT = new LT(e1, e2);:}
     |
-    expr:e1 LTEQ expr:e2 {:RESULT = new LE(e1, e2);:}
+    constant:e1 LTEQ constant:e2 {:RESULT = new LE(e1, e2);:}
     |
-    expr:e1 GT expr:e2 {:RESULT = new GT(e1, e2);:}
+    constant:e1 GT constant:e2 {:RESULT = new GT(e1, e2);:}
     |
-    expr:e1 GTEQ expr:e2 {:RESULT = new GE(e1, e2);:}
+    constant:e1 GTEQ constant:e2 {:RESULT = new GE(e1, e2);:}
     |
-    expr:e1 EQEQ expr:e2 {:RESULT = new EQ(e1, e2);:}
+    constant:e1 EQEQ constant:e2 {:RESULT = new EQ(e1, e2);:}
     |
-    expr:e1 NOTEQ expr:e2 {:RESULT = new NE(e1, e2);:}
+    constant:e1 NOTEQ constant:e2 {:RESULT = new NE(e1, e2);:}
     |
-    expr:e1 AND expr:e2 {:RESULT = new BinaryAnd(e1, e2);:}
+    constant:e1 AND constant:e2 {:RESULT = new BinaryAnd(e1, e2);:}
     |
-    expr:e1 OR expr:e2 {:RESULT = new BinaryOr(e1, e2);:}
+    constant:e1 OR constant:e2 {:RESULT = new BinaryOr(e1, e2);:}
     ;
 
 const_val ::=
@@ -551,7 +557,7 @@ function_call ::=
     ;
 
 parameters ::=
-    expr:e {:FunctionAccessData.getInstance().addParameter(e);:} parameters_part
+    constant:e {:FunctionAccessData.getInstance().addParameter(e);:} parameters_part
     |
     /*epsilon*/
     ;

@@ -403,6 +403,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/dcl/variable/StructDCL.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/dcl/variable/VarDCL.java">
           <value>
             <set />
@@ -1099,6 +1104,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/symtab/dscp/struct/StructureDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/symtab/dscp/struct/Structures.java">
           <value>
             <set />
           </value>
