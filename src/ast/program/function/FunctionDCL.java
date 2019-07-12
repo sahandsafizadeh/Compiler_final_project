@@ -28,22 +28,13 @@ public class FunctionDCL extends ProgramContent {
     public void compile() {
         Logger.log("function declaration");
         FunctionDescriptor descriptor = generate();
-        Functions.getInstance().addFunction(descriptor);
         if (checkOperation(descriptor))
             Functions.getInstance().addFunction(descriptor);
         else {
             if (!Functions.getInstance().contains(descriptor.getName(), descriptor.getParameterTypes()))
                 Functions.getInstance().addFunction(descriptor);
             descriptor.setCompleteDCL(true);
-            mVisit = mainClw.visitMethod(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, descriptor.getName(), descriptor.getDescriptor(), null, null);
-            mVisit.visitCode();
-            block.init();
-            TableStack.getInstance().newFunction(descriptor);
-            block.markStart();
-            block.compile();
-            block.markEnd();
-            mVisit.visitMaxs(1, 1);
-            mVisit.visitEnd();//todo create main method
+            writeFunction(descriptor);
         }
     }
 
@@ -62,6 +53,20 @@ public class FunctionDCL extends ProgramContent {
             return false;
         } else
             return block == null;
+    }
+
+    private void writeFunction(FunctionDescriptor descriptor) {
+        boolean isMain = descriptor.getName().equals("main") && descriptor.getReturnType() == Type.INT && descriptor.getParameterTypes().length == 0;
+        mVisit = mainClw.visitMethod(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, descriptor.getName(),
+                isMain ? "([Ljava/lang/String;)V" : descriptor.getDescriptor(), null, null);
+        mVisit.visitCode();
+        block.init();
+        TableStack.getInstance().newFunction(descriptor, isMain);
+        block.markStart();
+        block.compile();
+        block.markEnd();
+        mVisit.visitMaxs(1, 1);
+        mVisit.visitEnd();
     }
 
 }

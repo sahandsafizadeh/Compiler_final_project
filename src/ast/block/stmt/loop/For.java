@@ -30,7 +30,7 @@ public class For extends Statement {
         Logger.log("for loop");
         if (init != null)
             init.compile();
-
+        block.init();
         Label loopStart = new Label();
         Label loopBody = new Label();
         mVisit.visitLabel(loopStart);

@@ -29,7 +29,12 @@ public class Program implements Node {
     public void compile() {
         Logger.log("compiling program");
         contents.forEach(ProgramContent::compile);
-        if (!Functions.getInstance().contains("main", Type.INT))
+        checkMainExistence();
+    }
+
+    private void checkMainExistence() {
+        if (!Functions.getInstance().contains("main") ||
+                Functions.getInstance().get("main").getReturnType() != Type.INT)
             Logger.error("program doesn't contain a main function");
     }
 

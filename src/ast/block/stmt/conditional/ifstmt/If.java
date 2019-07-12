@@ -24,12 +24,16 @@ public class If extends Statement {
         Logger.log("if");
         expr.compile();
         CodeGenerator.mVisit.visitJumpInsn(Opcodes.IFEQ, ifBlock.getEnd());
+        ifBlock.init();
+        ifBlock.markStart();
         ifBlock.compile();
         if (elseBlock == null)
             ifBlock.markEnd();
         else {
             CodeGenerator.mVisit.visitJumpInsn(Opcodes.GOTO, elseBlock.getEnd());
             ifBlock.markEnd();
+            elseBlock.init();
+            elseBlock.markStart();
             elseBlock.compile();
             elseBlock.markEnd();
         }

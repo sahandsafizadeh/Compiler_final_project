@@ -20,6 +20,7 @@ public class Repeat extends Statement {
     @Override
     public void compile() {
         Logger.log("repeat");
+        block.init();
         block.markStart();
         block.compile();
         expr.compile();

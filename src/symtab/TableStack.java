@@ -117,8 +117,8 @@ public class TableStack {
         GLOBALS.put(descriptor);
     }
 
-    public void newFunction(FunctionDescriptor descriptor) {
-        stackIndex = 0;
+    public void newFunction(FunctionDescriptor descriptor, boolean isMain) {
+        stackIndex = isMain ? 1 : 0;
         descriptor.getParameters().forEach(this::addVariable);
     }
 

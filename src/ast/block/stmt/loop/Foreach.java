@@ -79,6 +79,7 @@ public class Foreach extends Statement {
     }
 
     private void initLoop() {
+        body.init();
         loopArray = (ArrayDescriptor) TableStack.getInstance().find(array);
         loopTemp = new VariableDescriptor();
         loopTemp.setName(temp);

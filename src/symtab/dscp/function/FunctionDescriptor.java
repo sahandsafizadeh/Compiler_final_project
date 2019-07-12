@@ -1,6 +1,7 @@
 package symtab.dscp.function;
 
 import ast.type.Type;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.Descriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
@@ -36,7 +37,7 @@ public class FunctionDescriptor implements Descriptor {
         return parameterTypes;
     }
 
-    public void setParameterTypes(Type... parameterTypes) {
+    void setParameterTypes(Type... parameterTypes) {
         this.parameterTypes = parameterTypes;
     }
 
@@ -46,6 +47,7 @@ public class FunctionDescriptor implements Descriptor {
 
     public void setParameters(List<VariableDescriptor> parameters) {
         this.parameters = parameters;
+        parameterTypes = (Type[]) parameters.stream().map(AbstractDescriptor::getType).toArray();
     }
 
     public boolean isCompleteDCL() {

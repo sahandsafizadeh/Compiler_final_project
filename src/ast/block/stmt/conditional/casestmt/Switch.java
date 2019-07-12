@@ -40,11 +40,13 @@ public class Switch extends Statement {
 
         List<Block> caseBlocks = cs.getCaseBlocks();
         for (Block block : caseBlocks) {
+            block.init();
             block.markStart();
             block.compile();
             mVisit.visitJumpInsn(Opcodes.GOTO, endCase);
             block.markEnd();
         }
+        defaultBlock.init();
         defaultBlock.markStart();
         defaultBlock.compile();
         defaultBlock.markEnd();
