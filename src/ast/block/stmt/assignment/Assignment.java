@@ -2,6 +2,7 @@ package ast.block.stmt.assignment;
 
 import ast.access.Access;
 import ast.access.ArrayAccess;
+import ast.access.StructureAccess;
 import ast.access.VariableAccess;
 import ast.block.BlockContent;
 import ast.expr.Expression;
@@ -26,7 +27,8 @@ public abstract class Assignment extends BlockContent {
     }
 
     void checkOperation() {
-        if (descriptor.isConst())
+        if (descriptor.isConst() ||
+                ((access instanceof StructureAccess) && (((StructureAccess) access)).getStructureVar().isConst()))
             Logger.error("constant variables can't be changed");
     }
 

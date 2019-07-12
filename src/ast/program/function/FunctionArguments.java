@@ -11,7 +11,6 @@ public class FunctionArguments {
     private static final FunctionArguments instance = new FunctionArguments();
 
     private final List<VariableDescriptor> arguments = new ArrayList<>();
-    private Type currentType;
 
     private FunctionArguments() {
     }
@@ -24,6 +23,10 @@ public class FunctionArguments {
         arguments.clear();
     }
 
+    public List<VariableDescriptor> getArguments() {
+        return arguments;
+    }
+
     public void addArgument(String id, Type type) {
         VariableDescriptor descriptor = new VariableDescriptor();
         descriptor.setName(id);
@@ -32,15 +35,4 @@ public class FunctionArguments {
         arguments.add(descriptor);
     }
 
-    public List<VariableDescriptor> getArguments() {
-        return arguments;
-    }
-
-    public Type getCurrentType() {
-        return currentType;
-    }
-
-    public void setCurrentType(Type currentType) {
-        this.currentType = currentType;
-    }
 }

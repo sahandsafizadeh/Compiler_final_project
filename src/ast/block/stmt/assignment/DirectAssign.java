@@ -46,7 +46,7 @@ public class DirectAssign extends Assignment {
         Type type = Type.toSimple(descriptor.getType());
         arrayStoreInit();
         expr.compile();
-        expr.doCastCompile(Type.toSimple(type));
+        expr.doCastCompile(type);
         mVisit.visitInsn(determineOp(type));
     }
 

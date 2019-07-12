@@ -69,11 +69,12 @@ nonterminal ProgramContent global_var_dcl;
 nonterminal Type variable_type;
 
 nonterminal ProgramContent func_dcl;
-nonterminal Type function_type;
 nonterminal Block func_dcl_part;
 nonterminal arguments;
 nonterminal arguments_part;
 nonterminal Boolean function_array_dcl;
+nonterminal Type function_return_type;
+nonterminal Type function_argument_type;
 
 nonterminal ProgramContent struct_dcl;
 nonterminal StructVarDCL struct_var_dcl;
@@ -199,15 +200,9 @@ variable_type ::=
 
 //functions
 func_dcl ::=
-    EXTERN function_type ID SEMI //todo
+    EXTERN function_return_type ID SEMI //todo
     |
-    FUNCTION function_type:t ID:id {:id = scanner.string.toString();:} PRANTOP arguments PRANTCL func_dcl_part:b {:RESULT = new FunctionDCL(t, id, b);:}
-    ;
-
-function_type ::=
-    variable_type:t {:RESULT = t;:}
-    |
-    VOID  {:RESULT = FunctionType.VOID;:}
+    FUNCTION function_return_type:t ID:id {:id = scanner.string.toString();:} PRANTOP arguments PRANTCL func_dcl_part:b {:RESULT = new FunctionDCL(t, id, b);:}
     ;
 
 func_dcl_part ::=
@@ -217,7 +212,7 @@ func_dcl_part ::=
     ;
 
 arguments ::=
-    variable_type:t {:FunctionArguments.getInstance().setCurrentType(t);:} ID:id {:id = scanner.string.toString();:} function_array_dcl:b {:t = b ? Type.toArray(t) : t;:} arguments_part {:FunctionArguments.getinstance().addArgument(id, t);:}
+    variable_type:t ID:id {:id = scanner.string.toString();:} function_array_dcl:b {:t = b ? Type.toArray(t) : t;:} arguments_part {:FunctionArguments.getInstance().addArgument(id, t);:}
     |
     /*epsilon*/
     ;
@@ -232,6 +227,28 @@ function_array_dcl ::=
     BRACKOP BRACKCL function_array_dcl {:RESULT = true;:}
     |
     /*epsilon*/ {:RESULT = false;:}
+    ;
+
+function_return_type ::=
+    function_argument_type:t {:RESULT = t;:}
+    |
+    VOID  {:RESULT = Type.VOID;:}
+    ;
+
+function_argument_type ::=
+    BOOL {:RESULT = Type.BOOL;:}
+    |
+    CHAR {:RESULT = Type.CHAR;:}
+    |
+    INT {:RESULT = Type.INT;:}
+    |
+    LONG {:RESULT = Type.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
+    |
+    STRING {:RESULT = Type.STRING;:}
     ;
 
 

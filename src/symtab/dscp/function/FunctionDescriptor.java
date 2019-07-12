@@ -5,7 +5,7 @@ import symtab.dscp.Descriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.Arrays;
-import java.util.Map;
+import java.util.List;
 import java.util.Objects;
 
 public class FunctionDescriptor implements Descriptor {
@@ -13,7 +13,8 @@ public class FunctionDescriptor implements Descriptor {
     private String name;
     private Type returnType;
     private Type[] parameterTypes;
-    private Map<String, VariableDescriptor> parameters;
+    private List<VariableDescriptor> parameters;
+    private boolean completeDCL;
 
     public String getName() {
         return name;
@@ -39,12 +40,20 @@ public class FunctionDescriptor implements Descriptor {
         this.parameterTypes = parameterTypes;
     }
 
-    public Map<String, VariableDescriptor> getParameters() {
+    public List<VariableDescriptor> getParameters() {
         return parameters;
     }
 
-    public void setParameters(Map<String, VariableDescriptor> parameters) {
+    public void setParameters(List<VariableDescriptor> parameters) {
         this.parameters = parameters;
+    }
+
+    public boolean isCompleteDCL() {
+        return completeDCL;
+    }
+
+    public void setCompleteDCL(boolean completeDCL) {
+        this.completeDCL = completeDCL;
     }
 
     public String getDescriptor() {

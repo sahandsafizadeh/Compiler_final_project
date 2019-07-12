@@ -15,11 +15,6 @@ public class Block implements Node {
     private Label end = new Label();
     private List<BlockContent> contents;
 
-    public Block() {
-        Blocks.getInstance().add(this);
-        TableStack.getInstance().pushSymbolTable(new SymbolTable(new HashMap<>()));
-    }
-
     public Label getStart() {
         return start;
     }
@@ -30,6 +25,11 @@ public class Block implements Node {
 
     public void addContent(BlockContent content) {
         contents.add(content);
+    }
+
+    public void init() {
+        Blocks.getInstance().add(this);
+        TableStack.getInstance().pushSymbolTable(new SymbolTable(new HashMap<>()));
     }
 
     public void markStart() {

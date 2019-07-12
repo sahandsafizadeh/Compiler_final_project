@@ -4,24 +4,22 @@ import ast.type.Type;
 import cg.Logger;
 import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.KeywordDescriptor;
-import symtab.dscp.array.ArrayDescriptor;
 import symtab.dscp.function.FunctionDescriptor;
-import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static ast.type.Type.DOUBLE;
+import static ast.type.Type.LONG;
+
 public class TableStack {
 
     private static final TableStack instance = new TableStack();
     private final List<SymbolTable> SYM_TAB_STACK = new ArrayList<>();
     private final SymbolTable GLOBALS;
-    private int mainStackIndex = 1;
-    private int functionStackIndex = 0;
-    private boolean inFuncDCL = false;
-    private FunctionDescriptor currentFunction;
+    private int stackIndex;
 
     private static final String[] KEYWORDS = {
             "const",
@@ -103,16 +101,8 @@ public class TableStack {
         return instance;
     }
 
-    public SymbolTable getBase() {
-        return SYM_TAB_STACK.get(0);
-    }
-
-    public SymbolTable getTop() {
+    private SymbolTable getTop() {
         return SYM_TAB_STACK.get(SYM_TAB_STACK.size() - 1);
-    }
-
-    public FunctionDescriptor getCurrentFunction() {
-        return currentFunction;
     }
 
     public void pushSymbolTable(SymbolTable symbolTable) {
@@ -127,14 +117,18 @@ public class TableStack {
         GLOBALS.put(descriptor);
     }
 
-    public void addVariable(VariableDescriptor descriptor) {
-        checkError(descriptor);
-        putDescriptor(descriptor.getType() == Type.DOUBLE || descriptor.getType() == Type.LONG ? 2 : 1, descriptor);
+    public void newFunction(FunctionDescriptor descriptor) {
+        stackIndex = 0;
+        descriptor.getParameters().forEach(this::addVariable);
     }
 
-    public void addArray(ArrayDescriptor descriptor) {
-        checkError(descriptor);
-        putDescriptor(1, descriptor);
+    public void addVariable(AbstractDescriptor descriptor) {
+        if (getTop().contains(descriptor.getName()))
+            Logger.error("variable name already exists");
+        descriptor.setStackIndex(stackIndex);
+        Type type = descriptor.getType();
+        stackIndex += type == LONG || type == DOUBLE ? 2 : 1;
+        getTop().put(descriptor);
     }
 
     public AbstractDescriptor find(String id) {
@@ -143,27 +137,7 @@ public class TableStack {
             if (table.contains(id))
                 return table.get(id);
         }
-        return findGlobal(id);
-    }
-
-    public AbstractDescriptor findGlobal(String id) {
         return GLOBALS.contains(id) ? GLOBALS.get(id) : null;
-    }
-
-    private void checkError(AbstractDescriptor descriptor) {
-        if (getTop().contains(descriptor.getName()) || getBase().contains(descriptor.getName()))
-            Logger.error("variable name already exists");
-    }
-
-    private void putDescriptor(int increment, AbstractDescriptor descriptor) {
-        if (inFuncDCL) {
-            descriptor.setStackIndex(functionStackIndex);
-            functionStackIndex += increment;
-        } else {
-            descriptor.setStackIndex(mainStackIndex);
-            mainStackIndex += increment;
-        }
-        getTop().put(descriptor);
     }
 
 }

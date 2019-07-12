@@ -111,8 +111,6 @@ b
 2src/ast/expr/binary/logical/LogicalBinaryExpr.java,6\b\6be21aba04b0bb02d9b24ccd447dc5c95a72c677
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-P
- src/ast/block/stmt/Continue.java,c\4\c4ce9019e733eab9f8c020969812d9d2fa92d2fa
 ]
 -src/ast/block/stmt/conditional/ifstmt/If.java,4\4\4491e041874f9850ecb4eac4a8a0352f7f5a5d34
 c
@@ -121,8 +119,6 @@ b
 2src/ast/block/stmt/conditional/casestmt/Cases.java,c\a\ca7d774ff7003b052792b084f09b9451ca10c8c8
 U
 %src/ast/dcl/variable/VariableDcl.java,5\6\560ef943e962dd1b1342c3abc228d98cce71d324
-M
-src/ast/block/stmt/Break.java,2\2\22fec8147e3fca8c3afc2ff489b9f10157b5e72c
 S
 #src/ast/expr/unary/logical/Not.java,6\8\68c5a79a0bd0e57faf214c9aa617d0527455bc5c
 `
@@ -179,8 +175,6 @@ Y
 )src/ast/program/structure/Structures.java,d\6\d632e6bdb0a3fa9e7098a5722766bc616d225ea4
 S
 #src/ast/access/StructureAccess.java,c\9\c99aaf2555ba334f3d4bb75d8eef98b21f3f333b
-X
-(src/ast/access/GlobalVariableAccess.java,7\2\72eaf346ce41af31ec17c4143fb9370808d89420
 L
 src/ast/dcl/CompleteDCL.java,f\1\f1d4fa75af337356854c79060ecfe35a7350859d
 Q
@@ -201,8 +195,6 @@ S
 #src/ast/dcl/variable/Variables.java,1\9\1956c4d66f7615cb5f45a12eab1cef38e37b455c
 W
 'src/symtab/dscp/function/Functions.java,9\3\9398c1fd8c16b3e81faa3c829e6014e5d8adae08
-_
-/src/ast/access/function/FunctionAccessData.java,9\1\912b84512aecd8caaf3a6e74692ce02dd739a1f8
 R
 "src/ast/access/FunctionAccess.java,e\b\ebd73f508f4c7dfc4154b8f79cd5693ae12838b8
 ]
@@ -215,3 +207,11 @@ _
 /src/ast/program/function/FunctionArguments.java,4\e\4eb4154a5d802485d5865de6d1b00fd0f24be57a
 Y
 )src/ast/program/function/FunctionDCL.java,b\3\b338f1efef1968d2842194534cafef011c79a526
+f
+6src/symtab/dscp/variable/GlobalVariableDescriptor.java,0\7\0766981d631b38898aff3199f592ebad110edecd
+V
+&src/ast/access/FunctionAccessData.java,2\0\2057e99123a76c9c5807da45819a0cbe09834066
+U
+%src/ast/block/stmt/loop/Continue.java,8\3\835c51ea473f3ca0dfcd357bbe9ffa644b5a2760
+R
+"src/ast/block/stmt/loop/Break.java,2\9\29ce2a53a4bfb5c4795dd98e3e6136bca272370a
