@@ -11,8 +11,7 @@ import symtab.dscp.struct.Structures;
 
 import java.util.List;
 
-import static cg.CodeGenerator.structClw;
-import static cg.CodeGenerator.structMVisit;
+import static cg.CodeGenerator.*;
 
 public class StructureDCL extends ProgramContent {
 
@@ -31,17 +30,17 @@ public class StructureDCL extends ProgramContent {
         structClw.visit(Opcodes.V1_8, Opcodes.ACC_PUBLIC, typeName, null, CodeGenerator.SUPER_CLASS, null);
         declarations.forEach(StructVarDCL::compile);
 
-        structMVisit = structClw.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null);
-        structMVisit.visitCode();
-        structMVisit.visitVarInsn(Opcodes.ALOAD, 0);
-        structMVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, CodeGenerator.SUPER_CLASS, "<init>", "()V", false);
+        mVisit = structClw.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null);
+        mVisit.visitCode();
+        mVisit.visitVarInsn(Opcodes.ALOAD, 0);
+        mVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, CodeGenerator.SUPER_CLASS, "<init>", "()V", false);
         declarations.forEach(dcl -> dcl.init(typeName));
-        structMVisit.visitInsn(Opcodes.RETURN);
-        structMVisit.visitMaxs(1, 1);
-        structMVisit.visitEnd();
+        mVisit.visitInsn(Opcodes.RETURN);
+        mVisit.visitMaxs(1, 1);
+        mVisit.visitEnd();
 
         structClw.visitEnd();
-        CodeGenerator.writeStructureClassCode(typeName + ".java");
+        CodeGenerator.writeStructureClassCode(typeName + ".class");
     }
 
     private void createDescriptor() {

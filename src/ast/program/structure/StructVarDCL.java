@@ -34,10 +34,19 @@ public class StructVarDCL extends ProgramContent {
     public void init(String typeName) {
         Logger.log("initializing struct variable value in constructor");
         if (constant != null) {
-            CodeGenerator.structMVisit.visitVarInsn(Opcodes.ALOAD, 0);
+            CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, 0);
             constant.compile();
-            CodeGenerator.structMVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), descriptor.getType().typeName());
+            constant.doCastCompile(descriptor.getType());
+            CodeGenerator.mVisit.visitFieldInsn(Opcodes.PUTFIELD, typeName, descriptor.getName(), descriptor.getType().typeName());
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StructVarDCL that = (StructVarDCL) o;
+        return descriptor.equals(that.descriptor);
     }
 
 }

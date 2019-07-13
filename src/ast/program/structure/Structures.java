@@ -1,5 +1,7 @@
 package ast.program.structure;
 
+import cg.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,8 @@ public class Structures {
     }
 
     public void addDCL(StructVarDCL dcl) {
+        if (declarations.contains(dcl))
+            Logger.error("duplicate variable name for structure");
         declarations.add(dcl);
     }
 

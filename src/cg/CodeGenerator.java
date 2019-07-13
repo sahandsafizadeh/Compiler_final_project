@@ -19,7 +19,6 @@ public class CodeGenerator {
     public static ClassWriter mainClw;
     public static ClassWriter structClw;
     public static MethodVisitor mVisit;
-    public static MethodVisitor structMVisit;
 
     public static void initClass() {
         Logger.log("Initializing code generator");

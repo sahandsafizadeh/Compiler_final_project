@@ -36,10 +36,12 @@ public class Type {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Type type1 = (Type) o;
-        if ((type1 == INT || type1 == CHAR || type1 == BOOL) &&
-                this == INT || this == CHAR || this == BOOL)
-            return true;
         return type.equals(type1.type);
+    }
+
+    @Override
+    public String toString() {
+        return type;
     }
 
     public static void inferType(AbstractDescriptor descriptor, Type type) {
@@ -82,5 +84,6 @@ public class Type {
             Logger.error("invalid array type");
         return null;
     }
+
 
 }

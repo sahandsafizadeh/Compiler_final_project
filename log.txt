@@ -1,4 +1,38 @@
 compiling program
 Initializing code generator
+declaring struct field
+declaring struct field
+declaring struct field
+declaring struct field
+declaring struct field
+declaring struct field
+declaring struct field
+initializing struct variable value in constructor
+boolean constant
+initializing struct variable value in constructor
+boolean constant
+initializing struct variable value in constructor
+double constant
+initializing struct variable value in constructor
+double constant
+initializing struct variable value in constructor
+double constant
+initializing struct variable value in constructor
+double constant
+initializing struct variable value in constructor
+character constant
+writing structures class code to the output file
+global variable declaration
+global variable declaration
+global variable declaration
+declaring struct field
+initializing struct variable value in constructor
+writing structures class code to the output file
+global variable declaration
+global variable declaration
 function declaration
+global variable declaration
+declaring struct field
+initializing struct variable value in constructor
+writing structures class code to the output file
 Writing the generated code into the executable output file

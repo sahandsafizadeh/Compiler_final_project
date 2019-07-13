@@ -72,6 +72,7 @@ nonterminal program;
 nonterminal program_part;
 
 nonterminal ProgramContent global_var_dcl;
+nonterminal Type global_var_type;
 nonterminal Type variable_type;
 
 nonterminal ProgramContent func_dcl;
@@ -182,13 +183,27 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type:t id:id SEMI {:RESULT = new GlobalVarDCL(t, id);:}
+    global_var_type:t id:id SEMI {:RESULT = new GlobalVarDCL(t, id);:}
+    ;
+
+global_var_type ::=
+    BOOL {:RESULT = Type.INT;:}
+    |
+    CHAR {:RESULT = Type.INT;:}
+    |
+    INT {:RESULT = Type.INT;:}
+    |
+    LONG {:RESULT = Type.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
     ;
 
 variable_type ::=
-    BOOL {:RESULT = Type.BOOL;:}
+    BOOL {:RESULT = Type.INT;:}
     |
-    CHAR {:RESULT = Type.CHAR;:}
+    CHAR {:RESULT = Type.INT;:}
     |
     INT {:RESULT = Type.INT;:}
     |
@@ -244,9 +259,9 @@ function_return_type ::=
     ;
 
 function_argument_type ::=
-    BOOL {:RESULT = Type.BOOL;:}
+    BOOL {:RESULT = Type.INT;:}
     |
-    CHAR {:RESULT = Type.CHAR;:}
+    CHAR {:RESULT = Type.INT;:}
     |
     INT {:RESULT = Type.INT;:}
     |
@@ -288,9 +303,9 @@ struct_var_dcl_cnt ::=
     ;
 
 struct_type ::=
-    BOOL {:RESULT = Type.BOOL;:}
+    BOOL {:RESULT = Type.INT;:}
     |
-    CHAR {:RESULT = Type.CHAR;:}
+    CHAR {:RESULT = Type.INT;:}
     |
     INT {:RESULT = Type.INT;:}
     |
@@ -499,7 +514,7 @@ expr ::=
     ;
 
 casting_type ::=
-    CHAR {:RESULT = Type.CHAR;:}
+    CHAR {:RESULT = Type.INT;:}
     |
     INT {:RESULT = Type.INT;:}
     |
@@ -549,13 +564,13 @@ const_val ::=
     |
     FALSE {:RESULT = new BooleanConstant(false);:}
     |
-    CHAR_LIT {:RESULT = new CharConstant(scanner.string);:}
+    CHAR_LIT {:RESULT = new CharConstant(scanner.current);:}
     |
     INT_LIT {:RESULT = new IntegerConstant(scanner.ICV);:}
     |
     FLOAT_LIT {:RESULT = new DoubleConstant(scanner.RCV);:}
     |
-    STR_LIT {:RESULT = new StringConstant(scanner.string);:}
+    STR_LIT {:RESULT = new StringConstant(scanner.current);:}
     ;
 
 

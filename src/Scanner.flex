@@ -67,7 +67,7 @@ IntegerLiteral = [1-9]\d*
 
 DecimalFloatingPointAfterDot = \.\d+
 DecimalFloatingPointBeforeAfterDot = \d+\.\d*
-DecimalFloatingPointSicentific = e(\+ | -)\d+
+DecimalFloatingPointSicentific = e(\+ | -)?\d+
 FloatingPointLiteral = (({DecimalFloatingPointAfterDot} | {DecimalFloatingPointBeforeAfterDot}){DecimalFloatingPointSicentific}?) | ({IntegerLiteral}{DecimalFloatingPointSicentific})
 
 Identifier = [_\w][_\w\d]*

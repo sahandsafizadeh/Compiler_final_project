@@ -27,7 +27,6 @@ public class GlobalVarDCL extends ProgramContent {
             Logger.error("invalid type for global variable");
         GlobalVariableDescriptor descriptor = generate();
         TableStack.getInstance().addGlobal(descriptor);
-        Program.getInstance().addContent(this);
         CodeGenerator.mainClw.visitField(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, id, type.typeName(), null, null).visitEnd();
     }
 

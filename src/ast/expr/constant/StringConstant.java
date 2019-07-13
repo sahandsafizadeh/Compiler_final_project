@@ -2,6 +2,7 @@ package ast.expr.constant;
 
 import ast.type.Type;
 import cg.CodeGenerator;
+import cg.Logger;
 
 public class StringConstant extends Constant {
 
@@ -16,6 +17,7 @@ public class StringConstant extends Constant {
 
     @Override
     public void compile() {
+        Logger.log("string constant");
         CodeGenerator.mVisit.visitLdcInsn(value);
     }
 

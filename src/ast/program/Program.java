@@ -6,7 +6,6 @@ import cg.CodeGenerator;
 import cg.Logger;
 import symtab.dscp.function.Functions;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +37,8 @@ public class Program implements Node {
 
     private void checkMainExistence() {
         if (!Functions.getInstance().contains("main") ||
-                Functions.getInstance().get("main").getReturnType() != Type.INT)
+                Functions.getInstance().get("main").getReturnType() != Type.INT ||
+                !Functions.getInstance().get("main").isCompleteDCL())
             Logger.error("program doesn't contain a main function");
     }
 

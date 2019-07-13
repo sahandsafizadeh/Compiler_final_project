@@ -1,3 +1,30 @@
+record Ali begin
+    bool boool = true;
+    const int test = false;
+    double d_value = .2123;
+    float f = 123.;
+    const double other = 1.213;
+    const long lll = 123e3;
+    char character = '\n';
+end record;
+
+int global_int_var;
+double double_global;
+char c;
+
+record Taghi begin
+    double a;
+end record;
+
+float f_globe;
+bool bol_global;
+
 function int main()
     begin
     end
+
+long long_var;
+
+record Vali_vali begin
+    bool bol;
+end record;

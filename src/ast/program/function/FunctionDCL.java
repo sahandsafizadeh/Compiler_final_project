@@ -64,11 +64,11 @@ public class FunctionDCL extends ProgramContent {
         TableStack.getInstance().newFunction(descriptor, isMain);
         block.markStart();
         block.compile();
-        if (descriptor.getReturnType() == Type.VOID)
+        block.markEnd();
+        if (descriptor.getReturnType() == Type.VOID || isMain)
             mVisit.visitInsn(Opcodes.RETURN);
         mVisit.visitMaxs(1, 1);
         mVisit.visitEnd();
-        block.markEnd();
     }
 
 }

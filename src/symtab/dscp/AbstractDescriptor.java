@@ -2,6 +2,8 @@ package symtab.dscp;
 
 import ast.type.Type;
 
+import java.util.Objects;
+
 public abstract class AbstractDescriptor implements Descriptor {
 
     protected Type type;
@@ -39,6 +41,14 @@ public abstract class AbstractDescriptor implements Descriptor {
 
     public void setStackIndex(int stackIndex) {
         this.stackIndex = stackIndex;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractDescriptor that = (AbstractDescriptor) o;
+        return name.equals(that.name);
     }
 
 }
