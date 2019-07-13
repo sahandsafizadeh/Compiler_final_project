@@ -22,7 +22,7 @@ public class TableStack {
     private FunctionDescriptor currentFunection;
     private int stackIndex;
 
-    private static final String[] KEYWORDS = {
+    private final String[] KEYWORDS = {
             "const",
             "record",
             "bool",

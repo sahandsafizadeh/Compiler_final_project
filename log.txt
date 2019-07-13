@@ -1,2 +1,4 @@
+compiling program
 Initializing code generator
+function declaration
 Writing the generated code into the executable output file

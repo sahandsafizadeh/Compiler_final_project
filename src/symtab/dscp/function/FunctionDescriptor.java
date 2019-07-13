@@ -8,6 +8,7 @@ import symtab.dscp.variable.VariableDescriptor;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class FunctionDescriptor implements Descriptor {
 
@@ -47,7 +48,7 @@ public class FunctionDescriptor implements Descriptor {
 
     public void setParameters(List<VariableDescriptor> parameters) {
         this.parameters = parameters;
-        parameterTypes = (Type[]) parameters.stream().map(AbstractDescriptor::getType).toArray();
+        parameterTypes = parameters.stream().map(AbstractDescriptor::getType).toArray(Type[]::new);
     }
 
     public boolean isCompleteDCL() {

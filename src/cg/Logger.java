@@ -36,7 +36,7 @@ public class Logger {
     }
 
     public static void error(String error) {
-        error += "(Error) ";
+        error = "(Error) " + error;
         Logger.log(error);
         throw new RuntimeException();
     }

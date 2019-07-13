@@ -612,10 +612,13 @@ public class Scanner implements java_cup.runtime.Scanner {
 
     public int ICV;
     public double RCV;
-    public StringBuilder string = new StringBuilder();
+    public StringBuilder string;
+    public StringBuilder current;
 
     private Symbol token(int code) {
-//        System.out.println(yytext());//debug
+        current = string;
+        string = new StringBuilder(yytext());
+        System.out.println(yytext());//debug
         return new Symbol(code, yytext());
     }
 
@@ -1156,8 +1159,6 @@ public class Scanner implements java_cup.runtime.Scanner {
                     case 95:
                         break;
                     case 25: {
-                        string.setLength(0);
-                        string.append(yytext());
                         return token(Symbol.STR_LIT);
                     }
                     // fall through
@@ -1249,8 +1250,6 @@ public class Scanner implements java_cup.runtime.Scanner {
                     case 110:
                         break;
                     case 40: {
-                        string.setLength(0);
-                        string.append(yytext());
                         return token(Symbol.CHAR_LIT);
                     }
                     // fall through

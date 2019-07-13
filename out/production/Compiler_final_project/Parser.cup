@@ -1,20 +1,20 @@
-import ast.access.Access;
-import ast.access.ArrayAccess;
-import ast.access.VariableAccess;
+import ast.access.*;
 import ast.block.Block;
 import ast.block.BlockContent;
 import ast.block.Blocks;
-import ast.block.stmt.Break;
-import ast.block.stmt.Continue;
 import ast.block.stmt.Statement;
 import ast.block.stmt.assignment.*;
 import ast.block.stmt.conditional.casestmt.Cases;
 import ast.block.stmt.conditional.casestmt.Switch;
 import ast.block.stmt.conditional.ifstmt.If;
-import ast.block.stmt.loop.For;
-import ast.block.stmt.loop.Foreach;
-import ast.block.stmt.loop.Repeat;
-import ast.dcl.variable.*;
+import ast.block.stmt.function.FunctionCall;
+import ast.block.stmt.function.Return;
+import ast.block.stmt.loop.*;
+import ast.dcl.CompleteDCL;
+import ast.dcl.DCL;
+import ast.dcl.array.ArrayDCL;
+import ast.dcl.variable.VariableDCL;
+import ast.dcl.variable.Variables;
 import ast.expr.Expression;
 import ast.expr.binary.arithmatic.*;
 import ast.expr.binary.logical.*;
@@ -22,15 +22,21 @@ import ast.expr.constant.*;
 import ast.expr.other.Casting;
 import ast.expr.other.SizeOf;
 import ast.expr.other.Variable;
-import ast.expr.unary.arithmatic.*;
+import ast.expr.unary.arithmatic.BinaryNot;
+import ast.expr.unary.arithmatic.Uminus;
+import ast.expr.unary.arithmatic.dual.PostfixMinus2;
+import ast.expr.unary.arithmatic.dual.PostfixPlus2;
+import ast.expr.unary.arithmatic.dual.PrefixMinus2;
+import ast.expr.unary.arithmatic.dual.PrefixPlus2;
 import ast.expr.unary.logical.Not;
 import ast.program.Program;
 import ast.program.ProgramContent;
+import ast.program.function.FunctionArguments;
+import ast.program.function.FunctionDCL;
 import ast.program.global.GlobalVarDCL;
-import ast.type.CastingType;
-import ast.type.StructureType;
+import ast.program.structure.StructVarDCL;
+import ast.program.structure.Structures;
 import ast.type.Type;
-import ast.type.VariableType;
 
 parser code
     {:
@@ -69,11 +75,12 @@ nonterminal ProgramContent global_var_dcl;
 nonterminal Type variable_type;
 
 nonterminal ProgramContent func_dcl;
-nonterminal function_type;
-nonterminal func_dcl_part;
+nonterminal Block func_dcl_part;
 nonterminal arguments;
 nonterminal arguments_part;
-nonterminal function_array_dcl;
+nonterminal Boolean function_array_dcl;
+nonterminal Type function_return_type;
+nonterminal Type function_argument_type;
 
 nonterminal ProgramContent struct_dcl;
 nonterminal StructVarDCL struct_var_dcl;
@@ -92,8 +99,8 @@ nonterminal var_dcl_part;
 nonterminal BlockContent var_dcl_cnt;
 nonterminal Expression var_dcl_cnt_part;
 nonterminal var_dcl_cnt_extension;
-nonterminal VarDCL single_var;
-nonterminal VarDCL array_part;
+nonterminal DCL single_var;
+nonterminal DCL array_part;
 
 nonterminal BlockContent statement;
 nonterminal BlockContent loop_statement;
@@ -118,9 +125,11 @@ nonterminal Expression arithmatic_expr;
 nonterminal Expression conditional_expr;
 nonterminal Constant const_val;
 
-nonterminal function_call;
+nonterminal FunctionAccess function_call;
 nonterminal parameters;
 nonterminal parameters_part;
+
+nonterminal String id;
 
 
 //PRECEDENCES
@@ -173,41 +182,45 @@ program_part ::=
 
 //global variables
 global_var_dcl ::=
-    variable_type:t ID:id {:id = scanner.string.toString();:} SEMI {:RESULT = new GlobalVarDCL(t, id);:}
+    variable_type:t id:id SEMI {:RESULT = new GlobalVarDCL(t, id);:}
     ;
 
 variable_type ::=
-    struct_type:t {:RESULT = t;:}
+    BOOL {:RESULT = Type.BOOL;:}
     |
-    STRING {:RESULT = VariableType.STRING;:}
+    CHAR {:RESULT = Type.CHAR;:}
     |
-    AUTO {:RESULT = VariableType.AUTO;:}
+    INT {:RESULT = Type.INT;:}
     |
-    ID:type {:new VariableType(type);:}
+    LONG {:RESULT = Type.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
+    |
+    STRING {:RESULT = Type.STRING;:}
+    |
+    AUTO {:RESULT = Type.AUTO;:}
+    |
+    id:type {:new Type(type);:}
     ;
 
 
 //functions
 func_dcl ::=
-    EXTERN function_type ID SEMI
+    EXTERN function_return_type id SEMI //todo
     |
-    FUNCTION function_type ID PRANTOP arguments PRANTCL func_dcl_part
-    ;
-
-function_type ::=
-    variable_type:t {:RESULT = t;:}
-    |
-    VOID
+    FUNCTION function_return_type:t id:id PRANTOP arguments PRANTCL func_dcl_part:b {:RESULT = new FunctionDCL(t, id, b);:}
     ;
 
 func_dcl_part ::=
-    SEMI
+    SEMI {:RESULT = null;:}
     |
-    block
+    block:b {:RESULT = b;:}
     ;
 
 arguments ::=
-    variable_type ID function_array_dcl arguments_part
+    variable_type:t id:id function_array_dcl:b {:t = b ? Type.toArray(t) : t;:} arguments_part {:FunctionArguments.getInstance().addArgument(id, t);:}
     |
     /*epsilon*/
     ;
@@ -219,15 +232,37 @@ arguments_part ::=
     ;
 
 function_array_dcl ::=
-    BRACKOP BRACKCL function_array_dcl
+    BRACKOP BRACKCL function_array_dcl {:RESULT = true;:}
     |
-    /*epsilon*/
+    /*epsilon*/ {:RESULT = false;:}
+    ;
+
+function_return_type ::=
+    function_argument_type:t {:RESULT = t;:}
+    |
+    VOID  {:RESULT = Type.VOID;:}
+    ;
+
+function_argument_type ::=
+    BOOL {:RESULT = Type.BOOL;:}
+    |
+    CHAR {:RESULT = Type.CHAR;:}
+    |
+    INT {:RESULT = Type.INT;:}
+    |
+    LONG {:RESULT = Type.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
+    |
+    STRING {:RESULT = Type.STRING;:}
     ;
 
 
 //structurs
 struct_dcl ::=
-    RECORD {:Structures.getInstance().init();:} ID:id BEGIN struct_var_dcl:dcl {:Structures.getInstance().addDCL(dcl);:} struct_more_var_dcl END RECORD SEMI {:RESULT = Structures.getInstance().getDCL(id);:}
+    RECORD {:Structures.getInstance().init();:} id:id BEGIN struct_var_dcl:dcl {:Structures.getInstance().addDCL(dcl);:} struct_more_var_dcl END RECORD SEMI {:RESULT = Structures.getInstance().getDCL(id);:}
     ;
 
 struct_more_var_dcl ::=
@@ -237,13 +272,13 @@ struct_more_var_dcl ::=
     ;
 
 struct_var_dcl ::=
-    CONST struct_var_dcl_part:dcl SEMI {:ini.getDescriptor().setConst(true); RESULT = dcl;:}
+    CONST struct_var_dcl_part:dcl SEMI {:dcl.getDescriptor().setConst(true); RESULT = dcl;:}
     |
-    struct_var_dcl_part:dcl SEMI {:ini.getDescriptor().setConst(false); RESULT = dcl;:}
+    struct_var_dcl_part:dcl SEMI {:dcl.getDescriptor().setConst(false); RESULT = dcl;:}
     ;
 
 struct_var_dcl_part ::=
-    struct_type:t ID:id {:id = scanner.string.toString();:} struct_var_dcl_cnt:dcl {:ini.getDescriptor().setType(t); ini.getDescriptor().setName(id); RESULT = dcl;:}
+    struct_type:t id:id struct_var_dcl_cnt:dcl {:dcl.getDescriptor().setType(t); dcl.getDescriptor().setName(id); RESULT = dcl;:}
     ;
 
 struct_var_dcl_cnt ::=
@@ -253,17 +288,23 @@ struct_var_dcl_cnt ::=
     ;
 
 struct_type ::=
-    casting_type:t {:RESULT = t;:}
+    BOOL {:RESULT = Type.BOOL;:}
     |
-    BOOL {:RESULT = StructureType.BOOL;:}
+    CHAR {:RESULT = Type.CHAR;:}
     |
-    LONG {:RESULT = StructureType.LONG;:}
+    INT {:RESULT = Type.INT;:}
+    |
+    LONG {:RESULT = Type.LONG;:}
+    |
+    FLOAT {:RESULT = Type.FLOAT;:}
+    |
+    DOUBLE {:RESULT = Type.DOUBLE;:}
     ;
 
 
 //blocks
 block ::=
-    BEGIN block_content END
+    BEGIN {:Blocks.getInstance().add(new Block());:} block_content END {:RESULT = Blocks.getInstance().getCurrent();:}
     ;
 
 block_content ::=
@@ -289,13 +330,13 @@ loop_block_content ::=
 
 //variables
 var_dcl ::=
-    CONST {:Variables.getInstance().setConstant(true);:} var_dcl_part SEMI
+    CONST {:Variables.getInstance().setConstant(true);:} var_dcl_part SEMI {:Variables.getInstance().setConstant(false);:}
     |
     var_dcl_part SEMI
     ;
 
 var_dcl_part ::=
-    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension {:Blocks.getInstance().setConstant(false);:}
+    variable_type:t {:Variables.getInstance().setType(t);:} var_dcl_cnt:cont {:Blocks.getInstance().getCurrent().addContent(cont);:} var_dcl_cnt_extension
     ;
 
 var_dcl_cnt ::=
@@ -315,11 +356,11 @@ var_dcl_cnt_extension ::=
     ;
 
 single_var ::=
-    ID:id {:id = scanner.string.toString();:} array_part:dcl {:dcl.setId(id); RESULT = dcl;:}
+    id:id array_part:dcl {:dcl.setId(id); RESULT = dcl;:}
     ;
 
 array_part ::=
-    BRACKOP expr:e BRACKCL array_part {:RESULT = new ArrayVarDCL(e);:}
+    BRACKOP expr:e BRACKCL array_part {:RESULT = new ArrayDCL(e);:}
     |
     /*epsilon*/ {:RESULT = new VariableDCL();:}
     ;
@@ -333,9 +374,9 @@ statement ::=
     |
     assignment:stmt SEMI {:RESULT = stmt;:}
     |
-    function_call SEMI
+    function_call:a SEMI {:RESULT = new FunctionCall(a);:}
     |
-    RETURN expr SEMI
+    RETURN expr:e SEMI {:RESULT = new Return(e);:}
     ;
 
 loop_statement ::=
@@ -351,7 +392,7 @@ loop_statement ::=
 cond_stmt ::=
     IF PRANTOP expr:e PRANTCL block:ifb else_part:eb {:RESULT = new If(e, ifb, eb);:}
     |
-    SWITCH PRANTOP ID:id {:id = scanner.string.toString(); Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(id, db);:}
+    SWITCH PRANTOP variable:a {:Cases.getInstance().init();:} PRANTCL OF COL BEGIN case_part DEFAULT COL block:db END {:RESULT = new Switch(a, db);:}
     ;
 
 else_part ::=
@@ -373,7 +414,7 @@ loop_stmt ::=
     |
     REPEAT loop_block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
     |
-    FOREACH PRANTOP ID:i1 {:i1 = scanner.string.toString();:} IN ID:i2 {:i2 = scanner.string.toString();:} PRANTCL loop_block:b {:RESULT = new Foreach(i1, i2, b);:}
+    FOREACH PRANTOP id:i1 IN id:i2 PRANTCL loop_block:b {:RESULT = new Foreach(i1, i2, b);:}
     ;
 
 loop_init_part ::=
@@ -411,11 +452,11 @@ assignment ::=
 variable ::=
     var_access:a {:RESULT = a;:}
     |
-    variable DOT ID {:;//todo:}
+    variable:a DOT id:id {:RESULT = new StructureAccess(a); RESULT.setDescriptor(id);:}
     ;
 
 var_access ::=
-    ID:id var_access_array_part:a {:a.setDescriptor(id); RESULT = a;:}
+    id:id var_access_array_part:a {:a.setDescriptor(id); RESULT = a;:}
     ;
 
 var_access_array_part ::=
@@ -436,13 +477,13 @@ expr ::=
     |
     MINUS expr:e {:RESULT = new Uminus(e);:} %prec UMINUS
     |
-    PREFMINUS2 variable:a {:RESULT = new PrefixMinus2(a.getDescriptor());:}
+    PREFMINUS2 variable:a {:RESULT = new PrefixMinus2(a);:}
     |
-    PREFPLUS2 variable:a {:RESULT = new PrefixPlus2(a.getDescriptor());:}
+    PREFPLUS2 variable:a {:RESULT = new PrefixPlus2(a);:}
     |
-    variable:a PREFMINUS2 {:RESULT = new PostfixMinus2(a.getDescriptor());:} %prec POSTMINUS2
+    variable:a PREFMINUS2 {:RESULT = new PostfixMinus2(a);:} %prec POSTMINUS2
     |
-    variable:a PREFPLUS2 {:RESULT = new PostfixPlus2(a.getDescriptor());:} %prec POSTPLUS2
+    variable:a PREFPLUS2 {:RESULT = new PostfixPlus2(a);:} %prec POSTPLUS2
     |
     PRANTOP casting_type:t PRANTCL expr:e {:RESULT = new Casting(t, e);:} %prec CASTPRANTOP
     |
@@ -454,17 +495,17 @@ expr ::=
     |
     variable:a {:RESULT = new Variable(a);:}
     |
-    function_call
+    function_call:a {:RESULT = new ast.expr.function.FunctionCall(a);:}
     ;
 
 casting_type ::=
-    CHAR {:RESULT = CastingType.CHAR;:}
+    CHAR {:RESULT = Type.CHAR;:}
     |
-    INT {:RESULT = CastingType.INT;:}
+    INT {:RESULT = Type.INT;:}
     |
-    FLOAT {:RESULT = CastingType.FLOAT;:}
+    FLOAT {:RESULT = Type.FLOAT;:}
     |
-    DOUBLE {:RESULT = CastingType.DOUBLE;:}
+    DOUBLE {:RESULT = Type.DOUBLE;:}
     ;
 
 arithmatic_expr ::=
@@ -520,11 +561,11 @@ const_val ::=
 
 //function calls
 function_call ::=
-    ID PRANTOP parameters PRANTCL %prec FUNCPRANTOP
+    id:id {:FunctionAccessData.getInstance().init();:} PRANTOP parameters PRANTCL {:RESULT = new FunctionAccess(); RESULT.setDescriptor(id);:} %prec FUNCPRANTOP
     ;
 
 parameters ::=
-    expr parameters_part
+    expr:e {:FunctionAccessData.getInstance().addParameter(e);:} parameters_part
     |
     /*epsilon*/
     ;
@@ -533,4 +574,8 @@ parameters_part ::=
     COMA parameters
     |
     /*epsilon*/
+    ;
+
+id ::=
+    ID {:RESULT = scanner.current.toString();:}
     ;

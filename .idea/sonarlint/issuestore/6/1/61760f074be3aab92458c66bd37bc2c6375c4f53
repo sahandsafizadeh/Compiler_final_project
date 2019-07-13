@@ -1,4 +1,4 @@
 
-wsquid:S00116"XRename this field "SYM_TAB_STACK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô•·ø8ÚŸ…Š»-
-vsquid:S00116"RRename this field "GLOBALS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åşÿÿÿÿÿ8®¼˜ş¼-
-|squid:S1171_"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ˆ¡›ş¼-
+wsquid:S00116"XRename this field "SYM_TAB_STACK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô•·ø8ÚŸ…Š»-
+|squid:S1171^"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ˆ¡›ş¼-
+vsquid:S00116"RRename this field "GLOBALS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åşÿÿÿÿÿ8®¼˜ş¼-

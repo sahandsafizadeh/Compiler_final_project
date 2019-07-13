@@ -2,9 +2,11 @@ package ast.program;
 
 import ast.Node;
 import ast.type.Type;
+import cg.CodeGenerator;
 import cg.Logger;
 import symtab.dscp.function.Functions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +30,10 @@ public class Program implements Node {
     @Override
     public void compile() {
         Logger.log("compiling program");
+        CodeGenerator.initClass();
         contents.forEach(ProgramContent::compile);
         checkMainExistence();
+        CodeGenerator.writeFinalClassCode();
     }
 
     private void checkMainExistence() {

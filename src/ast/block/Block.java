@@ -6,6 +6,7 @@ import org.objectweb.asm.Label;
 import symtab.SymbolTable;
 import symtab.TableStack;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Block implements Node {
 
     private Label start = new Label();
     private Label end = new Label();
-    private List<BlockContent> contents;
+    private List<BlockContent> contents = new ArrayList<>();
 
     public Label getStart() {
         return start;
@@ -28,7 +29,6 @@ public class Block implements Node {
     }
 
     public void init() {
-        Blocks.getInstance().add(this);
         TableStack.getInstance().pushSymbolTable(new SymbolTable(new HashMap<>()));
     }
 

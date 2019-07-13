@@ -1,3 +1,2 @@
 
-qsquid:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Û°ºâ8ê¨º»-
-fsquid:S1182"HUse super.clone() to create and seed the cloned instance to be returned.(Û°ºâ8ê¨º»-
+Csquid:S2157"%Add a "clone()" method to this class.(ËÈ°æ8ø«­¾-

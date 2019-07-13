@@ -5,7 +5,6 @@ import ast.type.Type;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import symtab.dscp.struct.StructureDescriptor;
 import symtab.dscp.struct.Structures;
@@ -13,6 +12,7 @@ import symtab.dscp.struct.Structures;
 import java.util.List;
 
 import static cg.CodeGenerator.structClw;
+import static cg.CodeGenerator.structMVisit;
 
 public class StructureDCL extends ProgramContent {
 
@@ -31,7 +31,7 @@ public class StructureDCL extends ProgramContent {
         structClw.visit(Opcodes.V1_8, Opcodes.ACC_PUBLIC, typeName, null, CodeGenerator.SUPER_CLASS, null);
         declarations.forEach(StructVarDCL::compile);
 
-        MethodVisitor structMVisit = structClw.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null);
+        structMVisit = structClw.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null);
         structMVisit.visitCode();
         structMVisit.visitVarInsn(Opcodes.ALOAD, 0);
         structMVisit.visitMethodInsn(Opcodes.INVOKESPECIAL, CodeGenerator.SUPER_CLASS, "<init>", "()V", false);

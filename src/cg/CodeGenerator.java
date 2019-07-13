@@ -19,6 +19,7 @@ public class CodeGenerator {
     public static ClassWriter mainClw;
     public static ClassWriter structClw;
     public static MethodVisitor mVisit;
+    public static MethodVisitor structMVisit;
 
     public static void initClass() {
         Logger.log("Initializing code generator");
@@ -33,15 +34,15 @@ public class CodeGenerator {
         mVisit.visitEnd();
     }
 
-    public static void writeFinalClassCode() throws IOException {
+    public static void writeFinalClassCode() {
         Logger.log("Writing the generated code into the executable output file");
         mainClw.visitEnd();
         try (OutputStream out = new FileOutputStream(OUTPUT_FILE)) {
             out.write(mainClw.toByteArray());
+            Logger.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Logger.close();
     }
 
     public static void writeStructureClassCode(String outputFile) {

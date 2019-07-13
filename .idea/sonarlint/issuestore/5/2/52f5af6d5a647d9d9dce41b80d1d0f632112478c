@@ -1,4 +1,9 @@
 
-.squid:S1700"Rename field "a"(®š‹á8ª¤¸ˆ¾-
-dsquid:S1226	"AIntroduce a new variable instead of reusing the parameter "args".(ÀÓõ†øÿÿÿÿ8ÕŠÑ‡¾-
-Isquid:S1481"&Remove this unused "b" local variable.(ÖÑÈ£ùÿÿÿÿ8–à¼ˆ¾-
+Gsquid:S1481")Remove this unused "asdf" local variable.(çøˆÂ8éÆ”²¾-
+`squid:S2184"BCast one of the operands of this addition operation to a "double".(¡„²œ8¼îï±¾-
+Fsquid:S1481"(Remove this unused "asd" local variable.(‚Á‚„8–¶è±¾-
+Ksquid:S1481"(Remove this unused "ali" local variable.(åûÑôşÿÿÿÿ8È„ï±¾-
+Gsquid:S1481"*Remove this unused "weori" local variable.(Àê³8¯¼•²¾-
+esquid:S2184"BCast one of the operands of this addition operation to a "double".(åûÑôşÿÿÿÿ8¨˜ï±¾-
+Lsquid:S1481	")Remove this unused "kdjf" local variable.(ãÁõıÿÿÿÿ8şúè±¾-
+Hsquid:S1481"*Remove this unused "taghi" local variable.(¡„²œ8ÆØï±¾-

@@ -164,6 +164,7 @@ public class Symbol extends java_cup.runtime.Symbol {
             "FLOAT_LIT",
             "ID"
     };
+
     private int code;
     private String value;
 
