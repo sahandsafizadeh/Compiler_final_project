@@ -19,11 +19,17 @@ end record;
 float f_globe;
 bool bol_global;
 
+function void test();
 function int main()
     begin
     end
 
 long long_var;
+
+function void test()
+    begin
+    end
+
 
 record Vali_vali begin
     bool bol;

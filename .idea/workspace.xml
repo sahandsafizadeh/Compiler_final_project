@@ -3,49 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="08843bd0-2b1b-454c-a098-b432b14f0f48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiled.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiled.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inputFiles/codegen.c" beforeDir="false" afterPath="$PROJECT_DIR$/inputFiles/codegen.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser$CUP$Parser$actions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser$CUP$Parser$actions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/Scanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/Expression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/BooleanConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/BooleanConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/CharConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/CharConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/DoubleConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/DoubleConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/IntegerConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/IntegerConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/StringConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/expr/constant/StringConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/Program.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/function/FunctionDCL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/function/FunctionDCL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/global/GlobalVarDCL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/global/GlobalVarDCL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/structure/StructVarDCL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/structure/StructVarDCL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/structure/StructureDCL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/structure/StructureDCL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/structure/Structures.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/program/structure/Structures.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/ast/type/Type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/cg/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/cg/CodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/AbstractDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_final_project/symtab/dscp/AbstractDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.cup" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.cup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scanner.flex" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner.flex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/Expression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/BooleanConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/BooleanConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/CharConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/CharConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/DoubleConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/DoubleConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/IntegerConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/IntegerConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/program/structure/StructVarDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/structure/StructVarDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/program/structure/StructureDCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/structure/StructureDCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/program/structure/Structures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/program/structure/Structures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/type/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cg/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cg/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symtab/dscp/AbstractDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symtab/dscp/AbstractDescriptor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,8 +44,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inputFiles/codegen.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="73">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ast/expr/constant/CharConstant.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -176,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/ast/block/Block.java" />
         <option value="$PROJECT_DIR$/src/ast/program/global/GlobalVarDCL.java" />
         <option value="$PROJECT_DIR$/src/ast/program/Program.java" />
-        <option value="$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java" />
         <option value="$PROJECT_DIR$/src/cg/CodeGenerator.java" />
         <option value="$PROJECT_DIR$/src/ast/program/structure/StructureDCL.java" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/StringConstant.java" />
@@ -194,8 +167,9 @@
         <option value="$PROJECT_DIR$/src/Parser.cup" />
         <option value="$PROJECT_DIR$/src/Parser.java" />
         <option value="$PROJECT_DIR$/src/Compiler.java" />
-        <option value="$PROJECT_DIR$/inputFiles/codegen.c" />
         <option value="$PROJECT_DIR$/src/ast/expr/constant/CharConstant.java" />
+        <option value="$PROJECT_DIR$/inputFiles/codegen.c" />
+        <option value="$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java" />
       </list>
     </option>
   </component>
@@ -265,7 +239,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563009692795" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563011080127" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../servers/Server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -360,7 +334,7 @@
       <workItem from="1562835121216" duration="16487000" />
       <workItem from="1562904212573" duration="23396000" />
       <workItem from="1562958630810" duration="2000" />
-      <workItem from="1562990891208" duration="16247000" />
+      <workItem from="1562990891208" duration="17570000" />
     </task>
     <task id="LOCAL-00001" summary="scanner and parser work correctly after moving to the new project">
       <created>1561735332318</created>
@@ -380,7 +354,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354093000" />
+    <option name="totallyTimeSpent" value="355416000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,7 +369,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17583893" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17583893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -404,7 +378,7 @@
       <window_info id="Designer" order="6" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.45184135" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45184135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="SonarLint" order="5" />
@@ -604,16 +578,6 @@
     <entry file="file://$PROJECT_DIR$/inputFiles/input.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="50" column="81" lean-forward="true" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/symtab/dscp/function/Functions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
@@ -731,16 +695,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/A.class">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cg/CodeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -905,16 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inputFiles/codegen.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Scanner.flex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-124">
@@ -926,6 +870,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/symtab/dscp/function/FunctionDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="50" column="81" lean-forward="true" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inputFiles/codegen.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/program/function/FunctionDCL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

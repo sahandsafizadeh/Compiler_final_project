@@ -33,6 +33,8 @@ public class FunctionDCL extends ProgramContent {
         else {
             if (!Functions.getInstance().contains(descriptor.getName(), descriptor.getParameterTypes()))
                 Functions.getInstance().addFunction(descriptor);
+            else
+                descriptor = Functions.getInstance().get(descriptor.getName(), descriptor.getParameterTypes());
             descriptor.setCompleteDCL(true);
             writeFunction(descriptor);
         }
@@ -48,6 +50,7 @@ public class FunctionDCL extends ProgramContent {
 
     private boolean checkOperation(FunctionDescriptor descriptor) {
         if (Functions.getInstance().contains(descriptor.getName(), descriptor.getParameterTypes())) {
+            descriptor = Functions.getInstance().get(descriptor.getName(), descriptor.getParameterTypes());
             if (descriptor.isCompleteDCL() || block == null)
                 Logger.error("invalid function declaration");
             return false;
