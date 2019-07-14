@@ -20,17 +20,25 @@ float f_globe;
 bool bol_global;
 
 function void test();
+
 function int main()
     begin
+
+        int a = 3;
+        double b = 4, dab = 123.23;
+        float f1, f2 = true, f3 = 13e2;
+        char local_character = 'a', c3 = '\t';
+
+        a = 4;
     end
 
 long long_var;
 
-function long other(double db, long test, float fa)
+function long other(double db, long tea, float fa)
     begin
     end
 
-function void test(int a, bool bole, char character, int test)
+function void test(int a, bool bole, char character, int tea)
     begin
     end
 

@@ -1,15 +1,14 @@
 package ast.dcl;
 
-import ast.Node;
+import ast.block.BlockContent;
 import symtab.dscp.AbstractDescriptor;
 
-public abstract class DCL implements Node {
+public abstract class DCL extends BlockContent {
 
-    protected String id;
     protected AbstractDescriptor descriptor;
 
     public void setId(String id) {
-        this.id = id;
+        descriptor.setName(id);
     }
 
     public AbstractDescriptor getDescriptor() {

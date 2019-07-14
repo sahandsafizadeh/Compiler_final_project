@@ -29,6 +29,13 @@ public class Functions {
         return ALL_FUNCTIONS.contains(temp);
     }
 
+    public boolean containsName(String id) {
+        for (FunctionDescriptor function : ALL_FUNCTIONS)
+            if (function.getName().equals(id))
+                return true;
+        return false;
+    }
+
     public FunctionDescriptor get(String id, Type... parameterTypes) {
         FunctionDescriptor temp = new FunctionDescriptor();
         temp.setName(id);

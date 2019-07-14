@@ -5,6 +5,7 @@ import cg.Logger;
 import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.KeywordDescriptor;
 import symtab.dscp.function.FunctionDescriptor;
+import symtab.dscp.function.Functions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -129,7 +130,8 @@ public class TableStack {
     }
 
     public void addVariable(AbstractDescriptor descriptor) {
-        if (getTop().contains(descriptor.getName()))
+        if (getTop().contains(descriptor.getName()) ||
+                Functions.getInstance().containsName(descriptor.getName()))
             Logger.error("variable name already exists");
         descriptor.setStackIndex(stackIndex);
         Type type = descriptor.getType();

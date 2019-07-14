@@ -32,10 +32,27 @@ global variable declaration
 global variable declaration
 function declaration
 function declaration
-global variable declaration
-function declaration
-function declaration
-declaring struct field
-initializing struct variable value in constructor
-writing structures class code to the output file
-Writing the generated code into the executable output file
+complete local variable declaration
+variable declaration
+integer constant
+complete local variable declaration
+variable declaration
+integer constant
+complete local variable declaration
+variable declaration
+double constant
+complete local variable declaration
+variable declaration
+complete local variable declaration
+variable declaration
+boolean constant
+complete local variable declaration
+variable declaration
+double constant
+complete local variable declaration
+variable declaration
+character constant
+complete local variable declaration
+variable declaration
+character constant
+direct assignment
