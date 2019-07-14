@@ -46,7 +46,7 @@ function int main()
         double darray[10 + 1];
 
         b = darray[1];
-        ##darray[2] -= .0123;
+        darray[2] -= .0123;
 
         test(1, true+2*(5-1), 'a', 12);
     end

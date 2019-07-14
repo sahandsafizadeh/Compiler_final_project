@@ -113,6 +113,12 @@ array access
 loading array access
 integer constant
 array access
+minus assignment
+array access
+integer constant
+loading array access
+integer constant
+double constant
 function call statement
 function access compile
 function access invoke
@@ -126,3 +132,9 @@ integer constant
 integer constant
 character constant
 integer constant
+global variable declaration
+function declaration
+declaring struct field
+initializing struct variable value in constructor
+writing structures class code to the output file
+Writing the generated code into the executable output file
