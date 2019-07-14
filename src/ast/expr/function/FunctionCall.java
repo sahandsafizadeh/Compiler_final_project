@@ -23,6 +23,7 @@ public class FunctionCall extends Expression {
     @Override
     public void compile() {
         Logger.log("expression function call");
+        access.compile();
         access.push();
     }
 

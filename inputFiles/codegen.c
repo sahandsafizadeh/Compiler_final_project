@@ -102,6 +102,13 @@ function int main()
                 end
             end#/
 
+            /#foreach(i in array)
+            begin
+                a += i -1;
+            end#/
+
+            int fact = factorial(6) + 10;
+            factorial(7);
     end
 
 long long_var;

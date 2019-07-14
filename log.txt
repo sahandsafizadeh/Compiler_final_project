@@ -54,6 +54,8 @@ variable access
 loading variable access
 variable access
 expression function call
+function access compile
+variable access
 function access invoke
 subtraction
 variable access
@@ -261,6 +263,21 @@ variable access
 loading variable access
 add
 integer constant
+integer constant
+complete local variable declaration
+variable declaration
+add
+function access compile
+expression function call
+function access compile
+function access invoke
+integer constant
+function access compile
+integer constant
+function access compile
+function call statement
+function access compile
+function access invoke
 integer constant
 global variable declaration
 function declaration
