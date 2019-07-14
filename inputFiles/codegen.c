@@ -24,20 +24,17 @@ function void test(int a, bool bole, char character, int tea);
 
 function int main()
     begin
-
         int a = 3;
         double b = 4, dab = 123.23;
         float f1, f2 = true, f3 = 13e2;
         char local_character = 'a', c3 = '\t';
 
         a = 4;
-        bool aflas=false;
+        bool aflas= false;
 
         Ali ali, taghi;
 
         a = (2.2+3)*4-2;
-
-        b += a;
         ali.abc *= 10;
         b = ali.abc;
 
@@ -49,6 +46,18 @@ function int main()
         darray[2] -= .0123;
 
         test(1, true+2*(5-1), 'a', 12);
+
+        repeat
+            begin
+                a=2;
+            end
+        until(true);
+
+        if(false and true)
+        begin
+            b = .123;
+        end
+
     end
 
 long long_var;

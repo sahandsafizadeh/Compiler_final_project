@@ -76,13 +76,6 @@ double constant
 integer constant
 integer constant
 integer constant
-plus assignment
-variable access
-loading variable access
-variable push
-variable access
-loading variable access
-variable access
 multiply assignment
 struct access
 loading structure access
@@ -132,6 +125,18 @@ integer constant
 integer constant
 character constant
 integer constant
+repeat
+direct assignment
+variable access
+integer constant
+boolean constant
+if
+binary and
+boolean constant
+boolean constant
+direct assignment
+variable access
+double constant
 global variable declaration
 function declaration
 declaring struct field
