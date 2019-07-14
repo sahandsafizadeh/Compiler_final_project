@@ -37,6 +37,7 @@ public abstract class DualOperation extends UnaryExpression {
         checkOperation();
         determineOp(descriptor.getType());
         access.compile();
+        access.push();
     }
 
     /**

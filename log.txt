@@ -61,6 +61,8 @@ integer constant
 complete local variable declaration
 variable declaration
 boolean constant
+complete local variable declaration
+struct declaration
 global variable declaration
 function declaration
 function declaration

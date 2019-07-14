@@ -30,8 +30,11 @@ function int main()
         char local_character = 'a', c3 = '\t';
 
         a = 4;
-
         bool aflas=false;
+
+        Ali ali;
+
+
     end
 
 long long_var;

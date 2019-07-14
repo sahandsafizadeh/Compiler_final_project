@@ -36,7 +36,7 @@ public abstract class OperatorAssign extends Assignment {
     }
 
     private void variableOperatorAssign() {
-        access.compile();
+        access.push();
         expr.compile();
         expr.doCastCompile(descriptor.getType());
         CodeGenerator.mVisit.visitInsn(opcode);

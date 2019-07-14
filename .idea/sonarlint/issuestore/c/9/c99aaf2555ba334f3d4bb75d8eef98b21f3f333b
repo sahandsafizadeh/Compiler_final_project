@@ -1,0 +1,4 @@
+
+hsquid:UselessImportCheck":Remove this unused import 'symtab.dscp.struct.Structures'.(÷ç¯µýÿÿÿÿ8˜›ƒø¾-
+Gsquid:S1068")Remove this unused "varId" private field.(ží’†8˜›ƒø¾-
+rsquid:S1450"TRemove the "varId" field and declare it as a local variable in the relevant methods.(ží’†8˜›ƒø¾-

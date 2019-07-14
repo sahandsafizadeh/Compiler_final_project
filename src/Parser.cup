@@ -217,7 +217,7 @@ variable_type ::=
     |
     AUTO {:RESULT = Type.AUTO;:}
     |
-    id:type {:new Type(type);:}
+    id:type {:RESULT = new Type(type);:}
     ;
 
 
