@@ -89,9 +89,18 @@ function int main()
             begin
                 case 10:
                 begin
+                    if(a == 5)
+                    begin
+                    ##darray[1] = 1000 * darray[2] + (a or 4);
+                    end
+                    else
+                    begin
+                        int a = 10;
+                    end
                 end
                 case 1:
                 begin
+                    int c = true;
                 end
                 case 5:
                 begin
@@ -101,18 +110,25 @@ function int main()
                 end
                 default:
                 begin
+                    double d = 3e4;
                 end
             end
 
             /#foreach(i in array)
             begin
-                a += i -1;
             end#/
 
             int fact = factorial(6) + 10;
             factorial(7);
 
            global_int_var = 4 and a++;
+
+            print(a);
+            print(b);
+            string other = str;
+            print(other);
+
+            int length = len("ali ali");
     end
 
 long long_var;

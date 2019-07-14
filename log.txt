@@ -282,6 +282,23 @@ variable access
 loading variable access
 complete local variable declaration
 variable declaration
+boolean constant
+if
+equality
+variable access
+variable push
+variable access
+loading variable access
+variable access
+integer constant
+complete local variable declaration
+variable declaration
+integer constant
+complete local variable declaration
+variable declaration
+double constant
+complete local variable declaration
+variable declaration
 add
 function access compile
 expression function call
@@ -307,6 +324,40 @@ variable access
 loading variable access
 variable access
 variable access
+function call statement
+function access compile
+variable access
+function access invoke
+variable push
+variable access
+loading variable access
+function call statement
+function access compile
+variable access
+function access invoke
+variable push
+variable access
+loading variable access
+complete local variable declaration
+variable declaration
+variable push
+variable access
+loading variable access
+variable access
+function call statement
+function access compile
+variable access
+function access invoke
+variable push
+variable access
+loading variable access
+complete local variable declaration
+variable declaration
+expression function call
+function access compile
+function access invoke
+string constant
+function access compile
 global variable declaration
 function declaration
 declaring struct field
