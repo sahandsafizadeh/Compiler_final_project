@@ -39,11 +39,13 @@ function int main()
 
         b += a;
         ali.abc *= 10;
+        b = ali.abc;
 
         string str = "ali alavi";
         int array[10];
         double darray[10 + 1];
 
+        b = darray[1];
         ##darray[2] -= .0123;
 
         test(1, true+2*(5-1), 'a', 12);

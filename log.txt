@@ -87,6 +87,13 @@ multiply assignment
 struct access
 loading structure access
 integer constant
+direct assignment
+variable access
+struct access
+variable push
+struct access
+loading structure access
+struct access
 complete local variable declaration
 variable declaration
 string constant
@@ -98,6 +105,14 @@ array declaration
 add
 integer constant
 integer constant
+direct assignment
+variable access
+array access
+variable push
+array access
+loading array access
+integer constant
+array access
 function call statement
 function access compile
 function access invoke
@@ -111,9 +126,3 @@ integer constant
 integer constant
 character constant
 integer constant
-global variable declaration
-function declaration
-declaring struct field
-initializing struct variable value in constructor
-writing structures class code to the output file
-Writing the generated code into the executable output file
