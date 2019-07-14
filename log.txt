@@ -34,6 +34,7 @@ function declaration
 function declaration
 global variable declaration
 function declaration
+function declaration
 declaring struct field
 initializing struct variable value in constructor
 writing structures class code to the output file

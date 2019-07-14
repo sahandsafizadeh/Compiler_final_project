@@ -17,18 +17,19 @@ public class FunctionDCL extends ProgramContent {
     private Type type;
     private String id;
     private Block block;
+    private FunctionDescriptor descriptor;
 
     public FunctionDCL(Type type, String id, Block block) {
         this.type = type;
         this.id = id;
         this.block = block;
+        generate();
     }
 
     @Override
     public void compile() {
         Logger.log("function declaration");
-        FunctionDescriptor descriptor = generate();
-        if (checkOperation(descriptor))
+        if (checkOperation())
             Functions.getInstance().addFunction(descriptor);
         else {
             if (!Functions.getInstance().contains(descriptor.getName(), descriptor.getParameterTypes()))
@@ -36,19 +37,18 @@ public class FunctionDCL extends ProgramContent {
             else
                 descriptor = Functions.getInstance().get(descriptor.getName(), descriptor.getParameterTypes());
             descriptor.setCompleteDCL(true);
-            writeFunction(descriptor);
+            writeFunction();
         }
     }
 
-    private FunctionDescriptor generate() {
-        FunctionDescriptor descriptor = new FunctionDescriptor();
+    private void generate() {
+        descriptor = new FunctionDescriptor();
         descriptor.setName(id);
         descriptor.setReturnType(type);
         descriptor.setParameters(FunctionArguments.getInstance().getArguments());
-        return descriptor;
     }
 
-    private boolean checkOperation(FunctionDescriptor descriptor) {
+    private boolean checkOperation() {
         if (Functions.getInstance().contains(descriptor.getName(), descriptor.getParameterTypes())) {
             descriptor = Functions.getInstance().get(descriptor.getName(), descriptor.getParameterTypes());
             if (descriptor.isCompleteDCL() || block == null)
@@ -58,7 +58,7 @@ public class FunctionDCL extends ProgramContent {
             return block == null;
     }
 
-    private void writeFunction(FunctionDescriptor descriptor) {
+    private void writeFunction() {
         boolean isMain = descriptor.getName().equals("main") && descriptor.getReturnType() == Type.INT && descriptor.getParameterTypes().length == 0;
         mVisit = mainClw.visitMethod(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, descriptor.getName(),
                 isMain ? "([Ljava/lang/String;)V" : descriptor.getDescriptor(), null, null);

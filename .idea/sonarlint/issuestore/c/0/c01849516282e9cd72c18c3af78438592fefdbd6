@@ -1,3 +1,4 @@
 
-osquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(øøÖH8…ÀÜƒ¼-
 ]squid:S1610":Convert the abstract class "Expression" into an interface.(Š…Ù“şÿÿÿÿ8‡áÛş½-
+osquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(øøÖH8…ÀÜƒ¼-
+lsquid:S1192"NDefine a constant instead of duplicating this literal "type mismatch" 5 times.(…”É¿8¤ÃÓ¾-

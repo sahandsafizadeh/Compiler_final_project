@@ -8,7 +8,6 @@ import symtab.dscp.variable.VariableDescriptor;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class FunctionDescriptor implements Descriptor {
 

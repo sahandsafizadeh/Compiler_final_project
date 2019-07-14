@@ -4,7 +4,7 @@ record Ali begin
     double d_value = .2123;
     float f = 123.;
     const double other = 1.213;
-    const long lll = 123e3;
+    const long lll = /#123e3#/ 123e-3;
     char character = '\n';
 end record;
 
@@ -26,10 +26,17 @@ function int main()
 
 long long_var;
 
-function void test()
+function long other(double db, long test, float fa)
     begin
     end
 
+function void test(int a, bool bole, char character, int test)
+    begin
+    end
+
+/#function double test(bool a, bool b, char c, int d)
+    begin
+    end wrong overloading#/
 
 record Vali_vali begin
     bool bol;

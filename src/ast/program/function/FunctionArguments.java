@@ -4,13 +4,14 @@ import ast.type.Type;
 import symtab.dscp.variable.VariableDescriptor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class FunctionArguments {
 
     private static final FunctionArguments instance = new FunctionArguments();
 
-    private final List<VariableDescriptor> arguments = new ArrayList<>();
+    private List<VariableDescriptor> arguments;
 
     private FunctionArguments() {
     }
@@ -20,10 +21,11 @@ public class FunctionArguments {
     }
 
     public void init() {
-        arguments.clear();
+        arguments = new ArrayList<>();
     }
 
     public List<VariableDescriptor> getArguments() {
+        Collections.reverse(arguments);
         return arguments;
     }
 
