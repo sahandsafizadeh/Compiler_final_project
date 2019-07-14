@@ -50,16 +50,18 @@ public abstract class OperatorAssign extends Assignment {
     private void arrayOperatorAssign() {
         Type type = Type.toSimple(descriptor.getType());
         arrayStoreInit();
-        access.compile();
+        access.push();
         expr.compile();
         expr.doCastCompile(type);
+        int strCode = determineOp(type);
         mVisit.visitInsn(opcode);
-        mVisit.visitInsn(determineOp(type));
+        mVisit.visitInsn(strCode);
     }
 
     private void structOperatorAssign() {
         VariableDescriptor structVar = ((StructureAccess) access).getStructureVar();
-        access.compile();
+        mVisit.visitVarInsn(Opcodes.ALOAD, descriptor.getStackIndex());
+        access.push();
         expr.compile();
         expr.doCastCompile(structVar.getType());
         determineOp(structVar.getType());

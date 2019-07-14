@@ -83,6 +83,10 @@ variable push
 variable access
 loading variable access
 variable access
+multiply assignment
+struct access
+loading structure access
+integer constant
 complete local variable declaration
 variable declaration
 string constant
@@ -94,8 +98,20 @@ array declaration
 add
 integer constant
 integer constant
+function call statement
+function access compile
+function access invoke
+integer constant
+add
+boolean constant
+multiply
+integer constant
+subtraction
+integer constant
+integer constant
+character constant
+integer constant
 global variable declaration
-function declaration
 function declaration
 declaring struct field
 initializing struct variable value in constructor

@@ -576,7 +576,7 @@ const_val ::=
 
 //function calls
 function_call ::=
-    id:id {:FunctionAccessData.getInstance().init();:} PRANTOP parameters PRANTCL {:RESULT = new FunctionAccess(); RESULT.setDescriptor(id);:} %prec FUNCPRANTOP
+    id:id {:FunctionAccessData.getInstance().init();:} PRANTOP parameters PRANTCL {:RESULT = new FunctionAccess(FunctionAccessData.getInstance().getParameters()); RESULT.setDescriptor(id);:} %prec FUNCPRANTOP
     ;
 
 parameters ::=

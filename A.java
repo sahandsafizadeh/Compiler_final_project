@@ -1,10 +1,13 @@
 public class A {
 
     String s = "ali alavi";
+    int a = 2;
 
     public static void main(String[] args) {
-        int[] hello = new int[10];
-        hello[1] += 3;
+        A a = new A();
+        a.a += 3;
+        int c = a.s.length();
+        System.out.println("ali");
     }
 
 }

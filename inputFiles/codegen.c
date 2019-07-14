@@ -38,7 +38,7 @@ function int main()
         a = (2.2+3)*4-2;
 
         b += a;
-        ##ali.abc = 10;
+        ali.abc *= 10;
 
         string str = "ali alavi";
         int array[10];
@@ -46,14 +46,10 @@ function int main()
 
         ##darray[2] -= .0123;
 
-        ##other(1, true, 'a', 12);
+        test(1, true+2*(5-1), 'a', 12);
     end
 
 long long_var;
-
-function long other(double db, long tea, float fa)
-    begin
-    end
 
 function void test(int a, bool bole, char character, int tea)
     begin

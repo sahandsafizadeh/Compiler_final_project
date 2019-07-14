@@ -2789,7 +2789,7 @@ FunctionAccessData.getInstance().init();
 		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)).left;
 		int idright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)).right;
 		String id = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-4)).value;
-		RESULT = new FunctionAccess(); RESULT.setDescriptor(id);
+		RESULT = new FunctionAccess(FunctionAccessData.getInstance().getParameters()); RESULT.setDescriptor(id);
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("function_call",47, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
