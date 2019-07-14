@@ -249,8 +249,21 @@ double constant
 direct assignment
 variable access
 double constant
+direct assignment
+variable access
+double constant
 for loop
-boolean constant
+direct assignment
+variable access
+unary minus
+integer constant
+grater than
+variable access
+variable push
+variable access
+loading variable access
+variable access
+integer constant
 plus assignment
 variable access
 loading variable access
@@ -264,6 +277,9 @@ loading variable access
 add
 integer constant
 integer constant
+switch-case
+variable access
+loading variable access
 complete local variable declaration
 variable declaration
 add
@@ -279,6 +295,18 @@ function call statement
 function access compile
 function access invoke
 integer constant
+direct assignment
+variable access
+variable access
+binary and
+variable access
+integer constant
+postfix plus plus
+variable access
+variable access
+loading variable access
+variable access
+variable access
 global variable declaration
 function declaration
 declaring struct field

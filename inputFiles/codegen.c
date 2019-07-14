@@ -77,13 +77,15 @@ function int main()
             b = 123e3;
         end
 
-        for(;true; a+=10)
+        a = 0.0;
+
+        for(a = -1; a > 3; a+=10)
         begin
             int var = 3;
             a *= 12 + 2;
         end
 
-        /#switch(darray[0]) of :
+        switch(a) of :
             begin
                 case 10:
                 begin
@@ -100,7 +102,7 @@ function int main()
                 default:
                 begin
                 end
-            end#/
+            end
 
             /#foreach(i in array)
             begin
@@ -109,6 +111,8 @@ function int main()
 
             int fact = factorial(6) + 10;
             factorial(7);
+
+           global_int_var = 4 and a++;
     end
 
 long long_var;
