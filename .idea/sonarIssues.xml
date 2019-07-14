@@ -283,6 +283,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/loop/Break.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ast/block/stmt/loop/Continue.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ast/block/stmt/loop/For.java">
           <value>
             <set />

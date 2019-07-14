@@ -22,6 +22,18 @@ bool bol_global;
 
 function void test(int a, bool bole, char character, int tea);
 
+function int factorial(int n)
+    begin
+        if(n <= 1)
+        begin
+            return 1;
+        end
+        else
+        begin
+            return n * factorial(n - 1);
+        end
+    end
+
 function int main()
     begin
         int a = 3;
@@ -45,18 +57,50 @@ function int main()
         b = darray[1];
         darray[2] -= .0123;
 
+        int heavy_expression = a + b * 10 %(a-- - 5) + darray[1] + ali.test;
+
         test(1, true+2*(5-1), 'a', 12);
 
         repeat
             begin
                 a=2;
+                a= 2*8 and 3;
             end
-        until(true);
+        until(a);
 
         if(false and true)
         begin
             b = .123;
         end
+        else
+        begin
+            b = 123e3;
+        end
+
+        for(;true; a+=10)
+        begin
+            int var = 3;
+            a *= 12 + 2;
+        end
+
+        /#switch(darray[0]) of :
+            begin
+                case 10:
+                begin
+                end
+                case 1:
+                begin
+                end
+                case 5:
+                begin
+                end
+                case 2:
+                begin
+                end
+                default:
+                begin
+                end
+            end#/
 
     end
 

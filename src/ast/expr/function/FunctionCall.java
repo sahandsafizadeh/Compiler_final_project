@@ -16,13 +16,13 @@ public class FunctionCall extends Expression {
 
     @Override
     public Type getResultType() {
+        access.compile();
         return ((FunctionDescriptor) access.getDescriptor()).getReturnType();
     }
 
     @Override
     public void compile() {
         Logger.log("expression function call");
-        access.compile();
         access.push();
     }
 

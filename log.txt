@@ -34,6 +34,40 @@ global variable declaration
 global variable declaration
 function declaration
 function declaration
+if
+less than equal
+variable access
+variable push
+variable access
+loading variable access
+variable access
+integer constant
+return statement
+integer constant
+return statement
+multiply
+variable access
+function access compile
+variable access
+variable push
+variable access
+loading variable access
+variable access
+expression function call
+function access invoke
+subtraction
+variable access
+variable push
+variable access
+loading variable access
+variable access
+integer constant
+function access compile
+variable access
+variable access
+function access compile
+variable access
+function declaration
 complete local variable declaration
 variable declaration
 integer constant
@@ -112,6 +146,70 @@ integer constant
 loading array access
 integer constant
 double constant
+complete local variable declaration
+variable declaration
+add
+variable access
+variable access
+variable access
+array access
+struct access
+add
+variable access
+variable access
+variable access
+array access
+add
+variable access
+variable access
+variable access
+variable push
+variable access
+loading variable access
+variable access
+remainder
+variable access
+variable access
+multiply
+variable access
+variable push
+variable access
+loading variable access
+variable access
+integer constant
+variable access
+subtraction
+variable access
+postfix minus minus
+variable access
+variable access
+loading variable access
+variable access
+integer constant
+variable access
+variable access
+variable access
+variable access
+variable access
+variable access
+variable push
+array access
+loading array access
+integer constant
+array access
+variable access
+variable access
+variable access
+array access
+variable push
+struct access
+loading structure access
+struct access
+variable access
+variable access
+variable access
+array access
+struct access
 function call statement
 function access compile
 function access invoke
@@ -129,7 +227,16 @@ repeat
 direct assignment
 variable access
 integer constant
-boolean constant
+direct assignment
+variable access
+binary and
+multiply
+integer constant
+integer constant
+integer constant
+variable push
+variable access
+loading variable access
 if
 binary and
 boolean constant
@@ -137,6 +244,24 @@ boolean constant
 direct assignment
 variable access
 double constant
+direct assignment
+variable access
+double constant
+for loop
+boolean constant
+plus assignment
+variable access
+loading variable access
+integer constant
+complete local variable declaration
+variable declaration
+integer constant
+multiply assignment
+variable access
+loading variable access
+add
+integer constant
+integer constant
 global variable declaration
 function declaration
 declaring struct field

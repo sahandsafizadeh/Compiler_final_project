@@ -92,8 +92,6 @@ nonterminal Type struct_type;
 
 nonterminal Block block;
 nonterminal BlockContent block_content;
-nonterminal Block loop_block;
-nonterminal BlockContent loop_block_content;
 
 nonterminal var_dcl;
 nonterminal var_dcl_part;
@@ -104,8 +102,6 @@ nonterminal DCL single_var;
 nonterminal DCL array_part;
 
 nonterminal statement;
-nonterminal loop_statement;
-
 nonterminal Statement cond_stmt;
 nonterminal Block else_part;
 nonterminal case_part;
@@ -330,18 +326,6 @@ block_content ::=
     /*epsilon*/
     ;
 
-loop_block ::=
-    BEGIN {:RESULT = new Block();:} loop_block_content END {:Blocks.getInstance().remove();:}
-    ;
-
-loop_block_content ::=
-    var_dcl loop_block_content
-    |
-    loop_statement loop_block_content
-    |
-    /*epsilon*/
-    ;
-
 
 //variables
 var_dcl ::=
@@ -391,15 +375,11 @@ statement ::=
     |
     function_call:a SEMI {:Blocks.getInstance().getCurrent().addContent(new FunctionCall(a));:}
     |
-    RETURN expr:e SEMI {:Blocks.getInstance().getCurrent().addContent(new Return(e));:}
-    ;
-
-loop_statement ::=
-    statement
-    |
     BREAK SEMI {:Blocks.getInstance().getCurrent().addContent(new Break());:}
     |
     CONTINUE SEMI {:Blocks.getInstance().getCurrent().addContent(new Continue());:}
+    |
+    RETURN expr:e SEMI {:Blocks.getInstance().getCurrent().addContent(new Return(e));:}
     ;
 
 
@@ -425,11 +405,11 @@ case_part ::=
 
 //loops
 loop_stmt ::=
-    FOR PRANTOP loop_init_part:in SEMI loop_cond_part:e SEMI loop_update_part:up PRANTCL loop_block:b {:RESULT = new For(in, e, up, b);:}
+    FOR PRANTOP loop_init_part:in SEMI loop_cond_part:e SEMI loop_update_part:up PRANTCL block:b {:RESULT = new For(in, e, up, b);:}
     |
-    REPEAT loop_block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
+    REPEAT block:b UNTIL PRANTOP expr:e PRANTCL SEMI {:RESULT = new Repeat(b, e);:}
     |
-    FOREACH PRANTOP id:i1 IN id:i2 PRANTCL loop_block:b {:RESULT = new Foreach(i1, i2, b);:}
+    FOREACH PRANTOP id:i1 IN id:i2 PRANTCL block:b {:RESULT = new Foreach(i1, i2, b);:}
     ;
 
 loop_init_part ::=
