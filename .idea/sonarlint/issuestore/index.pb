@@ -221,3 +221,5 @@ d
 4src/ast/expr/unary/arithmatic/dual/PostfixPlus2.java,8\a\8a10d19d2937aa749b3212031062018757d28767
 D
 inputFiles/codegen.c,4\d\4d812219421d4d68366cdc3525dc989ab2d2ad46
+B
+inputFiles/test1.c,3\0\30e35bea8ab0b63e282fb13a1ebab0831c53c88b

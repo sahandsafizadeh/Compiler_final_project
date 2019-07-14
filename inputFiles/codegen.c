@@ -114,9 +114,10 @@ function int main()
                 end
             end
 
-            /#foreach(i in array)
+            foreach(i in array)
             begin
-            end#/
+            int test2 = 3-1;
+            end
 
             int fact = factorial(6) + 10;
             factorial(7);

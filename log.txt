@@ -297,6 +297,12 @@ integer constant
 complete local variable declaration
 variable declaration
 double constant
+foreach loop
+complete local variable declaration
+variable declaration
+subtraction
+integer constant
+integer constant
 complete local variable declaration
 variable declaration
 add

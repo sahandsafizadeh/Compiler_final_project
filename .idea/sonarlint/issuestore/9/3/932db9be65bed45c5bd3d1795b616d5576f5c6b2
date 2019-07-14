@@ -1,2 +1,5 @@
 
-{squid:S00116"^Rename this field "ALL_STRUCTURE_TYPES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì˜€Ìùÿÿÿÿ
+{squid:S00116"^Rename this field "ALL_STRUCTURE_TYPES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì˜€Ìùÿÿÿÿ
+csquid:UselessImportCheck"9Remove this unused import 'javax.swing.text.html.Option'.(¼Òì:8®‹Ãù¾-
+Ysquid:UselessImportCheck
+".Remove this unused import 'java.util.Objects'.(¼¸õ›8®¶Äù¾-

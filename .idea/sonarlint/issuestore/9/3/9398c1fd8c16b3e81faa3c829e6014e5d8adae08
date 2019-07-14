@@ -1,2 +1,5 @@
 
-|squid:S00116"XRename this field "ALL_FUNCTIONS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ş¹ªÿÿÿÿÿ8¬°ïá½-
+|squid:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8Äù±‰¿-
+]squid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Ã½Š¿-
+|squid:S00116"XRename this field "ALL_FUNCTIONS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ş¹ªÿÿÿÿÿ8¬°ïá½-
+csquid:S1192"FDefine a constant instead of duplicating this literal "print" 5 times.(êî-8æø§Š¿-
