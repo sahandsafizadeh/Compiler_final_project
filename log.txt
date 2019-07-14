@@ -7,6 +7,7 @@ declaring struct field
 declaring struct field
 declaring struct field
 declaring struct field
+declaring struct field
 initializing struct variable value in constructor
 boolean constant
 initializing struct variable value in constructor
@@ -21,6 +22,7 @@ initializing struct variable value in constructor
 double constant
 initializing struct variable value in constructor
 character constant
+initializing struct variable value in constructor
 writing structures class code to the output file
 global variable declaration
 global variable declaration
@@ -63,6 +65,26 @@ variable declaration
 boolean constant
 complete local variable declaration
 struct declaration
+complete local variable declaration
+struct declaration
+direct assignment
+variable access
+variable access
+variable push
+variable access
+loading variable access
+variable access
+complete local variable declaration
+variable declaration
+string constant
+complete local variable declaration
+array declaration
+integer constant
+complete local variable declaration
+array declaration
+add
+integer constant
+integer constant
 global variable declaration
 function declaration
 function declaration

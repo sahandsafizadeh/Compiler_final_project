@@ -17,6 +17,7 @@ public class Variable extends Expression {
 
     @Override
     public Type getResultType() {
+        access.compile();
         Type type = ((AbstractDescriptor) access.getDescriptor()).getType();
         if (!TypeChecker.isValidVariableType(type))
             Logger.error("type mismatch");
@@ -27,6 +28,7 @@ public class Variable extends Expression {
     public void compile() {
         Logger.log("variable push");
         access.compile();
+        access.push();
     }
 
 }

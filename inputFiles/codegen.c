@@ -6,6 +6,7 @@ record Ali begin
     const double other = 1.213;
     const long lll = /#123e3#/ 123e-3;
     char character = '\n';
+    int abc;
 end record;
 
 int global_int_var;
@@ -32,8 +33,14 @@ function int main()
         a = 4;
         bool aflas=false;
 
-        Ali ali;
+        Ali ali, taghi;
 
+        b = a;
+        ##ali.abc = 10;
+
+        string str = "ali alavi";
+        int array[10];
+        double darray[10 + 1];
 
     end
 
