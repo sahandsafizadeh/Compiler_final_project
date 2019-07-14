@@ -9,6 +9,7 @@ import ast.type.Type;
 import cg.CodeGenerator;
 import cg.Logger;
 import org.objectweb.asm.Opcodes;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.GlobalVariableDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
@@ -23,6 +24,8 @@ public class DirectAssign extends Assignment {
     @Override
     public void compile() {
         Logger.log("direct assignment");
+        access.compile();
+        descriptor = (AbstractDescriptor) access.getDescriptor();
         checkOperation();
         if (access instanceof VariableAccess)
             variableDirectAssign();

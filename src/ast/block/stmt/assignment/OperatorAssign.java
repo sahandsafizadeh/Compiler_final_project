@@ -8,6 +8,7 @@ import ast.expr.Expression;
 import ast.type.Type;
 import cg.CodeGenerator;
 import org.objectweb.asm.Opcodes;
+import symtab.dscp.AbstractDescriptor;
 import symtab.dscp.variable.GlobalVariableDescriptor;
 import symtab.dscp.variable.VariableDescriptor;
 
@@ -23,6 +24,8 @@ public abstract class OperatorAssign extends Assignment {
 
     @Override
     public void compile() {
+        access.compile();
+        descriptor = (AbstractDescriptor) access.getDescriptor();
         checkOperation();
         if (access instanceof VariableAccess)
             variableOperatorAssign();

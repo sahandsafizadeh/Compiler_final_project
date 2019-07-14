@@ -23,16 +23,17 @@ public class ArrayAccess extends Access {
     }
 
     @Override
-    public void setDescriptor(String id) {
+    public void compile() {
+        Logger.log("array access");
         descriptor = TableStack.getInstance().find(id);
+        if (!(descriptor instanceof ArrayDescriptor))
+            Logger.error("array not declared");
     }
 
     @Override
-    public void compile() {
-        Logger.log("array access load");
-        if (!(descriptor instanceof ArrayDescriptor))
-            Logger.error("array not declared");
-        ArrayDescriptor descriptor = (ArrayDescriptor) getDescriptor();
+    public void push() {
+        Logger.log("loading array access");
+        ArrayDescriptor descriptor = (ArrayDescriptor) this.descriptor;
         CodeGenerator.mVisit.visitVarInsn(Opcodes.ALOAD, descriptor.getStackIndex());
         if (index.getResultType() != INT)
             Logger.error("arrays can only be accessed using integer types");

@@ -103,7 +103,7 @@ nonterminal var_dcl_cnt_extension;
 nonterminal DCL single_var;
 nonterminal DCL array_part;
 
-nonterminal BlockContent statement;
+nonterminal statement;
 nonterminal BlockContent loop_statement;
 
 nonterminal Statement cond_stmt;
@@ -325,7 +325,7 @@ block ::=
 block_content ::=
     var_dcl block_content
     |
-    statement:cont block_content {:Blocks.getInstance().getCurrent().addContent(cont);:}
+    statement block_content
     |
     /*epsilon*/
     ;
@@ -383,19 +383,19 @@ array_part ::=
 
 //statements
 statement ::=
-    cond_stmt:stmt {:RESULT = stmt;:}
+    cond_stmt:stmt {:Blocks.getInstance().getCurrent().addContent(stmt);:}
     |
-    loop_stmt:stmt {:RESULT = stmt;:}
+    loop_stmt:stmt {:Blocks.getInstance().getCurrent().addContent(stmt);:}
     |
-    assignment:stmt SEMI {:RESULT = stmt;:}
+    assignment:stmt SEMI {:Blocks.getInstance().getCurrent().addContent(stmt);:}
     |
-    function_call:a SEMI {:RESULT = new FunctionCall(a);:}
+    function_call:a SEMI {:Blocks.getInstance().getCurrent().addContent(new FunctionCall(a));:}
     |
-    RETURN expr:e SEMI {:RESULT = new Return(e);:}
+    RETURN expr:e SEMI {:Blocks.getInstance().getCurrent().addContent(new Return(e));:}
     ;
 
 loop_statement ::=
-    statement:stmt {:RESULT = stmt;:}
+    statement
     |
     BREAK SEMI {:new Break();:}
     |

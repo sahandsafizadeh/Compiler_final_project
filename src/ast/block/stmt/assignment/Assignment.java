@@ -23,7 +23,6 @@ public abstract class Assignment extends BlockContent {
     public Assignment(Access access, Expression expr) {
         this.access = access;
         this.expr = expr;
-        descriptor = (AbstractDescriptor) access.getDescriptor();
     }
 
     void checkOperation() {

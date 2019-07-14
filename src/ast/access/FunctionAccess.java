@@ -25,6 +25,11 @@ public class FunctionAccess extends Access {
     }
 
     @Override
+    public void push() {
+        //todo
+    }
+
+    @Override
     public int determineOp(Type type) {
         return 0;
     }

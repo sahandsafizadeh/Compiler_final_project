@@ -13,16 +13,17 @@ import static ast.type.Type.*;
 public class VariableAccess extends Access {
 
     @Override
-    public void setDescriptor(String id) {
+    public void compile() {
+        Logger.log("variable access");
         descriptor = TableStack.getInstance().find(id);
+        if (!(descriptor instanceof VariableDescriptor))
+            Logger.error("variable not declared");
     }
 
     @Override
-    public void compile() {
-        Logger.log("variable access load");
-        if (!(descriptor instanceof VariableDescriptor))
-            Logger.error("variable not declared");
-        VariableDescriptor descriptor = (VariableDescriptor) getDescriptor();
+    public void push() {
+        Logger.log("loading variable access");
+        VariableDescriptor descriptor = (VariableDescriptor) this.descriptor;
         if (descriptor instanceof GlobalVariableDescriptor)
             CodeGenerator.mVisit.visitFieldInsn(Opcodes.GETSTATIC, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
         else

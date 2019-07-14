@@ -56,3 +56,15 @@ complete local variable declaration
 variable declaration
 character constant
 direct assignment
+variable access
+integer constant
+complete local variable declaration
+variable declaration
+boolean constant
+global variable declaration
+function declaration
+function declaration
+declaring struct field
+initializing struct variable value in constructor
+writing structures class code to the output file
+Writing the generated code into the executable output file
