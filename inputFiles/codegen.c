@@ -20,7 +20,7 @@ end record;
 float f_globe;
 bool bol_global;
 
-function void test();
+function void test(int a, bool bole, char character, int tea);
 
 function int main()
     begin
@@ -35,13 +35,18 @@ function int main()
 
         Ali ali, taghi;
 
-        b = a;
+        a = (2.2+3)*4-2;
+
+        b += a;
         ##ali.abc = 10;
 
         string str = "ali alavi";
         int array[10];
         double darray[10 + 1];
 
+        ##darray[2] -= .0123;
+
+        ##other(1, true, 'a', 12);
     end
 
 long long_var;

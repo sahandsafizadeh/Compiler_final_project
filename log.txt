@@ -69,7 +69,16 @@ complete local variable declaration
 struct declaration
 direct assignment
 variable access
+subtraction
+multiply
+add
+double constant
+integer constant
+integer constant
+integer constant
+plus assignment
 variable access
+loading variable access
 variable push
 variable access
 loading variable access

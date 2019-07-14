@@ -39,11 +39,12 @@ public abstract class OperatorAssign extends Assignment {
         access.push();
         expr.compile();
         expr.doCastCompile(descriptor.getType());
+        int strCode = determineOp(descriptor.getType());
         CodeGenerator.mVisit.visitInsn(opcode);
         if (descriptor instanceof GlobalVariableDescriptor)
             mVisit.visitFieldInsn(Opcodes.PUTFIELD, CodeGenerator.GENERATED_CLASS, descriptor.getName(), descriptor.getType().typeName());
         else
-            mVisit.visitVarInsn(determineOp(descriptor.getType()), descriptor.getStackIndex());
+            mVisit.visitVarInsn(strCode, descriptor.getStackIndex());
     }
 
     private void arrayOperatorAssign() {
@@ -61,6 +62,7 @@ public abstract class OperatorAssign extends Assignment {
         access.compile();
         expr.compile();
         expr.doCastCompile(structVar.getType());
+        determineOp(structVar.getType());
         mVisit.visitInsn(opcode);
         mVisit.visitFieldInsn(Opcodes.PUTFIELD, descriptor.getType().typeName(), structVar.getName(), structVar.getType().typeName());
     }
