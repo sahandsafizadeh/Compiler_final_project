@@ -1,120 +1,60 @@
 compiling program
 Initializing code generator
+global variable declaration
+global variable declaration
+global variable declaration
 function declaration
-complete local variable declaration
-variable declaration
-integer constant
-complete local variable declaration
-array declaration
+direct assignment
+variable access
 integer constant
 direct assignment
-array access
-integer constant
-integer constant
-complete local variable declaration
-variable declaration
-binary or
 variable access
-array access
-binary and
-variable access
-array access
-equality
-character constant
-character constant
-grater than equal
-variable access
-array access
-variable push
-variable access
-loading variable access
-variable access
-variable push
-array access
-loading array access
-integer constant
-array access
-variable access
-array access
-variable access
-array access
-boolean constant
-variable access
-array access
-if
-variable push
-variable access
-loading variable access
-if
-equality
-variable access
-variable push
-variable access
-loading variable access
-variable access
-integer constant
-complete local variable declaration
-variable declaration
-string constant
-complete local variable declaration
-variable declaration
-add
-function access compile
-variable access
-expression function call
-function access compile
-variable access
-function access invoke
-variable push
-variable access
-loading variable access
-function access compile
-variable access
-integer constant
-function access compile
-variable access
-function call statement
-function access compile
-variable access
-function access invoke
-variable push
-variable access
-loading variable access
-if
-equality
-array access
-variable push
-array access
-loading array access
-integer constant
-array access
-integer constant
-complete local variable declaration
-variable declaration
-integer constant
-function call statement
-function access compile
-variable access
-function access invoke
-variable push
-variable access
-loading variable access
-complete local variable declaration
-variable declaration
 double constant
 direct assignment
-array access
+variable access
+boolean constant
+switch-case
+variable access
+loading variable access
+division assignment
+variable access
+loading variable access
 integer constant
+function call statement
+function access compile
+variable access
+function access invoke
+variable push
+variable access
+loading variable access
+function call statement
+function access compile
+variable access
+function access invoke
+variable push
+variable access
+loading variable access
+function call statement
+function access compile
+variable access
+function access invoke
+variable push
+variable access
+loading variable access
+function call statement
+function access compile
+variable access
+variable access
+function access invoke
+add
+variable access
+variable access
 variable push
 variable access
 loading variable access
 variable access
-function call statement
-function access compile
-array access
-function access invoke
 variable push
-array access
-loading array access
-integer constant
+variable access
+loading variable access
+variable access
 Writing the generated code into the executable output file

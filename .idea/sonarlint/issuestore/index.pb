@@ -17,8 +17,6 @@ C
 doc/manuals/Cup.txt,5\e\5ed7b63f82e7c07603f83d1b3ad26e99312bf86f
 >
 symbolData.txt,0\0\00d0a7f59d8a07ccc641381022ea3785265fa6f7
-B
-inputFiles/input.c,2\2\22e32224dbb95555d8687de615989e50a2eb3433
 A
 src/ast/Node.java,7\b\7beabe9aaf735c0110e159444ba6d2fbb61299a4
 W
@@ -227,3 +225,7 @@ G
 inputFiles/structTest.c,9\f\9f7bf6e31804b521f5e52729a247073916a7b57a
 E
 inputFiles/caseTest.c,f\f\ff4cc018bb16b1be9d55b0ef2f66b62e918c9924
+H
+inputFiles/expressions.c,0\7\07cd7a26a8944f677e7590b2b5921b0c939775d8
+C
+inputFiles/ifTest.c,4\4\440703b612945f75d4a0b99f20361aa8304bd3e0
