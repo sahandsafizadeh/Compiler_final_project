@@ -1,14 +1,14 @@
 
-Rsquid:S1444"/Make this "public static structClw" field final(„à¸ªúÿÿÿÿ8’·§É¼-
-ˆ"squid:ClassVariableVisibilityCheck"SMake mainClw a static final constant or non-public and provide accessors if needed.(°§òš8’·§É¼-
-jsquid:UselessImportCheck":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8Ôêµ®¾-
-Xsquid:S1118":Add a private constructor to hide the implicit public one.(åˆÂØ8öı½-
-Osquid:S1444",Make this "public static mVisit" field final(‘„øÿÿÿÿ8Èª˜çº-
+wsquid:S1192'"TDefine a constant instead of duplicating this literal "java/io/PrintStream" 4 times.(ËúÅåøÿÿÿÿ8ÆÚ‡Š¿-
 "squid:ClassVariableVisibilityCheck"UMake structClw a static final constant or non-public and provide accessors if needed.(„à¸ªúÿÿÿÿ8’·§É¼-
-Ksquid:S1444"-Make this "public static mainClw" field final(°§òš8’·§É¼-
+dsquid:S1192#"FDefine a constant instead of duplicating this literal "print" 4 times.(†ã³Ø8ÆÚ‡Š¿-
+Xsquid:S1118":Add a private constructor to hide the implicit public one.(åˆÂØ8öı½-
+ysquid:S1192%"VDefine a constant instead of duplicating this literal "Ljava/io/PrintStream;" 4 times.(ï³“¸ùÿÿÿÿ8ÆÚ‡Š¿-
+tsquid:S1192%"QDefine a constant instead of duplicating this literal "java/lang/System" 4 times.(ï³“¸ùÿÿÿÿ8ÆÚ‡Š¿-
 Œ"squid:ClassVariableVisibilityCheck"RMake mVisit a static final constant or non-public and provide accessors if needed.(‘„øÿÿÿÿ8Èª˜çº-
-wsquid:S1192'"TDefine a constant instead of duplicating this literal "java/io/PrintStream" 5 times.(ËúÅåøÿÿÿÿ8ÆÚ‡Š¿-
-ksquid:S1192'"HDefine a constant instead of duplicating this literal "println" 5 times.(ËúÅåøÿÿÿÿ8ÆÚ‡Š¿-
-ysquid:S1192%"VDefine a constant instead of duplicating this literal "Ljava/io/PrintStream;" 5 times.(ï³“¸ùÿÿÿÿ8ÆÚ‡Š¿-
-tsquid:S1192%"QDefine a constant instead of duplicating this literal "java/lang/System" 5 times.(ï³“¸ùÿÿÿÿ8ÆÚ‡Š¿-
-dsquid:S1192#"FDefine a constant instead of duplicating this literal "print" 5 times.(†ã³Ø8ÆÚ‡Š¿-
+Rsquid:S1444"/Make this "public static structClw" field final(„à¸ªúÿÿÿÿ8’·§É¼-
+Osquid:S1444",Make this "public static mVisit" field final(‘„øÿÿÿÿ8Èª˜çº-
+jsquid:UselessImportCheck":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8Ôêµ®¾-
+ksquid:S1192'"HDefine a constant instead of duplicating this literal "println" 4 times.(ËúÅåøÿÿÿÿ8ÆÚ‡Š¿-
+Ksquid:S1444"-Make this "public static mainClw" field final(°§òš8’·§É¼-
+ˆ"squid:ClassVariableVisibilityCheck"SMake mainClw a static final constant or non-public and provide accessors if needed.(°§òš8’·§É¼-

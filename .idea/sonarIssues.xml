@@ -38,6 +38,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/inputFiles/caseTest.c">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/inputFiles/codegen.c">
           <value>
             <set />
@@ -48,7 +53,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/inputFiles/expressions.c">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/inputFiles/functionCallTest.c">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/inputFiles/ifTest.c">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/inputFiles/input.c">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/inputFiles/recursiveTest.c">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/inputFiles/structTest.c">
           <value>
             <set />
           </value>

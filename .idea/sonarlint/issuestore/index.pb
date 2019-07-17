@@ -67,8 +67,6 @@ Q
 !src/ast/block/stmt/Statement.java,3\3\33bf3c9dc7e07807524b96382e113d287112ed44
 F
 src/ast/type/Type.java,5\1\512febc7b868a5ab727790a2e675f0135fefa9fc
-6
-A.java,5\2\52f5af6d5a647d9d9dce41b80d1d0f632112478c
 Y
 )src/ast/expr/binary/BinaryExpression.java,7\f\7f2d7662d6fd8ab74fdfeff6189e9e64fabfe4d1
 W
@@ -221,5 +219,11 @@ d
 4src/ast/expr/unary/arithmatic/dual/PostfixPlus2.java,8\a\8a10d19d2937aa749b3212031062018757d28767
 D
 inputFiles/codegen.c,4\d\4d812219421d4d68366cdc3525dc989ab2d2ad46
-B
-inputFiles/test1.c,3\0\30e35bea8ab0b63e282fb13a1ebab0831c53c88b
+J
+inputFiles/recursiveTest.c,f\b\fb2081728c6e31bf6f7f1e877769a0e2564b8490
+M
+inputFiles/functionCallTest.c,7\6\764e061b71a03ccec7ba2c3910f18bbb0ca32595
+G
+inputFiles/structTest.c,9\f\9f7bf6e31804b521f5e52729a247073916a7b57a
+E
+inputFiles/caseTest.c,f\f\ff4cc018bb16b1be9d55b0ef2f66b62e918c9924
